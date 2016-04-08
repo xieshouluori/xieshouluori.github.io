@@ -204,11 +204,11 @@ eg1: style = window.getComputedStyle(elem_id , &quot;:after&quot;);
 
 eg2：var width = window.getComputedStyle(mydiv , null);
 </code></pre><p>获取具体的属性值：</p>
-<pre><code>eg2：var width = window.getComputedStyle(mydiv , null)[&apos;width&apos;];
+<pre><code>eg1：var width = window.getComputedStyle(mydiv , null)[&apos;width&apos;];
 
-eg3：var width = window.getComputedStyle(mydiv , null).width;
+eg2：var width = window.getComputedStyle(mydiv , null).width;
 
-eg4：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;width&quot;);
+eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;width&quot;);
 </code></pre><p>获取float，如果使用键值访问，则不能直接使用getComputedStyle(element, null).float，而应该是cssFloat与styleFloat，自然需要浏览器判断了，比较折腾！</p>
 <p>2&gt; currentStyle</p>
 <p>eg:var width = mydiv.currentStyle[‘width’];</p>

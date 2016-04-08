@@ -16,7 +16,7 @@
 <meta property="og:description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
 2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。
 3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS">
-<meta property="og:updated_time" content="2016-04-08T08:29:17.000Z">
+<meta property="og:updated_time" content="2016-04-08T08:34:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="style、currentStyle、getComputedStyle的区别">
 <meta name="twitter:description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
@@ -216,11 +216,11 @@ eg1: style = window.getComputedStyle(elem_id , &quot;:after&quot;);
 
 eg2：var width = window.getComputedStyle(mydiv , null);
 </code></pre><p>获取具体的属性值：</p>
-<pre><code>eg2：var width = window.getComputedStyle(mydiv , null)[&apos;width&apos;];
+<pre><code>eg1：var width = window.getComputedStyle(mydiv , null)[&apos;width&apos;];
 
-eg3：var width = window.getComputedStyle(mydiv , null).width;
+eg2：var width = window.getComputedStyle(mydiv , null).width;
 
-eg4：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;width&quot;);
+eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;width&quot;);
 </code></pre><p>获取float，如果使用键值访问，则不能直接使用getComputedStyle(element, null).float，而应该是cssFloat与styleFloat，自然需要浏览器判断了，比较折腾！</p>
 <p>2&gt; currentStyle</p>
 <p>eg:var width = mydiv.currentStyle[‘width’];</p>
