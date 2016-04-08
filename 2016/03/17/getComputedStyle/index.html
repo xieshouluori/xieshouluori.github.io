@@ -16,7 +16,7 @@
 <meta property="og:description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
 2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。
 3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS">
-<meta property="og:updated_time" content="2016-04-08T08:22:02.000Z">
+<meta property="og:updated_time" content="2016-04-08T08:24:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="style、currentStyle、getComputedStyle的区别">
 <meta name="twitter:description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
@@ -203,23 +203,26 @@
 <p>通过document.getElementById(id).runtimeStyle.XXX设置</p>
 <p>作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！</p>
 <p>3.currentStyle 与 getComputedStyle</p>
-<p>作用：获取元素中所有可用的css属性</p>
-<p>应用：IE使用currentStyle，其他浏览器用getComputedStyle</p>
+<p>（1）作用：获取元素中所有可用的css属性</p>
+<p>（2）应用：IE使用currentStyle，其他浏览器用getComputedStyle</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var computed = !!window.getComputedStyle;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!computed) &#123;</span><br><span class="line">  window.getComputedStyle = <span class="keyword">function</span>(el) &#123;</span><br><span class="line">    this.el = el;</span><br><span class="line">    this.getPropertyValue = <span class="keyword">function</span>(prop) &#123;</span><br><span class="line">      var re = /(\-([a-z])&#123;1&#125;)/g;</span><br><span class="line">      <span class="keyword">if</span> (prop === <span class="string">"float"</span>) &#123;</span><br><span class="line">        prop = <span class="string">"styleFloat"</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (re.test(prop)) &#123;</span><br><span class="line">        prop = prop.replace(re, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">          <span class="built_in">return</span> arguments[2].toUpperCase();</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">return</span> el.currentStyle[prop] ? el.currentStyle[prop] : null;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">return</span> this;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>语法：</p>
-<p>（1）getComputedStyle：(只读不可写－－－只能获取样式，不能设置)</p>
-<p>获取属性列表</p>
-<p>arr_style=window.getComputedStyle(元素,伪类)</p>
-<p>伪元素，是否要获取伪元素属性值。如hover,active,link等属性。如果不想获取这些伪元素的属性值请填写为null。</p>
-<p>eg1: style = window.getComputedStyle(elem_id , “:after”);</p>
-<p>eg2：var width = window.getComputedStyle(mydiv , null);</p>
-<p>获取具体的属性值：</p>
-<p>eg2：var width = window.getComputedStyle(mydiv , null)[‘width’];</p>
-<p>eg3：var width = window.getComputedStyle(mydiv , null).width;</p>
-<p>eg4：var width = window.getComputedStyle(mydiv , null).getPropertyValue(“width”);</p>
-<p>获取float，如果使用键值访问，则不能直接使用getComputedStyle(element, null).float，而应该是cssFloat与styleFloat，自然需要浏览器判断了，比较折腾！</p>
-<p>（2）currentStyle</p>
-<p>eg:var width = mydiv.currentStyle[‘width’];</p>
+<p>（3）语法：</p>
+<h4 id="getComputedStyle：-只读不可写－－－只能获取样式，不能设置"><a href="#getComputedStyle：-只读不可写－－－只能获取样式，不能设置" class="headerlink" title="getComputedStyle：(只读不可写－－－只能获取样式，不能设置)"></a>getComputedStyle：(只读不可写－－－只能获取样式，不能设置)</h4><p>获取属性列表</p>
+<pre><code>arr_style=window.getComputedStyle(元素,伪类)
+
+伪元素，是否要获取伪元素属性值。如hover,active,link等属性。如果不想获取这些伪元素的属性值请填写为null。
+
+eg1: style = window.getComputedStyle(elem_id , &quot;:after&quot;);
+
+eg2：var width = window.getComputedStyle(mydiv , null);
+</code></pre><p>获取具体的属性值：</p>
+<pre><code>eg2：var width = window.getComputedStyle(mydiv , null)[&apos;width&apos;];
+
+eg3：var width = window.getComputedStyle(mydiv , null).width;
+
+eg4：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;width&quot;);
+</code></pre><p>获取float，如果使用键值访问，则不能直接使用getComputedStyle(element, null).float，而应该是cssFloat与styleFloat，自然需要浏览器判断了，比较折腾！</p>
+<h4 id="currentStyle"><a href="#currentStyle" class="headerlink" title="currentStyle"></a>currentStyle</h4><p>eg:var width = mydiv.currentStyle[‘width’];</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
