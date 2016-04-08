@@ -48,15 +48,17 @@
     <link href="http://yoursite.com/2016/03/17/getComputedStyle/"/>
     <id>http://yoursite.com/2016/03/17/getComputedStyle/</id>
     <published>2016-03-17T06:52:12.000Z</published>
-    <updated>2016-04-08T08:06:02.000Z</updated>
+    <updated>2016-04-08T08:08:04.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;css设置样式分为三种方式&quot;&gt;&lt;a href=&quot;#css设置样式分为三种方式&quot; class=&quot;headerlink&quot; title=&quot;css设置样式分为三种方式&quot;&gt;&lt;/a&gt;css设置样式分为三种方式&lt;/h2&gt;&lt;p&gt;1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。&lt;/p&gt;
 &lt;p&gt;2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。&lt;/p&gt;
 &lt;p&gt;3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS文件。 &lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;js获取样式&quot;&gt;&lt;a href=&quot;#js获取样式&quot; class=&quot;headerlink&quot; title=&quot;js获取样式&quot;&gt;&lt;/a&gt;js获取样式&lt;/h2&gt;&lt;p&gt;1.style属性：通过document.getElementById(id).style.XXX就可以获取到XXX的值。(可读可写)&lt;/p&gt;
-&lt;h3 id=&quot;作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值&quot;&gt;&lt;a href=&quot;#作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值&quot; class=&quot;headerlink&quot; title=&quot;作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值&quot;&gt;&lt;/a&gt;作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值&lt;/h3&gt;&lt;p&gt;2.runtimeStyle ： 通过document.getElementById(id).runtimeStyle.XXX设置&lt;/p&gt;
-&lt;h3 id=&quot;作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！&quot;&gt;&lt;a href=&quot;#作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！&quot; class=&quot;headerlink&quot; title=&quot;作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！&quot;&gt;&lt;/a&gt;作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！&lt;/h3&gt;&lt;p&gt;3.currentStyle 与 getComputedStyle&lt;/p&gt;
+&lt;p&gt;作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值&lt;/p&gt;
+&lt;p&gt;2.runtimeStyle ： 通过document.getElementById(id).runtimeStyle.XXX设置&lt;/p&gt;
+&lt;p&gt;作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！&lt;/p&gt;
+&lt;p&gt;3.currentStyle 与 getComputedStyle&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;作用：获取元素中所有可用的css属性
 
 应用：IE使用currentStyle，其他浏览器用getComputedStyle

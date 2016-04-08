@@ -246,8 +246,10 @@
 <p>3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS文件。 </p>
 <hr>
 <h2 id="js获取样式"><a href="#js获取样式" class="headerlink" title="js获取样式"></a>js获取样式</h2><p>1.style属性：通过document.getElementById(id).style.XXX就可以获取到XXX的值。(可读可写)</p>
-<h3 id="作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值"><a href="#作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值" class="headerlink" title="作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值"></a>作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值</h3><p>2.runtimeStyle ： 通过document.getElementById(id).runtimeStyle.XXX设置</p>
-<h3 id="作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！"><a href="#作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！" class="headerlink" title="作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！"></a>作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！</h3><p>3.currentStyle 与 getComputedStyle</p>
+<p>作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值</p>
+<p>2.runtimeStyle ： 通过document.getElementById(id).runtimeStyle.XXX设置</p>
+<p>作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！</p>
+<p>3.currentStyle 与 getComputedStyle</p>
 <pre><code>作用：获取元素中所有可用的css属性
 
 应用：IE使用currentStyle，其他浏览器用getComputedStyle
