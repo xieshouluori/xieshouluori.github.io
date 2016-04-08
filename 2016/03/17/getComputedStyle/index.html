@@ -6,25 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>style、currentStyle、getComputedStyle的区别 | 携手落日</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##css设置样式分为三种方式
-1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
+  <meta name="description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
 2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。
-3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个">
+3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="style、currentStyle、getComputedStyle的区别">
 <meta property="og:url" content="http://yoursite.com/2016/03/17/getComputedStyle/index.html">
 <meta property="og:site_name" content="携手落日">
-<meta property="og:description" content="##css设置样式分为三种方式
-1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
+<meta property="og:description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
 2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。
-3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个">
-<meta property="og:updated_time" content="2016-04-08T08:04:27.000Z">
+3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS">
+<meta property="og:updated_time" content="2016-04-08T08:06:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="style、currentStyle、getComputedStyle的区别">
-<meta name="twitter:description" content="##css设置样式分为三种方式
-1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
+<meta name="twitter:description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
 2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。
-3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个">
+3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS">
   
   
     <link rel="icon" href="/favicon.png">
@@ -195,17 +192,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##css设置样式分为三种方式</p>
-<p>1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。</p>
+        <h2 id="css设置样式分为三种方式"><a href="#css设置样式分为三种方式" class="headerlink" title="css设置样式分为三种方式"></a>css设置样式分为三种方式</h2><p>1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。</p>
 <p>2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。</p>
 <p>3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS文件。 </p>
 <hr>
-<p>##js获取样式</p>
-<p>1.style属性：通过document.getElementById(id).style.XXX就可以获取到XXX的值。(可读可写)</p>
-<pre><code>作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值
-</code></pre><p>2.runtimeStyle ： 通过document.getElementById(id).runtimeStyle.XXX设置</p>
-<pre><code>作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！
-</code></pre><p>3.currentStyle 与 getComputedStyle</p>
+<h2 id="js获取样式"><a href="#js获取样式" class="headerlink" title="js获取样式"></a>js获取样式</h2><p>1.style属性：通过document.getElementById(id).style.XXX就可以获取到XXX的值。(可读可写)</p>
+<h3 id="作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值"><a href="#作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值" class="headerlink" title="作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值"></a>作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值</h3><p>2.runtimeStyle ： 通过document.getElementById(id).runtimeStyle.XXX设置</p>
+<h3 id="作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！"><a href="#作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！" class="headerlink" title="作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！"></a>作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！</h3><p>3.currentStyle 与 getComputedStyle</p>
 <pre><code>作用：获取元素中所有可用的css属性
 
 应用：IE使用currentStyle，其他浏览器用getComputedStyle
@@ -243,11 +236,15 @@
     
 <nav id="article-nav">
   
-  
-    <a href="/2016/03/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <strong class="article-nav-caption">></strong>
+    <a href="/2016/03/17/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
     </a>
+  
   
 </nav>
 

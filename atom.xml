@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-08T08:04:27.000Z</updated>
+  <updated>2016-03-17T10:09:02.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,23 +16,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/03/17/hello-world/"/>
+    <id>http://yoursite.com/2016/03/17/hello-world/</id>
+    <published>2016-03-17T06:52:12.000Z</published>
+    <updated>2016-03-17T10:09:02.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to 我的博客&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to 我的博客&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>style、currentStyle、getComputedStyle的区别</title>
     <link href="http://yoursite.com/2016/03/17/getComputedStyle/"/>
     <id>http://yoursite.com/2016/03/17/getComputedStyle/</id>
     <published>2016-03-17T06:52:12.000Z</published>
-    <updated>2016-04-08T08:04:27.000Z</updated>
+    <updated>2016-04-08T08:06:02.000Z</updated>
     
-    <content type="html">&lt;p&gt;##css设置样式分为三种方式&lt;/p&gt;
-&lt;p&gt;1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;css设置样式分为三种方式&quot;&gt;&lt;a href=&quot;#css设置样式分为三种方式&quot; class=&quot;headerlink&quot; title=&quot;css设置样式分为三种方式&quot;&gt;&lt;/a&gt;css设置样式分为三种方式&lt;/h2&gt;&lt;p&gt;1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。&lt;/p&gt;
 &lt;p&gt;2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。&lt;/p&gt;
 &lt;p&gt;3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS文件。 &lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;##js获取样式&lt;/p&gt;
-&lt;p&gt;1.style属性：通过document.getElementById(id).style.XXX就可以获取到XXX的值。(可读可写)&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.runtimeStyle ： 通过document.getElementById(id).runtimeStyle.XXX设置&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.currentStyle 与 getComputedStyle&lt;/p&gt;
+&lt;h2 id=&quot;js获取样式&quot;&gt;&lt;a href=&quot;#js获取样式&quot; class=&quot;headerlink&quot; title=&quot;js获取样式&quot;&gt;&lt;/a&gt;js获取样式&lt;/h2&gt;&lt;p&gt;1.style属性：通过document.getElementById(id).style.XXX就可以获取到XXX的值。(可读可写)&lt;/p&gt;
+&lt;h3 id=&quot;作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值&quot;&gt;&lt;a href=&quot;#作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值&quot; class=&quot;headerlink&quot; title=&quot;作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值&quot;&gt;&lt;/a&gt;作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值&lt;/h3&gt;&lt;p&gt;2.runtimeStyle ： 通过document.getElementById(id).runtimeStyle.XXX设置&lt;/p&gt;
+&lt;h3 id=&quot;作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！&quot;&gt;&lt;a href=&quot;#作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！&quot; class=&quot;headerlink&quot; title=&quot;作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！&quot;&gt;&lt;/a&gt;作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！&lt;/h3&gt;&lt;p&gt;3.currentStyle 与 getComputedStyle&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;作用：获取元素中所有可用的css属性
 
 应用：IE使用currentStyle，其他浏览器用getComputedStyle
@@ -65,37 +89,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;##css设置样式分为三种方式&lt;/p&gt;
-&lt;p&gt;1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。&lt;/p&gt;
-&lt;p&gt;2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/03/17/hello-world/"/>
-    <id>http://yoursite.com/2016/03/17/hello-world/</id>
-    <published>2016-03-17T06:52:12.000Z</published>
-    <updated>2016-03-17T10:09:02.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Welcome to 我的博客&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to 我的博客&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create
+      &lt;h2 id=&quot;css设置样式分为三种方式&quot;&gt;&lt;a href=&quot;#css设置样式分为三种方式&quot; class=&quot;headerlink&quot; title=&quot;css设置样式分为三种方式&quot;&gt;&lt;/a&gt;css设置样式分为三种方式&lt;/h2&gt;&lt;p&gt;1.内嵌样式（inline Style） ：写在Ta
     
     </summary>
     
