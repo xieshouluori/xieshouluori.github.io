@@ -4,17 +4,30 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>携手落日</title>
+  <title>JavaScript 模块化编程 | 携手落日</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript html5 css3 前端">
-<meta property="og:type" content="website">
-<meta property="og:title" content="携手落日">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="模块模式闭包与 IIFE1234;(function (参数) &amp;#123;  // 模块代码  // return something;&amp;#125;(参数));
+模块模式的本质:(1)可以定义私有变量和函数，外部无法访问它们，从而做到了私有成员的隐藏和隔离。
+(2)通过返回对象或函数,可以公开我们对外暴露的公开的方法与数据。
+More info: Writing
+参数输入123456;(func">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 模块化编程">
+<meta property="og:url" content="http://yoursite.com/2016/04/11/module_pattern/index.html">
 <meta property="og:site_name" content="携手落日">
-<meta property="og:description" content="javascript html5 css3 前端">
+<meta property="og:description" content="模块模式闭包与 IIFE1234;(function (参数) &amp;#123;  // 模块代码  // return something;&amp;#125;(参数));
+模块模式的本质:(1)可以定义私有变量和函数，外部无法访问它们，从而做到了私有成员的隐藏和隔离。
+(2)通过返回对象或函数,可以公开我们对外暴露的公开的方法与数据。
+More info: Writing
+参数输入123456;(func">
+<meta property="og:updated_time" content="2016-04-11T07:14:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="携手落日">
-<meta name="twitter:description" content="javascript html5 css3 前端">
+<meta name="twitter:title" content="JavaScript 模块化编程">
+<meta name="twitter:description" content="模块模式闭包与 IIFE1234;(function (参数) &amp;#123;  // 模块代码  // return something;&amp;#125;(参数));
+模块模式的本质:(1)可以定义私有变量和函数，外部无法访问它们，从而做到了私有成员的隐藏和隔离。
+(2)通过返回对象或函数,可以公开我们对外暴露的公开的方法与数据。
+More info: Writing
+参数输入123456;(func">
   
   
     <link rel="icon" href="/favicon.png">
@@ -152,9 +165,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-module_pattern" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-module_pattern" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/04/11/module_pattern/" class="article-date">
@@ -170,12 +181,19 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/11/module_pattern/">JavaScript 模块化编程</a>
+    <h1 class="article-title" itemprop="name">
+      JavaScript 模块化编程
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -198,174 +216,68 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
 
 
 
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/17/hello-world/" class="article-date">
-  	<time datetime="2016-03-17T06:52:12.000Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to 我的博客</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="module_pattern" data-title="JavaScript 模块化编程" data-url="http://yoursite.com/2016/04/11/module_pattern/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-
-
-
-
-  
-    <article id="post-getComputedStyle" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/17/getComputedStyle/" class="article-date">
-  	<time datetime="2016-03-17T06:52:12.000Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/getComputedStyle/">style、currentStyle、getComputedStyle的区别</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="css设置样式分为三种方式"><a href="#css设置样式分为三种方式" class="headerlink" title="css设置样式分为三种方式"></a>css设置样式分为三种方式</h2><p>1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。</p>
-<p>2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。</p>
-<p>3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS文件。 </p>
-<h2 id="js获取样式"><a href="#js获取样式" class="headerlink" title="js获取样式"></a>js获取样式</h2><p>1.style属性：</p>
-<p>通过document.getElementById(id).style.XXX就可以获取到XXX的值。(可读可写)</p>
-<p>作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值</p>
-<p>2.runtimeStyle ：</p>
-<p>通过document.getElementById(id).runtimeStyle.XXX设置</p>
-<p>作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！</p>
-<p>3.currentStyle 与 getComputedStyle</p>
-<p>（1）作用：获取元素中所有可用的css属性</p>
-<p>（2）应用：IE使用currentStyle，其他浏览器用getComputedStyle</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var computed = !!window.getComputedStyle;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!computed) &#123;</span><br><span class="line">  window.getComputedStyle = <span class="keyword">function</span>(el) &#123;</span><br><span class="line">    this.el = el;</span><br><span class="line">    this.getPropertyValue = <span class="keyword">function</span>(prop) &#123;</span><br><span class="line">      var re = /(\-([a-z])&#123;1&#125;)/g;</span><br><span class="line">      <span class="keyword">if</span> (prop === <span class="string">"float"</span>) &#123;</span><br><span class="line">        prop = <span class="string">"styleFloat"</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (re.test(prop)) &#123;</span><br><span class="line">        prop = prop.replace(re, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">          <span class="built_in">return</span> arguments[2].toUpperCase();</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">return</span> el.currentStyle[prop] ? el.currentStyle[prop] : null;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">return</span> this;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>（3）语法：</p>
-<p>1&gt; getComputedStyle：(只读不可写－－－只能获取样式，不能设置)</p>
-<p>获取属性列表</p>
-<pre><code>arr_style=window.getComputedStyle(元素,伪类)
-
-伪元素，是否要获取伪元素属性值。如hover,active,link等属性。如果不想获取这些伪元素的属性值请填写为null。
-
-eg1: style = window.getComputedStyle(elem_id , &quot;:after&quot;);
-
-eg2：var width = window.getComputedStyle(mydiv , null);
-</code></pre><p>获取具体的属性值：</p>
-<pre><code>eg1：var width = window.getComputedStyle(mydiv , null)[&apos;width&apos;];
-
-eg2：var width = window.getComputedStyle(mydiv , null).width;
-
-eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;width&quot;);
-</code></pre><p>获取float，如果使用键值访问，则不能直接使用getComputedStyle(element, null).float，而应该是cssFloat与styleFloat，自然需要浏览器判断了，比较折腾！</p>
-<p>2&gt; currentStyle</p>
-<p>eg:var width = mydiv.currentStyle[‘width’];</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -389,8 +301,8 @@ eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;w
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
