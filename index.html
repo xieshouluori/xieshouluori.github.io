@@ -154,6 +154,150 @@
 
       <div class="body-wrap">
   
+    <article id="post-babel5.0 升到6.0 遇到的坑" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/30/babel5.0 升到6.0 遇到的坑/" class="article-date">
+  	<time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/30/babel5.0 升到6.0 遇到的坑/">babel5.0 升到6.0 遇到的坑</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装-babel-cli"><a href="#安装-babel-cli" class="headerlink" title="安装 babel-cli"></a>安装 babel-cli</h2><p>在命令行下使用 Babel</p>
+<h2 id="安装-编译插件：babel-reset-es2015"><a href="#安装-编译插件：babel-reset-es2015" class="headerlink" title="安装 编译插件：babel-reset-es2015"></a>安装 编译插件：babel-reset-es2015</h2><p>babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译</p>
+<h3 id="babel-preset-stage-3"><a href="#babel-preset-stage-3" class="headerlink" title="babel-preset-stage-3"></a>babel-preset-stage-3</h3><p>如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并</p>
+<p>vuex2.0 中的mapState 返回一个对象。我们如何使用 mapState 合并其他局部的计算属性呢？通常地，为了将多个对象合并为一个对象，再把这个合并好的最终对象传入到 computed 属性去，我们不得不使用一个工具函数来实现。然而有了对象扩展运算符（ECMAScript 提案 stage-3），我们可以大大简化语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">localComputed</span></span> () &#123; /* ... */ &#125;,</span><br><span class="line">  // 使用对象扩展运算符，将 mapState 返回的对象和外层其他计算属性混合起来</span><br><span class="line">  ...mapState(&#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://vuefe.cn/vuex/state.html" target="_blank" rel="external">vueX2.0</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-babel_6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/30/babel_6/" class="article-date">
+  	<time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/30/babel_6/">babel 6.0</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Babel 是一个通用的多用途 JavaScript 编译器。通过 Babel 你可以使用（并创建）下一代的 JavaScript，以及下一代的 JavaScript 工具。</p>
+<p>用最新标准编写的 JavaScript 代码向下编译成可以在今天随处可用的版本。 这一过程叫做“源码到源码”编译， 也被称为转换编译。</p>
+<h2 id="配置-Babel—配置文件-babelrc"><a href="#配置-Babel—配置文件-babelrc" class="headerlink" title="配置 Babel—配置文件.babelrc"></a>配置 Babel—配置文件.babelrc</h2><pre><code>在项目的根路径下创建 .babelrc 文件，告诉 Babel 该做什么，即用来设置转码规则(presers)和插件(plugins)。
+
+基本格式如下：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [],</span><br><span class="line">  <span class="string">"plugins"</span>: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="常用转码规则"><a href="#常用转码规则" class="headerlink" title="常用转码规则"></a>常用转码规则</h3><p>（1） ES2015转码规则（把 ES2015（最新版本的 JavaScript 标准，也叫做 ES6）编译成 ES5）<br>        安装：<br>        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-preset-es2015</span><br></pre></td></tr></table></figure></p>
+<p>（2） react转码规则<br>           安装：<br>           <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-preset-react</span><br></pre></td></tr></table></figure></p>
+<p>（3）babel-preset-stage-x<br>    ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个<br>       安装：<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-preset-stage-0</span><br><span class="line">$ npm install --save-dev babel-preset-stage-1</span><br><span class="line">$ npm install --save-dev babel-preset-stage-2</span><br><span class="line">$ npm install --save-dev babel-preset-stage-3</span><br><span class="line">`</span><br></pre></td></tr></table></figure></p>
+<h3 id="将以上这些规则加入-babelrc。"><a href="#将以上这些规则加入-babelrc。" class="headerlink" title="将以上这些规则加入.babelrc。"></a>将以上这些规则加入.babelrc。</h3><p>  {<br>    “presets”: [<br>          “es2015”,<br>          “react”,<br>          “stage-3”<br>    ],<br>    “plugins”: []<br>  }</p>
+<h2 id="Babel工具和模块"><a href="#Babel工具和模块" class="headerlink" title="Babel工具和模块"></a>Babel工具和模块</h2><h3 id="babel-cli"><a href="#babel-cli" class="headerlink" title="babel-cli"></a>babel-cli</h3><p>Babel提供babel-cli工具—-用于命令行转码</p>
+<p>(1)全局安装<br>1&gt;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --global babel-cli</span><br></pre></td></tr></table></figure></p>
+<p>2&gt;基本用法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 转码结果输出到标准输出</span></span><br><span class="line">$ babel example.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转码结果写入一个文件</span></span><br><span class="line"><span class="comment"># --out-file 或 -o 参数指定输出文件</span></span><br><span class="line">$ babel example.js --out-file compiled.js</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ babel example.js -o compiled.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 整个目录转码</span></span><br><span class="line"><span class="comment"># --out-dir 或 -d 参数指定输出目录</span></span><br><span class="line">$ babel src --out-dir lib</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ babel src <span class="_">-d</span> lib</span><br><span class="line"></span><br><span class="line"><span class="comment"># -s 参数生成source map文件</span></span><br><span class="line">$ babel src <span class="_">-d</span> lib <span class="_">-s</span></span><br></pre></td></tr></table></figure></p>
+<p>(2)项目内运行 Babel CLI</p>
+<p>尽管你可以把 Babel CLI 全局安装在你的机器上，但是按项目安装会更好。</p>
+<p>有两个主要的原因：</p>
+<p>在同一台机器上的不同项目或许会依赖不同版本的 Babel 并允许你有选择的更新。<br>这意味着你对工作环境没有隐式依赖，这让你的项目有很好的可移植性并且易于安装。</p>
+<p>1&gt;本地安装 Babel CLI</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-cli</span><br></pre></td></tr></table></figure>
+<p>2&gt;安装完成后的 package.json<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  // ...</span><br><span class="line">  <span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"babel-cli"</span>: <span class="string">"^6.0.0"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"babel src -d lib"</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3&gt;转码的时候，就执行下面的命令。<br>$ npm run build</p>
+<h3 id="babel-node"><a href="#babel-node" class="headerlink" title="babel-node"></a>babel-node</h3><p>如果你要用 node CLI 来运行代码，那么整合 Babel 最简单的方式就是使用 babel-node CLI，它是 node CLI 的替代品。</p>
+<p>它支持Node的REPL环境的所有功能，而且可以直接运行ES6代码。<br>它不用单独安装，而是随babel-cli一起安装。然后，执行babel-node就进入PEPL环境。</p>
+<p>用babel-node替代node，这样代码本身就不用做任何转码处理。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ babel-node</span><br><span class="line">&gt; (x =&gt; x * 2)(1)</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<p>babel-node命令可以直接运行ES6脚本。将上面的代码放入脚本文件es6.js，然后直接运行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ babel-node es6.js</span><br><span class="line">2</span><br></pre></td></tr></table></figure></p>
+<p>babel-node也可以安装在项目中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-cli</span><br></pre></td></tr></table></figure></p>
+<p>然后，改写package.json。<br>{<br>  “scripts”: {<br>    “script-name”: “babel-node script.js”<br>  }<br>}<br>上面代码中，使用babel-node替代node，这样script.js本身就不用做任何转码处理。</p>
+<h3 id="babel-core"><a href="#babel-core" class="headerlink" title="babel-core"></a>babel-core</h3><p>如果你需要以编程的方式来调用Babel的API进行转码，就可以使用 babel-core 这个模块。</p>
+<p>（1）安装 babel-core。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install babel-core</span><br></pre></td></tr></table></figure></p>
+<p>(2)项目中调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var babel = require(<span class="string">'babel-core'</span>);</span><br><span class="line"></span><br><span class="line">// 字符串转码</span><br><span class="line">babel.transform(<span class="string">'code();'</span>, options);</span><br><span class="line">// =&gt; &#123; code, map, ast &#125;</span><br><span class="line"></span><br><span class="line">// 文件转码（异步）</span><br><span class="line">babel.transformFile(<span class="string">'filename.js'</span>, options, <span class="keyword">function</span>(err, result) &#123;</span><br><span class="line">  result; // =&gt; &#123; code, map, ast &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 文件转码（同步）</span><br><span class="line">babel.transformFileSync(<span class="string">'filename.js'</span>, options);</span><br><span class="line">// =&gt; &#123; code, map, ast &#125;</span><br><span class="line"></span><br><span class="line">// Babel AST转码</span><br><span class="line">babel.transformFromAst(ast, code, options);</span><br><span class="line">// =&gt; &#123; code, map, ast &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="babel-polyfill"><a href="#babel-polyfill" class="headerlink" title="babel-polyfill"></a>babel-polyfill</h3><p>Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。Babel默认不转码的API非常多。</p>
+<p>举例来说，ES6在Array对象上新增了Arrayfrom方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。</p>
+<p>（1）用 npm 安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save babel-polyfill</span><br></pre></td></tr></table></figure></p>
+<p>(2)调用<br>然后只需要在文件顶部导入 polyfill 就可以了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import <span class="string">"babel-polyfill"</span>;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-checkbox全选" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -277,6 +421,67 @@
 
 
   
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/17/hello-world/" class="article-date">
+  	<time datetime="2016-03-17T06:52:12.000Z" itemprop="datePublished">2016-03-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/17/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to 我的博客</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-getComputedStyle" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -335,67 +540,6 @@ eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;w
 </code></pre><p>获取float，如果使用键值访问，则不能直接使用getComputedStyle(element, null).float，而应该是cssFloat与styleFloat，自然需要浏览器判断了，比较折腾！</p>
 <p>2&gt; currentStyle</p>
 <p>eg:var width = mydiv.currentStyle[‘width’];</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/17/hello-world/" class="article-date">
-  	<time datetime="2016-03-17T06:52:12.000Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to 我的博客</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
     </div>
