@@ -154,11 +154,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-babel5.0 升到6.0 遇到的坑" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Javascript闭包" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/30/babel5.0 升到6.0 遇到的坑/" class="article-date">
-  	<time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time>
+      <a href="/2016/11/11/Javascript闭包/" class="article-date">
+  	<time datetime="2016-11-10T16:00:00.000Z" itemprop="datePublished">2016-11-11</time>
 </a>
     </div>
   
@@ -171,7 +171,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/30/babel5.0 升到6.0 遇到的坑/">babel5.0 升到6.0 遇到的坑</a>
+      <a class="article-title" href="/2016/11/11/Javascript闭包/">Javascript闭包.md</a>
     </h1>
   
 
@@ -180,11 +180,256 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装-babel-cli"><a href="#安装-babel-cli" class="headerlink" title="安装 babel-cli"></a>安装 babel-cli</h2><p>在命令行下使用 Babel</p>
-<h2 id="安装-编译插件：babel-reset-es2015"><a href="#安装-编译插件：babel-reset-es2015" class="headerlink" title="安装 编译插件：babel-reset-es2015"></a>安装 编译插件：babel-reset-es2015</h2><p>babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译</p>
-<h3 id="babel-preset-stage-3"><a href="#babel-preset-stage-3" class="headerlink" title="babel-preset-stage-3"></a>babel-preset-stage-3</h3><p>如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并</p>
-<p>vuex2.0 中的mapState 返回一个对象。我们如何使用 mapState 合并其他局部的计算属性呢？通常地，为了将多个对象合并为一个对象，再把这个合并好的最终对象传入到 computed 属性去，我们不得不使用一个工具函数来实现。然而有了对象扩展运算符（ECMAScript 提案 stage-3），我们可以大大简化语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">localComputed</span></span> () &#123; /* ... */ &#125;,</span><br><span class="line">  // 使用对象扩展运算符，将 mapState 返回的对象和外层其他计算属性混合起来</span><br><span class="line">  ...mapState(&#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://vuefe.cn/vuex/state.html" target="_blank" rel="external">vueX2.0</a></p>
+        <p>   JS闭包是什么？<br>　　Ali的回答：<br>　　当function里嵌套function时，内部的function可以访问外部function里的变量。</p>
+<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> foo(x) &#123;</span><br><span class="line">    var tmp = 3;</span><br><span class="line">    <span class="keyword">function</span> bar(y) &#123;</span><br><span class="line">        alert(x + y + (++tmp));</span><br><span class="line">    &#125;</span><br><span class="line">    bar(10);</span><br><span class="line">&#125;</span><br><span class="line">foo(2)</span><br></pre></td></tr></table></figure>
+</code></pre><p>　　不管执行多少次，都会alert 16，因为bar能访问foo的参数x，也能访问foo的变量tmp。<br>　　但，这还不是闭包。当你return的是内部function时，就是一个闭包。内部function会close-over外部function的变量直到内部function结束。</p>
+<pre><code>function foo(x) {
+    var tmp = 3;
+    return function (y) {
+        alert(x + y + (++tmp));
+    }
+}
+var bar = foo(2); // bar 现在是一个闭包
+bar(10);
+</code></pre><p>　　上面的脚本最终也会alert 16，因为虽然bar不直接处于foo的内部作用域，但bar还是能访问x和tmp。<br>　　但是，由于tmp仍存在于bar闭包的内部，所以它还是会自加1，而且你每次调用bar时它都会自加1.<br>　　（考虑到六岁这个限制：我们其实可以建立不止一个闭包方法，比如return它们的数组，也可以把它们设置为全局变量。它们全都指向相同的x和相同的tmp，而不是各自有一份副本。）<br>　　注：现在来整点儿七岁的内容。<br>　　上面的x是一个字面值（值传递），和JS里其他的字面值一样，当调用foo时，实参x的值被复制了一份，复制的那一份作为了foo的参数x。<br>　　那么问题来了，JS里处理object时是用到引用传递的，那么，你调用foo时传递一个object，foo函数return的闭包也会引用最初那个object！<br>function foo(x) {<br>var tmp = 3;<br>return function (y) {<br>    alert(x + y + tmp);<br>    x.memb = x.memb ? x.memb + 1 : 1;<br>    alert(x.memb);<br>    }<br>}<br>var age = new Number(2);<br>var bar = foo(age); // bar 现在是一个引用了age的闭包<br>bar(10);<br>　　不出我们意料，每次运行bar(10)，x.memb都会自加1。但需要注意的是x每次都指向同一个object变量——age，运行两次bar(10)后，age.memb会变成2.<br>　　这和HTML对象的内存泄漏有关，呃，不过貌似超出了答题的范围。<br>　　JohnMerlino 对Ali说：<br>　　这里有一个不用return关键字的闭包例子：<br>function closureExample(objID, text, timedelay) {<br>    setTimeout(function() {<br>        document.getElementById(objID).innerHTML = text;<br>    }, timedelay);<br>}<br>closureExample(‘myDiv’, ‘Closure is created’, 500);<br>　　深夜1:37 John Pick这样回答：<br>　　JS里的function能访问它们的：<br>　　1. 参数<br>　　2. 局部变量或函数<br>　　3. 外部变量（环境变量？），包括<br>3.1 全局变量，包括DOM。<br>3.2 外部函数的变量或函数。<br>　　如果一个函数访问了它的外部变量，那么它就是一个闭包。<br>　　注意，外部函数不是必需的。通过访问外部变量，一个闭包可以维持（keep alive）这些变量。在内部函数和外部函数的例子中，外部函数可以创建局部变量，并且最终退出；但是，如果任何一个或多个内部函数在它退出后却没有退出，那么内部函数就维持了外部函数的局部数据。<br>　　一个典型的例子就是全局变量的使用。<br>　　mykhal这样回答：<br>　　Wikipedia对闭包的定义是这样的：<br>In computer science, a closure is a function together with a referencing environment for the nonlocal names (free variables) of that function.<br>　　从技术上来讲，在JS中，每个function都是闭包，因为它总是能访问在它外部定义的数据。<br>　　Since scope-defining construction in Javascript is a function, not a code block like in many other languages, what we usually mean by closure in Javascript is a fuction working with nonlocal variables defined in already executed surrounding function.<br>　　闭包经常用于创建含有隐藏数据的函数（但并不总是这样）。<br>var db = (function() {<br>// 创建一个隐藏的object, 这个object持有一些数据<br>// 从外部是不能访问这个object的<br>var data = {};<br>// 创建一个函数, 这个函数提供一些访问data的数据的方法<br>return function(key, val) {<br>    if (val === undefined) { return data[key] } // get<br>    else { return data[key] = val } // set<br>    }<br>// 我们可以调用这个匿名方法<br>// 返回这个内部函数，它是一个闭包<br>})();</p>
+<p>db(‘x’); // 返回 undefined<br>db(‘x’, 1); // 设置data[‘x’]为1<br>db(‘x’); // 返回 1<br>// 我们不可能访问data这个object本身<br>// 但是我们可以设置它的成员<br>　　看了这么多外国大牛的解答，不知道你懂还是不懂，反正我是懂了。<br>　　P.S. 发布文章之后看到@xiaotie的一篇文章，觉得有必要推荐一下，因为其剖析得更为深入。有人说应该在文章结尾对闭包进行总结，可惜小弟才疏学浅，不能给出一个精辟的总结。<br>　　@xiaotie对闭包的总结如下：<br>（1）闭包是一种设计原则，它通过分析上下文，来简化用户的调用，让用户在不知晓的情况下，达到他的目的；<br>（2）网上主流的对闭包剖析的文章实际上是和闭包原则反向而驰的，如果需要知道闭包细节才能用好的话，这个闭包是设计失败的；<br>（3）尽量少学习。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-前端项目框架" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/31/前端项目框架/" class="article-date">
+  	<time datetime="2016-10-31T03:31:49.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前端项目框架</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-webpack +gulp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/31/webpack +gulp/" class="article-date">
+  	<time datetime="2016-10-31T03:31:20.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>webpack +gulp</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-node 环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/31/node 环境搭建/" class="article-date">
+  	<time datetime="2016-10-31T03:30:46.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>node 环境搭建</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-vue-router2.0" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/31/vue-router2.0/" class="article-date">
+  	<time datetime="2016-10-31T03:30:19.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The old router.go() is now router.push() .</p>
+<p>新的 router.go 类似 window.history.go() : 接受一个数值作为参数在历史栈中导航</p>
+<p>新增的方法:</p>
+<p>router.back()</p>
+<p>router.forward()</p>
+<p>routes 选项取代了 router.map() 。路由配置现在用数组而不是用对象哈希表来作为数据结构。这保证了一致的匹配次序（对象键值枚举的次序是依赖游览器的）。</p>
+<p>以下的路由器实例化选项被作废了：</p>
+<p>history (被 mode 取代)</p>
+<p>abstract (被 mode 取代)</p>
+<p>root (被 base 取代)</p>
+<p>saveScrollPosition (被 scrollBehavior 取代，后者用起来更加灵活，下面会提到)</p>
+<p>hashbang (因为 hashbang 在Google爬站的时候不在需要，所以移除了此选项)</p>
+<p>transitionOnLoad (因为 Vue 2.0 有显式的视觉表现过渡动画控制，所以此选项移除)</p>
+<p>suppressTransitionError (因为钩子函数的系统的简化而移除)</p>
+<p>新的 mode 选项取值为： (默认是 “hash”):</p>
+<p>“abstract”</p>
+<p>“hash”</p>
+<p>“history”</p>
+<p>在不支持 history.pushState 的浏览器中, 路由器会自动回退为 hash 模式.</p>
+<p>下列方法已经作废：</p>
+<p>router.map (被 routes 选项取代)</p>
+<p>router.beforeEach (被 beforeEach 选项取代，不过 beta2中有修改，见下面)</p>
+<p>router.afterEach (被 afterEach 选项取代，不过 beta2中有修改，见下面)</p>
+<p>router.redirect (现在可以在 routes 中直接声明, 参见 Example )</p>
+<p>router.alias (现在可以在 routes 配置中直接声明, 参见 Example )</p>
+<p>1.0版本不用new Vue，一直都是像下面这样启动<br>import app from ‘app.vue’;<br>router.start(app, ‘#app’);<br>2.0官方给的例子全是模版写在template里的， 官方文档也没有这样的例子。我试着在vue2.0的模板里这样挂载结果报错</p>
+<p>import Vue from ‘vue’;<br>import App from ‘./app.vue’;<br>import router from ‘./router’;</p>
+<p>var app = new Vue({<br>    router,<br>    render: h =&gt; h(App)<br>}).$mount(‘#app’);</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-vuex2.0" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/31/vuex2.0/" class="article-date">
+  	<time datetime="2016-10-31T03:29:52.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vuex2.0</p>
 
       
     </div>
@@ -272,6 +517,63 @@
 <p>举例来说，ES6在Array对象上新增了Arrayfrom方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。</p>
 <p>（1）用 npm 安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save babel-polyfill</span><br></pre></td></tr></table></figure></p>
 <p>(2)调用<br>然后只需要在文件顶部导入 polyfill 就可以了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import <span class="string">"babel-polyfill"</span>;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-babel5.0 升到6.0 遇到的坑" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/30/babel5.0 升到6.0 遇到的坑/" class="article-date">
+  	<time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/30/babel5.0 升到6.0 遇到的坑/">babel5.0 升到6.0 遇到的坑</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装-babel-cli"><a href="#安装-babel-cli" class="headerlink" title="安装 babel-cli"></a>安装 babel-cli</h2><p>在命令行下使用 Babel</p>
+<h2 id="安装-编译插件：babel-reset-es2015"><a href="#安装-编译插件：babel-reset-es2015" class="headerlink" title="安装 编译插件：babel-reset-es2015"></a>安装 编译插件：babel-reset-es2015</h2><p>babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译</p>
+<h3 id="babel-preset-stage-3"><a href="#babel-preset-stage-3" class="headerlink" title="babel-preset-stage-3"></a>babel-preset-stage-3</h3><p>如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并</p>
+<p>vuex2.0 中的mapState 返回一个对象。我们如何使用 mapState 合并其他局部的计算属性呢？通常地，为了将多个对象合并为一个对象，再把这个合并好的最终对象传入到 computed 属性去，我们不得不使用一个工具函数来实现。然而有了对象扩展运算符（ECMAScript 提案 stage-3），我们可以大大简化语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">localComputed</span></span> () &#123; /* ... */ &#125;,</span><br><span class="line">  // 使用对象扩展运算符，将 mapState 返回的对象和外层其他计算属性混合起来</span><br><span class="line">  ...mapState(&#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://vuefe.cn/vuex/state.html" target="_blank" rel="external">vueX2.0</a></p>
 
       
     </div>
@@ -421,151 +723,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/03/17/hello-world/" class="article-date">
-  	<time datetime="2016-03-17T06:52:12.000Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to 我的博客</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-getComputedStyle" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/17/getComputedStyle/" class="article-date">
-  	<time datetime="2016-03-17T06:52:12.000Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/getComputedStyle/">style、currentStyle、getComputedStyle的区别</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="css设置样式分为三种方式"><a href="#css设置样式分为三种方式" class="headerlink" title="css设置样式分为三种方式"></a>css设置样式分为三种方式</h2><p>1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。</p>
-<p>2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。</p>
-<p>3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS文件。 </p>
-<h2 id="js获取样式"><a href="#js获取样式" class="headerlink" title="js获取样式"></a>js获取样式</h2><p>1.style属性：</p>
-<p>通过document.getElementById(id).style.XXX就可以获取到XXX的值。(可读可写)</p>
-<p>作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值</p>
-<p>2.runtimeStyle ：</p>
-<p>通过document.getElementById(id).runtimeStyle.XXX设置</p>
-<p>作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！</p>
-<p>3.currentStyle 与 getComputedStyle</p>
-<p>（1）作用：获取元素中所有可用的css属性</p>
-<p>（2）应用：IE使用currentStyle，其他浏览器用getComputedStyle</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var computed = !!window.getComputedStyle;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!computed) &#123;</span><br><span class="line">  window.getComputedStyle = <span class="keyword">function</span>(el) &#123;</span><br><span class="line">    this.el = el;</span><br><span class="line">    this.getPropertyValue = <span class="keyword">function</span>(prop) &#123;</span><br><span class="line">      var re = /(\-([a-z])&#123;1&#125;)/g;</span><br><span class="line">      <span class="keyword">if</span> (prop === <span class="string">"float"</span>) &#123;</span><br><span class="line">        prop = <span class="string">"styleFloat"</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (re.test(prop)) &#123;</span><br><span class="line">        prop = prop.replace(re, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">          <span class="built_in">return</span> arguments[2].toUpperCase();</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">return</span> el.currentStyle[prop] ? el.currentStyle[prop] : null;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">return</span> this;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>（3）语法：</p>
-<p>1&gt; getComputedStyle：(只读不可写－－－只能获取样式，不能设置)</p>
-<p>获取属性列表</p>
-<pre><code>arr_style=window.getComputedStyle(元素,伪类)
-
-伪元素，是否要获取伪元素属性值。如hover,active,link等属性。如果不想获取这些伪元素的属性值请填写为null。
-
-eg1: style = window.getComputedStyle(elem_id , &quot;:after&quot;);
-
-eg2：var width = window.getComputedStyle(mydiv , null);
-</code></pre><p>获取具体的属性值：</p>
-<pre><code>eg1：var width = window.getComputedStyle(mydiv , null)[&apos;width&apos;];
-
-eg2：var width = window.getComputedStyle(mydiv , null).width;
-
-eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;width&quot;);
-</code></pre><p>获取float，如果使用键值访问，则不能直接使用getComputedStyle(element, null).float，而应该是cssFloat与styleFloat，自然需要浏览器判断了，比较折腾！</p>
-<p>2&gt; currentStyle</p>
-<p>eg:var width = mydiv.currentStyle[‘width’];</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Javascript闭包.md | 携手落日</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JS闭包是什么？　　Ali的回答：　　当function里嵌套function时，内部的function可以访问外部function里的变量。
+12345678function foo(x) &amp;#123;    var tmp = 3;    function bar(y) &amp;#123;        alert(x + y + (++tmp));    &amp;#125;    bar(10);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript闭包.md">
+<meta property="og:url" content="http://yoursite.com/2016/11/11/Javascript闭包/index.html">
+<meta property="og:site_name" content="携手落日">
+<meta property="og:description" content="JS闭包是什么？　　Ali的回答：　　当function里嵌套function时，内部的function可以访问外部function里的变量。
+12345678function foo(x) &amp;#123;    var tmp = 3;    function bar(y) &amp;#123;        alert(x + y + (++tmp));    &amp;#125;    bar(10);">
+<meta property="og:updated_time" content="2016-11-11T07:30:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript闭包.md">
+<meta name="twitter:description" content="JS闭包是什么？　　Ali的回答：　　当function里嵌套function时，内部的function可以访问外部function里的变量。
+12345678function foo(x) &amp;#123;    var tmp = 3;    function bar(y) &amp;#123;        alert(x + y + (++tmp));    &amp;#125;    bar(10);">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">妞妞</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/5411966680/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">妞妞</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">妞妞</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/5411966680/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Javascript闭包" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/11/Javascript闭包/" class="article-date">
+  	<time datetime="2016-11-10T16:00:00.000Z" itemprop="datePublished">2016-11-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript闭包.md
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>   JS闭包是什么？<br>　　Ali的回答：<br>　　当function里嵌套function时，内部的function可以访问外部function里的变量。</p>
+<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> foo(x) &#123;</span><br><span class="line">    var tmp = 3;</span><br><span class="line">    <span class="keyword">function</span> bar(y) &#123;</span><br><span class="line">        alert(x + y + (++tmp));</span><br><span class="line">    &#125;</span><br><span class="line">    bar(10);</span><br><span class="line">&#125;</span><br><span class="line">foo(2)</span><br></pre></td></tr></table></figure>
+</code></pre><p>　　不管执行多少次，都会alert 16，因为bar能访问foo的参数x，也能访问foo的变量tmp。<br>　　但，这还不是闭包。当你return的是内部function时，就是一个闭包。内部function会close-over外部function的变量直到内部function结束。</p>
+<pre><code>function foo(x) {
+    var tmp = 3;
+    return function (y) {
+        alert(x + y + (++tmp));
+    }
+}
+var bar = foo(2); // bar 现在是一个闭包
+bar(10);
+</code></pre><p>　　上面的脚本最终也会alert 16，因为虽然bar不直接处于foo的内部作用域，但bar还是能访问x和tmp。<br>　　但是，由于tmp仍存在于bar闭包的内部，所以它还是会自加1，而且你每次调用bar时它都会自加1.<br>　　（考虑到六岁这个限制：我们其实可以建立不止一个闭包方法，比如return它们的数组，也可以把它们设置为全局变量。它们全都指向相同的x和相同的tmp，而不是各自有一份副本。）<br>　　注：现在来整点儿七岁的内容。<br>　　上面的x是一个字面值（值传递），和JS里其他的字面值一样，当调用foo时，实参x的值被复制了一份，复制的那一份作为了foo的参数x。<br>　　那么问题来了，JS里处理object时是用到引用传递的，那么，你调用foo时传递一个object，foo函数return的闭包也会引用最初那个object！<br>function foo(x) {<br>var tmp = 3;<br>return function (y) {<br>    alert(x + y + tmp);<br>    x.memb = x.memb ? x.memb + 1 : 1;<br>    alert(x.memb);<br>    }<br>}<br>var age = new Number(2);<br>var bar = foo(age); // bar 现在是一个引用了age的闭包<br>bar(10);<br>　　不出我们意料，每次运行bar(10)，x.memb都会自加1。但需要注意的是x每次都指向同一个object变量——age，运行两次bar(10)后，age.memb会变成2.<br>　　这和HTML对象的内存泄漏有关，呃，不过貌似超出了答题的范围。<br>　　JohnMerlino 对Ali说：<br>　　这里有一个不用return关键字的闭包例子：<br>function closureExample(objID, text, timedelay) {<br>    setTimeout(function() {<br>        document.getElementById(objID).innerHTML = text;<br>    }, timedelay);<br>}<br>closureExample(‘myDiv’, ‘Closure is created’, 500);<br>　　深夜1:37 John Pick这样回答：<br>　　JS里的function能访问它们的：<br>　　1. 参数<br>　　2. 局部变量或函数<br>　　3. 外部变量（环境变量？），包括<br>3.1 全局变量，包括DOM。<br>3.2 外部函数的变量或函数。<br>　　如果一个函数访问了它的外部变量，那么它就是一个闭包。<br>　　注意，外部函数不是必需的。通过访问外部变量，一个闭包可以维持（keep alive）这些变量。在内部函数和外部函数的例子中，外部函数可以创建局部变量，并且最终退出；但是，如果任何一个或多个内部函数在它退出后却没有退出，那么内部函数就维持了外部函数的局部数据。<br>　　一个典型的例子就是全局变量的使用。<br>　　mykhal这样回答：<br>　　Wikipedia对闭包的定义是这样的：<br>In computer science, a closure is a function together with a referencing environment for the nonlocal names (free variables) of that function.<br>　　从技术上来讲，在JS中，每个function都是闭包，因为它总是能访问在它外部定义的数据。<br>　　Since scope-defining construction in Javascript is a function, not a code block like in many other languages, what we usually mean by closure in Javascript is a fuction working with nonlocal variables defined in already executed surrounding function.<br>　　闭包经常用于创建含有隐藏数据的函数（但并不总是这样）。<br>var db = (function() {<br>// 创建一个隐藏的object, 这个object持有一些数据<br>// 从外部是不能访问这个object的<br>var data = {};<br>// 创建一个函数, 这个函数提供一些访问data的数据的方法<br>return function(key, val) {<br>    if (val === undefined) { return data[key] } // get<br>    else { return data[key] = val } // set<br>    }<br>// 我们可以调用这个匿名方法<br>// 返回这个内部函数，它是一个闭包<br>})();</p>
+<p>db(‘x’); // 返回 undefined<br>db(‘x’, 1); // 设置data[‘x’]为1<br>db(‘x’); // 返回 1<br>// 我们不可能访问data这个object本身<br>// 但是我们可以设置它的成员<br>　　看了这么多外国大牛的解答，不知道你懂还是不懂，反正我是懂了。<br>　　P.S. 发布文章之后看到@xiaotie的一篇文章，觉得有必要推荐一下，因为其剖析得更为深入。有人说应该在文章结尾对闭包进行总结，可惜小弟才疏学浅，不能给出一个精辟的总结。<br>　　@xiaotie对闭包的总结如下：<br>（1）闭包是一种设计原则，它通过分析上下文，来简化用户的调用，让用户在不知晓的情况下，达到他的目的；<br>（2）网上主流的对闭包剖析的文章实际上是和闭包原则反向而驰的，如果需要知道闭包细节才能用好的话，这个闭包是设计失败的；<br>（3）尽量少学习。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/31/前端项目框架/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Javascript闭包" data-title="Javascript闭包.md" data-url="http://yoursite.com/2016/11/11/Javascript闭包/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 妞妞
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

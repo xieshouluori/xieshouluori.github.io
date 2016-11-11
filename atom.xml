@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-30T13:16:28.000Z</updated>
+  <updated>2016-11-11T07:30:55.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,23 +16,160 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>babel5.0 升到6.0 遇到的坑</title>
-    <link href="http://yoursite.com/2016/10/30/babel5.0%20%E5%8D%87%E5%88%B06.0%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
-    <id>http://yoursite.com/2016/10/30/babel5.0 升到6.0 遇到的坑/</id>
-    <published>2016-10-29T16:00:00.000Z</published>
-    <updated>2016-10-30T13:16:28.000Z</updated>
+    <title>Javascript闭包.md</title>
+    <link href="http://yoursite.com/2016/11/11/Javascript%E9%97%AD%E5%8C%85/"/>
+    <id>http://yoursite.com/2016/11/11/Javascript闭包/</id>
+    <published>2016-11-10T16:00:00.000Z</published>
+    <updated>2016-11-11T07:30:55.000Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;安装-babel-cli&quot;&gt;&lt;a href=&quot;#安装-babel-cli&quot; class=&quot;headerlink&quot; title=&quot;安装 babel-cli&quot;&gt;&lt;/a&gt;安装 babel-cli&lt;/h2&gt;&lt;p&gt;在命令行下使用 Babel&lt;/p&gt;
-&lt;h2 id=&quot;安装-编译插件：babel-reset-es2015&quot;&gt;&lt;a href=&quot;#安装-编译插件：babel-reset-es2015&quot; class=&quot;headerlink&quot; title=&quot;安装 编译插件：babel-reset-es2015&quot;&gt;&lt;/a&gt;安装 编译插件：babel-reset-es2015&lt;/h2&gt;&lt;p&gt;babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译&lt;/p&gt;
-&lt;h3 id=&quot;babel-preset-stage-3&quot;&gt;&lt;a href=&quot;#babel-preset-stage-3&quot; class=&quot;headerlink&quot; title=&quot;babel-preset-stage-3&quot;&gt;&lt;/a&gt;babel-preset-stage-3&lt;/h3&gt;&lt;p&gt;如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并&lt;/p&gt;
-&lt;p&gt;vuex2.0 中的mapState 返回一个对象。我们如何使用 mapState 合并其他局部的计算属性呢？通常地，为了将多个对象合并为一个对象，再把这个合并好的最终对象传入到 computed 属性去，我们不得不使用一个工具函数来实现。然而有了对象扩展运算符（ECMAScript 提案 stage-3），我们可以大大简化语法：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;computed: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;localComputed&lt;/span&gt;&lt;/span&gt; () &amp;#123; /* ... */ &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  // 使用对象扩展运算符，将 mapState 返回的对象和外层其他计算属性混合起来&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ...mapState(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    // ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://vuefe.cn/vuex/state.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vueX2.0&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;   JS闭包是什么？&lt;br&gt;　　Ali的回答：&lt;br&gt;　　当function里嵌套function时，内部的function可以访问外部function里的变量。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; foo(x) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    var tmp = 3;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; bar(y) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        alert(x + y + (++tmp));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    bar(10);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo(2)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;　　不管执行多少次，都会alert 16，因为bar能访问foo的参数x，也能访问foo的变量tmp。&lt;br&gt;　　但，这还不是闭包。当你return的是内部function时，就是一个闭包。内部function会close-over外部function的变量直到内部function结束。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function foo(x) {
+    var tmp = 3;
+    return function (y) {
+        alert(x + y + (++tmp));
+    }
+}
+var bar = foo(2); // bar 现在是一个闭包
+bar(10);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;　　上面的脚本最终也会alert 16，因为虽然bar不直接处于foo的内部作用域，但bar还是能访问x和tmp。&lt;br&gt;　　但是，由于tmp仍存在于bar闭包的内部，所以它还是会自加1，而且你每次调用bar时它都会自加1.&lt;br&gt;　　（考虑到六岁这个限制：我们其实可以建立不止一个闭包方法，比如return它们的数组，也可以把它们设置为全局变量。它们全都指向相同的x和相同的tmp，而不是各自有一份副本。）&lt;br&gt;　　注：现在来整点儿七岁的内容。&lt;br&gt;　　上面的x是一个字面值（值传递），和JS里其他的字面值一样，当调用foo时，实参x的值被复制了一份，复制的那一份作为了foo的参数x。&lt;br&gt;　　那么问题来了，JS里处理object时是用到引用传递的，那么，你调用foo时传递一个object，foo函数return的闭包也会引用最初那个object！&lt;br&gt;function foo(x) {&lt;br&gt;var tmp = 3;&lt;br&gt;return function (y) {&lt;br&gt;    alert(x + y + tmp);&lt;br&gt;    x.memb = x.memb ? x.memb + 1 : 1;&lt;br&gt;    alert(x.memb);&lt;br&gt;    }&lt;br&gt;}&lt;br&gt;var age = new Number(2);&lt;br&gt;var bar = foo(age); // bar 现在是一个引用了age的闭包&lt;br&gt;bar(10);&lt;br&gt;　　不出我们意料，每次运行bar(10)，x.memb都会自加1。但需要注意的是x每次都指向同一个object变量——age，运行两次bar(10)后，age.memb会变成2.&lt;br&gt;　　这和HTML对象的内存泄漏有关，呃，不过貌似超出了答题的范围。&lt;br&gt;　　JohnMerlino 对Ali说：&lt;br&gt;　　这里有一个不用return关键字的闭包例子：&lt;br&gt;function closureExample(objID, text, timedelay) {&lt;br&gt;    setTimeout(function() {&lt;br&gt;        document.getElementById(objID).innerHTML = text;&lt;br&gt;    }, timedelay);&lt;br&gt;}&lt;br&gt;closureExample(‘myDiv’, ‘Closure is created’, 500);&lt;br&gt;　　深夜1:37 John Pick这样回答：&lt;br&gt;　　JS里的function能访问它们的：&lt;br&gt;　　1. 参数&lt;br&gt;　　2. 局部变量或函数&lt;br&gt;　　3. 外部变量（环境变量？），包括&lt;br&gt;3.1 全局变量，包括DOM。&lt;br&gt;3.2 外部函数的变量或函数。&lt;br&gt;　　如果一个函数访问了它的外部变量，那么它就是一个闭包。&lt;br&gt;　　注意，外部函数不是必需的。通过访问外部变量，一个闭包可以维持（keep alive）这些变量。在内部函数和外部函数的例子中，外部函数可以创建局部变量，并且最终退出；但是，如果任何一个或多个内部函数在它退出后却没有退出，那么内部函数就维持了外部函数的局部数据。&lt;br&gt;　　一个典型的例子就是全局变量的使用。&lt;br&gt;　　mykhal这样回答：&lt;br&gt;　　Wikipedia对闭包的定义是这样的：&lt;br&gt;In computer science, a closure is a function together with a referencing environment for the nonlocal names (free variables) of that function.&lt;br&gt;　　从技术上来讲，在JS中，每个function都是闭包，因为它总是能访问在它外部定义的数据。&lt;br&gt;　　Since scope-defining construction in Javascript is a function, not a code block like in many other languages, what we usually mean by closure in Javascript is a fuction working with nonlocal variables defined in already executed surrounding function.&lt;br&gt;　　闭包经常用于创建含有隐藏数据的函数（但并不总是这样）。&lt;br&gt;var db = (function() {&lt;br&gt;// 创建一个隐藏的object, 这个object持有一些数据&lt;br&gt;// 从外部是不能访问这个object的&lt;br&gt;var data = {};&lt;br&gt;// 创建一个函数, 这个函数提供一些访问data的数据的方法&lt;br&gt;return function(key, val) {&lt;br&gt;    if (val === undefined) { return data[key] } // get&lt;br&gt;    else { return data[key] = val } // set&lt;br&gt;    }&lt;br&gt;// 我们可以调用这个匿名方法&lt;br&gt;// 返回这个内部函数，它是一个闭包&lt;br&gt;})();&lt;/p&gt;
+&lt;p&gt;db(‘x’); // 返回 undefined&lt;br&gt;db(‘x’, 1); // 设置data[‘x’]为1&lt;br&gt;db(‘x’); // 返回 1&lt;br&gt;// 我们不可能访问data这个object本身&lt;br&gt;// 但是我们可以设置它的成员&lt;br&gt;　　看了这么多外国大牛的解答，不知道你懂还是不懂，反正我是懂了。&lt;br&gt;　　P.S. 发布文章之后看到@xiaotie的一篇文章，觉得有必要推荐一下，因为其剖析得更为深入。有人说应该在文章结尾对闭包进行总结，可惜小弟才疏学浅，不能给出一个精辟的总结。&lt;br&gt;　　@xiaotie对闭包的总结如下：&lt;br&gt;（1）闭包是一种设计原则，它通过分析上下文，来简化用户的调用，让用户在不知晓的情况下，达到他的目的；&lt;br&gt;（2）网上主流的对闭包剖析的文章实际上是和闭包原则反向而驰的，如果需要知道闭包细节才能用好的话，这个闭包是设计失败的；&lt;br&gt;（3）尽量少学习。&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;安装-babel-cli&quot;&gt;&lt;a href=&quot;#安装-babel-cli&quot; class=&quot;headerlink&quot; title=&quot;安装 babel-cli&quot;&gt;&lt;/a&gt;安装 babel-cli&lt;/h2&gt;&lt;p&gt;在命令行下使用 Babel&lt;/p&gt;
-&lt;h2 id=&quot;安装-编
+      &lt;p&gt;   JS闭包是什么？&lt;br&gt;　　Ali的回答：&lt;br&gt;　　当function里嵌套function时，内部的function可以访问外部function里的变量。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2016/10/31/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6/"/>
+    <id>http://yoursite.com/2016/10/31/前端项目框架/</id>
+    <published>2016-10-31T03:31:49.000Z</published>
+    <updated>2016-10-31T03:31:49.000Z</updated>
+    
+    <content type="html">&lt;p&gt;前端项目框架&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前端项目框架&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2016/10/31/webpack%20+gulp/"/>
+    <id>http://yoursite.com/2016/10/31/webpack +gulp/</id>
+    <published>2016-10-31T03:31:20.000Z</published>
+    <updated>2016-10-31T03:31:20.000Z</updated>
+    
+    <content type="html">&lt;p&gt;webpack +gulp&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;webpack +gulp&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2016/10/31/node%20%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>http://yoursite.com/2016/10/31/node 环境搭建/</id>
+    <published>2016-10-31T03:30:46.000Z</published>
+    <updated>2016-10-31T03:30:46.000Z</updated>
+    
+    <content type="html">&lt;p&gt;node 环境搭建&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;node 环境搭建&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2016/10/31/vue-router2.0/"/>
+    <id>http://yoursite.com/2016/10/31/vue-router2.0/</id>
+    <published>2016-10-31T03:30:19.000Z</published>
+    <updated>2016-10-31T03:36:31.000Z</updated>
+    
+    <content type="html">&lt;p&gt;The old router.go() is now router.push() .&lt;/p&gt;
+&lt;p&gt;新的 router.go 类似 window.history.go() : 接受一个数值作为参数在历史栈中导航&lt;/p&gt;
+&lt;p&gt;新增的方法:&lt;/p&gt;
+&lt;p&gt;router.back()&lt;/p&gt;
+&lt;p&gt;router.forward()&lt;/p&gt;
+&lt;p&gt;routes 选项取代了 router.map() 。路由配置现在用数组而不是用对象哈希表来作为数据结构。这保证了一致的匹配次序（对象键值枚举的次序是依赖游览器的）。&lt;/p&gt;
+&lt;p&gt;以下的路由器实例化选项被作废了：&lt;/p&gt;
+&lt;p&gt;history (被 mode 取代)&lt;/p&gt;
+&lt;p&gt;abstract (被 mode 取代)&lt;/p&gt;
+&lt;p&gt;root (被 base 取代)&lt;/p&gt;
+&lt;p&gt;saveScrollPosition (被 scrollBehavior 取代，后者用起来更加灵活，下面会提到)&lt;/p&gt;
+&lt;p&gt;hashbang (因为 hashbang 在Google爬站的时候不在需要，所以移除了此选项)&lt;/p&gt;
+&lt;p&gt;transitionOnLoad (因为 Vue 2.0 有显式的视觉表现过渡动画控制，所以此选项移除)&lt;/p&gt;
+&lt;p&gt;suppressTransitionError (因为钩子函数的系统的简化而移除)&lt;/p&gt;
+&lt;p&gt;新的 mode 选项取值为： (默认是 “hash”):&lt;/p&gt;
+&lt;p&gt;“abstract”&lt;/p&gt;
+&lt;p&gt;“hash”&lt;/p&gt;
+&lt;p&gt;“history”&lt;/p&gt;
+&lt;p&gt;在不支持 history.pushState 的浏览器中, 路由器会自动回退为 hash 模式.&lt;/p&gt;
+&lt;p&gt;下列方法已经作废：&lt;/p&gt;
+&lt;p&gt;router.map (被 routes 选项取代)&lt;/p&gt;
+&lt;p&gt;router.beforeEach (被 beforeEach 选项取代，不过 beta2中有修改，见下面)&lt;/p&gt;
+&lt;p&gt;router.afterEach (被 afterEach 选项取代，不过 beta2中有修改，见下面)&lt;/p&gt;
+&lt;p&gt;router.redirect (现在可以在 routes 中直接声明, 参见 Example )&lt;/p&gt;
+&lt;p&gt;router.alias (现在可以在 routes 配置中直接声明, 参见 Example )&lt;/p&gt;
+&lt;p&gt;1.0版本不用new Vue，一直都是像下面这样启动&lt;br&gt;import app from ‘app.vue’;&lt;br&gt;router.start(app, ‘#app’);&lt;br&gt;2.0官方给的例子全是模版写在template里的， 官方文档也没有这样的例子。我试着在vue2.0的模板里这样挂载结果报错&lt;/p&gt;
+&lt;p&gt;import Vue from ‘vue’;&lt;br&gt;import App from ‘./app.vue’;&lt;br&gt;import router from ‘./router’;&lt;/p&gt;
+&lt;p&gt;var app = new Vue({&lt;br&gt;    router,&lt;br&gt;    render: h =&amp;gt; h(App)&lt;br&gt;}).$mount(‘#app’);&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The old router.go() is now router.push() .&lt;/p&gt;
+&lt;p&gt;新的 router.go 类似 window.history.go() : 接受一个数值作为参数在历史栈中导航&lt;/p&gt;
+&lt;p&gt;新增的方法:&lt;/p&gt;
+&lt;p&gt;router.bac
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2016/10/31/vuex2.0/"/>
+    <id>http://yoursite.com/2016/10/31/vuex2.0/</id>
+    <published>2016-10-31T03:29:52.000Z</published>
+    <updated>2016-10-31T03:29:52.000Z</updated>
+    
+    <content type="html">&lt;p&gt;vuex2.0&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;vuex2.0&lt;/p&gt;
+
     
     </summary>
     
@@ -86,6 +223,30 @@
     <summary type="html">
     
       &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;Babel 是一个通用的多用途 JavaScript 编译器。通过 Babel 你可以使用（并创建）下一代的 JavaScript，以及下一
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>babel5.0 升到6.0 遇到的坑</title>
+    <link href="http://yoursite.com/2016/10/30/babel5.0%20%E5%8D%87%E5%88%B06.0%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
+    <id>http://yoursite.com/2016/10/30/babel5.0 升到6.0 遇到的坑/</id>
+    <published>2016-10-29T16:00:00.000Z</published>
+    <updated>2016-10-30T13:16:28.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;安装-babel-cli&quot;&gt;&lt;a href=&quot;#安装-babel-cli&quot; class=&quot;headerlink&quot; title=&quot;安装 babel-cli&quot;&gt;&lt;/a&gt;安装 babel-cli&lt;/h2&gt;&lt;p&gt;在命令行下使用 Babel&lt;/p&gt;
+&lt;h2 id=&quot;安装-编译插件：babel-reset-es2015&quot;&gt;&lt;a href=&quot;#安装-编译插件：babel-reset-es2015&quot; class=&quot;headerlink&quot; title=&quot;安装 编译插件：babel-reset-es2015&quot;&gt;&lt;/a&gt;安装 编译插件：babel-reset-es2015&lt;/h2&gt;&lt;p&gt;babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译&lt;/p&gt;
+&lt;h3 id=&quot;babel-preset-stage-3&quot;&gt;&lt;a href=&quot;#babel-preset-stage-3&quot; class=&quot;headerlink&quot; title=&quot;babel-preset-stage-3&quot;&gt;&lt;/a&gt;babel-preset-stage-3&lt;/h3&gt;&lt;p&gt;如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并&lt;/p&gt;
+&lt;p&gt;vuex2.0 中的mapState 返回一个对象。我们如何使用 mapState 合并其他局部的计算属性呢？通常地，为了将多个对象合并为一个对象，再把这个合并好的最终对象传入到 computed 属性去，我们不得不使用一个工具函数来实现。然而有了对象扩展运算符（ECMAScript 提案 stage-3），我们可以大大简化语法：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;computed: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;localComputed&lt;/span&gt;&lt;/span&gt; () &amp;#123; /* ... */ &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  // 使用对象扩展运算符，将 mapState 返回的对象和外层其他计算属性混合起来&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ...mapState(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    // ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://vuefe.cn/vuex/state.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vueX2.0&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;安装-babel-cli&quot;&gt;&lt;a href=&quot;#安装-babel-cli&quot; class=&quot;headerlink&quot; title=&quot;安装 babel-cli&quot;&gt;&lt;/a&gt;安装 babel-cli&lt;/h2&gt;&lt;p&gt;在命令行下使用 Babel&lt;/p&gt;
+&lt;h2 id=&quot;安装-编
     
     </summary>
     
