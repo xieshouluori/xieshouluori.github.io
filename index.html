@@ -456,6 +456,73 @@ bar(10);
 
 
   
+    <article id="post-pm2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/30/pm2/" class="article-date">
+  	<time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/30/pm2/">pm2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>全局安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g pm2</span><br></pre></td></tr></table></figure></p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>启动指定应用程序   —-到运行文件的更目录 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pm2 start app.js     <span class="comment"># 启动app.js应用程序</span></span><br><span class="line"></span><br><span class="line">``</span><br><span class="line">`</span><br><span class="line">启动所有进程</span><br><span class="line">```bash</span><br><span class="line">pm2 start all</span><br></pre></td></tr></table></figure>
+<h2 id="重新启动"><a href="#重新启动" class="headerlink" title="重新启动"></a>重新启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 restart app.js  <span class="comment"># 重启 指定应用程序</span></span><br><span class="line">pm2 restart all     <span class="comment">#重启所有应用</span></span><br></pre></td></tr></table></figure>
+<h2 id="停止进程"><a href="#停止进程" class="headerlink" title="停止进程"></a>停止进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 stop all                  <span class="comment"># 停止所有的应用程序</span></span><br><span class="line">pm2 stop 0                    <span class="comment"># 停止 id为 0的指定应用程序</span></span><br></pre></td></tr></table></figure>
+<p>##删除进程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pm2 delete all                <span class="comment"># 关闭并删除所有应用</span></span><br><span class="line">pm2 delete 0                  <span class="comment"># 删除指定应用 id 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看进程状态</span></span><br><span class="line">```bash</span><br><span class="line">pm2 list</span><br></pre></td></tr></table></figure></p>
+<p>##查看某个进程的信息  （查看id为0的指定应用程序)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 describe 0</span><br></pre></td></tr></table></figure></p>
+<h2 id="自定义启动的配置文件"><a href="#自定义启动的配置文件" class="headerlink" title="自定义启动的配置文件"></a>自定义启动的配置文件</h2><pre><code>配置文件里的设置项，跟命令行参数基本是一一对应的。
+可以选择yaml或者json文件，就看个人洗好了。
+json格式的配置文件，pm2当作普通的js文件来处理，所以可以在里面添加注释或者编写代码，这对于动态调整配置很有好处。
+如果启动的时候指定了配置文件，那么命令行参数会被忽略。（个别参数除外，比如--env）
+</code></pre><p>eg：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>        : <span class="string">"test_saas"</span>,  </span><br><span class="line">    <span class="string">"script"</span>      : <span class="string">"/Users/niuniu/Documents/web/test_saas/bin/www"</span>,</span><br><span class="line">    <span class="string">"cwd"</span>         : <span class="string">"/Users/niuniu/Documents/web/test_saas"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注释：<br>name :进程名称<br>script :实际启动脚本 （为绝对路径）<br>cwd : 当前工作路径</p>
+<h2 id="补充-–注意点"><a href="#补充-–注意点" class="headerlink" title="补充 –注意点"></a>补充 –注意点</h2><p>1.pm2 start 启动之后，会自动生成一个 进程信息（包含该进程的所有配置信息） ，<br>  即使通过 pm2 stop  结束了本进程 ，但是进程信息会仍然存在 ，再次启动不会重新生成</p>
+<p>2.如果某个进程不再使用 或者配置信息有误   使用 pm2 delete 停止并删除；<br>3.如果某个进程只是暂停 做调整  可以使用 pm2 stop</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-babel_6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -633,71 +700,6 @@ bar(10);
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">我们看下 attr() 和 prop() 的区别：</span><br><span class="line"></span><br><span class="line">attr() 里面，最关键的两行代码</span><br><span class="line"></span><br><span class="line">elem.setAttribute( name, value + <span class="string">""</span> ); </span><br><span class="line"></span><br><span class="line">ret =  elem.getAttribute( name );</span><br><span class="line">很明显的看出来，使用的 DOM 的 API <span class="built_in">set</span>Attribute() 和 getAttribute() 方法操作的属性元素节点。</span><br><span class="line"></span><br><span class="line">prop() 里面，最关键的两行代码</span><br><span class="line"></span><br><span class="line"><span class="built_in">return</span> ( elem[ name ] = value );</span><br><span class="line"></span><br><span class="line"><span class="built_in">return</span> elem[ name ];</span><br><span class="line">可以理解为 document.getElementById(el)[name] = value，这是转化成 element 的一个属性。</span><br></pre></td></tr></table></figure>
 <p>不建议使用 attr() 来对具有 true 和 false 两个属性的属性进行操作了。</p>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-module_pattern" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/11/module_pattern/" class="article-date">
-  	<time datetime="2016-04-11T06:09:44.000Z" itemprop="datePublished">2016-04-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/11/module_pattern/">JavaScript 模块化编程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-模块模式"><a href="#一-模块模式" class="headerlink" title="一 模块模式"></a>一 模块模式</h2><h3 id="（1）-闭包与-IIFE"><a href="#（1）-闭包与-IIFE" class="headerlink" title="（1） 闭包与 IIFE"></a>（1） 闭包与 IIFE</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">;(<span class="keyword">function</span> (参数) &#123;</span><br><span class="line">  // 模块代码</span><br><span class="line">  // <span class="built_in">return</span> something;</span><br><span class="line">&#125;(参数));</span><br></pre></td></tr></table></figure>
-<p>模块模式的本质:<br>(1)可以定义私有变量和函数，外部无法访问它们，从而做到了私有成员的隐藏和隔离。</p>
-<p>(2)通过返回对象或函数,可以公开我们对外暴露的公开的方法与数据。</p>
-<h3 id="（2）参数输入"><a href="#（2）参数输入" class="headerlink" title="（2）参数输入"></a>（2）参数输入</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">;(<span class="keyword">function</span> (q, w) &#123;</span><br><span class="line">  // q is jQuery</span><br><span class="line">  // w is window</span><br><span class="line">  // 局部变量及代码</span><br><span class="line">  // 返回</span><br><span class="line">&#125;)(jQuery, window);</span><br></pre></td></tr></table></figure>
-<p>如果模块内需要使用其它全局对象，应该将这些对象作为参数来显式引用它们</p>
-<p>将引用的对象作为参数，使它们得以和函数内的其它局部变量区分开来</p>
-<h3 id="（3）模块输出（Module-Export）"><a href="#（3）模块输出（Module-Export）" class="headerlink" title="（3）模块输出（Module Export）"></a>（3）模块输出（Module Export）</h3><p>通过匿名函数的 return 语句来声明和输出模块中的对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var MODULE = (<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    var my = &#123;&#125;,</span><br><span class="line">        privateVariable = 1;</span><br><span class="line">    my.moduleProperty = 1;</span><br><span class="line">    my.moduleMethod = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        // ...</span><br><span class="line">    &#125;;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">return</span> my;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure></p>
-<h3 id="（4）与其它模块规范或-JS-库的适配"><a href="#（4）与其它模块规范或-JS-库的适配" class="headerlink" title="（4）与其它模块规范或 JS 库的适配"></a>（4）与其它模块规范或 JS 库的适配</h3><p>AMD 定义了 define 函数，可以使用 define 来编写模块化的代码<br>CommonJS定义了exports 或是 module.exports </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//注册模块</span><br><span class="line">//代码既兼容于 CommonJS Modules 或 AMD 规范，又能在一般环境下运行</span><br><span class="line"><span class="keyword">if</span> (typeof module !== <span class="string">'undefined'</span> &amp;&amp; module.exports) &#123; </span><br><span class="line">  module.exports = plug;    //CommonJS</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (typeof define === <span class="string">'function'</span> &amp;&amp; define.amd) &#123;</span><br><span class="line">  define(<span class="function"><span class="title">function</span></span>() &#123;       //AMD</span><br><span class="line">    <span class="built_in">return</span> plug;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;     //一般环境</span><br><span class="line">  (<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> this || (0, <span class="built_in">eval</span>)(<span class="string">'this'</span>);   //获取全局对象  若代码运行于浏览器中，得到的其实是 window 对象</span><br><span class="line">  &#125;()).plug = plug;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代码可以让我们的代码既兼容于 CommonJS Modules 或 AMD 规范，又能在一般环境下运行</p>
-<h2 id="二-模块模式的变化"><a href="#二-模块模式的变化" class="headerlink" title="二 模块模式的变化"></a>二 模块模式的变化</h2><h3 id="1-扩展"><a href="#1-扩展" class="headerlink" title="(1)扩展"></a>(1)扩展</h3><h4 id="对已有的模块作出扩展-模块的各个组成部分并没有加载顺序要求"><a href="#对已有的模块作出扩展-模块的各个组成部分并没有加载顺序要求" class="headerlink" title="对已有的模块作出扩展(模块的各个组成部分并没有加载顺序要求)"></a>对已有的模块作出扩展(模块的各个组成部分并没有加载顺序要求)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var MODULE = (<span class="keyword">function</span> (my) &#123;</span><br><span class="line">  // add capabilities...</span><br><span class="line">  <span class="built_in">return</span> my;</span><br><span class="line">&#125;(MODULE || &#123;&#125;));</span><br></pre></td></tr></table></figure>
-<h4 id="紧耦合扩展-对模块的定义顺序是有要求的"><a href="#紧耦合扩展-对模块的定义顺序是有要求的" class="headerlink" title="紧耦合扩展(对模块的定义顺序是有要求的)"></a>紧耦合扩展(对模块的定义顺序是有要求的)</h4><p>要求在扩展时调用以前已被定义的方法，这也有可能被用于覆盖已有的方法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var MODULE = (<span class="keyword">function</span> (my) &#123;</span><br><span class="line">  var old_moduleMethod = my.moduleMethod;</span><br><span class="line"> </span><br><span class="line">  my.moduleMethod = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    // 方法重载</span><br><span class="line">    // 可通过 old_moduleMethod 调用以前的方法...</span><br><span class="line">  &#125;;</span><br><span class="line"> </span><br><span class="line">  <span class="built_in">return</span> my;</span><br><span class="line">&#125;(MODULE));</span><br></pre></td></tr></table></figure>
-<h3 id="2-克隆与继承（利用Object-create-）"><a href="#2-克隆与继承（利用Object-create-）" class="headerlink" title="(2)克隆与继承（利用Object.create() ）"></a>(2)克隆与继承（利用Object.create() ）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var MODULE_TWO = (<span class="keyword">function</span> (old) &#123;</span><br><span class="line">  var my = Object.create(old);</span><br><span class="line"> </span><br><span class="line">  var super_moduleMethod = old.moduleMethod;</span><br><span class="line">  my.moduleMethod = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    // override method ...</span><br><span class="line">  &#125;;</span><br><span class="line"> </span><br><span class="line">  <span class="built_in">return</span> my;</span><br><span class="line">&#125;(MODULE));</span><br></pre></td></tr></table></figure>
       
     </div>
     
