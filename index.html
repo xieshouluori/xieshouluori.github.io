@@ -154,6 +154,68 @@
 
       <div class="body-wrap">
   
+    <article id="post-hexo常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/30/hexo常用命令/" class="article-date">
+  	<time datetime="2016-11-29T16:00:00.000Z" itemprop="datePublished">2016-11-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/30/hexo常用命令/">hexo常用命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a>hexo s</h2><p>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
+<p>1.hexo s 是 hexo server 的缩写，命令效果一致；<br>2.预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；<br>3.对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果</p>
+<p>##hexo new “文章名字”<br>新建一篇标题为 xxx 的文章，因为标题里有空格，所以加上了引号。<br>文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。</p>
+<p>##hexo new page aboutme<br>新建一个标题为 aboutme 的页面，默认链接地址为 主页地址/aboutme/</p>
+<p>1.标题可以为中文，但一般习惯用英文；<br>2.页面标题和文章一样可以随意修改；<br>3.页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。</p>
+<p>##hexo g<br>生成网站静态文件到默认设置的 public 文件夹。</p>
+<p>1.便于查看网站生成的静态文件或者手动部署网站；<br>2.如果使用自动部署，不需要先执行该命令；<br>3.hexo g 是 hexo generate 的缩写，命令效果一致。</p>
+<p>##hexo d<br>自动生成网站静态文件，并部署到设定的仓库。<br>1.hexo d 是 hexo deploy 的缩写，命令效果一致。</p>
+<p>##hexo clean<br>清除缓存文件 db.json 和已生成的静态文件 public 。</p>
+<p>网站显示异常时可以执行这条命令试试。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-pm2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -641,64 +703,6 @@ bar(10);
 <h3 id="babel-preset-stage-3"><a href="#babel-preset-stage-3" class="headerlink" title="babel-preset-stage-3"></a>babel-preset-stage-3</h3><p>如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并</p>
 <p>vuex2.0 中的mapState 返回一个对象。我们如何使用 mapState 合并其他局部的计算属性呢？通常地，为了将多个对象合并为一个对象，再把这个合并好的最终对象传入到 computed 属性去，我们不得不使用一个工具函数来实现。然而有了对象扩展运算符（ECMAScript 提案 stage-3），我们可以大大简化语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">localComputed</span></span> () &#123; /* ... */ &#125;,</span><br><span class="line">  // 使用对象扩展运算符，将 mapState 返回的对象和外层其他计算属性混合起来</span><br><span class="line">  ...mapState(&#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><a href="https://vuefe.cn/vuex/state.html" target="_blank" rel="external">vueX2.0</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-checkbox全选" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/02/checkbox全选/" class="article-date">
-  	<time datetime="2016-09-02T08:58:18.000Z" itemprop="datePublished">2016-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/02/checkbox全选/">checkbox全选</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-遇到的问题"><a href="#一-遇到的问题" class="headerlink" title="一 遇到的问题"></a>一 遇到的问题</h2><p>jq关于checkbox全选的问题，点击全选一次再点一次取消，然后再这么点全选都没有用了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">这是jq代码为什么全选只有第一次点击有效</span><br><span class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">         $(<span class="string">".ddd"</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                $(this).closest(<span class="string">"tr"</span>).find(<span class="string">"input[type='checkbox']"</span>).attr(<span class="string">"checked"</span>,<span class="literal">true</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">            $(<span class="string">".noc"</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                $(this).closest(<span class="string">"tr"</span>).find(<span class="string">"input[type='checkbox']"</span>).attr(<span class="string">"checked"</span>,<span class="literal">false</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="二-解决办法"><a href="#二-解决办法" class="headerlink" title="二 解决办法"></a>二 解决办法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">把  .attr(<span class="string">"checked"</span>,<span class="literal">true</span>);  改成  .prop(<span class="string">"checked"</span>,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="三-原理"><a href="#三-原理" class="headerlink" title="三 原理"></a>三 原理</h2><p>具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled 使用prop()，其他的使用 attr()</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">我们看下 attr() 和 prop() 的区别：</span><br><span class="line"></span><br><span class="line">attr() 里面，最关键的两行代码</span><br><span class="line"></span><br><span class="line">elem.setAttribute( name, value + <span class="string">""</span> ); </span><br><span class="line"></span><br><span class="line">ret =  elem.getAttribute( name );</span><br><span class="line">很明显的看出来，使用的 DOM 的 API <span class="built_in">set</span>Attribute() 和 getAttribute() 方法操作的属性元素节点。</span><br><span class="line"></span><br><span class="line">prop() 里面，最关键的两行代码</span><br><span class="line"></span><br><span class="line"><span class="built_in">return</span> ( elem[ name ] = value );</span><br><span class="line"></span><br><span class="line"><span class="built_in">return</span> elem[ name ];</span><br><span class="line">可以理解为 document.getElementById(el)[name] = value，这是转化成 element 的一个属性。</span><br></pre></td></tr></table></figure>
-<p>不建议使用 attr() 来对具有 true 和 false 两个属性的属性进行操作了。</p>
 
       
     </div>
