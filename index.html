@@ -154,68 +154,6 @@
 
       <div class="body-wrap">
   
-    <article id="post-hexo常用命令" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/30/hexo常用命令/" class="article-date">
-  	<time datetime="2016-11-29T16:00:00.000Z" itemprop="datePublished">2016-11-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/30/hexo常用命令/">hexo常用命令</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a>hexo s</h2><p>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
-<p>1.hexo s 是 hexo server 的缩写，命令效果一致；<br>2.预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；<br>3.对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果</p>
-<p>##hexo new “文章名字”<br>新建一篇标题为 xxx 的文章，因为标题里有空格，所以加上了引号。<br>文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。</p>
-<p>##hexo new page aboutme<br>新建一个标题为 aboutme 的页面，默认链接地址为 主页地址/aboutme/</p>
-<p>1.标题可以为中文，但一般习惯用英文；<br>2.页面标题和文章一样可以随意修改；<br>3.页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。</p>
-<p>##hexo g<br>生成网站静态文件到默认设置的 public 文件夹。</p>
-<p>1.便于查看网站生成的静态文件或者手动部署网站；<br>2.如果使用自动部署，不需要先执行该命令；<br>3.hexo g 是 hexo generate 的缩写，命令效果一致。</p>
-<p>##hexo d<br>自动生成网站静态文件，并部署到设定的仓库。<br>1.hexo d 是 hexo deploy 的缩写，命令效果一致。</p>
-<p>##hexo clean<br>清除缓存文件 db.json 和已生成的静态文件 public 。</p>
-<p>网站显示异常时可以执行这条命令试试。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-pm2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -248,7 +186,7 @@
 <h2 id="重新启动"><a href="#重新启动" class="headerlink" title="重新启动"></a>重新启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 restart app.js  <span class="comment"># 重启 指定应用程序</span></span><br><span class="line">pm2 restart all     <span class="comment">#重启所有应用</span></span><br></pre></td></tr></table></figure>
 <h2 id="停止进程"><a href="#停止进程" class="headerlink" title="停止进程"></a>停止进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 stop all                  <span class="comment"># 停止所有的应用程序</span></span><br><span class="line">pm2 stop 0                    <span class="comment"># 停止 id为 0的指定应用程序</span></span><br></pre></td></tr></table></figure>
 <p>##删除进程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pm2 delete all                <span class="comment"># 关闭并删除所有应用</span></span><br><span class="line">pm2 delete 0                  <span class="comment"># 删除指定应用 id 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看进程状态</span></span><br><span class="line">```bash</span><br><span class="line">pm2 list</span><br></pre></td></tr></table></figure></p>
-<p>##查看某个进程的信息  （查看id为0的指定应用程序)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 describe 0</span><br></pre></td></tr></table></figure></p>
+<h2 id="查看某个进程的信息-（查看id为0的指定应用程序"><a href="#查看某个进程的信息-（查看id为0的指定应用程序" class="headerlink" title="查看某个进程的信息  （查看id为0的指定应用程序)"></a>查看某个进程的信息  （查看id为0的指定应用程序)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 describe 0</span><br></pre></td></tr></table></figure>
 <h2 id="自定义启动的配置文件"><a href="#自定义启动的配置文件" class="headerlink" title="自定义启动的配置文件"></a>自定义启动的配置文件</h2><pre><code>配置文件里的设置项，跟命令行参数基本是一一对应的。
 可以选择yaml或者json文件，就看个人洗好了。
 json格式的配置文件，pm2当作普通的js文件来处理，所以可以在里面添加注释或者编写代码，这对于动态调整配置很有好处。
@@ -257,6 +195,68 @@ json格式的配置文件，pm2当作普通的js文件来处理，所以可以�
 <p>注释：<br>name :进程名称<br>script :实际启动脚本 （为绝对路径）<br>cwd : 当前工作路径</p>
 <h2 id="补充-–注意点"><a href="#补充-–注意点" class="headerlink" title="补充 –注意点"></a>补充 –注意点</h2><p>1.pm2 start 启动之后，会自动生成一个 进程信息（包含该进程的所有配置信息） ，<br>  即使通过 pm2 stop  结束了本进程 ，但是进程信息会仍然存在 ，再次启动不会重新生成</p>
 <p>2.如果某个进程不再使用 或者配置信息有误   使用 pm2 delete 停止并删除；<br>3.如果某个进程只是暂停 做调整  可以使用 pm2 stop</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hexo常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/30/hexo常用命令/" class="article-date">
+  	<time datetime="2016-11-29T16:00:00.000Z" itemprop="datePublished">2016-11-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/30/hexo常用命令/">hexo常用命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a>hexo s</h2><p>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
+<p>1.hexo s 是 hexo server 的缩写，命令效果一致；<br>2.预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；<br>3.对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果</p>
+<h2 id="hexo-new-“文章名字”"><a href="#hexo-new-“文章名字”" class="headerlink" title="hexo new “文章名字”"></a>hexo new “文章名字”</h2><p>新建一篇标题为 xxx 的文章，因为标题里有空格，所以加上了引号。<br>文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。</p>
+<h2 id="hexo-new-page-aboutme"><a href="#hexo-new-page-aboutme" class="headerlink" title="hexo new page aboutme"></a>hexo new page aboutme</h2><p>新建一个标题为 aboutme 的页面，默认链接地址为 主页地址/aboutme/</p>
+<p>1.标题可以为中文，但一般习惯用英文；<br>2.页面标题和文章一样可以随意修改；<br>3.页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。</p>
+<h2 id="hexo-g"><a href="#hexo-g" class="headerlink" title="hexo g"></a>hexo g</h2><p>生成网站静态文件到默认设置的 public 文件夹。</p>
+<p>1.便于查看网站生成的静态文件或者手动部署网站；<br>2.如果使用自动部署，不需要先执行该命令；<br>3.hexo g 是 hexo generate 的缩写，命令效果一致。</p>
+<h2 id="hexo-d"><a href="#hexo-d" class="headerlink" title="hexo d"></a>hexo d</h2><p>自动生成网站静态文件，并部署到设定的仓库。<br>1.hexo d 是 hexo deploy 的缩写，命令效果一致。</p>
+<h2 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h2><p>清除缓存文件 db.json 和已生成的静态文件 public 。</p>
+<p>网站显示异常时可以执行这条命令试试。</p>
 
       
     </div>
@@ -585,6 +585,63 @@ bar(10);
 
 
   
+    <article id="post-babel5.0 升到6.0 遇到的坑" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/30/babel5.0 升到6.0 遇到的坑/" class="article-date">
+  	<time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/30/babel5.0 升到6.0 遇到的坑/">babel5.0 升到6.0 遇到的坑</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装-babel-cli"><a href="#安装-babel-cli" class="headerlink" title="安装 babel-cli"></a>安装 babel-cli</h2><p>在命令行下使用 Babel</p>
+<h2 id="安装-编译插件：babel-reset-es2015"><a href="#安装-编译插件：babel-reset-es2015" class="headerlink" title="安装 编译插件：babel-reset-es2015"></a>安装 编译插件：babel-reset-es2015</h2><p>babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译</p>
+<h3 id="babel-preset-stage-3"><a href="#babel-preset-stage-3" class="headerlink" title="babel-preset-stage-3"></a>babel-preset-stage-3</h3><p>如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并</p>
+<p>vuex2.0 中的mapState 返回一个对象。我们如何使用 mapState 合并其他局部的计算属性呢？通常地，为了将多个对象合并为一个对象，再把这个合并好的最终对象传入到 computed 属性去，我们不得不使用一个工具函数来实现。然而有了对象扩展运算符（ECMAScript 提案 stage-3），我们可以大大简化语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">localComputed</span></span> () &#123; /* ... */ &#125;,</span><br><span class="line">  // 使用对象扩展运算符，将 mapState 返回的对象和外层其他计算属性混合起来</span><br><span class="line">  ...mapState(&#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://vuefe.cn/vuex/state.html" target="_blank" rel="external">vueX2.0</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-babel_6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -646,63 +703,6 @@ bar(10);
 <p>举例来说，ES6在Array对象上新增了Arrayfrom方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。</p>
 <p>（1）用 npm 安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save babel-polyfill</span><br></pre></td></tr></table></figure></p>
 <p>(2)调用<br>然后只需要在文件顶部导入 polyfill 就可以了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import <span class="string">"babel-polyfill"</span>;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-babel5.0 升到6.0 遇到的坑" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/30/babel5.0 升到6.0 遇到的坑/" class="article-date">
-  	<time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/30/babel5.0 升到6.0 遇到的坑/">babel5.0 升到6.0 遇到的坑</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装-babel-cli"><a href="#安装-babel-cli" class="headerlink" title="安装 babel-cli"></a>安装 babel-cli</h2><p>在命令行下使用 Babel</p>
-<h2 id="安装-编译插件：babel-reset-es2015"><a href="#安装-编译插件：babel-reset-es2015" class="headerlink" title="安装 编译插件：babel-reset-es2015"></a>安装 编译插件：babel-reset-es2015</h2><p>babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译</p>
-<h3 id="babel-preset-stage-3"><a href="#babel-preset-stage-3" class="headerlink" title="babel-preset-stage-3"></a>babel-preset-stage-3</h3><p>如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并</p>
-<p>vuex2.0 中的mapState 返回一个对象。我们如何使用 mapState 合并其他局部的计算属性呢？通常地，为了将多个对象合并为一个对象，再把这个合并好的最终对象传入到 computed 属性去，我们不得不使用一个工具函数来实现。然而有了对象扩展运算符（ECMAScript 提案 stage-3），我们可以大大简化语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">localComputed</span></span> () &#123; /* ... */ &#125;,</span><br><span class="line">  // 使用对象扩展运算符，将 mapState 返回的对象和外层其他计算属性混合起来</span><br><span class="line">  ...mapState(&#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://vuefe.cn/vuex/state.html" target="_blank" rel="external">vueX2.0</a></p>
 
       
     </div>
