@@ -154,6 +154,174 @@
 
       <div class="body-wrap">
   
+    <article id="post-vue-router2.0" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/31/vue-router2.0/" class="article-date">
+  	<time datetime="2016-10-31T03:30:19.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The old router.go() is now router.push() .</p>
+<p>新的 router.go 类似 window.history.go() : 接受一个数值作为参数在历史栈中导航</p>
+<p>新增的方法:</p>
+<p>router.back()</p>
+<p>router.forward()</p>
+<p>routes 选项取代了 router.map() 。路由配置现在用数组而不是用对象哈希表来作为数据结构。这保证了一致的匹配次序（对象键值枚举的次序是依赖游览器的）。</p>
+<p>以下的路由器实例化选项被作废了：</p>
+<p>history (被 mode 取代)</p>
+<p>abstract (被 mode 取代)</p>
+<p>root (被 base 取代)</p>
+<p>saveScrollPosition (被 scrollBehavior 取代，后者用起来更加灵活，下面会提到)</p>
+<p>hashbang (因为 hashbang 在Google爬站的时候不在需要，所以移除了此选项)</p>
+<p>transitionOnLoad (因为 Vue 2.0 有显式的视觉表现过渡动画控制，所以此选项移除)</p>
+<p>suppressTransitionError (因为钩子函数的系统的简化而移除)</p>
+<p>新的 mode 选项取值为： (默认是 “hash”):</p>
+<p>“abstract”</p>
+<p>“hash”</p>
+<p>“history”</p>
+<p>在不支持 history.pushState 的浏览器中, 路由器会自动回退为 hash 模式.</p>
+<p>下列方法已经作废：</p>
+<p>router.map (被 routes 选项取代)</p>
+<p>router.beforeEach (被 beforeEach 选项取代，不过 beta2中有修改，见下面)</p>
+<p>router.afterEach (被 afterEach 选项取代，不过 beta2中有修改，见下面)</p>
+<p>router.redirect (现在可以在 routes 中直接声明, 参见 Example )</p>
+<p>router.alias (现在可以在 routes 配置中直接声明, 参见 Example )</p>
+<p>1.0版本不用new Vue，一直都是像下面这样启动<br>import app from ‘app.vue’;<br>router.start(app, ‘#app’);<br>2.0官方给的例子全是模版写在template里的， 官方文档也没有这样的例子。我试着在vue2.0的模板里这样挂载结果报错</p>
+<p>import Vue from ‘vue’;<br>import App from ‘./app.vue’;<br>import router from ‘./router’;</p>
+<p>var app = new Vue({<br>    router,<br>    render: h =&gt; h(App)<br>}).$mount(‘#app’);</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-vuex2.0" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/31/vuex2.0/" class="article-date">
+  	<time datetime="2016-10-31T03:29:52.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vuex2.0</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-babel5.0 升到6.0 遇到的坑" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/30/babel5.0 升到6.0 遇到的坑/" class="article-date">
+  	<time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/30/babel5.0 升到6.0 遇到的坑/">babel5.0 升到6.0 遇到的坑</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装-babel-cli"><a href="#安装-babel-cli" class="headerlink" title="安装 babel-cli"></a>安装 babel-cli</h2><p>在命令行下使用 Babel</p>
+<h2 id="安装-编译插件：babel-reset-es2015"><a href="#安装-编译插件：babel-reset-es2015" class="headerlink" title="安装 编译插件：babel-reset-es2015"></a>安装 编译插件：babel-reset-es2015</h2><p>babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译</p>
+<h3 id="babel-preset-stage-3"><a href="#babel-preset-stage-3" class="headerlink" title="babel-preset-stage-3"></a>babel-preset-stage-3</h3><p>如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并</p>
+<p>vuex2.0 中的mapState 返回一个对象。我们如何使用 mapState 合并其他局部的计算属性呢？通常地，为了将多个对象合并为一个对象，再把这个合并好的最终对象传入到 computed 属性去，我们不得不使用一个工具函数来实现。然而有了对象扩展运算符（ECMAScript 提案 stage-3），我们可以大大简化语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">localComputed</span></span> () &#123; /* ... */ &#125;,</span><br><span class="line">  // 使用对象扩展运算符，将 mapState 返回的对象和外层其他计算属性混合起来</span><br><span class="line">  ...mapState(&#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://vuefe.cn/vuex/state.html" target="_blank" rel="external">vueX2.0</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-babel_6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -364,67 +532,6 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/17/hello-world/" class="article-date">
-  	<time datetime="2016-03-17T06:52:12.000Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to 我的博客</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-getComputedStyle" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -509,6 +616,126 @@ eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;w
 
 
   
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/17/hello-world/" class="article-date">
+  	<time datetime="2016-03-17T06:52:12.000Z" itemprop="datePublished">2016-03-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/17/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to 我的博客</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-禁止页面滚动" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/09/禁止页面滚动/" class="article-date">
+  	<time datetime="2016-01-08T16:00:00.000Z" itemprop="datePublished">2016-01-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/09/禁止页面滚动/">禁止页面滚动</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在写一个在页面中，经验证用户没有登录或session失效时候弹出登录框禁止页面滚动用到<br>今天搞了一个功能，上下左右居中，模仿QQ空间里的样式，把横向和纵向滚动条禁止掉代码如下：</p>
+<p><script type="text/javascript"><br> //禁止滚动条<br> $(document.body).css({<br>   “overflow-x”:”hidden”,<br>   “overflow-y”:”hidden”<br> });</p>
+<p> //启用滚动条<br> $(document.body).css({<br>   “overflow-x”:”auto”,<br>   “overflow-y”:”auto”<br> });</p>
+<p></script><br>     我相信大家对这个代码应该无异议吧，如果有请高手给予指点。测试结果如下：<br>     IE6：禁止滚动条正常，启动滚动条错误，出现双滚动条且滚动条滚动页面无反应。<br>     IE7：禁止滚动条正常，启动滚动条错误，出现双滚动条且滚动条滚动页面无反应。<br>     IE8: 禁止滚动条正常，启动滚动条正常。<br>     IE9: 禁止滚动条正常，启动滚动条正常。<br>     Chrome: 禁止滚动条正常，启动滚动条正常。<br>     FireFox: 禁止滚动条正常，启动滚动条正常。</p>
+<pre><code>靠，又是IE6和IE7，微软真的该反省了，所以说做产品得一开始就要负责人。别扯远了，解决方法是当overflow设置hidden以后，直接取消这个style而不要设置overflow，具体代码如下：
+</code></pre><p> //为了简便定义一个样式类<br> <style type="text/css"><br>  .html-body-overflow<br>  {<br>    overflow-x:hidden;<br>    overflow-y:hidden;<br>  }<br> </style></p>
+<p> <script type="text/javascript"><br>  //禁止滚动条(默认是没有附加这个样式类的）<br>  $(document.body).toggleClass(“html-body-overflow”);<br>  //启动滚动条<br>  $(document.body).toggleClass(“html-body-overflow”);<br> </script><br>     当然也可以直接清掉style的内容，不过上面的做法更直观、更简单。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
@@ -519,7 +746,7 @@ eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;w
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 妞妞
+    		&copy; 2017 妞妞
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
