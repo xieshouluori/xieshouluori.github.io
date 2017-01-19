@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2017 | 携手落日</title>
+  <title>携手落日</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="javascript html5 css3 前端">
 <meta property="og:type" content="website">
 <meta property="og:title" content="携手落日">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="携手落日">
 <meta property="og:description" content="javascript html5 css3 前端">
 <meta name="twitter:card" content="summary">
@@ -154,102 +154,70 @@
 
       <div class="body-wrap">
   
+    <article id="post-禁止页面滚动" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2016/01/09/禁止页面滚动/" class="article-date">
+  	<time datetime="2016-01-08T16:00:00.000Z" itemprop="datePublished">2016-01-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/09/禁止页面滚动/">禁止页面滚动</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在写一个在页面中，经验证用户没有登录或session失效时候弹出登录框禁止页面滚动用到<br>今天搞了一个功能，上下左右居中，模仿QQ空间里的样式，把横向和纵向滚动条禁止掉代码如下：</p>
+<p><script type="text/javascript"><br> //禁止滚动条<br> $(document.body).css({<br>   “overflow-x”:”hidden”,<br>   “overflow-y”:”hidden”<br> });</p>
+<p> //启用滚动条<br> $(document.body).css({<br>   “overflow-x”:”auto”,<br>   “overflow-y”:”auto”<br> });</p>
+<p></script><br>     我相信大家对这个代码应该无异议吧，如果有请高手给予指点。测试结果如下：<br>     IE6：禁止滚动条正常，启动滚动条错误，出现双滚动条且滚动条滚动页面无反应。<br>     IE7：禁止滚动条正常，启动滚动条错误，出现双滚动条且滚动条滚动页面无反应。<br>     IE8: 禁止滚动条正常，启动滚动条正常。<br>     IE9: 禁止滚动条正常，启动滚动条正常。<br>     Chrome: 禁止滚动条正常，启动滚动条正常。<br>     FireFox: 禁止滚动条正常，启动滚动条正常。</p>
+<pre><code>靠，又是IE6和IE7，微软真的该反省了，所以说做产品得一开始就要负责人。别扯远了，解决方法是当overflow设置hidden以后，直接取消这个style而不要设置overflow，具体代码如下：
+</code></pre><p> //为了简便定义一个样式类<br> <style type="text/css"><br>  .html-body-overflow<br>  {<br>    overflow-x:hidden;<br>    overflow-y:hidden;<br>  }<br> </style></p>
+<p> <script type="text/javascript"><br>  //禁止滚动条(默认是没有附加这个样式类的）<br>  $(document.body).toggleClass(“html-body-overflow”);<br>  //启动滚动条<br>  $(document.body).toggleClass(“html-body-overflow”);<br> </script><br>     当然也可以直接清掉style的内容，不过上面的做法更直观、更简单。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/17/weex/" class="archive-article-date">
-  	<time datetime="2017-01-16T16:00:00.000Z" itemprop="datePublished">1月 17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/17/weex/">weex /  weex-toolkit 脚手架(mac)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
   </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/10/CSS 盒状模型/" class="archive-article-date">
-  	<time datetime="2017-01-09T16:00:00.000Z" itemprop="datePublished">1月 10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/10/CSS 盒状模型/">CSS 盒状模型</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/10/promise/" class="archive-article-date">
-  	<time datetime="2017-01-09T16:00:00.000Z" itemprop="datePublished">1月 10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/10/promise/">promise</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
+
+
   
   
-    </div></section>
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
   
-
-    
-
 </div>
       <footer id="footer">
   <div class="outer">
@@ -273,9 +241,9 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
