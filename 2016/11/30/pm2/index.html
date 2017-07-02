@@ -6,31 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>pm2 | 携手落日</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装全局安装1npm install -g pm2
-启动启动指定应用程序   —-到运行文件的更目录 
-1pm2 start app.js     # 启动app.js应用程序
-启动所有进程1pm2 start all
-重新启动12pm2 restart app.js  # 重启 指定应用程序pm2 restart all     #重启所有应用
-停止进程12pm2 stop all">
+  <meta name="description" content="安装全局安装1npm install -g pm2 启动启动指定应用程序   —-到运行文件的更目录  1pm2 start app.js     # 启动app.js应用程序 启动所有进程1pm2 start all 重新启动12pm2 restart app.js  # 重启 指定应用程序pm2 restart all     #重启所有应用 停止进程12pm2 stop all">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pm2">
 <meta property="og:url" content="http://yoursite.com/2016/11/30/pm2/index.html">
 <meta property="og:site_name" content="携手落日">
-<meta property="og:description" content="安装全局安装1npm install -g pm2
-启动启动指定应用程序   —-到运行文件的更目录 
-1pm2 start app.js     # 启动app.js应用程序
-启动所有进程1pm2 start all
-重新启动12pm2 restart app.js  # 重启 指定应用程序pm2 restart all     #重启所有应用
-停止进程12pm2 stop all">
+<meta property="og:description" content="安装全局安装1npm install -g pm2 启动启动指定应用程序   —-到运行文件的更目录  1pm2 start app.js     # 启动app.js应用程序 启动所有进程1pm2 start all 重新启动12pm2 restart app.js  # 重启 指定应用程序pm2 restart all     #重启所有应用 停止进程12pm2 stop all">
 <meta property="og:updated_time" content="2016-12-02T05:24:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pm2">
-<meta name="twitter:description" content="安装全局安装1npm install -g pm2
-启动启动指定应用程序   —-到运行文件的更目录 
-1pm2 start app.js     # 启动app.js应用程序
-启动所有进程1pm2 start all
-重新启动12pm2 restart app.js  # 重启 指定应用程序pm2 restart all     #重启所有应用
-停止进程12pm2 stop all">
+<meta name="twitter:description" content="安装全局安装1npm install -g pm2 启动启动指定应用程序   —-到运行文件的更目录  1pm2 start app.js     # 启动app.js应用程序 启动所有进程1pm2 start all 重新启动12pm2 restart app.js  # 重启 指定应用程序pm2 restart all     #重启所有应用 停止进程12pm2 stop all">
   
   
     <link rel="icon" href="/favicon.png">
@@ -201,20 +186,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>全局安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g pm2</span><br></pre></td></tr></table></figure></p>
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>全局安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g pm2</div></pre></td></tr></table></figure></p>
 <h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>启动指定应用程序   —-到运行文件的更目录 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start app.js     <span class="comment"># 启动app.js应用程序</span></span><br></pre></td></tr></table></figure>
-<p>启动所有进程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start all</span><br></pre></td></tr></table></figure></p>
-<h2 id="重新启动"><a href="#重新启动" class="headerlink" title="重新启动"></a>重新启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 restart app.js  <span class="comment"># 重启 指定应用程序</span></span><br><span class="line">pm2 restart all     <span class="comment">#重启所有应用</span></span><br></pre></td></tr></table></figure>
-<h2 id="停止进程"><a href="#停止进程" class="headerlink" title="停止进程"></a>停止进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 stop all                  <span class="comment"># 停止所有的应用程序</span></span><br><span class="line">pm2 stop 0                    <span class="comment"># 停止 id为 0的指定应用程序</span></span><br></pre></td></tr></table></figure>
-<h2 id="删除进程"><a href="#删除进程" class="headerlink" title="删除进程"></a>删除进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 delete all                <span class="comment"># 关闭并删除所有应用</span></span><br><span class="line">pm2 delete 0                  <span class="comment"># 删除指定应用 id 0</span></span><br></pre></td></tr></table></figure>
-<h2 id="查看进程状态"><a href="#查看进程状态" class="headerlink" title="查看进程状态"></a>查看进程状态</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 list</span><br></pre></td></tr></table></figure>
-<h2 id="查看某个进程的信息-（查看id为0的指定应用程序"><a href="#查看某个进程的信息-（查看id为0的指定应用程序" class="headerlink" title="查看某个进程的信息  （查看id为0的指定应用程序)"></a>查看某个进程的信息  （查看id为0的指定应用程序)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 describe 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start app.js     <span class="comment"># 启动app.js应用程序</span></div></pre></td></tr></table></figure>
+<p>启动所有进程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start all</div></pre></td></tr></table></figure></p>
+<h2 id="重新启动"><a href="#重新启动" class="headerlink" title="重新启动"></a>重新启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pm2 restart app.js  <span class="comment"># 重启 指定应用程序</span></div><div class="line">pm2 restart all     <span class="comment">#重启所有应用</span></div></pre></td></tr></table></figure>
+<h2 id="停止进程"><a href="#停止进程" class="headerlink" title="停止进程"></a>停止进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pm2 stop all                  <span class="comment"># 停止所有的应用程序</span></div><div class="line">pm2 stop 0                    <span class="comment"># 停止 id为 0的指定应用程序</span></div></pre></td></tr></table></figure>
+<h2 id="删除进程"><a href="#删除进程" class="headerlink" title="删除进程"></a>删除进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pm2 delete all                <span class="comment"># 关闭并删除所有应用</span></div><div class="line">pm2 delete 0                  <span class="comment"># 删除指定应用 id 0</span></div></pre></td></tr></table></figure>
+<h2 id="查看进程状态"><a href="#查看进程状态" class="headerlink" title="查看进程状态"></a>查看进程状态</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 list</div></pre></td></tr></table></figure>
+<h2 id="查看某个进程的信息-（查看id为0的指定应用程序"><a href="#查看某个进程的信息-（查看id为0的指定应用程序" class="headerlink" title="查看某个进程的信息  （查看id为0的指定应用程序)"></a>查看某个进程的信息  （查看id为0的指定应用程序)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 describe 0</div></pre></td></tr></table></figure>
 <h2 id="自定义启动的配置文件"><a href="#自定义启动的配置文件" class="headerlink" title="自定义启动的配置文件"></a>自定义启动的配置文件</h2><pre><code>配置文件里的设置项，跟命令行参数基本是一一对应的。
 可以选择yaml或者json文件，就看个人洗好了。
 json格式的配置文件，pm2当作普通的js文件来处理，所以可以在里面添加注释或者编写代码，这对于动态调整配置很有好处。
 如果启动的时候指定了配置文件，那么命令行参数会被忽略。（个别参数除外，比如--env）
-</code></pre><p>eg：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>        : <span class="string">"test_saas"</span>,  </span><br><span class="line">    <span class="string">"script"</span>      : <span class="string">"/Users/niuniu/Documents/web/test_saas/bin/www"</span>,</span><br><span class="line">    <span class="string">"cwd"</span>         : <span class="string">"/Users/niuniu/Documents/web/test_saas"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</code></pre><p>eg：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"name"</span>        : <span class="string">"test_saas"</span>,  </div><div class="line">    <span class="string">"script"</span>      : <span class="string">"/Users/niuniu/Documents/web/test_saas/bin/www"</span>,</div><div class="line">    <span class="string">"cwd"</span>         : <span class="string">"/Users/niuniu/Documents/web/test_saas"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>注释：<br>name :进程名称<br>script :实际启动脚本 （为绝对路径）<br>cwd : 当前工作路径</p>
 <h2 id="补充-–注意点"><a href="#补充-–注意点" class="headerlink" title="补充 –注意点"></a>补充 –注意点</h2><p>1.pm2 start 启动之后，会自动生成一个 进程信息（包含该进程的所有配置信息） ，<br>  即使通过 pm2 stop  结束了本进程 ，但是进程信息会仍然存在 ，再次启动不会重新生成</p>
 <p>2.如果某个进程不再使用 或者配置信息有误   使用 pm2 delete 停止并删除；<br>3.如果某个进程只是暂停 做调整  可以使用 pm2 stop</p>

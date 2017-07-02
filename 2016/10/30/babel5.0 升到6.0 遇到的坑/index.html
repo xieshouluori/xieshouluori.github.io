@@ -6,25 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>babel5.0 升到6.0 遇到的坑 | 携手落日</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装 babel-cli在命令行下使用 Babel
-安装 编译插件：babel-reset-es2015babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译
-babel-preset-stage-3如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并
-vuex2.0 中的mapState 返回一个对象。我们如何使用 mapS">
+  <meta name="description" content="安装 babel-cli在命令行下使用 Babel 安装 编译插件：babel-reset-es2015babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译 babel-preset-stage-3如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并 vuex2.0 中的mapState 返回一个对象。我们如何使用 mapS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="babel5.0 升到6.0 遇到的坑">
 <meta property="og:url" content="http://yoursite.com/2016/10/30/babel5.0 升到6.0 遇到的坑/index.html">
 <meta property="og:site_name" content="携手落日">
-<meta property="og:description" content="安装 babel-cli在命令行下使用 Babel
-安装 编译插件：babel-reset-es2015babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译
-babel-preset-stage-3如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并
-vuex2.0 中的mapState 返回一个对象。我们如何使用 mapS">
+<meta property="og:description" content="安装 babel-cli在命令行下使用 Babel 安装 编译插件：babel-reset-es2015babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译 babel-preset-stage-3如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并 vuex2.0 中的mapState 返回一个对象。我们如何使用 mapS">
 <meta property="og:updated_time" content="2016-10-30T13:16:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="babel5.0 升到6.0 遇到的坑">
-<meta name="twitter:description" content="安装 babel-cli在命令行下使用 Babel
-安装 编译插件：babel-reset-es2015babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译
-babel-preset-stage-3如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并
-vuex2.0 中的mapState 返回一个对象。我们如何使用 mapS">
+<meta name="twitter:description" content="安装 babel-cli在命令行下使用 Babel 安装 编译插件：babel-reset-es2015babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译 babel-preset-stage-3如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并 vuex2.0 中的mapState 返回一个对象。我们如何使用 mapS">
   
   
     <link rel="icon" href="/favicon.png">
@@ -198,7 +189,7 @@ vuex2.0 中的mapState 返回一个对象。我们如何使用 mapS">
         <h2 id="安装-babel-cli"><a href="#安装-babel-cli" class="headerlink" title="安装 babel-cli"></a>安装 babel-cli</h2><p>在命令行下使用 Babel</p>
 <h2 id="安装-编译插件：babel-reset-es2015"><a href="#安装-编译插件：babel-reset-es2015" class="headerlink" title="安装 编译插件：babel-reset-es2015"></a>安装 编译插件：babel-reset-es2015</h2><p>babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译</p>
 <h3 id="babel-preset-stage-3"><a href="#babel-preset-stage-3" class="headerlink" title="babel-preset-stage-3"></a>babel-preset-stage-3</h3><p>如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并</p>
-<p>vuex2.0 中的mapState 返回一个对象。我们如何使用 mapState 合并其他局部的计算属性呢？通常地，为了将多个对象合并为一个对象，再把这个合并好的最终对象传入到 computed 属性去，我们不得不使用一个工具函数来实现。然而有了对象扩展运算符（ECMAScript 提案 stage-3），我们可以大大简化语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">localComputed</span></span> () &#123; /* ... */ &#125;,</span><br><span class="line">  // 使用对象扩展运算符，将 mapState 返回的对象和外层其他计算属性混合起来</span><br><span class="line">  ...mapState(&#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>vuex2.0 中的mapState 返回一个对象。我们如何使用 mapState 合并其他局部的计算属性呢？通常地，为了将多个对象合并为一个对象，再把这个合并好的最终对象传入到 computed 属性去，我们不得不使用一个工具函数来实现。然而有了对象扩展运算符（ECMAScript 提案 stage-3），我们可以大大简化语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">  <span class="function"><span class="title">localComputed</span></span> () &#123; /* ... */ &#125;,</div><div class="line">  // 使用对象扩展运算符，将 mapState 返回的对象和外层其他计算属性混合起来</div><div class="line">  ...mapState(&#123;</div><div class="line">    // ...</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><a href="https://vuefe.cn/vuex/state.html" target="_blank" rel="external">vueX2.0</a></p>
 
       
@@ -209,18 +200,18 @@ vuex2.0 中的mapState 返回一个对象。我们如何使用 mapS">
     
 <nav id="article-nav">
   
-    <a href="/2016/10/31/vuex2.0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/10/30/babel_6/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          (no title)
+          babel 6.0
         
       </div>
     </a>
   
   
-    <a href="/2016/10/30/babel_6/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">babel 6.0</div>
+    <a href="/2016/09/02/checkbox全选/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">checkbox全选</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

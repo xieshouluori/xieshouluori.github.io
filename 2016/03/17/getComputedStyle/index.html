@@ -6,22 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>style、currentStyle、getComputedStyle的区别 | 携手落日</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
-2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。
-3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS">
+  <meta name="description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。 2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。 3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="style、currentStyle、getComputedStyle的区别">
 <meta property="og:url" content="http://yoursite.com/2016/03/17/getComputedStyle/index.html">
 <meta property="og:site_name" content="携手落日">
-<meta property="og:description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
-2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。
-3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS">
+<meta property="og:description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。 2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。 3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS">
 <meta property="og:updated_time" content="2016-04-08T08:37:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="style、currentStyle、getComputedStyle的区别">
-<meta name="twitter:description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。
-2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。
-3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS">
+<meta name="twitter:description" content="css设置样式分为三种方式1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。 2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。 3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS">
   
   
     <link rel="icon" href="/favicon.png">
@@ -204,7 +198,7 @@
 <p>3.currentStyle 与 getComputedStyle</p>
 <p>（1）作用：获取元素中所有可用的css属性</p>
 <p>（2）应用：IE使用currentStyle，其他浏览器用getComputedStyle</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var computed = !!window.getComputedStyle;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!computed) &#123;</span><br><span class="line">  window.getComputedStyle = <span class="keyword">function</span>(el) &#123;</span><br><span class="line">    this.el = el;</span><br><span class="line">    this.getPropertyValue = <span class="keyword">function</span>(prop) &#123;</span><br><span class="line">      var re = /(\-([a-z])&#123;1&#125;)/g;</span><br><span class="line">      <span class="keyword">if</span> (prop === <span class="string">"float"</span>) &#123;</span><br><span class="line">        prop = <span class="string">"styleFloat"</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (re.test(prop)) &#123;</span><br><span class="line">        prop = prop.replace(re, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">          <span class="built_in">return</span> arguments[2].toUpperCase();</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">return</span> el.currentStyle[prop] ? el.currentStyle[prop] : null;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">return</span> this;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">var computed = !!window.getComputedStyle;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (!computed) &#123;</div><div class="line">  window.getComputedStyle = <span class="keyword">function</span>(el) &#123;</div><div class="line">    this.el = el;</div><div class="line">    this.getPropertyValue = <span class="keyword">function</span>(prop) &#123;</div><div class="line">      var re = /(\-([a-z])&#123;1&#125;)/g;</div><div class="line">      <span class="keyword">if</span> (prop === <span class="string">"float"</span>) &#123;</div><div class="line">        prop = <span class="string">"styleFloat"</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (re.test(prop)) &#123;</div><div class="line">        prop = prop.replace(re, <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">          <span class="built_in">return</span> arguments[2].toUpperCase();</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">      <span class="built_in">return</span> el.currentStyle[prop] ? el.currentStyle[prop] : null;</div><div class="line">    &#125;;</div><div class="line">    <span class="built_in">return</span> this;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>（3）语法：</p>
 <p>1&gt; getComputedStyle：(只读不可写－－－只能获取样式，不能设置)</p>
 <p>获取属性列表</p>
@@ -233,18 +227,18 @@ eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;w
     
 <nav id="article-nav">
   
-    <a href="/2016/03/17/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/11/module_pattern/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Hello World
+          JavaScript 模块化编程
         
       </div>
     </a>
   
   
-    <a href="/2016/01/09/禁止页面滚动/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">禁止页面滚动</div>
+    <a href="/2016/03/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
