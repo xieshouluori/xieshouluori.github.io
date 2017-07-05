@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-19T08:06:54.000Z</updated>
+  <updated>2017-07-05T06:16:51.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小数点截取两位（小数三位以上的，小数点第二位加一）</title>
+    <link href="http://yoursite.com/2017/07/05/%E5%B0%8F%E6%95%B0%E7%82%B9%E6%88%AA%E5%8F%96%E4%B8%A4%E4%BD%8D%EF%BC%88%E5%B0%8F%E6%95%B0%E4%B8%89%E4%BD%8D%E4%BB%A5%E4%B8%8A%E7%9A%84%EF%BC%8C%E5%B0%8F%E6%95%B0%E7%82%B9%E7%AC%AC%E4%BA%8C%E4%BD%8D%E5%8A%A0%E4%B8%80%EF%BC%89/"/>
+    <id>http://yoursite.com/2017/07/05/小数点截取两位（小数三位以上的，小数点第二位加一）/</id>
+    <published>2017-07-04T16:00:00.000Z</published>
+    <updated>2017-07-05T06:16:51.000Z</updated>
+    
+    <content type="html">&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; handleNum(p)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  var r = (&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt; + p).split(&lt;span class=&quot;string&quot;&gt;&#39;.&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  var f = r[0], e = r[1];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!e || e.length &amp;lt;= 2)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;return&lt;/span&gt; Number(p).toFixed(2)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;return&lt;/span&gt; (+f + ((+e.substr(0, 2) + 1)/100)).toFixed(2)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;toFixed(2) 四舍五入保留两位小数&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>weex /  weex-toolkit 脚手架(mac)</title>
@@ -35,6 +55,30 @@
     <summary type="html">
     
       &lt;h2 id=&quot;安装-node&quot;&gt;&lt;a href=&quot;#安装-node&quot; class=&quot;headerlink&quot; title=&quot;安装 node&quot;&gt;&lt;/a&gt;安装 node&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CSS 盒状模型</title>
+    <link href="http://yoursite.com/2017/01/10/CSS%20%E7%9B%92%E7%8A%B6%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://yoursite.com/2017/01/10/CSS 盒状模型/</id>
+    <published>2017-01-09T16:00:00.000Z</published>
+    <updated>2017-01-10T10:23:43.000Z</updated>
+    
+    <content type="html">&lt;p&gt;CSS盒子模型就是在网页设计中经常用到的CSS技术所使用的一种思维模型。&lt;/p&gt;
+&lt;p&gt;虽然 CSS 中没有盒状模型这个属性，但它却是 CSS 中无处不在的。&lt;/p&gt;
+&lt;p&gt;CSS盒子模型有：外边距（margin）、边框（border）、内边距（padding）、内容（content）四个属性。&lt;/p&gt;
+&lt;h1 id=&quot;css盒模型分为两种&quot;&gt;&lt;a href=&quot;#css盒模型分为两种&quot; class=&quot;headerlink&quot; title=&quot;css盒模型分为两种&quot;&gt;&lt;/a&gt;css盒模型分为两种&lt;/h1&gt;&lt;p&gt; 一种是遵循w3c标准的标准盒模型，另一种是IE盒模型。&lt;br&gt; 两种盒子模型都包括padding，margin，border，content四部分；&lt;br&gt; 但是ie盒子模型的content已经计算border和padding在内。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CSS盒子模型就是在网页设计中经常用到的CSS技术所使用的一种思维模型。&lt;/p&gt;
+&lt;p&gt;虽然 CSS 中没有盒状模型这个属性，但它却是 CSS 中无处不在的。&lt;/p&gt;
+&lt;p&gt;CSS盒子模型有：外边距（margin）、边框（border）、内边距（padding）、内容（co
     
     </summary>
     
@@ -85,30 +129,6 @@
     
       &lt;p&gt;ES6 Promise 先拉出来遛遛&lt;br&gt;复杂的概念先不讲，我们先简单粗暴地把Promise用一下，有个直观感受。那么第一个问题来了，Promise是什么玩意呢？是一个类？对象？数组？函数？&lt;/p&gt;
 &lt;p&gt;别猜了，直接打印出来看看吧，console.dir(Promise
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>CSS 盒状模型</title>
-    <link href="http://yoursite.com/2017/01/10/CSS%20%E7%9B%92%E7%8A%B6%E6%A8%A1%E5%9E%8B/"/>
-    <id>http://yoursite.com/2017/01/10/CSS 盒状模型/</id>
-    <published>2017-01-09T16:00:00.000Z</published>
-    <updated>2017-01-10T10:23:43.000Z</updated>
-    
-    <content type="html">&lt;p&gt;CSS盒子模型就是在网页设计中经常用到的CSS技术所使用的一种思维模型。&lt;/p&gt;
-&lt;p&gt;虽然 CSS 中没有盒状模型这个属性，但它却是 CSS 中无处不在的。&lt;/p&gt;
-&lt;p&gt;CSS盒子模型有：外边距（margin）、边框（border）、内边距（padding）、内容（content）四个属性。&lt;/p&gt;
-&lt;h1 id=&quot;css盒模型分为两种&quot;&gt;&lt;a href=&quot;#css盒模型分为两种&quot; class=&quot;headerlink&quot; title=&quot;css盒模型分为两种&quot;&gt;&lt;/a&gt;css盒模型分为两种&lt;/h1&gt;&lt;p&gt; 一种是遵循w3c标准的标准盒模型，另一种是IE盒模型。&lt;br&gt; 两种盒子模型都包括padding，margin，border，content四部分；&lt;br&gt; 但是ie盒子模型的content已经计算border和padding在内。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;CSS盒子模型就是在网页设计中经常用到的CSS技术所使用的一种思维模型。&lt;/p&gt;
-&lt;p&gt;虽然 CSS 中没有盒状模型这个属性，但它却是 CSS 中无处不在的。&lt;/p&gt;
-&lt;p&gt;CSS盒子模型有：外边距（margin）、边框（border）、内边距（padding）、内容（co
     
     </summary>
     
@@ -192,6 +212,34 @@
   </entry>
   
   <entry>
+    <title>hexo常用命令</title>
+    <link href="http://yoursite.com/2016/11/30/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2016/11/30/hexo常用命令/</id>
+    <published>2016-11-29T16:00:00.000Z</published>
+    <updated>2016-11-30T12:22:36.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;hexo-s&quot;&gt;&lt;a href=&quot;#hexo-s&quot; class=&quot;headerlink&quot; title=&quot;hexo s&quot;&gt;&lt;/a&gt;hexo s&lt;/h2&gt;&lt;p&gt;启动本地服务器，用于预览主题。默认地址： &lt;a href=&quot;http://localhost:4000/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1.hexo s 是 hexo server 的缩写，命令效果一致；&lt;br&gt;2.预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；&lt;br&gt;3.对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果&lt;/p&gt;
+&lt;h2 id=&quot;hexo-new-“文章名字”&quot;&gt;&lt;a href=&quot;#hexo-new-“文章名字”&quot; class=&quot;headerlink&quot; title=&quot;hexo new “文章名字”&quot;&gt;&lt;/a&gt;hexo new “文章名字”&lt;/h2&gt;&lt;p&gt;新建一篇标题为 xxx 的文章，因为标题里有空格，所以加上了引号。&lt;br&gt;文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。&lt;/p&gt;
+&lt;h2 id=&quot;hexo-new-page-aboutme&quot;&gt;&lt;a href=&quot;#hexo-new-page-aboutme&quot; class=&quot;headerlink&quot; title=&quot;hexo new page aboutme&quot;&gt;&lt;/a&gt;hexo new page aboutme&lt;/h2&gt;&lt;p&gt;新建一个标题为 aboutme 的页面，默认链接地址为 主页地址/aboutme/&lt;/p&gt;
+&lt;p&gt;1.标题可以为中文，但一般习惯用英文；&lt;br&gt;2.页面标题和文章一样可以随意修改；&lt;br&gt;3.页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。&lt;/p&gt;
+&lt;h2 id=&quot;hexo-g&quot;&gt;&lt;a href=&quot;#hexo-g&quot; class=&quot;headerlink&quot; title=&quot;hexo g&quot;&gt;&lt;/a&gt;hexo g&lt;/h2&gt;&lt;p&gt;生成网站静态文件到默认设置的 public 文件夹。&lt;/p&gt;
+&lt;p&gt;1.便于查看网站生成的静态文件或者手动部署网站；&lt;br&gt;2.如果使用自动部署，不需要先执行该命令；&lt;br&gt;3.hexo g 是 hexo generate 的缩写，命令效果一致。&lt;/p&gt;
+&lt;h2 id=&quot;hexo-d&quot;&gt;&lt;a href=&quot;#hexo-d&quot; class=&quot;headerlink&quot; title=&quot;hexo d&quot;&gt;&lt;/a&gt;hexo d&lt;/h2&gt;&lt;p&gt;自动生成网站静态文件，并部署到设定的仓库。&lt;br&gt;1.hexo d 是 hexo deploy 的缩写，命令效果一致。&lt;/p&gt;
+&lt;h2 id=&quot;hexo-clean&quot;&gt;&lt;a href=&quot;#hexo-clean&quot; class=&quot;headerlink&quot; title=&quot;hexo clean&quot;&gt;&lt;/a&gt;hexo clean&lt;/h2&gt;&lt;p&gt;清除缓存文件 db.json 和已生成的静态文件 public 。&lt;/p&gt;
+&lt;p&gt;网站显示异常时可以执行这条命令试试。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;hexo-s&quot;&gt;&lt;a href=&quot;#hexo-s&quot; class=&quot;headerlink&quot; title=&quot;hexo s&quot;&gt;&lt;/a&gt;hexo s&lt;/h2&gt;&lt;p&gt;启动本地服务器，用于预览主题。默认地址： &lt;a href=&quot;http://localhost:4000/&quot; 
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>pm2</title>
     <link href="http://yoursite.com/2016/11/30/pm2/"/>
     <id>http://yoursite.com/2016/11/30/pm2/</id>
@@ -220,34 +268,6 @@ json格式的配置文件，pm2当作普通的js文件来处理，所以可以�
     <summary type="html">
     
       &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;全局安装&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>hexo常用命令</title>
-    <link href="http://yoursite.com/2016/11/30/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>http://yoursite.com/2016/11/30/hexo常用命令/</id>
-    <published>2016-11-29T16:00:00.000Z</published>
-    <updated>2016-11-30T12:22:36.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;hexo-s&quot;&gt;&lt;a href=&quot;#hexo-s&quot; class=&quot;headerlink&quot; title=&quot;hexo s&quot;&gt;&lt;/a&gt;hexo s&lt;/h2&gt;&lt;p&gt;启动本地服务器，用于预览主题。默认地址： &lt;a href=&quot;http://localhost:4000/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1.hexo s 是 hexo server 的缩写，命令效果一致；&lt;br&gt;2.预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；&lt;br&gt;3.对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果&lt;/p&gt;
-&lt;h2 id=&quot;hexo-new-“文章名字”&quot;&gt;&lt;a href=&quot;#hexo-new-“文章名字”&quot; class=&quot;headerlink&quot; title=&quot;hexo new “文章名字”&quot;&gt;&lt;/a&gt;hexo new “文章名字”&lt;/h2&gt;&lt;p&gt;新建一篇标题为 xxx 的文章，因为标题里有空格，所以加上了引号。&lt;br&gt;文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。&lt;/p&gt;
-&lt;h2 id=&quot;hexo-new-page-aboutme&quot;&gt;&lt;a href=&quot;#hexo-new-page-aboutme&quot; class=&quot;headerlink&quot; title=&quot;hexo new page aboutme&quot;&gt;&lt;/a&gt;hexo new page aboutme&lt;/h2&gt;&lt;p&gt;新建一个标题为 aboutme 的页面，默认链接地址为 主页地址/aboutme/&lt;/p&gt;
-&lt;p&gt;1.标题可以为中文，但一般习惯用英文；&lt;br&gt;2.页面标题和文章一样可以随意修改；&lt;br&gt;3.页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。&lt;/p&gt;
-&lt;h2 id=&quot;hexo-g&quot;&gt;&lt;a href=&quot;#hexo-g&quot; class=&quot;headerlink&quot; title=&quot;hexo g&quot;&gt;&lt;/a&gt;hexo g&lt;/h2&gt;&lt;p&gt;生成网站静态文件到默认设置的 public 文件夹。&lt;/p&gt;
-&lt;p&gt;1.便于查看网站生成的静态文件或者手动部署网站；&lt;br&gt;2.如果使用自动部署，不需要先执行该命令；&lt;br&gt;3.hexo g 是 hexo generate 的缩写，命令效果一致。&lt;/p&gt;
-&lt;h2 id=&quot;hexo-d&quot;&gt;&lt;a href=&quot;#hexo-d&quot; class=&quot;headerlink&quot; title=&quot;hexo d&quot;&gt;&lt;/a&gt;hexo d&lt;/h2&gt;&lt;p&gt;自动生成网站静态文件，并部署到设定的仓库。&lt;br&gt;1.hexo d 是 hexo deploy 的缩写，命令效果一致。&lt;/p&gt;
-&lt;h2 id=&quot;hexo-clean&quot;&gt;&lt;a href=&quot;#hexo-clean&quot; class=&quot;headerlink&quot; title=&quot;hexo clean&quot;&gt;&lt;/a&gt;hexo clean&lt;/h2&gt;&lt;p&gt;清除缓存文件 db.json 和已生成的静态文件 public 。&lt;/p&gt;
-&lt;p&gt;网站显示异常时可以执行这条命令试试。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;hexo-s&quot;&gt;&lt;a href=&quot;#hexo-s&quot; class=&quot;headerlink&quot; title=&quot;hexo s&quot;&gt;&lt;/a&gt;hexo s&lt;/h2&gt;&lt;p&gt;启动本地服务器，用于预览主题。默认地址： &lt;a href=&quot;http://localhost:4000/&quot; 
     
     </summary>
     
@@ -570,56 +590,6 @@ bar(10);
     
       &lt;p&gt;Welcome to 我的博客&lt;/p&gt;
 &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>style、currentStyle、getComputedStyle的区别</title>
-    <link href="http://yoursite.com/2016/03/17/getComputedStyle/"/>
-    <id>http://yoursite.com/2016/03/17/getComputedStyle/</id>
-    <published>2016-03-17T06:52:12.000Z</published>
-    <updated>2016-04-08T08:37:37.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;css设置样式分为三种方式&quot;&gt;&lt;a href=&quot;#css设置样式分为三种方式&quot; class=&quot;headerlink&quot; title=&quot;css设置样式分为三种方式&quot;&gt;&lt;/a&gt;css设置样式分为三种方式&lt;/h2&gt;&lt;p&gt;1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。&lt;/p&gt;
-&lt;p&gt;2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。&lt;/p&gt;
-&lt;p&gt;3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS文件。 &lt;/p&gt;
-&lt;h2 id=&quot;js获取样式&quot;&gt;&lt;a href=&quot;#js获取样式&quot; class=&quot;headerlink&quot; title=&quot;js获取样式&quot;&gt;&lt;/a&gt;js获取样式&lt;/h2&gt;&lt;p&gt;1.style属性：&lt;/p&gt;
-&lt;p&gt;通过document.getElementById(id).style.XXX就可以获取到XXX的值。(可读可写)&lt;/p&gt;
-&lt;p&gt;作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值&lt;/p&gt;
-&lt;p&gt;2.runtimeStyle ：&lt;/p&gt;
-&lt;p&gt;通过document.getElementById(id).runtimeStyle.XXX设置&lt;/p&gt;
-&lt;p&gt;作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！&lt;/p&gt;
-&lt;p&gt;3.currentStyle 与 getComputedStyle&lt;/p&gt;
-&lt;p&gt;（1）作用：获取元素中所有可用的css属性&lt;/p&gt;
-&lt;p&gt;（2）应用：IE使用currentStyle，其他浏览器用getComputedStyle&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var computed = !!window.getComputedStyle;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!computed) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  window.getComputedStyle = &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(el) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    this.el = el;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    this.getPropertyValue = &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(prop) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      var re = /(\-([a-z])&amp;#123;1&amp;#125;)/g;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (prop === &lt;span class=&quot;string&quot;&gt;&quot;float&quot;&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        prop = &lt;span class=&quot;string&quot;&gt;&quot;styleFloat&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (re.test(prop)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        prop = prop.replace(re, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;function&lt;/span&gt;&lt;/span&gt; () &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;          &lt;span class=&quot;built_in&quot;&gt;return&lt;/span&gt; arguments[2].toUpperCase();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;built_in&quot;&gt;return&lt;/span&gt; el.currentStyle[prop] ? el.currentStyle[prop] : null;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;return&lt;/span&gt; this;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;（3）语法：&lt;/p&gt;
-&lt;p&gt;1&amp;gt; getComputedStyle：(只读不可写－－－只能获取样式，不能设置)&lt;/p&gt;
-&lt;p&gt;获取属性列表&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;arr_style=window.getComputedStyle(元素,伪类)
-
-伪元素，是否要获取伪元素属性值。如hover,active,link等属性。如果不想获取这些伪元素的属性值请填写为null。
-
-eg1: style = window.getComputedStyle(elem_id , &amp;quot;:after&amp;quot;);
-
-eg2：var width = window.getComputedStyle(mydiv , null);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;获取具体的属性值：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;eg1：var width = window.getComputedStyle(mydiv , null)[&amp;apos;width&amp;apos;];
-
-eg2：var width = window.getComputedStyle(mydiv , null).width;
-
-eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&amp;quot;width&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;获取float，如果使用键值访问，则不能直接使用getComputedStyle(element, null).float，而应该是cssFloat与styleFloat，自然需要浏览器判断了，比较折腾！&lt;/p&gt;
-&lt;p&gt;2&amp;gt; currentStyle&lt;/p&gt;
-&lt;p&gt;eg:var width = mydiv.currentStyle[‘width’];&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;css设置样式分为三种方式&quot;&gt;&lt;a href=&quot;#css设置样式分为三种方式&quot; class=&quot;headerlink&quot; title=&quot;css设置样式分为三种方式&quot;&gt;&lt;/a&gt;css设置样式分为三种方式&lt;/h2&gt;&lt;p&gt;1.内嵌样式（inline Style） ：写在Ta
     
     </summary>
     
