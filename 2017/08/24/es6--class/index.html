@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>es6—class | 携手落日</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、javascript传统做法生成一个对象实例：​    定义构造函数，然后通过new的方式完成 12345678910function StdInfo()&amp;#123;    this.name = &amp;quot;job&amp;quot;;                this.age = 30;            &amp;#125;StdInfo.prototype.getNames = functi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6—class">
+<meta property="og:url" content="http://yoursite.com/2017/08/24/es6--class/index.html">
+<meta property="og:site_name" content="携手落日">
+<meta property="og:description" content="一、javascript传统做法生成一个对象实例：​    定义构造函数，然后通过new的方式完成 12345678910function StdInfo()&amp;#123;    this.name = &amp;quot;job&amp;quot;;                this.age = 30;            &amp;#125;StdInfo.prototype.getNames = functi">
+<meta property="og:image" content="https://static.segmentfault.com/v-599d4ab0/global/img/user-64.png">
+<meta property="og:image" content="https://sfault-avatar.b0.upaiyun.com/184/839/1848398528-5880ca077eec4_big64">
+<meta property="og:updated_time" content="2017-08-24T03:45:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="es6—class">
+<meta name="twitter:description" content="一、javascript传统做法生成一个对象实例：​    定义构造函数，然后通过new的方式完成 12345678910function StdInfo()&amp;#123;    this.name = &amp;quot;job&amp;quot;;                this.age = 30;            &amp;#125;StdInfo.prototype.getNames = functi">
+<meta name="twitter:image" content="https://static.segmentfault.com/v-599d4ab0/global/img/user-64.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">妞妞</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我思故我在</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/5411966680/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">妞妞</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">妞妞</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我思故我在</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/5411966680/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-es6--class" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/24/es6--class/" class="article-date">
+  	<time datetime="2017-08-23T16:00:00.000Z" itemprop="datePublished">2017-08-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      es6—class
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、javascript传统做法生成一个对象实例："><a href="#一、javascript传统做法生成一个对象实例：" class="headerlink" title="一、javascript传统做法生成一个对象实例："></a>一、javascript传统做法生成一个对象实例：</h2><p>​    定义构造函数，然后通过new的方式完成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function StdInfo()&#123;</div><div class="line">    this.name = &quot;job&quot;;            </div><div class="line">    this.age = 30;            </div><div class="line">&#125;</div><div class="line"></div><div class="line">StdInfo.prototype.getNames = function ()&#123;</div><div class="line">    console.log(&quot;name：&quot;+this.name);               </div><div class="line">&#125;</div><div class="line">//得到一个学员信息对象</div><div class="line">var p = new StdInfo()</div></pre></td></tr></table></figure>
+<p>javacript中只有对象，没有类。它是是基于原型的语言，原型对象是新对象的模板，它将自身的属性共享给新对象。</p>
+<h2 id="二、ES6添加了类，作为对象的模板"><a href="#二、ES6添加了类，作为对象的模板" class="headerlink" title="二、ES6添加了类，作为对象的模板"></a>二、ES6添加了类，作为对象的模板</h2><h3 id="1-定义类"><a href="#1-定义类" class="headerlink" title="1.定义类"></a>1.定义类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//定义类</div><div class="line">class StdInfo &#123;</div><div class="line">    constructor()&#123;</div><div class="line">       this.name = &quot;job&quot;;            </div><div class="line">       this.age = 30;      </div><div class="line">    &#125;</div><div class="line">    //定义在类中的方法不需要添加function</div><div class="line">    getNames()&#123;</div><div class="line">       console.log(&quot;name：&quot;+this.name);      </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//使用new的方式得到一个实例对象</div><div class="line">var p = new StdInfo();</div></pre></td></tr></table></figure>
+<p>上面的写法更加清晰、更像面向对象编程的语法，看起来也更容易理解。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//定义类</div><div class="line">class StdInfo &#123;</div><div class="line">    //...</div><div class="line">&#125;</div><div class="line">console.log(typeof  StdInfo);  //function</div><div class="line"></div><div class="line">console.log(StdInfo === StdInfo.prototype.constructor);  //true</div></pre></td></tr></table></figure>
+<p>从上面的测试中可以看出来，类的类型就是一个函数，是一个“特殊函数”，指向的是构造函数。</p>
+<p>函数的定义方式有函数声明和函数表达式两种，类的定义方式也有两种，分别是：<strong>类声明</strong>和<strong>类表达式</strong>。</p>
+<h3 id="2-类声明（-class-类名-）"><a href="#2-类声明（-class-类名-）" class="headerlink" title="2.类声明（    class 类名 {}    ）"></a>2.类声明（    class 类名 {}    ）</h3><p>类声明是定义类的一种方式，使用关键字<strong>class</strong>，后面跟上类名，然后就是一对大括号。把这一类需要定义的方法放在大括号中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//定义类，可以省略constructor</div><div class="line">class StdInfo &#123;</div><div class="line">    getNames()&#123;</div><div class="line">        console.log(&quot;name：&quot;+this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// -------------------------------------</div><div class="line">//定义类，加上constructor</div><div class="line">class StdInfo &#123;</div><div class="line">    //使用new定义实例对象时，自动调用这个函数，传入参数</div><div class="line">    constructor(name,age)&#123;</div><div class="line">       this.name = name;            </div><div class="line">       this.age = age;      </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    getNames()&#123;</div><div class="line">       console.log(&quot;name：&quot;+this.name);      </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义实例对象时，传入参数</div><div class="line">var p = new StdInfo(&quot;job&quot;,30)</div></pre></td></tr></table></figure>
+<p>（1）constructor<strong>是一个默认方法，使用</strong>new<strong>来定义实例对象时，自动执行</strong>constructor<strong>函数，传入所需要的参数,执行完</strong>constructor**后自动返回实例对象。</p>
+<p>（2）一个类中只能有一个<strong>constructor</strong>函数，定义多个会报错。</p>
+<p>（3）constructor**中的this指向新创建的实例对象，利用this往新创建的实例对象扩展属性。</p>
+<p>（4）在定义实例对象时，不需要在初始化阶段做一些事，可以不用显示的写<strong>constructor</strong>函数。如果没有显式定义，一个空的constructor方法会被默认添加，constructor(){}</p>
+<h3 id="3-类表达式"><a href="#3-类表达式" class="headerlink" title="3.类表达式"></a>3.类表达式</h3><p>类表达式是定义类的另一种形式，类似于函数表达式，把一个函数作为值赋给变量。</p>
+<p>可以把定义的类赋值给一个变量，这时候变量就为类名。<strong>class</strong>关键字之后的类名可有可无，如果存在，则只能在类内部使用。</p>
+<p>定义类 class后面有类名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> const People = class StdInfo &#123;</div><div class="line">    constructor()&#123;</div><div class="line">        console.log(StdInfo);  //可以打印出值，是一个函数</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">new People();</div><div class="line">new StdInfo();  //报错，StdInfo is not defined；</div></pre></td></tr></table></figure>
+<p>定义类 class后面没有类名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">const People = class &#123;</div><div class="line">    constructor()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">new People();</div></pre></td></tr></table></figure>
+<p>立即执行的类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const p = new class &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        console.log(name,age);</div><div class="line">    &#125;</div><div class="line">&#125;(&quot;job&quot;,30)</div></pre></td></tr></table></figure>
+<p>立即执行的类，在类前要加上<strong>new</strong>。<strong>p</strong>为类的实例对象。</p>
+<h3 id="4-不存在变量提升"><a href="#4-不存在变量提升" class="headerlink" title="4.不存在变量提升"></a>4.不存在变量提升</h3><p>定义类不存在变量提升，只能先定义类后使用，跟函数声明有区别的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//-----函数声明-------</div><div class="line">//定义前可以先使用，因为函数声明提升的缘故，调用合法。</div><div class="line">func();</div><div class="line">function func()&#123;&#125;</div><div class="line"></div><div class="line">//-----定义类---------------</div><div class="line">new StdInfo();  //报错，StdInfo is not defined</div><div class="line">class StdInfo&#123;&#125;</div></pre></td></tr></table></figure>
+<h2 id="5-extends继承"><a href="#5-extends继承" class="headerlink" title="5.extends继承"></a>5.extends继承</h2><p>使用<strong>extends</strong>关键字实现类之间的继承。这比在ES5中使用继承要方便很多。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//定义类父类</div><div class="line">class Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    speakSometing()&#123;</div><div class="line">        console.log(&quot;I can speek chinese&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义子类，继承父类</div><div class="line">class Child extends Parent &#123;</div><div class="line">    coding()&#123;</div><div class="line">        console.log(&quot;coding javascript&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var c = new Child();</div><div class="line"></div><div class="line">//可以调用父类的方法</div><div class="line">c.speakSometing(); // I can speek chinese</div></pre></td></tr></table></figure>
+<p>使用继承的方式，子类就拥有了父类的方法。</p>
+<p>如果子类中有<strong>constructor</strong>构造函数，则必须使用调用<strong>super</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//定义类父类</div><div class="line">class Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    speakSometing()&#123;</div><div class="line">        console.log(&quot;I can speek chinese&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义子类，继承父类</div><div class="line">class Child extends Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        //不调super()，则会报错  this is not defined</div><div class="line"></div><div class="line">        //必须调用super</div><div class="line">        super(name,age);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    coding()&#123;</div><div class="line">        console.log(&quot;coding javascript&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var c = new Child(&quot;job&quot;,30);</div><div class="line"></div><div class="line">//可以调用父类的方法</div><div class="line">c.speakSometing(); // I can speek chinese</div></pre></td></tr></table></figure>
+<p>子类必须在constructor方法中调用super方法，否则新建实例时会报错(<em>this is not defined</em>)。这是因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象。</p>
+<p>以上是对ES6中类的简单总结学习，欢迎一起讨论。</p>
+<p>参考：<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes</a></p>
+<p><a href="http://es6.ruanyifeng.com/#docs/class" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/class</a></p>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000007537173" target="_blank" rel="external">2016年11月20日发布</a></li>
+<li><a href="javascript:void(0" target="_blank" rel="external">**</a>;)</li>
+</ul>
+<ul>
+<li><a href="javascript:void(0" target="_blank" rel="external">新浪微博</a>;)</li>
+<li><a href="javascript:void(0" target="_blank" rel="external">微信</a>;)</li>
+<li><a href="javascript:void(0" target="_blank" rel="external">Twitter</a>;)</li>
+<li><a href="javascript:void(0" target="_blank" rel="external">Facebook</a>;)</li>
+</ul>
+<p>赞  |   1收藏  |  3</p>
+<h4 id="你可能感兴趣的文章"><a href="#你可能感兴趣的文章" class="headerlink" title="你可能感兴趣的文章"></a>你可能感兴趣的文章</h4><ul>
+<li><a href="https://segmentfault.com/a/1190000004102588" target="_blank" rel="external">JavaScript笔记集</a> 6 收藏，952 浏览</li>
+<li><a href="https://segmentfault.com/a/1190000010542028" target="_blank" rel="external">ES6的Class学习</a> 1 收藏，67 浏览</li>
+<li><a href="https://segmentfault.com/a/1190000004219721" target="_blank" rel="external">浮动【电梯】或【回到底部】的小插件ielevator.js</a> 2 收藏，727 浏览</li>
+</ul>
+<p>## </p>
+<p>2 条评论</p>
+<p><a href="javascript:;" target="_blank" rel="external">默认排序</a><a href="javascript:;" target="_blank" rel="external">时间排序</a></p>
+<p><a href="https://segmentfault.com/u/sunny_l" target="_blank" rel="external"><img src="https://static.segmentfault.com/v-599d4ab0/global/img/user-64.png" alt="img"></a></p>
+<p><a href="https://segmentfault.com/u/sunny_l" target="_blank" rel="external">Sunny_L</a></p>
+<p>· 7月4日</p>
+<p>非class方法可以写Point.prototype.on=Point.prototype.addListener，es6的class应该怎么写？包内好像不能用=号</p>
+<p>** 赞 回复</p>
+<p><a href="https://segmentfault.com/u/wocaibushidaocaoren" target="_blank" rel="external"><img src="https://sfault-avatar.b0.upaiyun.com/184/839/1848398528-5880ca077eec4_big64" alt="img"></a></p>
+<p><a href="https://segmentfault.com/u/wocaibushidaocaoren" target="_blank" rel="external">我才不是稻草人</a></p>
+<p>· 7月14日</p>
+<p>说的不错，想问个问题，在代码里<br>//定义类父类<br>class Parent {</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">constructor(name,age)&#123;</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">speakSometing()&#123;</div><div class="line">    console.log(&quot;I can speek chinese&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>}<br>//定义子类，继承父类<br>class Child extends Parent {</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">constructor(name,age)&#123;</div><div class="line">    //不调super()，则会报错  this is not defined</div><div class="line"></div><div class="line">    //必须调用super</div><div class="line">    super(name,age);</div><div class="line">&#125;</div><div class="line"></div><div class="line">coding()&#123;</div><div class="line">    this.speakSometing()   //可以这么用吗？？？？？？</div><div class="line">    console.log(&quot;coding javascript&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>}</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/24/箭头函数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          箭头函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/05/小数点截取两位（小数三位以上的，小数点第二位加一）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">小数点截取两位（小数三位以上的，小数点第二位加一）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="es6--class" data-title="es6—class" data-url="http://yoursite.com/2017/08/24/es6--class/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 妞妞
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
