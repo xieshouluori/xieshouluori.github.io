@@ -158,6 +158,603 @@
 
       <div class="body-wrap">
   
+    <article id="post-es6--class" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/24/es6--class/" class="article-date">
+  	<time datetime="2017-08-23T16:00:00.000Z" itemprop="datePublished">2017-08-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/24/es6--class/">es6—class</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、javascript传统做法生成一个对象实例："><a href="#一、javascript传统做法生成一个对象实例：" class="headerlink" title="一、javascript传统做法生成一个对象实例："></a>一、javascript传统做法生成一个对象实例：</h2><p>​    定义构造函数，然后通过new的方式完成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function StdInfo()&#123;</div><div class="line">    this.name = &quot;job&quot;;            </div><div class="line">    this.age = 30;            </div><div class="line">&#125;</div><div class="line"></div><div class="line">StdInfo.prototype.getNames = function ()&#123;</div><div class="line">    console.log(&quot;name：&quot;+this.name);               </div><div class="line">&#125;</div><div class="line">//得到一个学员信息对象</div><div class="line">var p = new StdInfo()</div></pre></td></tr></table></figure>
+<p>javacript中只有对象，没有类。它是是基于原型的语言，原型对象是新对象的模板，它将自身的属性共享给新对象。</p>
+<h2 id="二、ES6添加了类，作为对象的模板"><a href="#二、ES6添加了类，作为对象的模板" class="headerlink" title="二、ES6添加了类，作为对象的模板"></a>二、ES6添加了类，作为对象的模板</h2><h3 id="1-定义类"><a href="#1-定义类" class="headerlink" title="1.定义类"></a>1.定义类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//定义类</div><div class="line">class StdInfo &#123;</div><div class="line">    constructor()&#123;</div><div class="line">       this.name = &quot;job&quot;;            </div><div class="line">       this.age = 30;      </div><div class="line">    &#125;</div><div class="line">    //定义在类中的方法不需要添加function</div><div class="line">    getNames()&#123;</div><div class="line">       console.log(&quot;name：&quot;+this.name);      </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//使用new的方式得到一个实例对象</div><div class="line">var p = new StdInfo();</div></pre></td></tr></table></figure>
+<p>上面的写法更加清晰、更像面向对象编程的语法，看起来也更容易理解。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//定义类</div><div class="line">class StdInfo &#123;</div><div class="line">    //...</div><div class="line">&#125;</div><div class="line">console.log(typeof  StdInfo);  //function</div><div class="line"></div><div class="line">console.log(StdInfo === StdInfo.prototype.constructor);  //true</div></pre></td></tr></table></figure>
+<p>从上面的测试中可以看出来，类的类型就是一个函数，是一个“特殊函数”，指向的是构造函数。</p>
+<p>函数的定义方式有函数声明和函数表达式两种，类的定义方式也有两种，分别是：<strong>类声明</strong>和<strong>类表达式</strong>。</p>
+<h3 id="2-类声明（-class-类名-）"><a href="#2-类声明（-class-类名-）" class="headerlink" title="2.类声明（    class 类名 {}    ）"></a>2.类声明（    class 类名 {}    ）</h3><p>类声明是定义类的一种方式，使用关键字<strong>class</strong>，后面跟上类名，然后就是一对大括号。把这一类需要定义的方法放在大括号中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//定义类，可以省略constructor</div><div class="line">class StdInfo &#123;</div><div class="line">    getNames()&#123;</div><div class="line">        console.log(&quot;name：&quot;+this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// -------------------------------------</div><div class="line">//定义类，加上constructor</div><div class="line">class StdInfo &#123;</div><div class="line">    //使用new定义实例对象时，自动调用这个函数，传入参数</div><div class="line">    constructor(name,age)&#123;</div><div class="line">       this.name = name;            </div><div class="line">       this.age = age;      </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    getNames()&#123;</div><div class="line">       console.log(&quot;name：&quot;+this.name);      </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义实例对象时，传入参数</div><div class="line">var p = new StdInfo(&quot;job&quot;,30)</div></pre></td></tr></table></figure>
+<p>（1）constructor<strong>是一个默认方法，使用</strong>new<strong>来定义实例对象时，自动执行</strong>constructor<strong>函数，传入所需要的参数,执行完</strong>constructor**后自动返回实例对象。</p>
+<p>（2）一个类中只能有一个<strong>constructor</strong>函数，定义多个会报错。</p>
+<p>（3）constructor**中的this指向新创建的实例对象，利用this往新创建的实例对象扩展属性。</p>
+<p>（4）在定义实例对象时，不需要在初始化阶段做一些事，可以不用显示的写<strong>constructor</strong>函数。如果没有显式定义，一个空的constructor方法会被默认添加，constructor(){}</p>
+<h3 id="3-类表达式"><a href="#3-类表达式" class="headerlink" title="3.类表达式"></a>3.类表达式</h3><p>类表达式是定义类的另一种形式，类似于函数表达式，把一个函数作为值赋给变量。</p>
+<p>可以把定义的类赋值给一个变量，这时候变量就为类名。<strong>class</strong>关键字之后的类名可有可无，如果存在，则只能在类内部使用。</p>
+<p>定义类 class后面有类名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> const People = class StdInfo &#123;</div><div class="line">    constructor()&#123;</div><div class="line">        console.log(StdInfo);  //可以打印出值，是一个函数</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">new People();</div><div class="line">new StdInfo();  //报错，StdInfo is not defined；</div></pre></td></tr></table></figure>
+<p>定义类 class后面没有类名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">const People = class &#123;</div><div class="line">    constructor()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">new People();</div></pre></td></tr></table></figure>
+<p>立即执行的类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const p = new class &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        console.log(name,age);</div><div class="line">    &#125;</div><div class="line">&#125;(&quot;job&quot;,30)</div></pre></td></tr></table></figure>
+<p>立即执行的类，在类前要加上<strong>new</strong>。<strong>p</strong>为类的实例对象。</p>
+<h3 id="4-不存在变量提升"><a href="#4-不存在变量提升" class="headerlink" title="4.不存在变量提升"></a>4.不存在变量提升</h3><p>定义类不存在变量提升，只能先定义类后使用，跟函数声明有区别的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//-----函数声明-------</div><div class="line">//定义前可以先使用，因为函数声明提升的缘故，调用合法。</div><div class="line">func();</div><div class="line">function func()&#123;&#125;</div><div class="line"></div><div class="line">//-----定义类---------------</div><div class="line">new StdInfo();  //报错，StdInfo is not defined</div><div class="line">class StdInfo&#123;&#125;</div></pre></td></tr></table></figure>
+<h2 id="5-extends继承"><a href="#5-extends继承" class="headerlink" title="5.extends继承"></a>5.extends继承</h2><p>使用<strong>extends</strong>关键字实现类之间的继承。这比在ES5中使用继承要方便很多。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//定义类父类</div><div class="line">class Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    speakSometing()&#123;</div><div class="line">        console.log(&quot;I can speek chinese&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义子类，继承父类</div><div class="line">class Child extends Parent &#123;</div><div class="line">    coding()&#123;</div><div class="line">        console.log(&quot;coding javascript&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var c = new Child();</div><div class="line"></div><div class="line">//可以调用父类的方法</div><div class="line">c.speakSometing(); // I can speek chinese</div></pre></td></tr></table></figure>
+<p>使用继承的方式，子类就拥有了父类的方法。</p>
+<p>如果子类中有<strong>constructor</strong>构造函数，则必须使用调用<strong>super</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//定义类父类</div><div class="line">class Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    speakSometing()&#123;</div><div class="line">        console.log(&quot;I can speek chinese&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义子类，继承父类</div><div class="line">class Child extends Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        //不调super()，则会报错  this is not defined</div><div class="line"></div><div class="line">        //必须调用super</div><div class="line">        super(name,age);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    coding()&#123;</div><div class="line">        console.log(&quot;coding javascript&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var c = new Child(&quot;job&quot;,30);</div><div class="line"></div><div class="line">//可以调用父类的方法</div><div class="line">c.speakSometing(); // I can speek chinese</div></pre></td></tr></table></figure>
+<p>子类必须在constructor方法中调用super方法，否则新建实例时会报错(<em>this is not defined</em>)。这是因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象。</p>
+<p>以上是对ES6中类的简单总结学习，欢迎一起讨论。</p>
+<p>参考：<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes</a></p>
+<p><a href="http://es6.ruanyifeng.com/#docs/class" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/class</a></p>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000007537173" target="_blank" rel="external">2016年11月20日发布</a></li>
+<li><a href="javascript:void(0" target="_blank" rel="external">**</a>;)</li>
+</ul>
+<ul>
+<li><a href="javascript:void(0" target="_blank" rel="external">新浪微博</a>;)</li>
+<li><a href="javascript:void(0" target="_blank" rel="external">微信</a>;)</li>
+<li><a href="javascript:void(0" target="_blank" rel="external">Twitter</a>;)</li>
+<li><a href="javascript:void(0" target="_blank" rel="external">Facebook</a>;)</li>
+</ul>
+<p>赞  |   1收藏  |  3</p>
+<h4 id="你可能感兴趣的文章"><a href="#你可能感兴趣的文章" class="headerlink" title="你可能感兴趣的文章"></a>你可能感兴趣的文章</h4><ul>
+<li><a href="https://segmentfault.com/a/1190000004102588" target="_blank" rel="external">JavaScript笔记集</a> 6 收藏，952 浏览</li>
+<li><a href="https://segmentfault.com/a/1190000010542028" target="_blank" rel="external">ES6的Class学习</a> 1 收藏，67 浏览</li>
+<li><a href="https://segmentfault.com/a/1190000004219721" target="_blank" rel="external">浮动【电梯】或【回到底部】的小插件ielevator.js</a> 2 收藏，727 浏览</li>
+</ul>
+<p>## </p>
+<p>2 条评论</p>
+<p><a href="javascript:;" target="_blank" rel="external">默认排序</a><a href="javascript:;" target="_blank" rel="external">时间排序</a></p>
+<p><a href="https://segmentfault.com/u/sunny_l" target="_blank" rel="external"><img src="https://static.segmentfault.com/v-599d4ab0/global/img/user-64.png" alt="img"></a></p>
+<p><a href="https://segmentfault.com/u/sunny_l" target="_blank" rel="external">Sunny_L</a></p>
+<p>· 7月4日</p>
+<p>非class方法可以写Point.prototype.on=Point.prototype.addListener，es6的class应该怎么写？包内好像不能用=号</p>
+<p>** 赞 回复</p>
+<p><a href="https://segmentfault.com/u/wocaibushidaocaoren" target="_blank" rel="external"><img src="https://sfault-avatar.b0.upaiyun.com/184/839/1848398528-5880ca077eec4_big64" alt="img"></a></p>
+<p><a href="https://segmentfault.com/u/wocaibushidaocaoren" target="_blank" rel="external">我才不是稻草人</a></p>
+<p>· 7月14日</p>
+<p>说的不错，想问个问题，在代码里<br>//定义类父类<br>class Parent {</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">constructor(name,age)&#123;</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">speakSometing()&#123;</div><div class="line">    console.log(&quot;I can speek chinese&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>}<br>//定义子类，继承父类<br>class Child extends Parent {</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">constructor(name,age)&#123;</div><div class="line">    //不调super()，则会报错  this is not defined</div><div class="line"></div><div class="line">    //必须调用super</div><div class="line">    super(name,age);</div><div class="line">&#125;</div><div class="line"></div><div class="line">coding()&#123;</div><div class="line">    this.speakSometing()   //可以这么用吗？？？？？？</div><div class="line">    console.log(&quot;coding javascript&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>}</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-小数点截取两位（小数三位以上的，小数点第二位加一）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/05/小数点截取两位（小数三位以上的，小数点第二位加一）/" class="article-date">
+  	<time datetime="2017-07-04T16:00:00.000Z" itemprop="datePublished">2017-07-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/05/小数点截取两位（小数三位以上的，小数点第二位加一）/">小数点截取两位（小数三位以上的，小数点第二位加一）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> handleNum(p)&#123;</div><div class="line">  var r = (<span class="string">''</span> + p).split(<span class="string">'.'</span>)</div><div class="line">  var f = r[0], e = r[1];</div><div class="line">  <span class="keyword">if</span>(!e || e.length &lt;= 2)&#123;</div><div class="line">    <span class="built_in">return</span> Number(p).toFixed(2)</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">return</span> (+f + ((+e.substr(0, 2) + 1)/100)).toFixed(2)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>toFixed(2) 四舍五入保留两位小数</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-weex" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/17/weex/" class="article-date">
+  	<time datetime="2017-01-16T16:00:00.000Z" itemprop="datePublished">2017-01-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/17/weex/">weex /  weex-toolkit 脚手架(mac)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装-node"><a href="#安装-node" class="headerlink" title="安装 node"></a>安装 node</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install node</div></pre></td></tr></table></figure>
+<p>注意： node 版本要大于 5.0</p>
+<h3 id="检查-Node的当前版本"><a href="#检查-Node的当前版本" class="headerlink" title="检查 Node的当前版本"></a>检查 Node的当前版本</h3><p>node -v  </p>
+<h3 id="管理Node版本"><a href="#管理Node版本" class="headerlink" title="管理Node版本"></a>管理Node版本</h3><p>即使用Node Binary管理模块“n”<br>安装n模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g n</div></pre></td></tr></table></figure></p>
+<h3 id="安装node最新的稳定版本"><a href="#安装node最新的稳定版本" class="headerlink" title="安装node最新的稳定版本"></a>安装node最新的稳定版本</h3><pre><code class="bash">sudo n stable
+</code></pre>
+<h2 id="安装weex-toolkit"><a href="#安装weex-toolkit" class="headerlink" title="安装weex-toolkit"></a>安装weex-toolkit</h2><pre><code class="bash">$ npm install -g weex-toolkit
+</code></pre>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-CSS 盒状模型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/10/CSS 盒状模型/" class="article-date">
+  	<time datetime="2017-01-10T10:20:00.000Z" itemprop="datePublished">2017-01-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: CSS 盒状模型<br>date: 2017-09-05</p>
+<h3 id="一、盒模型定义"><a href="#一、盒模型定义" class="headerlink" title="一、盒模型定义"></a>一、盒模型定义</h3><p>(1)页面上显示的每个元素（包括内联元素）都可以看作一个盒子，即盒模型( box model );</p>
+<p>(2)盒模型由 4 部分组成，从内到外分别是：<code>content padding border margin</code></p>
+<p><img src="http://oph264zoo.bkt.clouddn.com/17-8-27/30023282.jpg" alt="img"></p>
+<h3 id="二、w3c与-IE的差别"><a href="#二、w3c与-IE的差别" class="headerlink" title="二、w3c与 IE的差别"></a>二、w3c与 IE的差别</h3><p><strong>W3C 标准盒模型</strong>一个元素的宽度（高度以此类推）应该这样计算：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">一个元素的宽度 =  content</div><div class="line"></div><div class="line">盒子总宽度 = margin-left + border-left + padding-left + width + padding-right + border-right + margin-right</div></pre></td></tr></table></figure>
+<p>而<strong>IE 怪异盒模型</strong>一个元素的宽度（高度以此类推）却是这样计算的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">一个元素的宽度 =  content + padding + border</div><div class="line"></div><div class="line">盒子总宽度 = margin-left + width + margin-right</div></pre></td></tr></table></figure>
+<h3 id="三、w3c与-IE的差别的解决方案-box-sizing"><a href="#三、w3c与-IE的差别的解决方案-box-sizing" class="headerlink" title="三、w3c与 IE的差别的解决方案  box-sizing"></a>三、w3c与 IE的差别的解决方案  box-sizing</h3><p>（1）浏览器默认设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// W3C 标准盒模型（浏览器默认）</div><div class="line">box-sizing: content-box;</div><div class="line"></div><div class="line">// IE 怪异盒模型</div><div class="line">box-sizing: border-box;</div></pre></td></tr></table></figure>
+<p>（2）统一设置：</p>
+<p>当我们设置 <code>box-sizing: border-box;</code> 时，<code>border</code> 和 <code>padding</code> 就被包含在了宽高之内，和 IE 盒模型是一样的。</p>
+<p>所以，为了避免你同一份 css 在不同浏览器下表现不同，最好加上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">*, *:before, *:after &#123;</div><div class="line">  -moz-box-sizing: border-box;</div><div class="line">  -webkit-box-sizing: border-box;</div><div class="line">  box-sizing: border-box;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="四、JS-如何获取盒模型对应的宽和高"><a href="#四、JS-如何获取盒模型对应的宽和高" class="headerlink" title="四、JS 如何获取盒模型对应的宽和高"></a>四、JS 如何获取盒模型对应的宽和高</h3><p>四种方式：</p>
+<p>（1）style</p>
+<p>（2）currentStyle</p>
+<p>（3）getComputedStyle(“元素”)</p>
+<p>（4）getBoundingClientRect()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"> &lt;style&gt;</div><div class="line">  * &#123;</div><div class="line">    margin: 0;</div><div class="line">    padding: 0;</div><div class="line">  &#125;</div><div class="line">  #box &#123;</div><div class="line">    width: 100px;</div><div class="line">    height: 100px;</div><div class="line">    padding: 50px;</div><div class="line">    border: 5px solid red;</div><div class="line">    margin: 50px;</div><div class="line">  &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div id=&quot;box&quot; style=&quot;&quot;&gt;&lt;/div&gt;</div><div class="line"></div><div class="line"> let box = document.getElementById(&apos;box&apos;)</div><div class="line">  // 只能取到内联样式的宽高</div><div class="line">  console.log(&apos;style:&apos; + box.style.width) // 100px</div><div class="line"></div><div class="line">  // 内联样式和外联样式的宽高都能取到，但只有 IE 支持</div><div class="line">  console.log(&apos;currentStyle:&apos; + box.currentStyle.width) // 100px</div><div class="line"></div><div class="line">  // 内联样式和外联样式的宽高都能取到，几乎所有主流浏览器都支持</div><div class="line">  console.log(&apos;getComputedStyle:&apos; + getComputedStyle(box).width) // 100px</div><div class="line"></div><div class="line">  // 内联样式和外联样式的宽高都能取到，几乎所有主流浏览器都支持，取到的是盒子总宽度 console.log(&apos;getBoundingClientRect:&apos;+box.getBoundingClientRect().width)</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-BFC_IFC" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/10/BFC_IFC/" class="article-date">
+  	<time datetime="2017-01-10T10:20:00.000Z" itemprop="datePublished">2017-01-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: BFC 原理讲解<br>date: 2017-09-05</p>
+<h3 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-promise" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/10/promise/" class="article-date">
+  	<time datetime="2017-01-09T16:00:00.000Z" itemprop="datePublished">2017-01-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/10/promise/">promise</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ES6 Promise 先拉出来遛遛<br>复杂的概念先不讲，我们先简单粗暴地把Promise用一下，有个直观感受。那么第一个问题来了，Promise是什么玩意呢？是一个类？对象？数组？函数？</p>
+<p>别猜了，直接打印出来看看吧，console.dir(Promise)，就这么简单粗暴。</p>
+<p>这么一看就明白了，Promise是一个构造函数，自己身上有all、reject、resolve这几个眼熟的方法，原型上有then、catch等同样很眼熟的方法。这么说用Promise new出来的对象肯定就有then、catch方法喽，没错。</p>
+<p>那就new一个玩玩吧。<br>复制代码</p>
+<p>var p = new Promise(function(resolve, reject){<br>    //做一些异步操作<br>    setTimeout(function(){<br>        console.log(‘执行完成’);<br>        resolve(‘随便什么数据’);<br>    }, 2000);<br>});<br>复制代码<br>Promise的构造函数接收一个参数，是函数，并且传入两个参数：resolve，reject，分别表示异步操作执行成功后的回调函数和异步操作执行失败后的回调函数。其实这里用“成功”和“失败”来描述并不准确，按照标准来讲，resolve是将Promise的状态置为fullfiled，reject是将Promise的状态置为rejected。不过在我们开始阶段可以先这么理解，后面再细究概念。</p>
+<p>在上面的代码中，我们执行了一个异步操作，也就是setTimeout，2秒后，输出“执行完成”，并且调用resolve方法。</p>
+<p>运行代码，会在2秒后输出“执行完成”。注意！我只是new了一个对象，并没有调用它，我们传进去的函数就已经执行了，这是需要注意的一个细节。所以我们用Promise的时候一般是包在一个函数中，在需要的时候去运行这个函数，如：<br>复制代码<br>function runAsync(){<br>    var p = new Promise(function(resolve, reject){<br>        //做一些异步操作<br>        setTimeout(function(){<br>            console.log(‘执行完成’);<br>            resolve(‘随便什么数据’);<br>        }, 2000);<br>    });<br>    return p;<br>}<br>runAsync()<br>复制代码<br>这时候你应该有两个疑问：1.包装这么一个函数有毛线用？2.resolve(‘随便什么数据’);这是干毛的？</p>
+<p>我们继续来讲。在我们包装好的函数最后，会return出Promise对象，也就是说，执行这个函数我们得到了一个Promise对象。还记得Promise对象上有then、catch方法吧？这就是强大之处了，看下面的代码：<br>复制代码<br>runAsync().then(function(data){<br>    console.log(data);<br>    //后面可以用传过来的数据做些其他操作<br>    //……<br>});<br>复制代码<br>在runAsync()的返回上直接调用then方法，then接收一个参数，是函数，并且会拿到我们在runAsync中调用resolve时传的的参数。运行这段代码，会在2秒后输出“执行完成”，紧接着输出“随便什么数据”。</p>
+<p>这时候你应该有所领悟了，原来then里面的函数就跟我们平时的回调函数一个意思，能够在runAsync这个异步任务执行完成之后被执行。这就是Promise的作用了，简单来讲，就是能把原来的回调写法分离出来，在异步操作执行完后，用链式调用的方式执行回调函数。</p>
+<p>你可能会不屑一顾，那么牛逼轰轰的Promise就这点能耐？我把回调函数封装一下，给runAsync传进去不也一样吗，就像这样：<br>复制代码<br>function runAsync(callback){<br>    setTimeout(function(){<br>        console.log(‘执行完成’);<br>        callback(‘随便什么数据’);<br>    }, 2000);<br>}</p>
+<p>runAsync(function(data){<br>    console.log(data);<br>});<br>复制代码<br>效果也是一样的，还费劲用Promise干嘛。那么问题来了，有多层回调该怎么办？如果callback也是一个异步操作，而且执行完后也需要有相应的回调函数，该怎么办呢？总不能再定义一个callback2，然后给callback传进去吧。而Promise的优势在于，可以在then方法中继续写Promise对象并返回，然后继续调用then来进行回调操作。</p>
+<p>链式操作的用法<br>所以，从表面上看，Promise只是能够简化层层回调的写法，而实质上，Promise的精髓是“状态”，用维护状态、传递状态的方式来使得回调函数能够及时调用，它比传递callback函数要简单、灵活的多。所以使用Promise的正确场景是这样的：<br>复制代码<br>runAsync1()<br>.then(function(data){<br>    console.log(data);<br>    return runAsync2();<br>})<br>.then(function(data){<br>    console.log(data);<br>    return runAsync3();<br>})<br>.then(function(data){<br>    console.log(data);<br>});<br>复制代码<br>这样能够按顺序，每隔两秒输出每个异步回调中的内容，在runAsync2中传给resolve的数据，能在接下来的then方法中拿到。运行结果如下：</p>
+<p>猜猜runAsync1、runAsync2、runAsync3这三个函数都是如何定义的？没错，就是下面这样（代码较长请自行展开）：</p>
+<p>复制代码<br>function runAsync1(){<br>    var p = new Promise(function(resolve, reject){<br>        //做一些异步操作<br>        setTimeout(function(){<br>            console.log(‘异步任务1执行完成’);<br>            resolve(‘随便什么数据1’);<br>        }, 1000);<br>    });<br>    return p;<br>}<br>function runAsync2(){<br>    var p = new Promise(function(resolve, reject){<br>        //做一些异步操作<br>        setTimeout(function(){<br>            console.log(‘异步任务2执行完成’);<br>            resolve(‘随便什么数据2’);<br>        }, 2000);<br>    });<br>    return p;<br>}<br>function runAsync3(){<br>    var p = new Promise(function(resolve, reject){<br>        //做一些异步操作<br>        setTimeout(function(){<br>            console.log(‘异步任务3执行完成’);<br>            resolve(‘随便什么数据3’);<br>        }, 2000);<br>    });<br>    return p;<br>}<br>复制代码</p>
+<p>在then方法中，你也可以直接return数据而不是Promise对象，在后面的then中就可以接收到数据了，比如我们把上面的代码修改成这样：<br>复制代码<br>runAsync1()<br>.then(function(data){<br>    console.log(data);<br>    return runAsync2();<br>})<br>.then(function(data){<br>    console.log(data);<br>    return ‘直接返回数据’;  //这里直接返回数据<br>})<br>.then(function(data){<br>    console.log(data);<br>});<br>复制代码</p>
+<p>那么输出就变成了这样：</p>
+<p>reject的用法<br>到这里，你应该对“Promise是什么玩意”有了最基本的了解。那么我们接着来看看ES6的Promise还有哪些功能。我们光用了resolve，还没用reject呢，它是做什么的呢？事实上，我们前面的例子都是只有“执行成功”的回调，还没有“失败”的情况，reject的作用就是把Promise的状态置为rejected，这样我们在then中就能捕捉到，然后执行“失败”情况的回调。看下面的代码。<br>复制代码<br>function getNumber(){<br>    var p = new Promise(function(resolve, reject){<br>        //做一些异步操作<br>        setTimeout(function(){<br>            var num = Math.ceil(Math.random()*10); //生成1-10的随机数<br>            if(num&lt;=5){<br>                resolve(num);<br>            }<br>            else{<br>                reject(‘数字太大了’);<br>            }<br>        }, 2000);<br>    });<br>    return p;<br>}</p>
+<p>getNumber()<br>.then(<br>    function(data){<br>        console.log(‘resolved’);<br>        console.log(data);<br>    },<br>    function(reason, data){<br>        console.log(‘rejected’);<br>        console.log(reason);<br>    }<br>);<br>复制代码<br>getNumber函数用来异步获取一个数字，2秒后执行完成，如果数字小于等于5，我们认为是“成功”了，调用resolve修改Promise的状态。否则我们认为是“失败”了，调用reject并传递一个参数，作为失败的原因。</p>
+<p>运行getNumber并且在then中传了两个参数，then方法可以接受两个参数，第一个对应resolve的回调，第二个对应reject的回调。所以我们能够分别拿到他们传过来的数据。多次运行这段代码，你会随机得到下面两种结果：<br> 或者 </p>
+<p>catch的用法<br>我们知道Promise对象除了then方法，还有一个catch方法，它是做什么用的呢？其实它和then的第二个参数一样，用来指定reject的回调，用法是这样：<br>复制代码<br>getNumber()<br>.then(function(data){<br>    console.log(‘resolved’);<br>    console.log(data);<br>})<br>.catch(function(reason){<br>    console.log(‘rejected’);<br>    console.log(reason);<br>});<br>复制代码<br>效果和写在then的第二个参数里面一样。不过它还有另外一个作用：在执行resolve的回调（也就是上面then中的第一个参数）时，如果抛出异常了（代码出错了），那么并不会报错卡死js，而是会进到这个catch方法中。请看下面的代码：<br>复制代码<br>getNumber()<br>.then(function(data){<br>    console.log(‘resolved’);<br>    console.log(data);<br>    console.log(somedata); //此处的somedata未定义<br>})<br>.catch(function(reason){<br>    console.log(‘rejected’);<br>    console.log(reason);<br>});<br>复制代码<br>在resolve的回调中，我们console.log(somedata);而somedata这个变量是没有被定义的。如果我们不用Promise，代码运行到这里就直接在控制台报错了，不往下运行了。但是在这里，会得到这样的结果：</p>
+<p>也就是说进到catch方法里面去了，而且把错误原因传到了reason参数中。即便是有错误的代码也不会报错了，这与我们的try/catch语句有相同的功能。</p>
+<p>all的用法<br>Promise的all方法提供了并行执行异步操作的能力，并且在所有异步操作执行完后才执行回调。我们仍旧使用上面定义好的runAsync1、runAsync2、runAsync3这三个函数，看下面的例子：<br>复制代码<br>Promise<br>.all([runAsync1(), runAsync2(), runAsync3()])<br>.then(function(results){<br>    console.log(results);<br>});<br>复制代码<br>用Promise.all来执行，all接收一个数组参数，里面的值最终都算返回Promise对象。这样，三个异步操作的并行执行的，等到它们都执行完后才会进到then里面。那么，三个异步操作返回的数据哪里去了呢？都在then里面呢，all会把所有异步操作的结果放进一个数组中传给then，就是上面的results。所以上面代码的输出结果就是：</p>
+<p>有了all，你就可以并行执行多个异步操作，并且在一个回调中处理所有的返回数据，是不是很酷？有一个场景是很适合用这个的，一些游戏类的素材比较多的应用，打开网页时，预先加载需要用到的各种资源如图片、flash以及各种静态文件。所有的都加载完后，我们再进行页面的初始化。</p>
+<p>race的用法<br>all方法的效果实际上是「谁跑的慢，以谁为准执行回调」，那么相对的就有另一个方法「谁跑的快，以谁为准执行回调」，这就是race方法，这个词本来就是赛跑的意思。race的用法与all一样，我们把上面runAsync1的延时改为1秒来看一下：<br>复制代码<br>Promise<br>.race([runAsync1(), runAsync2(), runAsync3()])<br>.then(function(results){<br>    console.log(results);<br>});<br>复制代码<br>这三个异步操作同样是并行执行的。结果你应该可以猜到，1秒后runAsync1已经执行完了，此时then里面的就执行了。结果是这样的：</p>
+<p>你猜对了吗？不完全，是吧。在then里面的回调开始执行时，runAsync2()和runAsync3()并没有停止，仍旧再执行。于是再过1秒后，输出了他们结束的标志。</p>
+<p>这个race有什么用呢？使用场景还是很多的，比如我们可以用race给某个异步请求设置超时时间，并且在超时后执行相应的操作，代码如下：<br>复制代码<br>//请求某个图片资源<br>function requestImg(){<br>    var p = new Promise(function(resolve, reject){<br>        var img = new Image();<br>        img.onload = function(){<br>            resolve(img);<br>        }<br>        img.src = ‘xxxxxx’;<br>    });<br>    return p;<br>}</p>
+<p>//延时函数，用于给请求计时<br>function timeout(){<br>    var p = new Promise(function(resolve, reject){<br>        setTimeout(function(){<br>            reject(‘图片请求超时’);<br>        }, 5000);<br>    });<br>    return p;<br>}</p>
+<p>Promise<br>.race([requestImg(), timeout()])<br>.then(function(results){<br>    console.log(results);<br>})<br>.catch(function(reason){<br>    console.log(reason);<br>});<br>复制代码<br>requestImg函数会异步请求一张图片，我把地址写为”xxxxxx”，所以肯定是无法成功请求到的。timeout函数是一个延时5秒的异步操作。我们把这两个返回Promise对象的函数放进race，于是他俩就会赛跑，如果5秒之内图片请求成功了，那么遍进入then方法，执行正常的流程。如果5秒钟图片还未成功返回，那么timeout就跑赢了，则进入catch，报出“图片请求超时”的信息。运行结果如下：</p>
+<p>总结<br>ES6 Promise的内容就这些吗？是的，能用到的基本就这些。<br>我怎么还见过done、finally、success、fail等，这些是啥？这些并不在Promise标准中，而是我们自己实现的语法糖。</p>
+<p>本文中所有异步操作均以setTimeout为例子，之所以不使用ajax是为了避免引起混淆，因为谈起ajax，很多人的第一反应就是jquery的ajax，而jquery又有自己的Promise实现。如果你理解了原理，就知道使用setTimeout和使用ajax是一样的意思。说起jquery，我不得不吐槽一句，jquery的Promise实现太过垃圾，各种语法糖把人都搞蒙了，我认为Promise之所以没有全面普及和jquery有很大的关系。后面我们会细讲jquery。</p>
+<p>关于Promise还有一些内容是需要讲的，限于篇幅，本文就只作ES6 Promise的讲解，接下来还会有大白话讲解系列：<br>Promise/A+规范<br>jquery中的Promise</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-newData" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/20/newData/" class="article-date">
+  	<time datetime="2016-12-19T16:00:00.000Z" itemprop="datePublished">2016-12-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/20/newData/">new Data(y,m,0)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="获取相对值"><a href="#获取相对值" class="headerlink" title="获取相对值"></a>获取相对值</h2><p>var a = new Data(y,m,0);<br>获取 当月（m）1号前一天的日期；—-即上月最后一天的日期</p>
+<p>var a = new Data(y,m,-1);<br>获取 当月（m）1号前两天的日期；</p>
+<p>var a = new Data(y,m,1);<br>获取 当月（m）1号后一天的日期；</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-redis2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/08/redis2/" class="article-date">
+  	<time datetime="2016-12-07T16:00:00.000Z" itemprop="datePublished">2016-12-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/08/redis2/">redis</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://redis.io/download" target="_blank" rel="external">官网下载</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>tar zxvf redis-2.8.9.tar.gz<br>cd redis-2.8.9</p>
+<h3 id="make-编译"><a href="#make-编译" class="headerlink" title="make 编译"></a>make 编译</h3><p>make</p>
+<h3 id="可使用root用户执行make-install，将可执行文件拷贝到-usr-local-bin目录下。这样就可以直接敲名字运行程序了。"><a href="#可使用root用户执行make-install，将可执行文件拷贝到-usr-local-bin目录下。这样就可以直接敲名字运行程序了。" class="headerlink" title="可使用root用户执行make install，将可执行文件拷贝到/usr/local/bin目录下。这样就可以直接敲名字运行程序了。"></a>可使用root用户执行<code>make install</code>，将可执行文件拷贝到/usr/local/bin目录下。这样就可以直接敲名字运行程序了。</h3><p>make install</p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>#加上<code>&amp;</code>号使redis以后台程序方式运行<br>./redis-server &amp;</p>
+<h2 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h2><h3 id="检测后台进程是否存在"><a href="#检测后台进程是否存在" class="headerlink" title="检测后台进程是否存在"></a>检测后台进程是否存在</h3><p>ps -ef |grep redis</p>
+<h3 id="检测6379端口是否在监听"><a href="#检测6379端口是否在监听" class="headerlink" title="检测6379端口是否在监听"></a>检测6379端口是否在监听</h3><p>netstat -lntp | grep 6379</p>
+<p>###使用<code>redis-cli</code>客户端检测连接是否正常<br>./redis-cli<br>127.0.0.1:6379&gt; keys *<br>(empty list or set)<br>127.0.0.1:6379&gt; set key “hello world”<br>OK<br>127.0.0.1:6379&gt; get key<br>“hello world”<br>停止</p>
+<h2 id="使用客户端"><a href="#使用客户端" class="headerlink" title="使用客户端"></a>使用客户端</h2><p>redis-cli shutdown</p>
+<h4 id="因为Redis可以妥善处理SIGTERM信号，所以直接kill-9也是可以的"><a href="#因为Redis可以妥善处理SIGTERM信号，所以直接kill-9也是可以的" class="headerlink" title="因为Redis可以妥善处理SIGTERM信号，所以直接kill -9也是可以的"></a>因为Redis可以妥善处理SIGTERM信号，所以直接kill -9也是可以的</h4><p>kill -9 PID</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-git 新建远程分支" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/02/git 新建远程分支/" class="article-date">
+  	<time datetime="2016-12-01T16:00:00.000Z" itemprop="datePublished">2016-12-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/02/git 新建远程分支/">git 新建远程分支</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -a</div></pre></td></tr></table></figure>
+<p>其中带星号的为当前分支</p>
+<h2 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch</div></pre></td></tr></table></figure>
+<h2 id="创建分支（git-branch-《分支名称》-）"><a href="#创建分支（git-branch-《分支名称》-）" class="headerlink" title="创建分支（git branch 《分支名称》 ）"></a>创建分支（git branch 《分支名称》 ）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch <span class="built_in">test</span>   <span class="comment"># 创建test分支</span></div></pre></td></tr></table></figure>
+<h2 id="把本地分支推到远程分支"><a href="#把本地分支推到远程分支" class="headerlink" title="把本地分支推到远程分支"></a>把本地分支推到远程分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin <span class="built_in">test</span>        <span class="comment"># 将test 分支推送到远程</span></div></pre></td></tr></table></figure>
+<h2 id="切换分支到test"><a href="#切换分支到test" class="headerlink" title="切换分支到test"></a>切换分支到test</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout <span class="built_in">test</span></div></pre></td></tr></table></figure>
+<h2 id="删除本地分支test-Git-branch-d-test-或者-git-br-d-test"><a href="#删除本地分支test-Git-branch-d-test-或者-git-br-d-test" class="headerlink" title="删除本地分支test   Git branch -d test  或者 git br -d test"></a>删除本地分支test   Git branch -d test  或者 git br -d test</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git br -d <span class="built_in">test</span></div></pre></td></tr></table></figure>
+<p>删除前先切换至其他分支，才可以删除</p>
+<h2 id="删除远程版本"><a href="#删除远程版本" class="headerlink" title="删除远程版本"></a>删除远程版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin :br-1.0.0</div></pre></td></tr></table></figure>
+<h2 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch -r -d origin/branch-name  </div><div class="line">git push origin :branch-name</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-pm2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -227,513 +824,9 @@ json格式的配置文件，pm2当作普通的js文件来处理，所以可以�
 
 
   
-    <article id="post-Javascript闭包" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/11/Javascript闭包/" class="article-date">
-  	<time datetime="2016-11-10T16:00:00.000Z" itemprop="datePublished">2016-11-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/11/Javascript闭包/">Javascript闭包</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>   JS闭包是什么？<br>　　Ali的回答：<br>　　当function里嵌套function时，内部的function可以访问外部function里的变量。</p>
-<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> foo(x) &#123;</div><div class="line">    var tmp = 3;</div><div class="line">    <span class="keyword">function</span> bar(y) &#123;</div><div class="line">        alert(x + y + (++tmp));</div><div class="line">    &#125;</div><div class="line">    bar(10);</div><div class="line">&#125;</div><div class="line">foo(2)</div></pre></td></tr></table></figure>
-</code></pre><p>　　不管执行多少次，都会alert 16，因为bar能访问foo的参数x，也能访问foo的变量tmp。<br>　　但，这还不是闭包。当你return的是内部function时，就是一个闭包。内部function会close-over外部function的变量直到内部function结束。</p>
-<pre><code>function foo(x) {
-    var tmp = 3;
-    return function (y) {
-        alert(x + y + (++tmp));
-    }
-}
-var bar = foo(2); // bar 现在是一个闭包
-bar(10);
-</code></pre><p>　　上面的脚本最终也会alert 16，因为虽然bar不直接处于foo的内部作用域，但bar还是能访问x和tmp。<br>　　但是，由于tmp仍存在于bar闭包的内部，所以它还是会自加1，而且你每次调用bar时它都会自加1.<br>　　（考虑到六岁这个限制：我们其实可以建立不止一个闭包方法，比如return它们的数组，也可以把它们设置为全局变量。它们全都指向相同的x和相同的tmp，而不是各自有一份副本。）<br>　　注：现在来整点儿七岁的内容。<br>　　上面的x是一个字面值（值传递），和JS里其他的字面值一样，当调用foo时，实参x的值被复制了一份，复制的那一份作为了foo的参数x。<br>　　那么问题来了，JS里处理object时是用到引用传递的，那么，你调用foo时传递一个object，foo函数return的闭包也会引用最初那个object！<br>function foo(x) {<br>var tmp = 3;<br>return function (y) {<br>    alert(x + y + tmp);<br>    x.memb = x.memb ? x.memb + 1 : 1;<br>    alert(x.memb);<br>    }<br>}<br>var age = new Number(2);<br>var bar = foo(age); // bar 现在是一个引用了age的闭包<br>bar(10);<br>　　不出我们意料，每次运行bar(10)，x.memb都会自加1。但需要注意的是x每次都指向同一个object变量——age，运行两次bar(10)后，age.memb会变成2.<br>　　这和HTML对象的内存泄漏有关，呃，不过貌似超出了答题的范围。<br>　　JohnMerlino 对Ali说：<br>　　这里有一个不用return关键字的闭包例子：<br>function closureExample(objID, text, timedelay) {<br>    setTimeout(function() {<br>        document.getElementById(objID).innerHTML = text;<br>    }, timedelay);<br>}<br>closureExample(‘myDiv’, ‘Closure is created’, 500);<br>　　深夜1:37 John Pick这样回答：<br>　　JS里的function能访问它们的：<br>　　1. 参数<br>　　2. 局部变量或函数<br>　　3. 外部变量（环境变量？），包括<br>3.1 全局变量，包括DOM。<br>3.2 外部函数的变量或函数。<br>　　如果一个函数访问了它的外部变量，那么它就是一个闭包。<br>　　注意，外部函数不是必需的。通过访问外部变量，一个闭包可以维持（keep alive）这些变量。在内部函数和外部函数的例子中，外部函数可以创建局部变量，并且最终退出；但是，如果任何一个或多个内部函数在它退出后却没有退出，那么内部函数就维持了外部函数的局部数据。<br>　　一个典型的例子就是全局变量的使用。<br>　　mykhal这样回答：<br>　　Wikipedia对闭包的定义是这样的：<br>In computer science, a closure is a function together with a referencing environment for the nonlocal names (free variables) of that function.<br>　　从技术上来讲，在JS中，每个function都是闭包，因为它总是能访问在它外部定义的数据。<br>　　Since scope-defining construction in Javascript is a function, not a code block like in many other languages, what we usually mean by closure in Javascript is a fuction working with nonlocal variables defined in already executed surrounding function.<br>　　闭包经常用于创建含有隐藏数据的函数（但并不总是这样）。<br>var db = (function() {<br>// 创建一个隐藏的object, 这个object持有一些数据<br>// 从外部是不能访问这个object的<br>var data = {};<br>// 创建一个函数, 这个函数提供一些访问data的数据的方法<br>return function(key, val) {<br>    if (val === undefined) { return data[key] } // get<br>    else { return data[key] = val } // set<br>    }<br>// 我们可以调用这个匿名方法<br>// 返回这个内部函数，它是一个闭包<br>})();</p>
-<p>db(‘x’); // 返回 undefined<br>db(‘x’, 1); // 设置data[‘x’]为1<br>db(‘x’); // 返回 1<br>// 我们不可能访问data这个object本身<br>// 但是我们可以设置它的成员<br>　　看了这么多外国大牛的解答，不知道你懂还是不懂，反正我是懂了。<br>　　P.S. 发布文章之后看到@xiaotie的一篇文章，觉得有必要推荐一下，因为其剖析得更为深入。有人说应该在文章结尾对闭包进行总结，可惜小弟才疏学浅，不能给出一个精辟的总结。<br>　　@xiaotie对闭包的总结如下：<br>（1）闭包是一种设计原则，它通过分析上下文，来简化用户的调用，让用户在不知晓的情况下，达到他的目的；<br>（2）网上主流的对闭包剖析的文章实际上是和闭包原则反向而驰的，如果需要知道闭包细节才能用好的话，这个闭包是设计失败的；<br>（3）尽量少学习。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-前端项目框架" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/31/前端项目框架/" class="article-date">
-  	<time datetime="2016-10-31T03:31:49.000Z" itemprop="datePublished">2016-10-31</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前端项目框架</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-webpack +gulp" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/31/webpack +gulp/" class="article-date">
-  	<time datetime="2016-10-31T03:31:20.000Z" itemprop="datePublished">2016-10-31</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>webpack +gulp</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-node 环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/31/node 环境搭建/" class="article-date">
-  	<time datetime="2016-10-31T03:30:46.000Z" itemprop="datePublished">2016-10-31</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>node 环境搭建</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-vue-router2.0" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/31/vue-router2.0/" class="article-date">
-  	<time datetime="2016-10-31T03:30:19.000Z" itemprop="datePublished">2016-10-31</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>The old router.go() is now router.push() .</p>
-<p>新的 router.go 类似 window.history.go() : 接受一个数值作为参数在历史栈中导航</p>
-<p>新增的方法:</p>
-<p>router.back()</p>
-<p>router.forward()</p>
-<p>routes 选项取代了 router.map() 。路由配置现在用数组而不是用对象哈希表来作为数据结构。这保证了一致的匹配次序（对象键值枚举的次序是依赖游览器的）。</p>
-<p>以下的路由器实例化选项被作废了：</p>
-<p>history (被 mode 取代)</p>
-<p>abstract (被 mode 取代)</p>
-<p>root (被 base 取代)</p>
-<p>saveScrollPosition (被 scrollBehavior 取代，后者用起来更加灵活，下面会提到)</p>
-<p>hashbang (因为 hashbang 在Google爬站的时候不在需要，所以移除了此选项)</p>
-<p>transitionOnLoad (因为 Vue 2.0 有显式的视觉表现过渡动画控制，所以此选项移除)</p>
-<p>suppressTransitionError (因为钩子函数的系统的简化而移除)</p>
-<p>新的 mode 选项取值为： (默认是 “hash”):</p>
-<p>“abstract”</p>
-<p>“hash”</p>
-<p>“history”</p>
-<p>在不支持 history.pushState 的浏览器中, 路由器会自动回退为 hash 模式.</p>
-<p>下列方法已经作废：</p>
-<p>router.map (被 routes 选项取代)</p>
-<p>router.beforeEach (被 beforeEach 选项取代，不过 beta2中有修改，见下面)</p>
-<p>router.afterEach (被 afterEach 选项取代，不过 beta2中有修改，见下面)</p>
-<p>router.redirect (现在可以在 routes 中直接声明, 参见 Example )</p>
-<p>router.alias (现在可以在 routes 配置中直接声明, 参见 Example )</p>
-<p>1.0版本不用new Vue，一直都是像下面这样启动<br>import app from ‘app.vue’;<br>router.start(app, ‘#app’);<br>2.0官方给的例子全是模版写在template里的， 官方文档也没有这样的例子。我试着在vue2.0的模板里这样挂载结果报错</p>
-<p>import Vue from ‘vue’;<br>import App from ‘./app.vue’;<br>import router from ‘./router’;</p>
-<p>var app = new Vue({<br>    router,<br>    render: h =&gt; h(App)<br>}).$mount(‘#app’);</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-vuex2.0" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/31/vuex2.0/" class="article-date">
-  	<time datetime="2016-10-31T03:29:52.000Z" itemprop="datePublished">2016-10-31</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>vuex2.0</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-babel5.0 升到6.0 遇到的坑" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/30/babel5.0 升到6.0 遇到的坑/" class="article-date">
-  	<time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/30/babel5.0 升到6.0 遇到的坑/">babel5.0 升到6.0 遇到的坑</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装-babel-cli"><a href="#安装-babel-cli" class="headerlink" title="安装 babel-cli"></a>安装 babel-cli</h2><p>在命令行下使用 Babel</p>
-<h2 id="安装-编译插件：babel-reset-es2015"><a href="#安装-编译插件：babel-reset-es2015" class="headerlink" title="安装 编译插件：babel-reset-es2015"></a>安装 编译插件：babel-reset-es2015</h2><p>babel-cli 只是将代码原样输出，需要使用babel-reset-es2015进行编译</p>
-<h3 id="babel-preset-stage-3"><a href="#babel-preset-stage-3" class="headerlink" title="babel-preset-stage-3"></a>babel-preset-stage-3</h3><p>如果不安装babel-preset-stage-3，无法使用vuex2.0中的对象合并</p>
-<p>vuex2.0 中的mapState 返回一个对象。我们如何使用 mapState 合并其他局部的计算属性呢？通常地，为了将多个对象合并为一个对象，再把这个合并好的最终对象传入到 computed 属性去，我们不得不使用一个工具函数来实现。然而有了对象扩展运算符（ECMAScript 提案 stage-3），我们可以大大简化语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">  <span class="function"><span class="title">localComputed</span></span> () &#123; /* ... */ &#125;,</div><div class="line">  // 使用对象扩展运算符，将 mapState 返回的对象和外层其他计算属性混合起来</div><div class="line">  ...mapState(&#123;</div><div class="line">    // ...</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><a href="https://vuefe.cn/vuex/state.html" target="_blank" rel="external">vueX2.0</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-babel_6" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/30/babel_6/" class="article-date">
-  	<time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/30/babel_6/">babel 6.0</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Babel 是一个通用的多用途 JavaScript 编译器。通过 Babel 你可以使用（并创建）下一代的 JavaScript，以及下一代的 JavaScript 工具。</p>
-<p>用最新标准编写的 JavaScript 代码向下编译成可以在今天随处可用的版本。 这一过程叫做“源码到源码”编译， 也被称为转换编译。</p>
-<h2 id="配置-Babel—配置文件-babelrc"><a href="#配置-Babel—配置文件-babelrc" class="headerlink" title="配置 Babel—配置文件.babelrc"></a>配置 Babel—配置文件.babelrc</h2><pre><code>在项目的根路径下创建 .babelrc 文件，告诉 Babel 该做什么，即用来设置转码规则(presers)和插件(plugins)。
-
-基本格式如下：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"presets"</span>: [],</div><div class="line">  <span class="string">"plugins"</span>: []</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><h3 id="常用转码规则"><a href="#常用转码规则" class="headerlink" title="常用转码规则"></a>常用转码规则</h3><p>（1） ES2015转码规则（把 ES2015（最新版本的 JavaScript 标准，也叫做 ES6）编译成 ES5）<br>        安装：<br>        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-preset-es2015</div></pre></td></tr></table></figure></p>
-<p>（2） react转码规则<br>           安装：<br>           <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-preset-react</div></pre></td></tr></table></figure></p>
-<p>（3）babel-preset-stage-x<br>    ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个<br>       安装：<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-preset-stage-0</div><div class="line">$ npm install --save-dev babel-preset-stage-1</div><div class="line">$ npm install --save-dev babel-preset-stage-2</div><div class="line">$ npm install --save-dev babel-preset-stage-3</div><div class="line">`</div></pre></td></tr></table></figure></p>
-<h3 id="将以上这些规则加入-babelrc。"><a href="#将以上这些规则加入-babelrc。" class="headerlink" title="将以上这些规则加入.babelrc。"></a>将以上这些规则加入.babelrc。</h3><p>  {<br>    “presets”: [<br>          “es2015”,<br>          “react”,<br>          “stage-3”<br>    ],<br>    “plugins”: []<br>  }</p>
-<h2 id="Babel工具和模块"><a href="#Babel工具和模块" class="headerlink" title="Babel工具和模块"></a>Babel工具和模块</h2><h3 id="babel-cli"><a href="#babel-cli" class="headerlink" title="babel-cli"></a>babel-cli</h3><p>Babel提供babel-cli工具—-用于命令行转码</p>
-<p>(1)全局安装<br>1&gt;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --global babel-cli</div></pre></td></tr></table></figure></p>
-<p>2&gt;基本用法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 转码结果输出到标准输出</span></div><div class="line">$ babel example.js</div><div class="line"></div><div class="line"><span class="comment"># 转码结果写入一个文件</span></div><div class="line"><span class="comment"># --out-file 或 -o 参数指定输出文件</span></div><div class="line">$ babel example.js --out-file compiled.js</div><div class="line"><span class="comment"># 或者</span></div><div class="line">$ babel example.js -o compiled.js</div><div class="line"></div><div class="line"><span class="comment"># 整个目录转码</span></div><div class="line"><span class="comment"># --out-dir 或 -d 参数指定输出目录</span></div><div class="line">$ babel src --out-dir lib</div><div class="line"><span class="comment"># 或者</span></div><div class="line">$ babel src -d lib</div><div class="line"></div><div class="line"><span class="comment"># -s 参数生成source map文件</span></div><div class="line">$ babel src -d lib -s</div></pre></td></tr></table></figure></p>
-<p>(2)项目内运行 Babel CLI</p>
-<p>尽管你可以把 Babel CLI 全局安装在你的机器上，但是按项目安装会更好。</p>
-<p>有两个主要的原因：</p>
-<p>在同一台机器上的不同项目或许会依赖不同版本的 Babel 并允许你有选择的更新。<br>这意味着你对工作环境没有隐式依赖，这让你的项目有很好的可移植性并且易于安装。</p>
-<p>1&gt;本地安装 Babel CLI</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-cli</div></pre></td></tr></table></figure>
-<p>2&gt;安装完成后的 package.json<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  // ...</div><div class="line">  <span class="string">"devDependencies"</span>: &#123;</div><div class="line">    <span class="string">"babel-cli"</span>: <span class="string">"^6.0.0"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"build"</span>: <span class="string">"babel src -d lib"</span></div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>3&gt;转码的时候，就执行下面的命令。<br>$ npm run build</p>
-<h3 id="babel-node"><a href="#babel-node" class="headerlink" title="babel-node"></a>babel-node</h3><p>如果你要用 node CLI 来运行代码，那么整合 Babel 最简单的方式就是使用 babel-node CLI，它是 node CLI 的替代品。</p>
-<p>它支持Node的REPL环境的所有功能，而且可以直接运行ES6代码。<br>它不用单独安装，而是随babel-cli一起安装。然后，执行babel-node就进入PEPL环境。</p>
-<p>用babel-node替代node，这样代码本身就不用做任何转码处理。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ babel-node</div><div class="line">&gt; (x =&gt; x * 2)(1)</div><div class="line">2</div></pre></td></tr></table></figure>
-<p>babel-node命令可以直接运行ES6脚本。将上面的代码放入脚本文件es6.js，然后直接运行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ babel-node es6.js</div><div class="line">2</div></pre></td></tr></table></figure></p>
-<p>babel-node也可以安装在项目中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-cli</div></pre></td></tr></table></figure></p>
-<p>然后，改写package.json。<br>{<br>  “scripts”: {<br>    “script-name”: “babel-node script.js”<br>  }<br>}<br>上面代码中，使用babel-node替代node，这样script.js本身就不用做任何转码处理。</p>
-<h3 id="babel-core"><a href="#babel-core" class="headerlink" title="babel-core"></a>babel-core</h3><p>如果你需要以编程的方式来调用Babel的API进行转码，就可以使用 babel-core 这个模块。</p>
-<p>（1）安装 babel-core。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install babel-core</div></pre></td></tr></table></figure></p>
-<p>(2)项目中调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var babel = require(<span class="string">'babel-core'</span>);</div><div class="line"></div><div class="line">// 字符串转码</div><div class="line">babel.transform(<span class="string">'code();'</span>, options);</div><div class="line">// =&gt; &#123; code, map, ast &#125;</div><div class="line"></div><div class="line">// 文件转码（异步）</div><div class="line">babel.transformFile(<span class="string">'filename.js'</span>, options, <span class="keyword">function</span>(err, result) &#123;</div><div class="line">  result; // =&gt; &#123; code, map, ast &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 文件转码（同步）</div><div class="line">babel.transformFileSync(<span class="string">'filename.js'</span>, options);</div><div class="line">// =&gt; &#123; code, map, ast &#125;</div><div class="line"></div><div class="line">// Babel AST转码</div><div class="line">babel.transformFromAst(ast, code, options);</div><div class="line">// =&gt; &#123; code, map, ast &#125;</div></pre></td></tr></table></figure></p>
-<h3 id="babel-polyfill"><a href="#babel-polyfill" class="headerlink" title="babel-polyfill"></a>babel-polyfill</h3><p>Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。Babel默认不转码的API非常多。</p>
-<p>举例来说，ES6在Array对象上新增了Arrayfrom方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。</p>
-<p>（1）用 npm 安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save babel-polyfill</div></pre></td></tr></table></figure></p>
-<p>(2)调用<br>然后只需要在文件顶部导入 polyfill 就可以了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import <span class="string">"babel-polyfill"</span>;</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-checkbox全选" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/02/checkbox全选/" class="article-date">
-  	<time datetime="2016-09-02T08:58:18.000Z" itemprop="datePublished">2016-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/02/checkbox全选/">checkbox全选</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-遇到的问题"><a href="#一-遇到的问题" class="headerlink" title="一 遇到的问题"></a>一 遇到的问题</h2><p>jq关于checkbox全选的问题，点击全选一次再点一次取消，然后再这么点全选都没有用了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">这是jq代码为什么全选只有第一次点击有效</div><div class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</div><div class="line">         $(<span class="string">".ddd"</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">                $(this).closest(<span class="string">"tr"</span>).find(<span class="string">"input[type='checkbox']"</span>).attr(<span class="string">"checked"</span>,<span class="literal">true</span>);</div><div class="line">            &#125;);</div><div class="line">            $(<span class="string">".noc"</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">                $(this).closest(<span class="string">"tr"</span>).find(<span class="string">"input[type='checkbox']"</span>).attr(<span class="string">"checked"</span>,<span class="literal">false</span>);</div><div class="line">            &#125;);</div><div class="line">  &lt;/script&gt;</div></pre></td></tr></table></figure>
-<h2 id="二-解决办法"><a href="#二-解决办法" class="headerlink" title="二 解决办法"></a>二 解决办法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">把  .attr(<span class="string">"checked"</span>,<span class="literal">true</span>);  改成  .prop(<span class="string">"checked"</span>,<span class="literal">true</span>);</div></pre></td></tr></table></figure>
-<h2 id="三-原理"><a href="#三-原理" class="headerlink" title="三 原理"></a>三 原理</h2><p>具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled 使用prop()，其他的使用 attr()</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">我们看下 attr() 和 prop() 的区别：</div><div class="line"></div><div class="line">attr() 里面，最关键的两行代码</div><div class="line"></div><div class="line">elem.setAttribute( name, value + <span class="string">""</span> ); </div><div class="line"></div><div class="line">ret =  elem.getAttribute( name );</div><div class="line">很明显的看出来，使用的 DOM 的 API setAttribute() 和 getAttribute() 方法操作的属性元素节点。</div><div class="line"></div><div class="line">prop() 里面，最关键的两行代码</div><div class="line"></div><div class="line"><span class="built_in">return</span> ( elem[ name ] = value );</div><div class="line"></div><div class="line"><span class="built_in">return</span> elem[ name ];</div><div class="line">可以理解为 document.getElementById(el)[name] = value，这是转化成 element 的一个属性。</div></pre></td></tr></table></figure>
-<p>不建议使用 attr() 来对具有 true 和 false 两个属性的属性进行操作了。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>

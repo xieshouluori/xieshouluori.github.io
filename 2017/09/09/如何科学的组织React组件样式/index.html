@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>如何科学的组织React组件样式——模块化  样式之间互不影响 | 携手落日</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="方法一：定义类的前缀我们理想中的文件结构可能会是这样的： 1234567- components    - modal        - modal.jsx        - modal.css  // 可以是任意预处理器    - dropdown        - dropdown.jsx        - dropdown.css 然而，js现在可以做模块化，css并不行，所有css的定义都">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何科学的组织React组件样式——模块化  样式之间互不影响">
+<meta property="og:url" content="http://yoursite.com/2017/09/09/如何科学的组织React组件样式/index.html">
+<meta property="og:site_name" content="携手落日">
+<meta property="og:description" content="方法一：定义类的前缀我们理想中的文件结构可能会是这样的： 1234567- components    - modal        - modal.jsx        - modal.css  // 可以是任意预处理器    - dropdown        - dropdown.jsx        - dropdown.css 然而，js现在可以做模块化，css并不行，所有css的定义都">
+<meta property="og:updated_time" content="2017-09-09T15:47:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何科学的组织React组件样式——模块化  样式之间互不影响">
+<meta name="twitter:description" content="方法一：定义类的前缀我们理想中的文件结构可能会是这样的： 1234567- components    - modal        - modal.jsx        - modal.css  // 可以是任意预处理器    - dropdown        - dropdown.jsx        - dropdown.css 然而，js现在可以做模块化，css并不行，所有css的定义都">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">妞妞</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我思故我在</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/5411966680/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">妞妞</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">妞妞</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我思故我在</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/5411966680/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-如何科学的组织React组件样式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/09/如何科学的组织React组件样式/" class="article-date">
+  	<time datetime="2017-09-08T16:00:00.000Z" itemprop="datePublished">2017-09-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何科学的组织React组件样式——模块化  样式之间互不影响
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="方法一：定义类的前缀"><a href="#方法一：定义类的前缀" class="headerlink" title="方法一：定义类的前缀"></a>方法一：定义类的前缀</h2><p>我们理想中的文件结构可能会是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- components</div><div class="line">    - modal</div><div class="line">        - modal.jsx</div><div class="line">        - modal.css  // 可以是任意预处理器</div><div class="line">    - dropdown</div><div class="line">        - dropdown.jsx</div><div class="line">        - dropdown.css</div></pre></td></tr></table></figure>
+<p>然而，js现在可以做模块化，css并不行，所有css的定义都可以被视为全局变量，在css被打包后，一个组件的样式有可能会影响到其他组件，于是我们可以通过命名约定（name convention）来曲线救国（这一点并不局限于react开发）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@modal-prefix: modal;</div><div class="line"></div><div class="line">.@&#123;modal-prefix&#125; &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.@&#123;modal-prefix&#125;-title &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>类似于上面的使用less的方式，在文件顶部先定义个类的前缀，来尽量避免命名冲突的可能。于是在组件中就可以这样做</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">import &apos;./modal.less&apos;;</div><div class="line"></div><div class="line">export default React.createClass(&#123;</div><div class="line">    render () &#123;</div><div class="line">        return </div><div class="line"></div><div class="line">&lt;div className=&quot;modal-title&quot;&gt;Hello&lt;/div&gt;</div><div class="line"></div><div class="line">;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="方法二-：CSS-in-JS（行内样式）"><a href="#方法二-：CSS-in-JS（行内样式）" class="headerlink" title="方法二 ：CSS in JS（行内样式）"></a>方法二 ：CSS in JS（行内样式）</h2><p>把样式也直接写进组件里，即使用inline style。</p>
+<p>首先，直接用传统的inline style并不可取，它对属性的支持有限，比如不能用伪类、多个不同浏览器前缀的相同属性、媒体查询、动画等。</p>
+<p>至于重用样式而言，在react中倒是还行：将需要重用的样式对象作为模块导出即可。</p>
+<p>CSS in JS可以实现，比如：</p>
+<p><strong>react-style</strong></p>
+<p><a href="https://github.com/js-next/react-style" target="_blank" rel="external">github地址</a></p>
+<h2 id="方法三：local-scoped-CSS-（webpack-css模块化）"><a href="#方法三：local-scoped-CSS-（webpack-css模块化）" class="headerlink" title="方法三：local scoped CSS  （webpack css模块化）"></a>方法三：local scoped CSS  （webpack css模块化）</h2><p><a href="https://github.com/css-modules/css-modules" target="_blank" rel="external">https://github.com/css-modules/css-modules</a><br><a href="https://github.com/webpack/css-loader#local-scope" target="_blank" rel="external">https://github.com/webpack/css-loader#local-scope</a></p>
+<p>用这个东西现在是webpack官方支持的，已在<code>css-loader</code>中实现，</p>
+<p>(1)</p>
+<p>​    1.本地样式 用 :local(.title) { background: red; }</p>
+<p>​    2.共享样式用：</p>
+<p>​    :global {<br>      .global-class-name {<br>            color: green;<br>​      }<br>​    }</p>
+<p>(2)代码中运用  本地声明</p>
+<p>1.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// style.css</div><div class="line">:local(.title) &#123; background: red; &#125;</div></pre></td></tr></table></figure>
+<p>2.在需要这份样式的组件里引入这个模块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import styles from &apos;style.css&apos;</div><div class="line"></div><div class="line">&lt;div className=&#123;styles.title&#125;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>3.首先css的语法中是不支持这个:local()的，页面最终的代码为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;_3dpOqNNJl6oyjYpdDHCFD9&quot; data-reactid=&quot;.0.2.1&quot;&gt;Info&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>这也算是个预处理器，它将<code>:local(.title)</code>的类名变成了一个哈希值，仅可以通过模块导入的方式来获取这个哈希值 并应用到组件上（生成的类名是可以配置的）。</p>
+<p>(3)webpack配置：在<code>css-loader</code>可以通过添加<code>module</code>选项，</p>
+<p>​        使得css默认定义的是local scoped的，</p>
+<p>​    希望共享的可以用:global()定义。</p>
+<p>也可以和预处理器混用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">:global &#123;</div><div class="line">  .global-class-name &#123;</div><div class="line">    color: green;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>（4）目前看下来，它只对class名做哈希，对标签等不做哈希：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:local(.title span) // .[hash] span</div></pre></td></tr></table></figure>
+<p>然而</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:local(.title .name) // .[hash0] .[hash1]</div></pre></td></tr></table></figure>
+<p>这个算是一个有意思的方式，首先它依赖于webpack，而webpack并不局限于React的开发，任何前端项目都可以使用webpack，那么就也都可以使用CSS Modules的概念</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/09/vscode----eslint +默认配置文件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          vscode中 针对 react的 eslint配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/05/如何实现元素的水平垂直居中/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="如何科学的组织React组件样式" data-title="如何科学的组织React组件样式——模块化  样式之间互不影响" data-url="http://yoursite.com/2017/09/09/如何科学的组织React组件样式/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 妞妞
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

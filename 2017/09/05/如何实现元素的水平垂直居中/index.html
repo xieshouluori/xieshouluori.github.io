@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>携手落日</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="title: 如何实现元素的水平垂直居中date: 2017-09-05 http://www.jianshu.com/p/09ece194956a 水平居中1.方法1：若是行内元素  给其父级元素设置text-align:center,可以实现行内元素水平居中, 2.方法2:若是块级元素(div,p,ul,li,ol,h1-h6,dl,dt,dd,address,article,figure,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="携手落日">
+<meta property="og:url" content="http://yoursite.com/2017/09/05/如何实现元素的水平垂直居中/index.html">
+<meta property="og:site_name" content="携手落日">
+<meta property="og:description" content="title: 如何实现元素的水平垂直居中date: 2017-09-05 http://www.jianshu.com/p/09ece194956a 水平居中1.方法1：若是行内元素  给其父级元素设置text-align:center,可以实现行内元素水平居中, 2.方法2:若是块级元素(div,p,ul,li,ol,h1-h6,dl,dt,dd,address,article,figure,">
+<meta property="og:updated_time" content="2017-09-05T08:43:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="携手落日">
+<meta name="twitter:description" content="title: 如何实现元素的水平垂直居中date: 2017-09-05 http://www.jianshu.com/p/09ece194956a 水平居中1.方法1：若是行内元素  给其父级元素设置text-align:center,可以实现行内元素水平居中, 2.方法2:若是块级元素(div,p,ul,li,ol,h1-h6,dl,dt,dd,address,article,figure,">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">妞妞</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我思故我在</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/5411966680/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">妞妞</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">妞妞</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我思故我在</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/5411966680/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-如何实现元素的水平垂直居中" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/05/如何实现元素的水平垂直居中/" class="article-date">
+  	<time datetime="2017-09-05T07:06:36.000Z" itemprop="datePublished">2017-09-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: 如何实现元素的水平垂直居中<br>date: 2017-09-05</p>
+<p><a href="http://www.jianshu.com/p/09ece194956a" target="_blank" rel="external">http://www.jianshu.com/p/09ece194956a</a></p>
+<h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><h4 id="1-方法1：若是行内元素"><a href="#1-方法1：若是行内元素" class="headerlink" title="1.方法1：若是行内元素"></a>1.方法1：若是行内元素</h4><p>  给其父级元素设置text-align:center,可以实现行内元素水平居中,</p>
+<h4 id="2-方法2-若是块级元素"><a href="#2-方法2-若是块级元素" class="headerlink" title="2.方法2:若是块级元素"></a>2.方法2:若是块级元素</h4><h4 id="div-p-ul-li-ol-h1-h6-dl-dt-dd-address-article-figure-audio-video-section-table-canvas-header-table-footer-独自占一行-支持宽度和高度，要想实现水平居中-margin-0-auto"><a href="#div-p-ul-li-ol-h1-h6-dl-dt-dd-address-article-figure-audio-video-section-table-canvas-header-table-footer-独自占一行-支持宽度和高度，要想实现水平居中-margin-0-auto" class="headerlink" title="(div,p,ul,li,ol,h1-h6,dl,dt,dd,address,article,figure,audio,video,section,table,canvas,header,table,footer)独自占一行,支持宽度和高度，要想实现水平居中:margin:0 auto;"></a>(div,p,ul,li,ol,h1-h6,dl,dt,dd,address,article,figure,audio,video,section,table,canvas,header,table,footer)独自占一行,支持宽度和高度，要想实现水平居中:margin:0 auto;</h4><p>方法3:若是子元素有浮动,为了让子元素水平居中,则可以让父元素宽度设置为fit-content,并且配合margin:0 auto</p>
+<p>注意这个属性值fit-content配上margin:0 auto才会让其水平居中,目前只有chrome,firfox,Opera浏览器支持该属性值,并且只能实现水平居中,无法实现垂直居中,也没有height:fit-content,该属性,即使设置了也不生效</p>
+<p><ul class="parent"><br>    <li>随笔川迹</li><br>    <li>itclan</li><br>    <li>个人简介</li><br>    <li>联系地止</li><br></ul><br>css层叠样式代码</p>
+<p>ul,li{<br>    list-style:none;<br>}<br>.parent{<br>    width:100%;<br>    width:-moz-fit-content;<br>    width:-webkit-fit-content;<br>    width:fit-content;   /<em>父元素宽度设置fit-content,高度是没有这样的写法的</em>/<br>    margin:0 auto;     /<em>注意只设置得了水平居中,此方法,垂直居中无法</em>/<br>}<br>li{<br>    float:left;    /<em>子元素设置了浮动</em>/<br>    margin:0 5px 0;<br>}</p>
+<h3 id="方法4-使用flex布局-老版本"><a href="#方法4-使用flex布局-老版本" class="headerlink" title="方法4 使用flex布局,老版本:"></a><code>方法4</code> 使用flex布局,老版本:</h3><p>设置父元素<code>display:box;</code>(声明弹性盒模型),</p>
+<p><code>box-orient:horizontal;</code>(父元素设置,用来确定子元素的方向,是横着的还是竖着的,horizontal是横着(水平),vertical表示竖着,垂直,),</p>
+<p><code>box-pack:center;</code>(决定盒子内部剩余空间的对齐表现,这里是居中,均等地分割多余空间）</p>
+<h3 id="方法5-使用flex-新版本"><a href="#方法5-使用flex-新版本" class="headerlink" title="方法5 使用flex,新版本:"></a>方法5 使用flex,新版本:</h3><p>设置父元素<code>display:flex</code>(声明弹性盒模型),</p>
+<p><code>flex-direction:row</code>(设置主轴方向为水平方向),</p>
+<p>just-content:center`(规定主轴方向富裕空间的管理,所有子元素的居中,对应老版本的box-pack)</p>
+<h3 id="方法6-使用css3中新增的transform属性"><a href="#方法6-使用css3中新增的transform属性" class="headerlink" title="方法6 使用css3中新增的transform属性,"></a><code>方法6</code> 使用css3中新增的transform属性,</h3><p>子元素设置离x轴50%</p>
+<h3 id="方法7-固定宽高："><a href="#方法7-固定宽高：" class="headerlink" title="方法7 固定宽高："></a><code>方法7</code> 固定宽高：</h3><h3 id="元素使用绝对定位方式-以及负值的margin-left"><a href="#元素使用绝对定位方式-以及负值的margin-left" class="headerlink" title="元素使用绝对定位方式,以及负值的margin-left"></a>元素使用绝对定位方式,以及负值的margin-left</h3><p>.parent{<br>​    position:relative;<br>}<br>.son{<br>​    width:100px;<br>​    height:100px;<br>​    position:absolute;<br>​    left:50%;<br>​    margin-left:-50px; /<em>-宽度/2</em>/<br>​    background:green;<br>}</p>
+<h3 id="方法8-子元素使用绝对定位方式-position-absolute以及top-left-0-right-0-bottom-0-属性值设置为0-margin-0-auto"><a href="#方法8-子元素使用绝对定位方式-position-absolute以及top-left-0-right-0-bottom-0-属性值设置为0-margin-0-auto" class="headerlink" title="方法8 子元素使用绝对定位方式,position:absolute以及top,left:0,right:0;bottom:0,属性值设置为0,margin:0 auto;"></a><code>方法8</code> 子元素使用绝对定位方式,<code>position:absolute</code>以及<code>top</code>,<code>left:0</code>,<code>right:0</code>;<code>bottom:0</code>,属性值设置为0,<code>margin:0 auto</code>;</h3><h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><h4 id="方法1-若是单行文本内容-可以设置line-height等于父元素的高度"><a href="#方法1-若是单行文本内容-可以设置line-height等于父元素的高度" class="headerlink" title="方法1,若是单行文本内容,可以设置line-height等于父元素的高度,"></a><code>方法1</code>,若是单行文本内容,可以设置<code>line-height</code>等于父元素的高度,</h4><p>注意这是定高的，也就是高度是固定不变的,这种方法只适用于单行文本的元素才适用,比如块级元素里面文本,图片</p>
+<h3 id="方法2，若是行内块级元素，也就是给它设置了display-inline-block属性"><a href="#方法2，若是行内块级元素，也就是给它设置了display-inline-block属性" class="headerlink" title="方法2，若是行内块级元素，也就是给它设置了display:inline-block属性,"></a>方法2，若是行内块级元素，也就是给它设置了<code>display:inline-block</code>属性,</h3><p>这种方法针对一些<code>img</code>等行内元素,比较常用,<code>vertical-align:middle</code>和一个伪元素内容块处于容器的中央,<code>注意</code>要给这个伪类高度设置高度100%，此方法在IE6下失效,IE,7,8,9有用,但是又在IE10,11又失效(IEText测的)</p>
+<p>代码实例如下所示<br><code>html结构代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">      ![](img/QrCode.jpg)</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><code>css层叠样式代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">    width:500px;</div><div class="line">    height:500px;</div><div class="line">    border:1px solid red;</div><div class="line">&#125;</div><div class="line">.parent::after, .son&#123;        /*父级元素和子元素都设置display:inline-block*/</div><div class="line">    display:inline-block;</div><div class="line">    vertical-align: middle;   /*设置vertical-align:middle*/</div><div class="line">&#125;</div><div class="line">.parent::after&#123;   /*父元素添加一个伪类,并且设置高度100%*/ </div><div class="line">    content:&quot;&quot;;</div><div class="line">    height:100%;</div><div class="line">&#125;</div><div class="line">img&#123;</div><div class="line">    border:1px solid blue;</div><div class="line">    border-left:none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="方法3-子元素可用vertical-align-middle-使元素垂直对齐-和display-tab-cell-让元素以表格形式渲染-父元素使用display-table-让元素以表格的形式渲染"><a href="#方法3-子元素可用vertical-align-middle-使元素垂直对齐-和display-tab-cell-让元素以表格形式渲染-父元素使用display-table-让元素以表格的形式渲染" class="headerlink" title="方法3,子元素可用vertical-align:middle(使元素垂直对齐),和display:tab-cell(让元素以表格形式渲染),父元素使用display:table,让元素以表格的形式渲染"></a><code>方法3</code>,子元素可用<code>vertical-align:middle</code>(使元素垂直对齐),和<code>display:tab-cell</code>(让元素以表格形式渲染),<code>父元素使用display:table</code>,让元素以表格的形式渲染</h3><p>示例代码如下所示<br><code>html内容结构代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">     &lt;div class=&quot;son&quot;&gt;contentcontentcontentcontentcontentcontentcontent&lt;/div&gt;</div><div class="line"> &lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><code>css层叠样式结构代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">    display:table; /*让元素以表格形式渲染*/</div><div class="line">    border:1px solid red;</div><div class="line">    background:red;</div><div class="line">    height:200px;</div><div class="line">&#125;</div><div class="line">.son&#123;</div><div class="line">    display:table-cell; /*让元素以表格的单元表格形式渲染*/</div><div class="line">    vertical-align:middle;/*使用元素的垂直对齐*/</div><div class="line">    background:yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>方法4,使用<code>Flex布局</code>,<code>display:box(声明弹性盒模型)</code>,<code>box-orient:vertical;</code>(父元素设置,用来确定子元素的方向,垂直方向向的,竖着的,horizontal是横着的),<code>box-pack:center;</code>(决定盒子内部剩余空间的对齐表现,这里居中)</p>
+<p>方法5,使用Flex布局,<code>display:flex(声明弹性盒模型)</code>,<code>align-items:center</code>(元素在侧轴中间位置,富裕空间在侧轴两侧)<code>flex-direction:coluumn</code>(设置主轴方向为垂直方向)<br><code>优点</code>：使用display:flex布局,内容块的宽高任意,优雅的溢出，可用于复杂的高级布局技术<br><code>缺点</code>:IE678不支持,兼容性处理,火狐，谷歌,欧朋要浏览器前缀</p>
+<p>方法6,设置父元素相对定位<code>(position:relative)</code>,子元素设置绝对定位<code>position:absolute</code>,<code>top:50%</code>,<code>height高度固定,利用margin负半值的方式</code>，让元素垂直居中</p>
+<p><code>优点</code>：适用于所有浏览器<br><code>缺点</code>：父元素空间不够时,子元素可能不可见,当浏览器窗口缩小时,滚动条不出现时,如果子元素设置了overflow:auto,则高度不够时会出现滚动条<br>方法7,设置父元素相对定位(position:relative),子元素设置绝对定位,margin:auto 0,高度固定,left | top | right | bottom都设置为0，但是在IE8低版本浏览器以下失效</p>
+<p>方法8,需要在<code>居中元素前面放一个空块级元素</code>(比如div)即可,然后<code>设置这个div的高度为50%,margin-bottom为元素高度的一半</code>,而且<code>居中元素需要清除浮动</code>,需要注意的是,使用这种方法,<code>如果你的居中元素是放在body中的话,需要给html,body设置一个height:100%的属性</code><br> <code>html结构代码如下所示</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div class=&quot;content&quot;&gt;Content&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><code>css层叠样式</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> html,body&#123;height:100%;&#125;</div><div class="line"> .box&#123;</div><div class="line">        /*float:left;*/</div><div class="line">        height:50%;  /*相对父元素的高度的50%*/</div><div class="line">        margin-bottom:-120px;</div><div class="line">&#125;</div><div class="line">.content&#123;</div><div class="line">        clear:both;/*清除浮动*/</div><div class="line">        width:240px;</div><div class="line">        height:240px;</div><div class="line">        position:relative;/*只能用相对定位*/</div><div class="line">        background:green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>实例效果如下所示</code></p>
+<p>使用一个空标签使其元素垂直居中.png</p>
+<p><code>优点</code>:兼容所有的浏览器,在没有足够的空间下,内容不会被切掉<br><code>缺点</code>:元素高度被固定死,无法达到内容自适应,如果居中元素加上overflow,要么元素出现滚动条,要么元素被切掉,另外就是一个就是加上了一个空标签<br><code>html示例代码如下所示</code>方法9`:使用内边距的方式使其垂直居中 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">     &lt;div class=&quot;son&quot;&gt;content&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><code>css示例代码如下所示</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.son&#123;</div><div class="line">    padding:30px 0 30px 0;</div><div class="line">    border:1px solid red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>实例效果如图所示</code></p>
+<p>内填充的方式垂直居中1.png</p>
+<p><code>缺点</code>:使用这种方法不能给容器固定高度,如果加了高度的话,要想要达到效果,那么要减去对应的高度</p>
+<blockquote>
+<h3 id="水平-垂直居中"><a href="#水平-垂直居中" class="headerlink" title="水平+垂直居中"></a>水平+垂直居中</h3></blockquote>
+<ul>
+<li>若是文本图片,则可以使用line-height:高度；text-align:center</li>
+</ul>
+<p><code>示例代码如下所示</code><br><code>html结构代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;wrap&quot;&gt;</div><div class="line">    文本水平垂直居中显示</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><code>css结构代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.wrap&#123;</div><div class="line">        width:400px;</div><div class="line">        height:400px;</div><div class="line">        text-align:center;  /*文本水平居中显示*/</div><div class="line">        line-height:400px;  /*垂直居中显示*/</div><div class="line">        font-size:36px;</div><div class="line">        border:1px solid red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>实例效果图如下所示</code></p>
+<p>文本水平垂直居中显示.png</p>
+<ul>
+<li><p>若是定宽定高,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">使用绝对定位position:absolute,left:50%,top:50%,使用margin负半值</div></pre></td></tr></table></figure>
+<p>进行元素的水平垂直居中显示,代码如下所示:</p>
+<p>​</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">html结构内容代码</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">css示例代码如下所示</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">  width:100%;</div><div class="line">  height:500px;</div><div class="line">  position:relative;</div><div class="line">  background:red;</div><div class="line">&#125;</div><div class="line">.son&#123;</div><div class="line">  width:100px;</div><div class="line">  height:100px;</div><div class="line">  background:pink;</div><div class="line">  position:absolute;</div><div class="line">  left:50%;</div><div class="line">  top:50%;      /*top50%*/</div><div class="line">      margin-left:-50px;/*-(元素宽度/2)*/</div><div class="line">  margin-top:-50px; /*-(元素高度/2)*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">实例效果如下所示</div></pre></td></tr></table></figure>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+<p>使用绝对定位margin负半值水平垂直居中显示.png</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">绝对定位absolute+margin:auto</div></pre></td></tr></table></figure>
+<p>,同时,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">top:0</div></pre></td></tr></table></figure>
+<p>;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">left:0</div></pre></td></tr></table></figure>
+<p>;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">right:0</div></pre></td></tr></table></figure>
+<p>,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bottom:0</div></pre></td></tr></table></figure>
+<p>这种方式使一个元素水平垂直居中也是比较常见的</p>
+<p>​</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">html内容结构代码</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">css层叠样式代码</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.son&#123;</div><div class="line">    position:absolute;  /*设置绝对定位*/</div><div class="line">    width:100px;        /*宽度固定*/</div><div class="line">    height:100px;</div><div class="line">    background:#abcdef;</div><div class="line">    top:0;</div><div class="line">    left:0;             /*设置top | left | right | bottom都等于0*/</div><div class="line">    right:0;</div><div class="line">    bottom:0;</div><div class="line">    margin: auto;      /*水平垂直居中*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>实例效果图显示</code></p>
+<p>使用决定定位,设置left-top-bottom为0结合margin-auto水平垂直居中.png</p>
+<ul>
+<li>使用js动态计算使其元素水平垂直居中<ul>
+<li>水平居中元素应设置为绝对定位,获取元素的位置,距离浏览器左边，上边的距离,并且进行赋值</li>
+<li>left:(浏览器的宽度-元素的宽度)/2</li>
+<li>top:(浏览器的高度-元素的高度)/2<br>示例代码所示</li>
+</ul>
+</li>
+</ul>
+<p><code>html内容结构代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><code>css示例代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> #box&#123;</div><div class="line">    width:100px;</div><div class="line">    height:100px;</div><div class="line">    background:red;</div><div class="line">    position:absolute;  /*设置绝对定位*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>js代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* @desc 利用js控制一个元素的水平垂直居中显示</div><div class="line">* </div><div class="line">*/</div><div class="line">window.onload = function()&#123;</div><div class="line">  var oBox=document.getElementById(&quot;box&quot;),</div><div class="line">      left=(document.documentElement.clientWidth-oBox.offsetWidth)/2,</div><div class="line">      top = (document.documentElement.clientHeight)/2;</div><div class="line">      oBox.style.left = left+&quot;px&quot;;</div><div class="line">      oBox.style.top = top+&quot;px&quot;;</div><div class="line">  //当屏幕尺寸发生变化时</div><div class="line">  window.onresize = function()&#123;</div><div class="line">     var top = (document.documentElement.clientHeight-oBox.offsetHeight)/2,</div><div class="line">         left = (document.documentElement.clientWidth-oBox.offsetWidth)/2; </div><div class="line">         oBox.style.top = top+&quot;px&quot;;</div><div class="line">         oBox.style.left = left+&quot;px&quot;;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>实例效果如下所示</code></p>
+<p>使用原生js使元素水平垂直居中.png</p>
+<ul>
+<li>使用jQuery实现元素的水平垂直居中<ul>
+<li>获取元素</li>
+<li>获取浏览器可视宽度$(window).width();</li>
+<li>获取浏览器可视高度$(window).height();</li>
+<li>元素距离浏览器左边的距离left:($(window).width()-元素.width())/2</li>
+<li>元素距离浏览器上边的距离top:($(window).height()-元素.height())/2</li>
+<li>resize:当调整浏览器窗口的大小时，发生 resize 事件</li>
+</ul>
+</li>
+</ul>
+<p><code>示例代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><code>css层叠样式代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> #box&#123;</div><div class="line">    width:100px;</div><div class="line">    height:100px;</div><div class="line">    background:blue;</div><div class="line">    position:absolute;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>js代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">*  @dec 利用jQuery实现元素水平垂直居中</div><div class="line">*  @function getStyle 水平垂直居中元素</div><div class="line">*  @event resize</div><div class="line">*/</div><div class="line">$(function()&#123;</div><div class="line"> getStyle();</div><div class="line"> function getStyle()&#123;</div><div class="line">   var oBox = $(&quot;#box&quot;),</div><div class="line">       oW = $(window).width(),   //获取浏览器的可视宽度</div><div class="line">       oH  = $(window).height(), //获取浏览器的可视高度</div><div class="line">       l = (oW-oBox.width())/2,  // 元素距离浏览器左边的距离</div><div class="line">       t = (oH-oBox.height())/2; //元素距离浏览器右边的距离</div><div class="line">       oBox.css(&#123;                    //赋值操作,left,top值</div><div class="line">           left:l,</div><div class="line">           top:t</div><div class="line">        &#125;);</div><div class="line"> &#125;</div><div class="line">//当调整浏览器窗口的大小时,发生 resize 事件</div><div class="line">    $(window).resize(function()&#123;</div><div class="line">        getStyle();</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><code>实例效果如下所示</code></p>
+<p>使用jquery使元素水平垂直居中.png</p>
+<blockquote>
+<h3 id="两种常见布局-圣杯布局与双飞翼布局"><a href="#两种常见布局-圣杯布局与双飞翼布局" class="headerlink" title="两种常见布局:圣杯布局与双飞翼布局"></a>两种常见布局:圣杯布局与双飞翼布局</h3></blockquote>
+<ul>
+<li>圣杯布局(左中右结构,两边宽度固定,中间自适应)<ul>
+<li>左边与右边,使用绝对定位,左边left:0,top:0,右边right:0,top:0,中间使用margin</li>
+<li>两栏布局,左边侧边栏固定,右边主体自使用,左边主体自适应,右边侧边栏固定,左侧边栏固定，右主体自适应,左主体自适应,右侧边栏固定都是圣杯布局，解决办法:使用绝对定位,如上,还有就是浮动布局,弹性盒模型也可以解决</li>
+</ul>
+</li>
+</ul>
+<p>示例代码如下:<br><code>使用绝对定位实现圣杯布局</code><br><code>html结构代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;left&quot;&gt;左边&lt;/div&gt;</div><div class="line">&lt;div class=&quot;center&quot;&gt;中间&lt;/div&gt;</div><div class="line">&lt;div class=&quot;right&quot;&gt;右边&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><code>css示例代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"> .left&#123;</div><div class="line">    width:200px;        /*两边固定宽度,中间自适应*/</div><div class="line">    height:600px;       /*高度可以不可,由内容填充*/</div><div class="line">    position:absolute;</div><div class="line">    left:0;</div><div class="line">    top:0;</div><div class="line">    background:red;</div><div class="line">&#125;</div><div class="line">.center&#123;</div><div class="line">    width:100%;        /*宽度不固定*/</div><div class="line">    background:orange;</div><div class="line">    height:600px; </div><div class="line">    margin:0 200px;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">   width:200px;       /*两边固定宽度,中间自适应*/</div><div class="line">   height:600px;      /*高度可以不可,由内容填充*/</div><div class="line">   position:absolute;</div><div class="line">   right:0;</div><div class="line">   top:0;</div><div class="line">   background:green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>实例效果图所下所示</code></p>
+<p>绝对定位实现圣杯布局.gif</p>
+<p><code>使用浮动实现圣杯布局显示效果</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">* 利用浮动布局</div><div class="line">*  要注意位置不同,实现的效果也会不同,设置了浮动,一定要注意清除浮动</div></pre></td></tr></table></figure>
+<p>示例代码所示<br><code>html内容结构代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;left w200&quot;&gt;左边&lt;/div&gt;</div><div class="line">&lt;div class=&quot;right w200&quot;&gt;右边&lt;/div&gt;</div><div class="line">&lt;div class=&quot;center&quot;&gt;中间&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><code>css层叠样式代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"> .w200&#123;</div><div class="line">    width:200px;</div><div class="line">    height:600px;</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">    float:left;</div><div class="line">    background:pink;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">    float:right;</div><div class="line">    background:blue;</div><div class="line">&#125;</div><div class="line">.center&#123;</div><div class="line">    height:600px;</div><div class="line">    background:red;</div><div class="line">    overflow:hidden;  /*清除浮动*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>实现效果如下所示</code></p>
+<p>浮动实现圣杯布局.gif</p>
+<p><code>利用弹性盒模型老版本display:box实现圣杯布局,两边固定,中间自适应</code></p>
+<ul>
+<li>当你缩放到最小值时,中间的内容会被隐藏,你可以给中间的盒子设置一个最小宽度值即可<br><code>html结构内容代码</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">   &lt;div class=&quot;left w200&quot;&gt;左边&lt;/div&gt;</div><div class="line">   &lt;div class=&quot;center&quot;&gt;中间&lt;/div&gt;</div><div class="line">   &lt;div class=&quot;right w200&quot;&gt;右边&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><code>css层叠样式代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">    width:100%;</div><div class="line">    display:-webkit-box;</div><div class="line">    -webkit-box-orient:horizontal;</div><div class="line">    /*决定盒子剩余空间的利用对齐方式,center表示居中*/</div><div class="line">    -webkit-box-pack:center; </div><div class="line">    /*firefox*/</div><div class="line">    display:-moz-box;</div><div class="line">    -moz-box-orient:horizontal;</div><div class="line">    -moz-box-pack:center;</div><div class="line">    /*opera*/</div><div class="line">    display:-o-box;</div><div class="line">    -o-box-orient:horizontal;</div><div class="line">    -o-box-pack:center;</div><div class="line">    /*IE浏览器*/</div><div class="line">    display:-ms-box;</div><div class="line">    -ms-box-orient:horizontal;</div><div class="line">    -ms-box-pack:center;</div><div class="line">    /*标准浏览器*/</div><div class="line">    display:box;</div><div class="line">    box-orient:horizontal;</div><div class="line">    box-pack:center;</div><div class="line">&#125;</div><div class="line">.w200&#123;</div><div class="line">    width:200px;</div><div class="line">    height:600px;</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">   background:#abcdef;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">   background:yellow;</div><div class="line">&#125;</div><div class="line">.center&#123;</div><div class="line">    width:100%;</div><div class="line">    background:orange;</div><div class="line">    -webkit-box-flex:1;  /*注意的是浏览器前缀一定要加*/</div><div class="line">    -moz-box-flex:1;</div><div class="line">    -ms-box-flex:1;</div><div class="line">    -o-box-flex:1;</div><div class="line">    box-flex:1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>实现效果图如下所示</code></p>
+<p>使用弹性盒模型display-box实现圣杯布局.gif</p>
+<p><code>利用弹性盒模型新版本display:flex实现圣杯布局,两边固定,中间自适应</code><br><code>html内容结构代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> &lt;div class=&quot;parent&quot;&gt;</div><div class="line">        &lt;div class=&quot;left w200&quot;&gt;左边&lt;/div&gt;</div><div class="line">        &lt;div class=&quot;center&quot;&gt;中间&lt;/div&gt;</div><div class="line">        &lt;div class=&quot;right w200&quot;&gt;右边&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><code>css层叠样式代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">    width:100%;</div><div class="line">    display:-webkit-flex;/*声明弹性盒模型,定义弹性容器*/</div><div class="line">    -webkit-flex-direction:row; /*row设置主轴方向为水平方向*/</div><div class="line">   /*决定盒子剩余空间的利用对齐方式,center表示居中*/</div><div class="line">   -webkit-justify-content:center; /*定义了在当前行上,弹性项目沿主轴如何排布*/</div><div class="line">   display:flex; </div><div class="line">   flex-direction:row;</div><div class="line">   justify-content:center;  /*相当于老版本的flex-pack*/</div><div class="line">   /*firefox*/</div><div class="line">   display:-moz-flex;</div><div class="line">   -moz-direction:row; </div><div class="line">   -moz-justify-content:center;</div><div class="line">   /*opera*/</div><div class="line">   display:-o-flex;</div><div class="line">   -o-direction:row;</div><div class="line">   -o-justify-content:center;</div><div class="line">   /*IE浏览器*/</div><div class="line">   display:-ms-flex;</div><div class="line">   -ms-direction:row; </div><div class="line">   -ms-justify-content:center;</div><div class="line">   /*标准浏览器*/</div><div class="line">   display:flex;</div><div class="line">   flex-direction:row;</div><div class="line">   justify-content:center;</div><div class="line">&#125;</div><div class="line">.w200&#123;</div><div class="line">    width:200px;</div><div class="line">    height:600px;</div><div class="line"> &#125;</div><div class="line">.left&#123;</div><div class="line">    background:red;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">    background:green;</div><div class="line">&#125;</div><div class="line">.center&#123;</div><div class="line">    width:100%;</div><div class="line">    background:pink;</div><div class="line">    -webkit-flex-flex:1;  /*注意的是浏览器前缀一定要加*/</div><div class="line">    -moz-flex-flex:1;</div><div class="line">    -ms-flex-flex:1;</div><div class="line">    -o-flex-flex:1;</div><div class="line">    flex-flex:1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>实例效果图如下所示</code></p>
+<p>使用display-flex实现圣杯布局.gif</p>
+<p>实例:手机端的淘宝布局,京东上方的搜索栏,一些后台管理系统,什么两边固定,中间自适应结构,左固定,右自适应或者左自适应,右固定等都是圣杯布局的体现,无论是使用绝对定位还是浮动布局,前两者都会破坏文档流,使用定位元素会脱离文档流,浮动会引起一些困扰的bug,比如说忘记清除浮动,设置margin-right,margin:0 auto值都会失效,在移动端布局上,使用弹性盒模型flex,无论是老版本还是新版本,对于这种两列,三列或多列自适应,复杂的布局,用flex布局方式,都是非常强大的,但是要注意兼容性,加各浏览器前缀,不然的会调试半天也会没有效果的，css的书写顺序应是选择渐进增强的方式,从低版本到高版本<br>比如说下面常见移动端示例参考,可借助上面的决定定位,浮动,弹性盒模型等实现下面示例上方的搜索导航部分<br><code>京东移动端头部搜索栏部分(左中右结构,两边固定,中间自适应)</code></p>
+<p>京东搜索导航栏.gif</p>
+<p><code>淘宝移动端头部搜索栏部分(左边固定,右边自适应)</code></p>
+<p>淘宝搜索导航栏.gif</p>
+<ul>
+<li><p>双飞翼布局(等高布局)</p>
+</li>
+<li><p>一个盒子的内容变化,同样会影响同级(兄弟)高度变换,实时同步变化</p>
+<p>​</p>
+<p>示例代码如下所示</p>
+<p>​</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">html内容结构代码</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;wrap&quot;&gt;</div><div class="line">  &lt;div class=&quot;left&quot;&gt;等高布局等高布局等高布局等高布局等高布局&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;right&quot;&gt;等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">css层叠样式代码</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">.wrap&#123;</div><div class="line">    width:1000px;</div><div class="line">    margin:0 auto;</div><div class="line">    overflow:hidden;</div><div class="line">    border:1px solid red</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">    width:300px;</div><div class="line">    background:red;</div><div class="line">    float:left;             /*左浮动*/</div><div class="line">    padding-bottom:1000px;</div><div class="line">    margin-bottom:-10000px;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">    width:700px;</div><div class="line">    background:blue;</div><div class="line">    float:right;             /*右浮动*/</div><div class="line">    padding-bottom:1000px;</div><div class="line">    margin-bottom:-1000px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>实例效果如下所示</code></p>
+<p>等高布局.gif</p>
+<p><strong>总结</strong></p>
+<p> 本篇主要是围绕着一个元素在页面中如何水平垂直居中,分别对行内元素和块级元素介绍了8种方式元素的水平居中和9种垂直方式元素居中,进而又对一个元素用5种方式实现水平+垂直居中显示,最终常见两种布局,圣杯布局(使用绝对定位,浮动布局,弹性盒模性Flex布局可实现)和双飞翼(等高)布局,其中绝对定位与浮动布局都会破坏元素的文档流,对于一个元素让其水平垂直居中显示很常见,比如说弹框,还有页面上布局,对于块级元素我们往往第一想到的是margin:0 auto,水平居中显示,但是有时却难以想到其他种方法,对于使用绝对定位方式,设置left,top,right,bottom为0,配合margin的使用实现水平垂直居中还是挺巧妙的,同时绝对定位,对于固定宽度高度,用margin负半值的方法实现水平垂直居中显示也是一种很好的方式,还有display:table的方式实现垂直居中显示,以及transform结合绝对定位实现元素水平居中显示,最为强大的是弹性盒模型Flex布局,无论是老版本display:box,还是新版本display:flex对父元素设置该属性,同时设置子元素的排列方式,也可以对子元素进行box-flex进行设置,能够很好的达到水平垂直居中显示,自适应,但是注意该属性的兼容性,针对不同的浏览器,要加上浏览器的前缀,否则会失效,对于元素水平垂直居中显示可以优先考虑css的方式解决(如上方法),对于复杂的实例,也可以考虑同上文中用js的方式去实现元素的水平垂直居中显示</p>
+<p><strong>以下是本篇提点概要</strong></p>
+<ul>
+<li><p>水平居中</p>
+<ul>
+<li><code>方法1</code>：若是行内元素,给其父级元素设置<code>text-align:center</code>,可以实现行内元素水平居中</li>
+<li><code>方法2</code>:若是块级元素,要想实现水平居中:<code>margin:0 auto</code>;</li>
+<li><code>方法3</code>:若是子元素有浮动,为了让子元素水平居中,则可以让父元素宽度设置为<code>fit-content</code>,<code>并且配合margin:0 auto</code>,<code>注意</code>这个属性值<code>fit-content</code>配上<code>margin:0 auto</code>才会让其水平居中,目前只有chrome,firfox,Opera浏览器支持该属性值,并且只能实现水平居中,无法实现垂直居中,<code>也没有height:fit-content</code>,该属性,即使设置了也不生效</li>
+<li><code>方法4</code> 使用flex布局,老版本:设置父元素<code>display:box;</code>,<code>box-orient:horizontal;</code>,<code>box-pack:center;</code>实现元素水平居中</li>
+<li>. 方法5 使用flex,新版本:设置父元素<code>display:flex</code>),<code>flex-direction:row</code>(设置主轴方向为水平方向),<code>just-content:center</code>(规定主轴方向富裕空间的管理,所有子元素的居中,对应老版本的box-pack)</li>
+<li><code>方法6</code> 使用css3中新增的transform属性,子元素设置离x轴50%</li>
+<li><code>方法7</code> 元素使用绝对定位方式,left:50%,以及margin的负半值方式,margin-left:-宽度的一半</li>
+<li><code>方法8</code> 子元素使用绝对定位方式,<code>position:absolute</code>以及<code>top</code>,<code>left:0</code>,<code>right:0</code>;<code>bottom:0</code>,属性值设置为0,<code>margin:0 auto</code>;</li>
+</ul>
+</li>
+<li><p>垂直居中</p>
+<ul>
+<li><code>方法1</code>,若是单行文本内容,可以设置<code>line-height</code>等于父元素的高度,注意这是定高的，也就是高度是固定不变的,这种方法只适用于单行文本的元素才适用,比如块级元素里面文本,图片</li>
+<li><code>方法2</code>，若是行内块级元素，也就是给它设置了<code>display:inline-block</code>属性,这种方法针对一些<code>img</code>等行内元素,比较常用,<code>vertical-align:middle</code>和一个伪元素内容块处于容器的中央,<code>注意</code>要给这个伪类高度设置高度100%，此方法在IE6下失效,IE,7,8,9有用,但是又在IE10,11又失效(IEText测的)</li>
+<li><code>方法3</code>,子元素可用<code>vertical-align:middle</code>(使元素垂直对齐),和<code>display:tab-cell</code>(让元素以表格形式渲染),<code>父元素使用display:table</code>,让元素以表格的形式渲染</li>
+<li><code>方法4</code>,使用<code>Flex布局</code>,<code>display:box(声明弹性盒模型)</code>,<code>box-orient:vertical;</code>(父元素设置,用来确定子元素的方向,垂直方向向的,竖着的,horizontal是横着的),<code>box-pack:center;</code></li>
+<li><code>方法5</code>,使用Flex布局,<code>display:flex(声明弹性盒模型)</code>,<code>align-items:center</code>(元素在侧轴中间位置,富裕空间在侧轴两侧)<code>flex-direction:coluumn</code>(设置主轴方向为垂直方向)</li>
+<li><code>方法6</code>,设置父元素相对定位<code>(position:relative)</code>,子元素设置绝对定位<code>position:absolute</code>,<code>top:50%</code>,<code>height高度固定,利用margin负半值的方式</code>，让元素垂直居中</li>
+<li><code>方法7</code>,设置父元素相对定位(position:relative),子元素设置绝对定位,margin:auto 0,高度固定,left | top | right | bottom都设置为0，但是在IE8低版本浏览器以下失效</li>
+<li><code>方法8</code>,需要在<code>居中元素前面放一个空块级元素</code>(比如div)即可,然后<code>设置这个div的高度为50%,margin-bottom为元素高度的一半</code>,而且<code>居中元素需要清除浮动</code>,需要注意的是,使用这种方法,`如果你的居中元素是放在body中的话,需要给html,body设置一个height:100%的属性</li>
+<li><code>方法9</code>:使用内边距的方式使其垂直居中</li>
+</ul>
+</li>
+<li><p>水平+垂直居中</p>
+<ul>
+<li>若是文本图片,则可以使用<code>line-height:高度</code>；<code>text-align:center</code></li>
+<li>若是定宽定高,<code>使用绝对定位position:absolute,left:50%,top:50%,使用margin负半值</code>进行元素的水平垂直居中显示</li>
+<li><code>绝对定位absolute+margin:auto</code>,同时,<code>top:0</code>;<code>left:0</code>;<code>right:0</code>,<code>bottom:0</code>这种方式使一个元素水平垂直居中也是比较常见的</li>
+<li>使用js动态计算使其元素水平垂直居中</li>
+<li>使用jQuery实现元素的水平垂直居中</li>
+</ul>
+</li>
+<li><p>两种常见布局:圣杯布局(两边宽度固定,中间自适应)与双飞翼(等高)布局</p>
+<ul>
+<li>圣杯(两边宽度固定,中间自适应)布局<ul>
+<li>使用绝对定位实现圣杯布局</li>
+<li>使用浮动实现圣杯布局</li>
+<li>使用弹性盒模型Flex布局display-box实现圣杯布局</li>
+<li>利用弹性盒模型新版本display:flex实现圣杯布局</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>双飞翼(等高)布局<ul>
+<li>一个盒子的内容变化,同样会影响同级(兄弟)高度变换,实时同步变化,如上代码示例所示</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/09/如何科学的组织React组件样式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          如何科学的组织React组件样式——模块化  样式之间互不影响
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/05/grid 网格布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="如何实现元素的水平垂直居中" data-title="" data-url="http://yoursite.com/2017/09/05/如何实现元素的水平垂直居中/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 妞妞
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
