@@ -239,86 +239,6 @@
 
 
   
-    <article id="post-vscode----eslint +默认配置文件" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/09/09/vscode----eslint +默认配置文件/" class="article-date">
-  	<time datetime="2017-09-08T16:00:00.000Z" itemprop="datePublished">2017-09-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/09/vscode----eslint +默认配置文件/">vscode中 针对 react的 eslint配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> eslint官网：   <a href="http://eslint.cn/" target="_blank" rel="external">http://eslint.cn/</a></p>
-<h3 id="一：vscode默认配置"><a href="#一：vscode默认配置" class="headerlink" title="一：vscode默认配置"></a>一：vscode默认配置</h3><p>首选项  ——&gt;设置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  //控制台---</div><div class="line">  &quot;workbench.colorTheme&quot;: &quot;Monokai&quot;,</div><div class="line">  //文件---</div><div class="line">  &quot;files.autoSave&quot;: &quot;onFocusChange&quot;,</div><div class="line">  //配置语言的文件关联</div><div class="line">  &quot;files.associations&quot;: &#123;</div><div class="line">    &quot;*.js&quot;: &quot;javascriptreact&quot;</div><div class="line">  &#125;,</div><div class="line">  //editor----</div><div class="line">  &quot;editor.fontSize&quot;: 14,</div><div class="line">  &quot;editor.detectIndentation&quot;: false,</div><div class="line">  &quot;editor.tabSize&quot;: 2,</div><div class="line">  &quot;editor.formatOnType&quot;: false,</div><div class="line">  &quot;editor.formatOnSave&quot;: false,</div><div class="line">  &quot;editor.wordWrap&quot;: &quot;on&quot;,</div><div class="line"></div><div class="line">  //关闭VS自带的 javascript验证</div><div class="line">  &quot;javascript.validate.enable&quot;: false,</div><div class="line">  //eslint---- 代码检查(默认只支持 js 文件的脚本检测)</div><div class="line">  //支持类 html 文件（如 vue ）的内联脚本检测 安装 eslint-plugin-html </div><div class="line">  &quot;eslint.options&quot;: &#123;</div><div class="line">    &quot;plugins&quot;: [</div><div class="line">      &quot;html&quot;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  &quot;eslint.validate&quot;: [</div><div class="line">    &quot;javascript&quot;,</div><div class="line">    &quot;javascriptreact&quot;,</div><div class="line">    &quot;html&quot;,</div><div class="line">    &quot;vue&quot;</div><div class="line">  ],</div><div class="line">  // 在保存时自动修复错误</div><div class="line">  &quot;eslint.autoFixOnSave&quot;: true,</div><div class="line">  //emmet缩写----</div><div class="line">  // 设置.vue 文件与 HTML 的关联</div><div class="line">  &quot;emmet.includeLanguages&quot;: &#123;</div><div class="line">    &quot;javascript&quot;: &quot;javascriptreact&quot;,</div><div class="line">    &quot;vue&quot;: &quot;html&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;emmet.syntaxProfiles&quot;: &#123;</div><div class="line">    &quot;vue-html&quot;: &quot;html&quot;,</div><div class="line">    &quot;vue&quot;: &quot;html&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="二：-eslintrc-js"><a href="#二：-eslintrc-js" class="headerlink" title="二：.eslintrc.js"></a>二：.eslintrc.js</h3><p>​    针对项目设置，放在根目录下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  root: true,</div><div class="line">  parser: &apos;babel-eslint&apos;,</div><div class="line">  &quot;env&quot;: &#123;</div><div class="line">    &quot;es6&quot;: true,</div><div class="line">    &quot;browser&quot;: true,</div><div class="line">    &quot;node&quot;: true</div><div class="line">  &#125;,</div><div class="line">  &quot;extends&quot;: &apos;airbnb&apos;,</div><div class="line">  &quot;parserOptions&quot;: &#123;</div><div class="line">    &quot;ecmaVersion&quot;: 6,</div><div class="line">    &quot;sourceType&quot;: &apos;module&apos;,</div><div class="line">    &quot;ecmaFeatures&quot;: &#123;</div><div class="line">      &quot;experimentalObjectRestSpread&quot;: true,</div><div class="line">      &quot;arrowFunctions&quot;: true</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  &quot;plugins&quot;: [&quot;react&quot;],</div><div class="line">  &quot;rules&quot;: &#123;</div><div class="line">    &apos;no-debugger&apos;: process.env.NODE_ENV === &apos;production&apos;? 2 : 0,</div><div class="line">    &quot;no-underscore-dangle&quot;: &quot;off&quot;,</div><div class="line">    &quot;react/prop-types&quot;: &quot;off&quot;,</div><div class="line">    &quot;import/extensions&quot;: [</div><div class="line">      &quot;error&quot;,</div><div class="line">      &quot;never&quot;, &#123;</div><div class="line">        &quot;web.js&quot;: &quot;never&quot;,</div><div class="line">        &quot;json&quot;: &quot;never&quot;</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    &quot;import/no-extraneous-dependencies&quot;: [</div><div class="line">      &quot;error&quot;, &#123;</div><div class="line">        &quot;devDependencies&quot;: true</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    &quot;import/no-unresolved&quot;: [</div><div class="line">      &quot;error&quot;, &#123;</div><div class="line">        &quot;ignore&quot;: [&quot;antd-mobile&quot;]</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    &quot;indent&quot;: [</div><div class="line">      &quot;error&quot;, 2</div><div class="line">    ],</div><div class="line">    &quot;indent&quot;: [&quot;error&quot;, 2],</div><div class="line">    &quot;linebreak-style&quot;: [</div><div class="line">      &quot;error&quot;, &quot;unix&quot;</div><div class="line">    ],</div><div class="line">    &quot;quotes&quot;: [</div><div class="line">      &quot;error&quot;, &quot;single&quot;</div><div class="line">    ],</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="三-安装相关eslint插件-（npm-cnpm-安装）"><a href="#三-安装相关eslint插件-（npm-cnpm-安装）" class="headerlink" title="三 安装相关eslint插件 （npm/cnpm 安装）"></a>三 安装相关eslint插件 （npm/cnpm 安装）</h3><p>​     “eslint”: “^4.6.1”,</p>
-<p>​    “eslint-config-airbnb”: “^15.1.0”,</p>
-<p>​    “eslint-plugin-import”: “^2.7.0”,</p>
-<p>​    “eslint-plugin-jsx-a11y”: “^6.0.2”,</p>
-<p>​    “eslint-plugin-react”: “^7.3.0”,</p>
-<p>​     “babel-loader”: “^6.3.2”,</p>
-<p>ESLint 允许你指定你想要支持的 JavaScript 语言选项。默认情况下，ESLint 支持 ECMAScript 5 语法。你可以覆盖该设置启用对 ECMAScript 其它版本和 JSX 的支持。</p>
-<p>对 JSX 语法的支持不用于对 React 的支持。React 适用于特定 ESLint 无法识别的 JSX 语法。如果你正在使用 React 和 想要 React 语义，我们推荐你使用 <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">eslint-plugin-react</a>。</p>
-<h3 id="四、在项目中执行-eslint"><a href="#四、在项目中执行-eslint" class="headerlink" title="四、在项目中执行  eslint"></a>四、在项目中执行  eslint</h3><p>package.json 中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line"></div><div class="line">   	&quot;lint&quot;: &quot;eslint src --ext .js&quot;,</div><div class="line"></div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
-<p>说明:eslint 命令</p>
-<h4 id="ext"><a href="#ext" class="headerlink" title="--ext"></a><code>--ext</code></h4><p>这个选项允许你指定ESLint在指定的目录下查找JavaScript文件时要使用的文件扩展名。默认情况下，它使用<code>.js</code>作为唯一性文件扩展名。</p>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Use only .js2 extension</div><div class="line">eslint . --ext .js2</div><div class="line"></div><div class="line"># Use both .js and .js2</div><div class="line">eslint . --ext .js --ext .js2</div><div class="line"></div><div class="line"># Also use both .js and .js2</div><div class="line">eslint . --ext .js,.js2</div></pre></td></tr></table></figure>
-<p>注意：如果你使用了水珠模式，则<code>--ext</code>被忽略</p>
-<p>例如，<code>eslint lib/* --ext .js</code>将匹配<code>lib/</code>下的所有文件，忽略扩展名。</p>
-<h3 id="五、番外"><a href="#五、番外" class="headerlink" title="五、番外"></a>五、番外</h3><h5 id="npm安装相关组件"><a href="#npm安装相关组件" class="headerlink" title="npm安装相关组件"></a>npm安装相关组件</h5><h6 id="安装eslint"><a href="#安装eslint" class="headerlink" title="安装eslint"></a>安装eslint</h6><p><code>$ npm install eslint -g</code></p>
-<h5 id="安装eslint-plugin-react"><a href="#安装eslint-plugin-react" class="headerlink" title="安装eslint-plugin-react"></a>安装eslint-plugin-react</h5><p>识别react中的一些语法检验<br><code>$ npm install eslint-plugin-react</code></p>
-<h5 id="安装babel-eslint"><a href="#安装babel-eslint" class="headerlink" title="安装babel-eslint"></a>安装babel-eslint</h5><p>如果用到了es6的新语法, 需要安装babel-eslint,不然会把箭头函数识别成错误<br><code>$ npm install babel-eslint</code></p>
-<h4 id="在项目的根目录创建配置文件-eslintrc-json"><a href="#在项目的根目录创建配置文件-eslintrc-json" class="headerlink" title="在项目的根目录创建配置文件.eslintrc.json"></a>在项目的根目录创建配置文件.eslintrc.json</h4><p>eslint会根据.eslintrc.json定义的规则进行代码检测(在mac中的.开头的文件为隐藏文件);<br>eslint官方给出的一些有关react配置的文档:<br><a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">https://github.com/yannickcr/eslint-plugin-react</a></p>
-<p><strong>一般有两种做法:</strong></p>
-<ol>
-<li>宽松的定义,只检验一些语法上的错误.</li>
-<li>严谨的定义,可以当团队书写代码的规范,把规范错误定义成<strong>警告</strong>, 语法错误定义成<strong>错误</strong></li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-如何科学的组织React组件样式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -379,6 +299,86 @@
 <p>然而</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:local(.title .name) // .[hash0] .[hash1]</div></pre></td></tr></table></figure>
 <p>这个算是一个有意思的方式，首先它依赖于webpack，而webpack并不局限于React的开发，任何前端项目都可以使用webpack，那么就也都可以使用CSS Modules的概念</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-vscode----eslint +默认配置文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/09/vscode----eslint +默认配置文件/" class="article-date">
+  	<time datetime="2017-09-08T16:00:00.000Z" itemprop="datePublished">2017-09-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/09/vscode----eslint +默认配置文件/">vscode中 针对 react的 eslint配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> eslint官网：   <a href="http://eslint.cn/" target="_blank" rel="external">http://eslint.cn/</a></p>
+<h3 id="一：vscode默认配置"><a href="#一：vscode默认配置" class="headerlink" title="一：vscode默认配置"></a>一：vscode默认配置</h3><p>首选项  ——&gt;设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  //控制台---</div><div class="line">  &quot;workbench.colorTheme&quot;: &quot;Monokai&quot;,</div><div class="line">  //文件---</div><div class="line">  &quot;files.autoSave&quot;: &quot;onFocusChange&quot;,</div><div class="line">  //配置语言的文件关联</div><div class="line">  &quot;files.associations&quot;: &#123;</div><div class="line">    &quot;*.js&quot;: &quot;javascriptreact&quot;</div><div class="line">  &#125;,</div><div class="line">  //editor----</div><div class="line">  &quot;editor.fontSize&quot;: 14,</div><div class="line">  &quot;editor.detectIndentation&quot;: false,</div><div class="line">  &quot;editor.tabSize&quot;: 2,</div><div class="line">  &quot;editor.formatOnType&quot;: false,</div><div class="line">  &quot;editor.formatOnSave&quot;: false,</div><div class="line">  &quot;editor.wordWrap&quot;: &quot;on&quot;,</div><div class="line"></div><div class="line">  //关闭VS自带的 javascript验证</div><div class="line">  &quot;javascript.validate.enable&quot;: false,</div><div class="line">  //eslint---- 代码检查(默认只支持 js 文件的脚本检测)</div><div class="line">  //支持类 html 文件（如 vue ）的内联脚本检测 安装 eslint-plugin-html </div><div class="line">  &quot;eslint.options&quot;: &#123;</div><div class="line">    &quot;plugins&quot;: [</div><div class="line">      &quot;html&quot;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  &quot;eslint.validate&quot;: [</div><div class="line">    &quot;javascript&quot;,</div><div class="line">    &quot;javascriptreact&quot;,</div><div class="line">    &quot;html&quot;,</div><div class="line">    &quot;vue&quot;</div><div class="line">  ],</div><div class="line">  // 在保存时自动修复错误</div><div class="line">  &quot;eslint.autoFixOnSave&quot;: true,</div><div class="line">  //emmet缩写----</div><div class="line">  // 设置.vue 文件与 HTML 的关联</div><div class="line">  &quot;emmet.includeLanguages&quot;: &#123;</div><div class="line">    &quot;javascript&quot;: &quot;javascriptreact&quot;,</div><div class="line">    &quot;vue&quot;: &quot;html&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;emmet.syntaxProfiles&quot;: &#123;</div><div class="line">    &quot;vue-html&quot;: &quot;html&quot;,</div><div class="line">    &quot;vue&quot;: &quot;html&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="二：-eslintrc-js"><a href="#二：-eslintrc-js" class="headerlink" title="二：.eslintrc.js"></a>二：.eslintrc.js</h3><p>​    针对项目设置，放在根目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  root: true,</div><div class="line">  parser: &apos;babel-eslint&apos;,</div><div class="line">  &quot;env&quot;: &#123;</div><div class="line">    &quot;es6&quot;: true,</div><div class="line">    &quot;browser&quot;: true,</div><div class="line">    &quot;node&quot;: true</div><div class="line">  &#125;,</div><div class="line">  &quot;extends&quot;: &apos;airbnb&apos;,</div><div class="line">  &quot;parserOptions&quot;: &#123;</div><div class="line">    &quot;ecmaVersion&quot;: 6,</div><div class="line">    &quot;sourceType&quot;: &apos;module&apos;,</div><div class="line">    &quot;ecmaFeatures&quot;: &#123;</div><div class="line">      &quot;experimentalObjectRestSpread&quot;: true,</div><div class="line">      &quot;arrowFunctions&quot;: true</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  &quot;plugins&quot;: [&quot;react&quot;],</div><div class="line">  &quot;rules&quot;: &#123;</div><div class="line">    &apos;no-debugger&apos;: process.env.NODE_ENV === &apos;production&apos;? 2 : 0,</div><div class="line">    &quot;no-underscore-dangle&quot;: &quot;off&quot;,</div><div class="line">    &quot;react/prop-types&quot;: &quot;off&quot;,</div><div class="line">    &quot;import/extensions&quot;: [</div><div class="line">      &quot;error&quot;,</div><div class="line">      &quot;never&quot;, &#123;</div><div class="line">        &quot;web.js&quot;: &quot;never&quot;,</div><div class="line">        &quot;json&quot;: &quot;never&quot;</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    &quot;import/no-extraneous-dependencies&quot;: [</div><div class="line">      &quot;error&quot;, &#123;</div><div class="line">        &quot;devDependencies&quot;: true</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    &quot;import/no-unresolved&quot;: [</div><div class="line">      &quot;error&quot;, &#123;</div><div class="line">        &quot;ignore&quot;: [&quot;antd-mobile&quot;]</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    &quot;indent&quot;: [</div><div class="line">      &quot;error&quot;, 2</div><div class="line">    ],</div><div class="line">    &quot;indent&quot;: [&quot;error&quot;, 2],</div><div class="line">    &quot;linebreak-style&quot;: [</div><div class="line">      &quot;error&quot;, &quot;unix&quot;</div><div class="line">    ],</div><div class="line">    &quot;quotes&quot;: [</div><div class="line">      &quot;error&quot;, &quot;single&quot;</div><div class="line">    ],</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="三-安装相关eslint插件-（npm-cnpm-安装）"><a href="#三-安装相关eslint插件-（npm-cnpm-安装）" class="headerlink" title="三 安装相关eslint插件 （npm/cnpm 安装）"></a>三 安装相关eslint插件 （npm/cnpm 安装）</h3><p>​     “eslint”: “^4.6.1”,</p>
+<p>​    “eslint-config-airbnb”: “^15.1.0”,</p>
+<p>​    “eslint-plugin-import”: “^2.7.0”,</p>
+<p>​    “eslint-plugin-jsx-a11y”: “^6.0.2”,</p>
+<p>​    “eslint-plugin-react”: “^7.3.0”,</p>
+<p>​     “babel-loader”: “^6.3.2”,</p>
+<p>ESLint 允许你指定你想要支持的 JavaScript 语言选项。默认情况下，ESLint 支持 ECMAScript 5 语法。你可以覆盖该设置启用对 ECMAScript 其它版本和 JSX 的支持。</p>
+<p>对 JSX 语法的支持不用于对 React 的支持。React 适用于特定 ESLint 无法识别的 JSX 语法。如果你正在使用 React 和 想要 React 语义，我们推荐你使用 <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">eslint-plugin-react</a>。</p>
+<h3 id="四、在项目中执行-eslint"><a href="#四、在项目中执行-eslint" class="headerlink" title="四、在项目中执行  eslint"></a>四、在项目中执行  eslint</h3><p>package.json 中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line"></div><div class="line">   	&quot;lint&quot;: &quot;eslint src --ext .js&quot;,</div><div class="line"></div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
+<p>说明:eslint 命令</p>
+<h4 id="ext"><a href="#ext" class="headerlink" title="--ext"></a><code>--ext</code></h4><p>这个选项允许你指定ESLint在指定的目录下查找JavaScript文件时要使用的文件扩展名。默认情况下，它使用<code>.js</code>作为唯一性文件扩展名。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Use only .js2 extension</div><div class="line">eslint . --ext .js2</div><div class="line"></div><div class="line"># Use both .js and .js2</div><div class="line">eslint . --ext .js --ext .js2</div><div class="line"></div><div class="line"># Also use both .js and .js2</div><div class="line">eslint . --ext .js,.js2</div></pre></td></tr></table></figure>
+<p>注意：如果你使用了水珠模式，则<code>--ext</code>被忽略</p>
+<p>例如，<code>eslint lib/* --ext .js</code>将匹配<code>lib/</code>下的所有文件，忽略扩展名。</p>
+<h3 id="五、番外"><a href="#五、番外" class="headerlink" title="五、番外"></a>五、番外</h3><h5 id="npm安装相关组件"><a href="#npm安装相关组件" class="headerlink" title="npm安装相关组件"></a>npm安装相关组件</h5><h6 id="安装eslint"><a href="#安装eslint" class="headerlink" title="安装eslint"></a>安装eslint</h6><p><code>$ npm install eslint -g</code></p>
+<h5 id="安装eslint-plugin-react"><a href="#安装eslint-plugin-react" class="headerlink" title="安装eslint-plugin-react"></a>安装eslint-plugin-react</h5><p>识别react中的一些语法检验<br><code>$ npm install eslint-plugin-react</code></p>
+<h5 id="安装babel-eslint"><a href="#安装babel-eslint" class="headerlink" title="安装babel-eslint"></a>安装babel-eslint</h5><p>如果用到了es6的新语法, 需要安装babel-eslint,不然会把箭头函数识别成错误<br><code>$ npm install babel-eslint</code></p>
+<h4 id="在项目的根目录创建配置文件-eslintrc-json"><a href="#在项目的根目录创建配置文件-eslintrc-json" class="headerlink" title="在项目的根目录创建配置文件.eslintrc.json"></a>在项目的根目录创建配置文件.eslintrc.json</h4><p>eslint会根据.eslintrc.json定义的规则进行代码检测(在mac中的.开头的文件为隐藏文件);<br>eslint官方给出的一些有关react配置的文档:<br><a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">https://github.com/yannickcr/eslint-plugin-react</a></p>
+<p><strong>一般有两种做法:</strong></p>
+<ol>
+<li>宽松的定义,只检验一些语法上的错误.</li>
+<li>严谨的定义,可以当团队书写代码的规范,把规范错误定义成<strong>警告</strong>, 语法错误定义成<strong>错误</strong></li>
+</ol>
 
       
     </div>
@@ -1228,10 +1228,10 @@
 
 
   
-    <article id="post-es6--class" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-箭头函数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/08/24/es6--class/" class="article-date">
+      <a href="/2017/08/24/箭头函数/" class="article-date">
   	<time datetime="2017-08-23T16:00:00.000Z" itemprop="datePublished">2017-08-24</time>
 </a>
     </div>
@@ -1243,7 +1243,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/24/es6--class/">es6—class</a>
+      <a class="article-title" href="/2017/08/24/箭头函数/">箭头函数</a>
     </h1>
   
 
@@ -1252,72 +1252,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、javascript传统做法生成一个对象实例："><a href="#一、javascript传统做法生成一个对象实例：" class="headerlink" title="一、javascript传统做法生成一个对象实例："></a>一、javascript传统做法生成一个对象实例：</h2><p>​    定义构造函数，然后通过new的方式完成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function StdInfo()&#123;</div><div class="line">    this.name = &quot;job&quot;;            </div><div class="line">    this.age = 30;            </div><div class="line">&#125;</div><div class="line"></div><div class="line">StdInfo.prototype.getNames = function ()&#123;</div><div class="line">    console.log(&quot;name：&quot;+this.name);               </div><div class="line">&#125;</div><div class="line">//得到一个学员信息对象</div><div class="line">var p = new StdInfo()</div></pre></td></tr></table></figure>
-<p>javacript中只有对象，没有类。它是是基于原型的语言，原型对象是新对象的模板，它将自身的属性共享给新对象。</p>
-<h2 id="二、ES6添加了类，作为对象的模板"><a href="#二、ES6添加了类，作为对象的模板" class="headerlink" title="二、ES6添加了类，作为对象的模板"></a>二、ES6添加了类，作为对象的模板</h2><h3 id="1-定义类"><a href="#1-定义类" class="headerlink" title="1.定义类"></a>1.定义类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//定义类</div><div class="line">class StdInfo &#123;</div><div class="line">    constructor()&#123;</div><div class="line">       this.name = &quot;job&quot;;            </div><div class="line">       this.age = 30;      </div><div class="line">    &#125;</div><div class="line">    //定义在类中的方法不需要添加function</div><div class="line">    getNames()&#123;</div><div class="line">       console.log(&quot;name：&quot;+this.name);      </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//使用new的方式得到一个实例对象</div><div class="line">var p = new StdInfo();</div></pre></td></tr></table></figure>
-<p>上面的写法更加清晰、更像面向对象编程的语法，看起来也更容易理解。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//定义类</div><div class="line">class StdInfo &#123;</div><div class="line">    //...</div><div class="line">&#125;</div><div class="line">console.log(typeof  StdInfo);  //function</div><div class="line"></div><div class="line">console.log(StdInfo === StdInfo.prototype.constructor);  //true</div></pre></td></tr></table></figure>
-<p>从上面的测试中可以看出来，类的类型就是一个函数，是一个“特殊函数”，指向的是构造函数。</p>
-<p>函数的定义方式有函数声明和函数表达式两种，类的定义方式也有两种，分别是：<strong>类声明</strong>和<strong>类表达式</strong>。</p>
-<h3 id="2-类声明（-class-类名-）"><a href="#2-类声明（-class-类名-）" class="headerlink" title="2.类声明（    class 类名 {}    ）"></a>2.类声明（    class 类名 {}    ）</h3><p>类声明是定义类的一种方式，使用关键字<strong>class</strong>，后面跟上类名，然后就是一对大括号。把这一类需要定义的方法放在大括号中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//定义类，可以省略constructor</div><div class="line">class StdInfo &#123;</div><div class="line">    getNames()&#123;</div><div class="line">        console.log(&quot;name：&quot;+this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// -------------------------------------</div><div class="line">//定义类，加上constructor</div><div class="line">class StdInfo &#123;</div><div class="line">    //使用new定义实例对象时，自动调用这个函数，传入参数</div><div class="line">    constructor(name,age)&#123;</div><div class="line">       this.name = name;            </div><div class="line">       this.age = age;      </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    getNames()&#123;</div><div class="line">       console.log(&quot;name：&quot;+this.name);      </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义实例对象时，传入参数</div><div class="line">var p = new StdInfo(&quot;job&quot;,30)</div></pre></td></tr></table></figure>
-<p>（1）constructor<strong>是一个默认方法，使用</strong>new<strong>来定义实例对象时，自动执行</strong>constructor<strong>函数，传入所需要的参数,执行完</strong>constructor**后自动返回实例对象。</p>
-<p>（2）一个类中只能有一个<strong>constructor</strong>函数，定义多个会报错。</p>
-<p>（3）constructor**中的this指向新创建的实例对象，利用this往新创建的实例对象扩展属性。</p>
-<p>（4）在定义实例对象时，不需要在初始化阶段做一些事，可以不用显示的写<strong>constructor</strong>函数。如果没有显式定义，一个空的constructor方法会被默认添加，constructor(){}</p>
-<h3 id="3-类表达式"><a href="#3-类表达式" class="headerlink" title="3.类表达式"></a>3.类表达式</h3><p>类表达式是定义类的另一种形式，类似于函数表达式，把一个函数作为值赋给变量。</p>
-<p>可以把定义的类赋值给一个变量，这时候变量就为类名。<strong>class</strong>关键字之后的类名可有可无，如果存在，则只能在类内部使用。</p>
-<p>定义类 class后面有类名：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> const People = class StdInfo &#123;</div><div class="line">    constructor()&#123;</div><div class="line">        console.log(StdInfo);  //可以打印出值，是一个函数</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">new People();</div><div class="line">new StdInfo();  //报错，StdInfo is not defined；</div></pre></td></tr></table></figure>
-<p>定义类 class后面没有类名：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">const People = class &#123;</div><div class="line">    constructor()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">new People();</div></pre></td></tr></table></figure>
-<p>立即执行的类：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const p = new class &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        console.log(name,age);</div><div class="line">    &#125;</div><div class="line">&#125;(&quot;job&quot;,30)</div></pre></td></tr></table></figure>
-<p>立即执行的类，在类前要加上<strong>new</strong>。<strong>p</strong>为类的实例对象。</p>
-<h3 id="4-不存在变量提升"><a href="#4-不存在变量提升" class="headerlink" title="4.不存在变量提升"></a>4.不存在变量提升</h3><p>定义类不存在变量提升，只能先定义类后使用，跟函数声明有区别的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//-----函数声明-------</div><div class="line">//定义前可以先使用，因为函数声明提升的缘故，调用合法。</div><div class="line">func();</div><div class="line">function func()&#123;&#125;</div><div class="line"></div><div class="line">//-----定义类---------------</div><div class="line">new StdInfo();  //报错，StdInfo is not defined</div><div class="line">class StdInfo&#123;&#125;</div></pre></td></tr></table></figure>
-<h2 id="5-extends继承"><a href="#5-extends继承" class="headerlink" title="5.extends继承"></a>5.extends继承</h2><p>使用<strong>extends</strong>关键字实现类之间的继承。这比在ES5中使用继承要方便很多。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//定义类父类</div><div class="line">class Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    speakSometing()&#123;</div><div class="line">        console.log(&quot;I can speek chinese&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义子类，继承父类</div><div class="line">class Child extends Parent &#123;</div><div class="line">    coding()&#123;</div><div class="line">        console.log(&quot;coding javascript&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var c = new Child();</div><div class="line"></div><div class="line">//可以调用父类的方法</div><div class="line">c.speakSometing(); // I can speek chinese</div></pre></td></tr></table></figure>
-<p>使用继承的方式，子类就拥有了父类的方法。</p>
-<p>如果子类中有<strong>constructor</strong>构造函数，则必须使用调用<strong>super</strong>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//定义类父类</div><div class="line">class Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    speakSometing()&#123;</div><div class="line">        console.log(&quot;I can speek chinese&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义子类，继承父类</div><div class="line">class Child extends Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        //不调super()，则会报错  this is not defined</div><div class="line"></div><div class="line">        //必须调用super</div><div class="line">        super(name,age);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    coding()&#123;</div><div class="line">        console.log(&quot;coding javascript&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var c = new Child(&quot;job&quot;,30);</div><div class="line"></div><div class="line">//可以调用父类的方法</div><div class="line">c.speakSometing(); // I can speek chinese</div></pre></td></tr></table></figure>
-<p>子类必须在constructor方法中调用super方法，否则新建实例时会报错(<em>this is not defined</em>)。这是因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象。</p>
-<p>以上是对ES6中类的简单总结学习，欢迎一起讨论。</p>
-<p>参考：<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes</a></p>
-<p><a href="http://es6.ruanyifeng.com/#docs/class" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/class</a></p>
-<ul>
-<li><a href="https://segmentfault.com/a/1190000007537173" target="_blank" rel="external">2016年11月20日发布</a></li>
-<li><a href="javascript:void(0" target="_blank" rel="external">**</a>;)</li>
-</ul>
-<ul>
-<li><a href="javascript:void(0" target="_blank" rel="external">新浪微博</a>;)</li>
-<li><a href="javascript:void(0" target="_blank" rel="external">微信</a>;)</li>
-<li><a href="javascript:void(0" target="_blank" rel="external">Twitter</a>;)</li>
-<li><a href="javascript:void(0" target="_blank" rel="external">Facebook</a>;)</li>
-</ul>
-<p>赞  |   1收藏  |  3</p>
-<h4 id="你可能感兴趣的文章"><a href="#你可能感兴趣的文章" class="headerlink" title="你可能感兴趣的文章"></a>你可能感兴趣的文章</h4><ul>
-<li><a href="https://segmentfault.com/a/1190000004102588" target="_blank" rel="external">JavaScript笔记集</a> 6 收藏，952 浏览</li>
-<li><a href="https://segmentfault.com/a/1190000010542028" target="_blank" rel="external">ES6的Class学习</a> 1 收藏，67 浏览</li>
-<li><a href="https://segmentfault.com/a/1190000004219721" target="_blank" rel="external">浮动【电梯】或【回到底部】的小插件ielevator.js</a> 2 收藏，727 浏览</li>
-</ul>
-<p>## </p>
-<p>2 条评论</p>
-<p><a href="javascript:;" target="_blank" rel="external">默认排序</a><a href="javascript:;" target="_blank" rel="external">时间排序</a></p>
-<p><a href="https://segmentfault.com/u/sunny_l" target="_blank" rel="external"><img src="https://static.segmentfault.com/v-599d4ab0/global/img/user-64.png" alt="img"></a></p>
-<p><a href="https://segmentfault.com/u/sunny_l" target="_blank" rel="external">Sunny_L</a></p>
-<p>· 7月4日</p>
-<p>非class方法可以写Point.prototype.on=Point.prototype.addListener，es6的class应该怎么写？包内好像不能用=号</p>
-<p>** 赞 回复</p>
-<p><a href="https://segmentfault.com/u/wocaibushidaocaoren" target="_blank" rel="external"><img src="https://sfault-avatar.b0.upaiyun.com/184/839/1848398528-5880ca077eec4_big64" alt="img"></a></p>
-<p><a href="https://segmentfault.com/u/wocaibushidaocaoren" target="_blank" rel="external">我才不是稻草人</a></p>
-<p>· 7月14日</p>
-<p>说的不错，想问个问题，在代码里<br>//定义类父类<br>class Parent {</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">constructor(name,age)&#123;</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">speakSometing()&#123;</div><div class="line">    console.log(&quot;I can speek chinese&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>}<br>//定义子类，继承父类<br>class Child extends Parent {</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">constructor(name,age)&#123;</div><div class="line">    //不调super()，则会报错  this is not defined</div><div class="line"></div><div class="line">    //必须调用super</div><div class="line">    super(name,age);</div><div class="line">&#125;</div><div class="line"></div><div class="line">coding()&#123;</div><div class="line">    this.speakSometing()   //可以这么用吗？？？？？？</div><div class="line">    console.log(&quot;coding javascript&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>}</p>
+        <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a><strong>语法</strong></h2><p>我们先来看看箭头函数的<strong>语法</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">([param] [, param]) =&gt; &#123;</div><div class="line">   statements</div><div class="line">&#125;</div><div class="line"></div><div class="line">param =&gt; expression</div></pre></td></tr></table></figure>
+<p>一、param 是参数，根据参数个数不同，分这几种情况：<br><strong>() =&gt; { … } // 零个参数用 () 表示；</strong><br><strong>x =&gt; { … } // 一个参数可以省略 ()；</strong><br>(x, y) =&gt; { … } // 多参数不能省略 ()；</p>
+<p>二、expression：</p>
+<p>多行语句需要用{}括起来<strong>，</strong></p>
+<p>单行表达式不需要{}，并且会作为函数返回值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">x =&gt; &#123; return x * x &#125;; // 函数返回 x * x</div><div class="line">x =&gt; x * x; // 同上一行</div><div class="line">x =&gt; return x * x; // SyntaxError 报错，不能省略 &#123;&#125;</div><div class="line">x =&gt; &#123; x * x &#125;; // 合法，没有定义返回值，返回 undefined</div></pre></td></tr></table></figure>
+<p>三、和普通函数一样，箭头函数也可以使用<a href="http://blog.csdn.net/mevicky/article/details/49902147" target="_blank" rel="external"><strong>剩余参数</strong></a>和默认参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var func1 = (x = 1, y = 2) =&gt; x + y;</div><div class="line">func1(); // 得到 3</div><div class="line"></div><div class="line">var func2 = (x, ...args) =&gt; &#123; console.log(args) &#125;;</div><div class="line">func2(1,2,3); // 输出 [2, 3]</div></pre></td></tr></table></figure>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a><strong>特性</strong></h2><p>一、箭头函数内部<strong>没有constructor方法</strong>，也<strong>没有prototype</strong>，所以不支持new操作</p>
+<p>二、箭头函数的 this 始终指向函数定义时的 this，而非执行时；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var o = &#123;</div><div class="line">    x : 1,</div><div class="line">    func : function() &#123; console.log(this.x) &#125;,</div><div class="line">    test : function() &#123;</div><div class="line">        setTimeout(function() &#123;</div><div class="line">            this.func();</div><div class="line">        &#125;, 100);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">o.test(); // TypeError : this.func is not a function</div></pre></td></tr></table></figure>
+<p>上面的代码会出现错误，因为this的指向<strong>从o变为了全局</strong>（函数调用中的this都是指向全局的）。我们需要修改上面的代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var o = &#123;</div><div class="line">    x : 1,</div><div class="line">    func : function() &#123; console.log(this.x) &#125;,</div><div class="line">    test : function() &#123;</div><div class="line">        var _this = this;</div><div class="line">        setTimeout(function() &#123;</div><div class="line">            _this.func(); </div><div class="line">        &#125;, 100);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">o.test();</div></pre></td></tr></table></figure>
+<p>通过使用外部事先保存的this就行了。这里就可以利用到箭头函数了，我们刚才说过，<strong>箭头函数的 this 始终指向函数定义时的 this，而非执行时</strong>。所以我们将上面的代码修改如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var o = &#123;</div><div class="line">    x : 1,</div><div class="line">    func : function() &#123; console.log(this.x) &#125;,</div><div class="line">    test : function() &#123;</div><div class="line">        setTimeout(() =&gt; &#123; this.func() &#125;, 100);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">o.test();</div></pre></td></tr></table></figure>
+<p>这回<strong>this就指向o</strong>了。</p>
+<p>三、this是不会改变指向对象的**，我们知道call和apply可以改变this的指向，但是在箭头函数中是无效的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var x = 1,</div><div class="line">    o = &#123;</div><div class="line">        x : 10,</div><div class="line">        test : () =&gt; this.x</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">o.test(); // 1</div><div class="line">o.test.call(o); // 依然是1</div></pre></td></tr></table></figure>
 
       
     </div>
