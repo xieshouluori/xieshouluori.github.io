@@ -17,8 +17,6 @@
 <meta name="twitter:description" content="javascript html5 css3 前端">
   
   
-    <link rel="icon" href="/favicon.png">
-  
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -30,7 +28,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
 			
 		</a>
 
@@ -43,32 +41,6 @@
 		
 
 		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>Menu</li>
-						<li>Tags</li>
-						
-						
-					</ul>
-				</div>
-			</div>
-		
 
 		<div class="switch-area">
 			<div class="switch-wrap">
@@ -76,31 +48,15 @@
 					<nav class="header-menu">
 						<ul>
 						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">所有文章</a></li>
-				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
 						<div class="social">
 							
-								<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
-					        
-								<a class="weibo" target="_blank" href="http://weibo.com/5411966680/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="weibo">weibo</a>
-					        
-								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-					        
 						</div>
 					</nav>
 				</section>
 				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						
-					</div>
-				</section>
 				
 				
 				
@@ -122,7 +78,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+				<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
 			
 			</div>
 			<hgroup>
@@ -134,22 +90,12 @@
 			<nav class="header-menu">
 				<ul>
 				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">所有文章</a></li>
-		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/5411966680/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="weibo">weibo</a>
-			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-			        
 				</div>
 			</nav>
 		</header>				
@@ -158,24 +104,22 @@
 
       <div class="body-wrap">
   
-    <article id="post-hexo常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-pm2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/30/hexo常用命令/" class="article-date">
+      <a href="/2016/11/30/pm2/" class="article-date">
   	<time datetime="2016-11-29T16:00:00.000Z" itemprop="datePublished">2016-11-30</time>
 </a>
     </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/30/hexo常用命令/">hexo常用命令</a>
+      <a class="article-title" href="/2016/11/30/pm2/">pm2</a>
     </h1>
   
 
@@ -184,16 +128,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a>hexo s</h2><p>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
-<p>1.hexo s 是 hexo server 的缩写，命令效果一致；<br>2.预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；<br>3.对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果</p>
-<h2 id="hexo-new-“文章名字”"><a href="#hexo-new-“文章名字”" class="headerlink" title="hexo new “文章名字”"></a>hexo new “文章名字”</h2><p>新建一篇标题为 xxx 的文章，因为标题里有空格，所以加上了引号。<br>文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。</p>
-<h2 id="hexo-new-page-aboutme"><a href="#hexo-new-page-aboutme" class="headerlink" title="hexo new page aboutme"></a>hexo new page aboutme</h2><p>新建一个标题为 aboutme 的页面，默认链接地址为 主页地址/aboutme/</p>
-<p>1.标题可以为中文，但一般习惯用英文；<br>2.页面标题和文章一样可以随意修改；<br>3.页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。</p>
-<h2 id="hexo-g"><a href="#hexo-g" class="headerlink" title="hexo g"></a>hexo g</h2><p>生成网站静态文件到默认设置的 public 文件夹。</p>
-<p>1.便于查看网站生成的静态文件或者手动部署网站；<br>2.如果使用自动部署，不需要先执行该命令；<br>3.hexo g 是 hexo generate 的缩写，命令效果一致。</p>
-<h2 id="hexo-d"><a href="#hexo-d" class="headerlink" title="hexo d"></a>hexo d</h2><p>自动生成网站静态文件，并部署到设定的仓库。<br>1.hexo d 是 hexo deploy 的缩写，命令效果一致。</p>
-<h2 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h2><p>清除缓存文件 db.json 和已生成的静态文件 public 。</p>
-<p>网站显示异常时可以执行这条命令试试。</p>
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>全局安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g pm2</div></pre></td></tr></table></figure></p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>启动指定应用程序   —-到运行文件的更目录 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start app.js     <span class="comment"># 启动app.js应用程序</span></div></pre></td></tr></table></figure>
+<p>启动所有进程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start all</div></pre></td></tr></table></figure></p>
+<h2 id="重新启动"><a href="#重新启动" class="headerlink" title="重新启动"></a>重新启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pm2 restart app.js  <span class="comment"># 重启 指定应用程序</span></div><div class="line">pm2 restart all     <span class="comment">#重启所有应用</span></div></pre></td></tr></table></figure>
+<h2 id="停止进程"><a href="#停止进程" class="headerlink" title="停止进程"></a>停止进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pm2 stop all                  <span class="comment"># 停止所有的应用程序</span></div><div class="line">pm2 stop 0                    <span class="comment"># 停止 id为 0的指定应用程序</span></div></pre></td></tr></table></figure>
+<h2 id="删除进程"><a href="#删除进程" class="headerlink" title="删除进程"></a>删除进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pm2 delete all                <span class="comment"># 关闭并删除所有应用</span></div><div class="line">pm2 delete 0                  <span class="comment"># 删除指定应用 id 0</span></div></pre></td></tr></table></figure>
+<h2 id="查看进程状态"><a href="#查看进程状态" class="headerlink" title="查看进程状态"></a>查看进程状态</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 list</div></pre></td></tr></table></figure>
+<h2 id="查看某个进程的信息-（查看id为0的指定应用程序"><a href="#查看某个进程的信息-（查看id为0的指定应用程序" class="headerlink" title="查看某个进程的信息  （查看id为0的指定应用程序)"></a>查看某个进程的信息  （查看id为0的指定应用程序)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 describe 0</div></pre></td></tr></table></figure>
+<h2 id="自定义启动的配置文件"><a href="#自定义启动的配置文件" class="headerlink" title="自定义启动的配置文件"></a>自定义启动的配置文件</h2><pre><code>配置文件里的设置项，跟命令行参数基本是一一对应的。
+可以选择yaml或者json文件，就看个人洗好了。
+json格式的配置文件，pm2当作普通的js文件来处理，所以可以在里面添加注释或者编写代码，这对于动态调整配置很有好处。
+如果启动的时候指定了配置文件，那么命令行参数会被忽略。（个别参数除外，比如--env）
+</code></pre><p>eg：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"name"</span>        : <span class="string">"test_saas"</span>,  </div><div class="line">    <span class="string">"script"</span>      : <span class="string">"/Users/niuniu/Documents/web/test_saas/bin/www"</span>,</div><div class="line">    <span class="string">"cwd"</span>         : <span class="string">"/Users/niuniu/Documents/web/test_saas"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注释：<br>name :进程名称<br>script :实际启动脚本 （为绝对路径）<br>cwd : 当前工作路径</p>
+<h2 id="补充-–注意点"><a href="#补充-–注意点" class="headerlink" title="补充 –注意点"></a>补充 –注意点</h2><p>1.pm2 start 启动之后，会自动生成一个 进程信息（包含该进程的所有配置信息） ，<br>  即使通过 pm2 stop  结束了本进程 ，但是进程信息会仍然存在 ，再次启动不会重新生成</p>
+<p>2.如果某个进程不再使用 或者配置信息有误   使用 pm2 delete 停止并删除；<br>3.如果某个进程只是暂停 做调整  可以使用 pm2 stop</p>
 
       
     </div>
@@ -229,8 +180,6 @@
     </div>
   
   <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -295,8 +244,6 @@ bar(10);
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -336,8 +283,6 @@ bar(10);
     </div>
   
   <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
     
     
     <div class="article-entry" itemprop="articleBody">
@@ -379,8 +324,6 @@ bar(10);
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -420,8 +363,6 @@ bar(10);
     </div>
   
   <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
     
     
     <div class="article-entry" itemprop="articleBody">
@@ -490,8 +431,6 @@ bar(10);
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -531,8 +470,6 @@ bar(10);
     </div>
   
   <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -619,8 +556,6 @@ bar(10);
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
     
       <header class="article-header">
         
@@ -675,8 +610,6 @@ bar(10);
     </div>
   
   <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -744,20 +677,18 @@ bar(10);
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
 
 <script>
 	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
+		fancybox: undefined,
+		mathjax: undefined,
+		animate: undefined,
 		isHome: true,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: false
+		open_in_new: undefined
 	}
 </script>
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
@@ -766,27 +697,6 @@ bar(10);
 
 
 
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
   </div>
