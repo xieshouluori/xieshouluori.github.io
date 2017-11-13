@@ -792,6 +792,26 @@
   </entry>
   
   <entry>
+    <title>旋转动画</title>
+    <link href="http://yoursite.com/2017/09/04/%E6%97%8B%E8%BD%AC%E5%8A%A8%E7%94%BB/"/>
+    <id>http://yoursite.com/2017/09/04/旋转动画/</id>
+    <published>2017-09-03T16:00:00.000Z</published>
+    <updated>2017-09-04T11:32:30.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;css-transform&quot;&gt;&lt;a href=&quot;#css-transform&quot; class=&quot;headerlink&quot; title=&quot;css transform&quot;&gt;&lt;/a&gt;css transform&lt;/h2&gt;&lt;p&gt; 在部分浏览器上 比较卡 （安卓）&lt;/p&gt;
+&lt;h2 id=&quot;jquery-rotate库&quot;&gt;&lt;a href=&quot;#jquery-rotate库&quot; class=&quot;headerlink&quot; title=&quot;jquery rotate库&quot;&gt;&lt;/a&gt;jquery rotate库&lt;/h2&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;css-transform&quot;&gt;&lt;a href=&quot;#css-transform&quot; class=&quot;headerlink&quot; title=&quot;css transform&quot;&gt;&lt;/a&gt;css transform&lt;/h2&gt;&lt;p&gt; 在部分浏览器上 比较卡 （安卓）&lt;/p&gt;
+&lt;h2 
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>前端编辑器常用插件</title>
     <link href="http://yoursite.com/2017/09/04/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/"/>
     <id>http://yoursite.com/2017/09/04/前端开发插件/</id>
@@ -828,69 +848,11 @@
   </entry>
   
   <entry>
-    <title>旋转动画</title>
-    <link href="http://yoursite.com/2017/09/04/%E6%97%8B%E8%BD%AC%E5%8A%A8%E7%94%BB/"/>
-    <id>http://yoursite.com/2017/09/04/旋转动画/</id>
-    <published>2017-09-03T16:00:00.000Z</published>
-    <updated>2017-09-04T11:32:30.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;css-transform&quot;&gt;&lt;a href=&quot;#css-transform&quot; class=&quot;headerlink&quot; title=&quot;css transform&quot;&gt;&lt;/a&gt;css transform&lt;/h2&gt;&lt;p&gt; 在部分浏览器上 比较卡 （安卓）&lt;/p&gt;
-&lt;h2 id=&quot;jquery-rotate库&quot;&gt;&lt;a href=&quot;#jquery-rotate库&quot; class=&quot;headerlink&quot; title=&quot;jquery rotate库&quot;&gt;&lt;/a&gt;jquery rotate库&lt;/h2&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;css-transform&quot;&gt;&lt;a href=&quot;#css-transform&quot; class=&quot;headerlink&quot; title=&quot;css transform&quot;&gt;&lt;/a&gt;css transform&lt;/h2&gt;&lt;p&gt; 在部分浏览器上 比较卡 （安卓）&lt;/p&gt;
-&lt;h2 
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>使用JS与CSS3的翻转实现3D翻牌效果</title>
     <link href="http://yoursite.com/2017/08/31/%E4%BD%BF%E7%94%A8JS%E4%B8%8ECSS3%E7%9A%84%E7%BF%BB%E8%BD%AC%E5%AE%9E%E7%8E%B03D%E7%BF%BB%E7%89%8C%E6%95%88%E6%9E%9C/"/>
     <id>http://yoursite.com/2017/08/31/使用JS与CSS3的翻转实现3D翻牌效果/</id>
     <published>2017-08-30T16:00:00.000Z</published>
     <updated>2017-09-05T06:54:23.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;我们先来看看箭头函数的&lt;strong&gt;语法&lt;/strong&gt;：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;([param] [, param]) =&amp;gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   statements&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;param =&amp;gt; expression&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;一、param 是参数，根据参数个数不同，分这几种情况：&lt;br&gt;&lt;strong&gt;() =&amp;gt; { … } // 零个参数用 () 表示；&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;x =&amp;gt; { … } // 一个参数可以省略 ()；&lt;/strong&gt;&lt;br&gt;(x, y) =&amp;gt; { … } // 多参数不能省略 ()；&lt;/p&gt;
-&lt;p&gt;二、expression：&lt;/p&gt;
-&lt;p&gt;多行语句需要用{}括起来&lt;strong&gt;，&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;单行表达式不需要{}，并且会作为函数返回值&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; &amp;#123; return x * x &amp;#125;; // 函数返回 x * x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; x * x; // 同上一行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; return x * x; // SyntaxError 报错，不能省略 &amp;#123;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; &amp;#123; x * x &amp;#125;; // 合法，没有定义返回值，返回 undefined&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;三、和普通函数一样，箭头函数也可以使用&lt;a href=&quot;http://blog.csdn.net/mevicky/article/details/49902147&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;剩余参数&lt;/strong&gt;&lt;/a&gt;和默认参数。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var func1 = (x = 1, y = 2) =&amp;gt; x + y;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;func1(); // 得到 3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;var func2 = (x, ...args) =&amp;gt; &amp;#123; console.log(args) &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;func2(1,2,3); // 输出 [2, 3]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;特性&quot;&gt;&lt;a href=&quot;#特性&quot; class=&quot;headerlink&quot; title=&quot;特性&quot;&gt;&lt;/a&gt;&lt;strong&gt;特性&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;一、箭头函数内部&lt;strong&gt;没有constructor方法&lt;/strong&gt;，也&lt;strong&gt;没有prototype&lt;/strong&gt;，所以不支持new操作&lt;/p&gt;
-&lt;p&gt;二、箭头函数的 this 始终指向函数定义时的 this，而非执行时；&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x : 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    func : function() &amp;#123; console.log(this.x) &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test : function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        setTimeout(function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            this.func();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;, 100);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test(); // TypeError : this.func is not a function&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;上面的代码会出现错误，因为this的指向&lt;strong&gt;从o变为了全局&lt;/strong&gt;（函数调用中的this都是指向全局的）。我们需要修改上面的代码如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x : 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    func : function() &amp;#123; console.log(this.x) &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test : function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        var _this = this;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        setTimeout(function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            _this.func(); &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;, 100);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;通过使用外部事先保存的this就行了。这里就可以利用到箭头函数了，我们刚才说过，&lt;strong&gt;箭头函数的 this 始终指向函数定义时的 this，而非执行时&lt;/strong&gt;。所以我们将上面的代码修改如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x : 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    func : function() &amp;#123; console.log(this.x) &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test : function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        setTimeout(() =&amp;gt; &amp;#123; this.func() &amp;#125;, 100);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这回&lt;strong&gt;this就指向o&lt;/strong&gt;了。&lt;/p&gt;
-&lt;p&gt;三、this是不会改变指向对象的**，我们知道call和apply可以改变this的指向，但是在箭头函数中是无效的。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var x = 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        x : 10,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        test : () =&amp;gt; this.x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test(); // 1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test.call(o); // 依然是1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;我们先来看看箭头函数的&lt;strong&gt;语法&lt;/strong&gt;：&lt;/p&gt;
-&lt;figure class=&quot;hi
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>箭头函数</title>
-    <link href="http://yoursite.com/2017/08/24/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
-    <id>http://yoursite.com/2017/08/24/箭头函数/</id>
-    <published>2017-08-23T16:00:00.000Z</published>
-    <updated>2017-08-24T03:11:29.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;我们先来看看箭头函数的&lt;strong&gt;语法&lt;/strong&gt;：&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;([param] [, param]) =&amp;gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   statements&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;param =&amp;gt; expression&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -1008,6 +970,44 @@
   </entry>
   
   <entry>
+    <title>箭头函数</title>
+    <link href="http://yoursite.com/2017/08/24/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2017/08/24/箭头函数/</id>
+    <published>2017-08-23T16:00:00.000Z</published>
+    <updated>2017-08-24T03:11:29.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;我们先来看看箭头函数的&lt;strong&gt;语法&lt;/strong&gt;：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;([param] [, param]) =&amp;gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   statements&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;param =&amp;gt; expression&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;一、param 是参数，根据参数个数不同，分这几种情况：&lt;br&gt;&lt;strong&gt;() =&amp;gt; { … } // 零个参数用 () 表示；&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;x =&amp;gt; { … } // 一个参数可以省略 ()；&lt;/strong&gt;&lt;br&gt;(x, y) =&amp;gt; { … } // 多参数不能省略 ()；&lt;/p&gt;
+&lt;p&gt;二、expression：&lt;/p&gt;
+&lt;p&gt;多行语句需要用{}括起来&lt;strong&gt;，&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;单行表达式不需要{}，并且会作为函数返回值&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; &amp;#123; return x * x &amp;#125;; // 函数返回 x * x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; x * x; // 同上一行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; return x * x; // SyntaxError 报错，不能省略 &amp;#123;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; &amp;#123; x * x &amp;#125;; // 合法，没有定义返回值，返回 undefined&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;三、和普通函数一样，箭头函数也可以使用&lt;a href=&quot;http://blog.csdn.net/mevicky/article/details/49902147&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;剩余参数&lt;/strong&gt;&lt;/a&gt;和默认参数。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var func1 = (x = 1, y = 2) =&amp;gt; x + y;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;func1(); // 得到 3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;var func2 = (x, ...args) =&amp;gt; &amp;#123; console.log(args) &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;func2(1,2,3); // 输出 [2, 3]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;特性&quot;&gt;&lt;a href=&quot;#特性&quot; class=&quot;headerlink&quot; title=&quot;特性&quot;&gt;&lt;/a&gt;&lt;strong&gt;特性&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;一、箭头函数内部&lt;strong&gt;没有constructor方法&lt;/strong&gt;，也&lt;strong&gt;没有prototype&lt;/strong&gt;，所以不支持new操作&lt;/p&gt;
+&lt;p&gt;二、箭头函数的 this 始终指向函数定义时的 this，而非执行时；&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x : 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    func : function() &amp;#123; console.log(this.x) &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test : function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        setTimeout(function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            this.func();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;, 100);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test(); // TypeError : this.func is not a function&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;上面的代码会出现错误，因为this的指向&lt;strong&gt;从o变为了全局&lt;/strong&gt;（函数调用中的this都是指向全局的）。我们需要修改上面的代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x : 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    func : function() &amp;#123; console.log(this.x) &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test : function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        var _this = this;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        setTimeout(function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            _this.func(); &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;, 100);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;通过使用外部事先保存的this就行了。这里就可以利用到箭头函数了，我们刚才说过，&lt;strong&gt;箭头函数的 this 始终指向函数定义时的 this，而非执行时&lt;/strong&gt;。所以我们将上面的代码修改如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x : 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    func : function() &amp;#123; console.log(this.x) &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test : function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        setTimeout(() =&amp;gt; &amp;#123; this.func() &amp;#125;, 100);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这回&lt;strong&gt;this就指向o&lt;/strong&gt;了。&lt;/p&gt;
+&lt;p&gt;三、this是不会改变指向对象的**，我们知道call和apply可以改变this的指向，但是在箭头函数中是无效的。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var x = 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        x : 10,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        test : () =&amp;gt; this.x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test(); // 1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test.call(o); // 依然是1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;我们先来看看箭头函数的&lt;strong&gt;语法&lt;/strong&gt;：&lt;/p&gt;
+&lt;figure class=&quot;hi
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>小数点截取两位（小数三位以上的，小数点第二位加一）</title>
     <link href="http://yoursite.com/2017/07/05/%E5%B0%8F%E6%95%B0%E7%82%B9%E6%88%AA%E5%8F%96%E4%B8%A4%E4%BD%8D%EF%BC%88%E5%B0%8F%E6%95%B0%E4%B8%89%E4%BD%8D%E4%BB%A5%E4%B8%8A%E7%9A%84%EF%BC%8C%E5%B0%8F%E6%95%B0%E7%82%B9%E7%AC%AC%E4%BA%8C%E4%BD%8D%E5%8A%A0%E4%B8%80%EF%BC%89/"/>
     <id>http://yoursite.com/2017/07/05/小数点截取两位（小数三位以上的，小数点第二位加一）/</id>
@@ -1055,28 +1055,6 @@
   
   <entry>
     <title></title>
-    <link href="http://yoursite.com/2017/01/10/BFC_IFC/"/>
-    <id>http://yoursite.com/2017/01/10/BFC_IFC/</id>
-    <published>2017-01-10T10:20:00.000Z</published>
-    <updated>2017-09-05T06:54:16.000Z</updated>
-    
-    <content type="html">&lt;hr&gt;
-&lt;p&gt;title: BFC 原理讲解&lt;br&gt;date: 2017-09-05&lt;/p&gt;
-&lt;h3 id=&quot;一、&quot;&gt;&lt;a href=&quot;#一、&quot; class=&quot;headerlink&quot; title=&quot;一、&quot;&gt;&lt;/a&gt;一、&lt;/h3&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;title: BFC 原理讲解&lt;br&gt;date: 2017-09-05&lt;/p&gt;
-&lt;h3 id=&quot;一、&quot;&gt;&lt;a href=&quot;#一、&quot; class=&quot;headerlink&quot; title=&quot;一、&quot;&gt;&lt;/a&gt;一、&lt;/h3&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
     <link href="http://yoursite.com/2017/01/10/CSS%20%E7%9B%92%E7%8A%B6%E6%A8%A1%E5%9E%8B/"/>
     <id>http://yoursite.com/2017/01/10/CSS 盒状模型/</id>
     <published>2017-01-10T10:20:00.000Z</published>
@@ -1109,6 +1087,28 @@
       &lt;hr&gt;
 &lt;p&gt;title: CSS 盒状模型&lt;br&gt;date: 2017-09-05&lt;/p&gt;
 &lt;h3 id=&quot;一、盒模型定义&quot;&gt;&lt;a href=&quot;#一、盒模型定义&quot; class=&quot;headerlink&quot; title=&quot;一、盒模型定义&quot;&gt;&lt;/a&gt;一、盒模型定义&lt;/h3&gt;&lt;p&gt;(1
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/01/10/BFC_IFC/"/>
+    <id>http://yoursite.com/2017/01/10/BFC_IFC/</id>
+    <published>2017-01-10T10:20:00.000Z</published>
+    <updated>2017-09-05T06:54:16.000Z</updated>
+    
+    <content type="html">&lt;hr&gt;
+&lt;p&gt;title: BFC 原理讲解&lt;br&gt;date: 2017-09-05&lt;/p&gt;
+&lt;h3 id=&quot;一、&quot;&gt;&lt;a href=&quot;#一、&quot; class=&quot;headerlink&quot; title=&quot;一、&quot;&gt;&lt;/a&gt;一、&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;title: BFC 原理讲解&lt;br&gt;date: 2017-09-05&lt;/p&gt;
+&lt;h3 id=&quot;一、&quot;&gt;&lt;a href=&quot;#一、&quot; class=&quot;headerlink&quot; title=&quot;一、&quot;&gt;&lt;/a&gt;一、&lt;/h3&gt;
     
     </summary>
     
