@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>携手落日</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="javascript html5 css3 前端">
+<meta property="og:type" content="website">
+<meta property="og:title" content="携手落日">
+<meta property="og:url" content="http://yoursite.com/page/11/index.html">
+<meta property="og:site_name" content="携手落日">
+<meta property="og:description" content="javascript html5 css3 前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="携手落日">
+<meta name="twitter:description" content="javascript html5 css3 前端">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">妞妞</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我思故我在</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">妞妞</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">妞妞</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我思故我在</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+  
+    <article id="post-checkbox全选" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/02/checkbox全选/" class="article-date">
+  	<time datetime="2016-09-02T08:58:18.000Z" itemprop="datePublished">2016-09-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/02/checkbox全选/">checkbox全选</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-遇到的问题"><a href="#一-遇到的问题" class="headerlink" title="一 遇到的问题"></a>一 遇到的问题</h2><p>jq关于checkbox全选的问题，点击全选一次再点一次取消，然后再这么点全选都没有用了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">这是jq代码为什么全选只有第一次点击有效</div><div class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</div><div class="line">         $(<span class="string">".ddd"</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">                $(this).closest(<span class="string">"tr"</span>).find(<span class="string">"input[type='checkbox']"</span>).attr(<span class="string">"checked"</span>,<span class="literal">true</span>);</div><div class="line">            &#125;);</div><div class="line">            $(<span class="string">".noc"</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">                $(this).closest(<span class="string">"tr"</span>).find(<span class="string">"input[type='checkbox']"</span>).attr(<span class="string">"checked"</span>,<span class="literal">false</span>);</div><div class="line">            &#125;);</div><div class="line">  &lt;/script&gt;</div></pre></td></tr></table></figure>
+<h2 id="二-解决办法"><a href="#二-解决办法" class="headerlink" title="二 解决办法"></a>二 解决办法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">把  .attr(<span class="string">"checked"</span>,<span class="literal">true</span>);  改成  .prop(<span class="string">"checked"</span>,<span class="literal">true</span>);</div></pre></td></tr></table></figure>
+<h2 id="三-原理"><a href="#三-原理" class="headerlink" title="三 原理"></a>三 原理</h2><p>具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled 使用prop()，其他的使用 attr()</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">我们看下 attr() 和 prop() 的区别：</div><div class="line"></div><div class="line">attr() 里面，最关键的两行代码</div><div class="line"></div><div class="line">elem.setAttribute( name, value + <span class="string">""</span> ); </div><div class="line"></div><div class="line">ret =  elem.getAttribute( name );</div><div class="line">很明显的看出来，使用的 DOM 的 API setAttribute() 和 getAttribute() 方法操作的属性元素节点。</div><div class="line"></div><div class="line">prop() 里面，最关键的两行代码</div><div class="line"></div><div class="line"><span class="built_in">return</span> ( elem[ name ] = value );</div><div class="line"></div><div class="line"><span class="built_in">return</span> elem[ name ];</div><div class="line">可以理解为 document.getElementById(el)[name] = value，这是转化成 element 的一个属性。</div></pre></td></tr></table></figure>
+<p>不建议使用 attr() 来对具有 true 和 false 两个属性的属性进行操作了。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-module_pattern" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/11/module_pattern/" class="article-date">
+  	<time datetime="2016-04-11T06:09:44.000Z" itemprop="datePublished">2016-04-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/11/module_pattern/">JavaScript 模块化编程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-模块模式"><a href="#一-模块模式" class="headerlink" title="一 模块模式"></a>一 模块模式</h2><h3 id="（1）-闭包与-IIFE"><a href="#（1）-闭包与-IIFE" class="headerlink" title="（1） 闭包与 IIFE"></a>（1） 闭包与 IIFE</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">;(<span class="keyword">function</span> (参数) &#123;</div><div class="line">  // 模块代码</div><div class="line">  // <span class="built_in">return</span> something;</div><div class="line">&#125;(参数));</div></pre></td></tr></table></figure>
+<p>模块模式的本质:<br>(1)可以定义私有变量和函数，外部无法访问它们，从而做到了私有成员的隐藏和隔离。</p>
+<p>(2)通过返回对象或函数,可以公开我们对外暴露的公开的方法与数据。</p>
+<h3 id="（2）参数输入"><a href="#（2）参数输入" class="headerlink" title="（2）参数输入"></a>（2）参数输入</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">;(<span class="keyword">function</span> (q, w) &#123;</div><div class="line">  // q is jQuery</div><div class="line">  // w is window</div><div class="line">  // 局部变量及代码</div><div class="line">  // 返回</div><div class="line">&#125;)(jQuery, window);</div></pre></td></tr></table></figure>
+<p>如果模块内需要使用其它全局对象，应该将这些对象作为参数来显式引用它们</p>
+<p>将引用的对象作为参数，使它们得以和函数内的其它局部变量区分开来</p>
+<h3 id="（3）模块输出（Module-Export）"><a href="#（3）模块输出（Module-Export）" class="headerlink" title="（3）模块输出（Module Export）"></a>（3）模块输出（Module Export）</h3><p>通过匿名函数的 return 语句来声明和输出模块中的对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var MODULE = (<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">    var my = &#123;&#125;,</div><div class="line">        privateVariable = 1;</div><div class="line">    my.moduleProperty = 1;</div><div class="line">    my.moduleMethod = <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">        // ...</div><div class="line">    &#125;;</div><div class="line"> </div><div class="line">    <span class="built_in">return</span> my;</div><div class="line">&#125;());</div></pre></td></tr></table></figure></p>
+<h3 id="（4）与其它模块规范或-JS-库的适配"><a href="#（4）与其它模块规范或-JS-库的适配" class="headerlink" title="（4）与其它模块规范或 JS 库的适配"></a>（4）与其它模块规范或 JS 库的适配</h3><p>AMD 定义了 define 函数，可以使用 define 来编写模块化的代码<br>CommonJS定义了exports 或是 module.exports </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//注册模块</div><div class="line">//代码既兼容于 CommonJS Modules 或 AMD 规范，又能在一般环境下运行</div><div class="line"><span class="keyword">if</span> (typeof module !== <span class="string">'undefined'</span> &amp;&amp; module.exports) &#123; </div><div class="line">  module.exports = plug;    //CommonJS</div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (typeof define === <span class="string">'function'</span> &amp;&amp; define.amd) &#123;</div><div class="line">  define(<span class="function"><span class="title">function</span></span>() &#123;       //AMD</div><div class="line">    <span class="built_in">return</span> plug;</div><div class="line">  &#125;);</div><div class="line">&#125; <span class="keyword">else</span> &#123;     //一般环境</div><div class="line">  (<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">    <span class="built_in">return</span> this || (0, <span class="built_in">eval</span>)(<span class="string">'this'</span>);   //获取全局对象  若代码运行于浏览器中，得到的其实是 window 对象</div><div class="line">  &#125;()).plug = plug;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上代码可以让我们的代码既兼容于 CommonJS Modules 或 AMD 规范，又能在一般环境下运行</p>
+<h2 id="二-模块模式的变化"><a href="#二-模块模式的变化" class="headerlink" title="二 模块模式的变化"></a>二 模块模式的变化</h2><h3 id="1-扩展"><a href="#1-扩展" class="headerlink" title="(1)扩展"></a>(1)扩展</h3><h4 id="对已有的模块作出扩展-模块的各个组成部分并没有加载顺序要求"><a href="#对已有的模块作出扩展-模块的各个组成部分并没有加载顺序要求" class="headerlink" title="对已有的模块作出扩展(模块的各个组成部分并没有加载顺序要求)"></a>对已有的模块作出扩展(模块的各个组成部分并没有加载顺序要求)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var MODULE = (<span class="keyword">function</span> (my) &#123;</div><div class="line">  // add capabilities...</div><div class="line">  <span class="built_in">return</span> my;</div><div class="line">&#125;(MODULE || &#123;&#125;));</div></pre></td></tr></table></figure>
+<h4 id="紧耦合扩展-对模块的定义顺序是有要求的"><a href="#紧耦合扩展-对模块的定义顺序是有要求的" class="headerlink" title="紧耦合扩展(对模块的定义顺序是有要求的)"></a>紧耦合扩展(对模块的定义顺序是有要求的)</h4><p>要求在扩展时调用以前已被定义的方法，这也有可能被用于覆盖已有的方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var MODULE = (<span class="keyword">function</span> (my) &#123;</div><div class="line">  var old_moduleMethod = my.moduleMethod;</div><div class="line"> </div><div class="line">  my.moduleMethod = <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">    // 方法重载</div><div class="line">    // 可通过 old_moduleMethod 调用以前的方法...</div><div class="line">  &#125;;</div><div class="line"> </div><div class="line">  <span class="built_in">return</span> my;</div><div class="line">&#125;(MODULE));</div></pre></td></tr></table></figure>
+<h3 id="2-克隆与继承（利用Object-create-）"><a href="#2-克隆与继承（利用Object-create-）" class="headerlink" title="(2)克隆与继承（利用Object.create() ）"></a>(2)克隆与继承（利用Object.create() ）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var MODULE_TWO = (<span class="keyword">function</span> (old) &#123;</div><div class="line">  var my = Object.create(old);</div><div class="line"> </div><div class="line">  var super_moduleMethod = old.moduleMethod;</div><div class="line">  my.moduleMethod = <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">    // override method ...</div><div class="line">  &#125;;</div><div class="line"> </div><div class="line">  <span class="built_in">return</span> my;</div><div class="line">&#125;(MODULE));</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-getComputedStyle" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/17/getComputedStyle/" class="article-date">
+  	<time datetime="2016-03-17T06:52:12.000Z" itemprop="datePublished">2016-03-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/17/getComputedStyle/">style、currentStyle、getComputedStyle的区别</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="css设置样式分为三种方式"><a href="#css设置样式分为三种方式" class="headerlink" title="css设置样式分为三种方式"></a>css设置样式分为三种方式</h2><p>1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。</p>
+<p>2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。</p>
+<p>3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS文件。 </p>
+<h2 id="js获取样式"><a href="#js获取样式" class="headerlink" title="js获取样式"></a>js获取样式</h2><p>1.style属性：</p>
+<p>通过document.getElementById(id).style.XXX就可以获取到XXX的值。(可读可写)</p>
+<p>作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值</p>
+<p>2.runtimeStyle ：</p>
+<p>通过document.getElementById(id).runtimeStyle.XXX设置</p>
+<p>作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！</p>
+<p>3.currentStyle 与 getComputedStyle</p>
+<p>（1）作用：获取元素中所有可用的css属性</p>
+<p>（2）应用：IE使用currentStyle，其他浏览器用getComputedStyle</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">var computed = !!window.getComputedStyle;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (!computed) &#123;</div><div class="line">  window.getComputedStyle = <span class="keyword">function</span>(el) &#123;</div><div class="line">    this.el = el;</div><div class="line">    this.getPropertyValue = <span class="keyword">function</span>(prop) &#123;</div><div class="line">      var re = /(\-([a-z])&#123;1&#125;)/g;</div><div class="line">      <span class="keyword">if</span> (prop === <span class="string">"float"</span>) &#123;</div><div class="line">        prop = <span class="string">"styleFloat"</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (re.test(prop)) &#123;</div><div class="line">        prop = prop.replace(re, <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">          <span class="built_in">return</span> arguments[2].toUpperCase();</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">      <span class="built_in">return</span> el.currentStyle[prop] ? el.currentStyle[prop] : null;</div><div class="line">    &#125;;</div><div class="line">    <span class="built_in">return</span> this;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>（3）语法：</p>
+<p>1&gt; getComputedStyle：(只读不可写－－－只能获取样式，不能设置)</p>
+<p>获取属性列表</p>
+<pre><code>arr_style=window.getComputedStyle(元素,伪类)
+
+伪元素，是否要获取伪元素属性值。如hover,active,link等属性。如果不想获取这些伪元素的属性值请填写为null。
+
+eg1: style = window.getComputedStyle(elem_id , &quot;:after&quot;);
+
+eg2：var width = window.getComputedStyle(mydiv , null);
+</code></pre><p>获取具体的属性值：</p>
+<pre><code>eg1：var width = window.getComputedStyle(mydiv , null)[&apos;width&apos;];
+
+eg2：var width = window.getComputedStyle(mydiv , null).width;
+
+eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;width&quot;);
+</code></pre><p>获取float，如果使用键值访问，则不能直接使用getComputedStyle(element, null).float，而应该是cssFloat与styleFloat，自然需要浏览器判断了，比较折腾！</p>
+<p>2&gt; currentStyle</p>
+<p>eg:var width = mydiv.currentStyle[‘width’];</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 妞妞
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

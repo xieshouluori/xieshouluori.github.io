@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-11T07:06:25.000Z</updated>
+  <updated>2017-11-17T07:05:32.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,111 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/11/17/%E9%98%BF%E9%87%8C%E9%9D%A2%E8%AF%95/"/>
+    <id>http://yoursite.com/2017/11/17/阿里面试/</id>
+    <published>2017-11-17T06:56:44.000Z</published>
+    <updated>2017-11-17T07:05:32.000Z</updated>
+    
+    <content type="html">&lt;p&gt;阿里面试：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;jquery:&lt;/p&gt;
+&lt;p&gt;animate 怎么实现的，提供哪些接口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vue &lt;/p&gt;
+&lt;p&gt;双向数据绑定 具体咋实现，&lt;/p&gt;
+&lt;p&gt;vue-router内部代码咋写的&lt;/p&gt;
+&lt;p&gt;异步加载怎们做（按需加载）&lt;/p&gt;
+&lt;p&gt;当数据set之后，触发什么生命周期&lt;/p&gt;
+&lt;p&gt;虚拟dom和react有啥不一样&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;react&lt;/p&gt;
+&lt;p&gt;当数据set之后，触发什么生命周期&lt;/p&gt;
+&lt;p&gt;高阶函数有木有用&lt;/p&gt;
+&lt;p&gt;vue 和 react有啥区别&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;webpack&lt;/p&gt;
+&lt;p&gt;有哪些loader&lt;/p&gt;
+&lt;p&gt;有哪些 plugins&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;阿里面试：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;jquery:&lt;/p&gt;
+&lt;p&gt;animate 怎么实现的，提供哪些接口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vue &lt;/p&gt;
+&lt;p&gt;双向数据绑定 具体咋实现，&lt;/p&gt;
+&lt;p&gt;vue-router内部代码咋写的&lt;/p&gt;
+&lt;p&gt;异步加载
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端项目框架</title>
+    <link href="http://yoursite.com/2017/09/12/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6/"/>
+    <id>http://yoursite.com/2017/09/12/前端项目框架/</id>
+    <published>2017-09-11T16:00:00.000Z</published>
+    <updated>2017-11-13T11:05:46.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用JS与CSS3的翻转实现3D翻牌效果</title>
+    <link href="http://yoursite.com/2017/09/12/%E4%BD%BF%E7%94%A8JS%E4%B8%8ECSS3%E7%9A%84%E7%BF%BB%E8%BD%AC%E5%AE%9E%E7%8E%B03D%E7%BF%BB%E7%89%8C%E6%95%88%E6%9E%9C/"/>
+    <id>http://yoursite.com/2017/09/12/使用JS与CSS3的翻转实现3D翻牌效果/</id>
+    <published>2017-09-11T16:00:00.000Z</published>
+    <updated>2017-11-13T11:09:22.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;我们先来看看箭头函数的&lt;strong&gt;语法&lt;/strong&gt;：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;([param] [, param]) =&amp;gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   statements&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;param =&amp;gt; expression&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;一、param 是参数，根据参数个数不同，分这几种情况：&lt;br&gt;&lt;strong&gt;() =&amp;gt; { … } // 零个参数用 () 表示；&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;x =&amp;gt; { … } // 一个参数可以省略 ()；&lt;/strong&gt;&lt;br&gt;(x, y) =&amp;gt; { … } // 多参数不能省略 ()；&lt;/p&gt;
+&lt;p&gt;二、expression：&lt;/p&gt;
+&lt;p&gt;多行语句需要用{}括起来&lt;strong&gt;，&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;单行表达式不需要{}，并且会作为函数返回值&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; &amp;#123; return x * x &amp;#125;; // 函数返回 x * x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; x * x; // 同上一行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; return x * x; // SyntaxError 报错，不能省略 &amp;#123;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; &amp;#123; x * x &amp;#125;; // 合法，没有定义返回值，返回 undefined&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;三、和普通函数一样，箭头函数也可以使用&lt;a href=&quot;http://blog.csdn.net/mevicky/article/details/49902147&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;剩余参数&lt;/strong&gt;&lt;/a&gt;和默认参数。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var func1 = (x = 1, y = 2) =&amp;gt; x + y;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;func1(); // 得到 3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;var func2 = (x, ...args) =&amp;gt; &amp;#123; console.log(args) &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;func2(1,2,3); // 输出 [2, 3]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;特性&quot;&gt;&lt;a href=&quot;#特性&quot; class=&quot;headerlink&quot; title=&quot;特性&quot;&gt;&lt;/a&gt;&lt;strong&gt;特性&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;一、箭头函数内部&lt;strong&gt;没有constructor方法&lt;/strong&gt;，也&lt;strong&gt;没有prototype&lt;/strong&gt;，所以不支持new操作&lt;/p&gt;
+&lt;p&gt;二、箭头函数的 this 始终指向函数定义时的 this，而非执行时；&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x : 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    func : function() &amp;#123; console.log(this.x) &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test : function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        setTimeout(function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            this.func();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;, 100);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test(); // TypeError : this.func is not a function&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;上面的代码会出现错误，因为this的指向&lt;strong&gt;从o变为了全局&lt;/strong&gt;（函数调用中的this都是指向全局的）。我们需要修改上面的代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x : 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    func : function() &amp;#123; console.log(this.x) &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test : function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        var _this = this;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        setTimeout(function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            _this.func(); &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;, 100);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;通过使用外部事先保存的this就行了。这里就可以利用到箭头函数了，我们刚才说过，&lt;strong&gt;箭头函数的 this 始终指向函数定义时的 this，而非执行时&lt;/strong&gt;。所以我们将上面的代码修改如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x : 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    func : function() &amp;#123; console.log(this.x) &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test : function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        setTimeout(() =&amp;gt; &amp;#123; this.func() &amp;#125;, 100);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这回&lt;strong&gt;this就指向o&lt;/strong&gt;了。&lt;/p&gt;
+&lt;p&gt;三、this是不会改变指向对象的**，我们知道call和apply可以改变this的指向，但是在箭头函数中是无效的。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var x = 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        x : 10,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        test : () =&amp;gt; this.x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test(); // 1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test.call(o); // 依然是1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;我们先来看看箭头函数的&lt;strong&gt;语法&lt;/strong&gt;：&lt;/p&gt;
+&lt;figure class=&quot;hi
+    
+    </summary>
+    
+      <category term="js" scheme="http://yoursite.com/categories/js/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Immutable 在React 中实践</title>
@@ -123,6 +228,55 @@
   </entry>
   
   <entry>
+    <title>vscode中 针对 react的 eslint配置</title>
+    <link href="http://yoursite.com/2017/09/09/vscode----eslint%20+%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    <id>http://yoursite.com/2017/09/09/vscode----eslint +默认配置文件/</id>
+    <published>2017-09-08T16:00:00.000Z</published>
+    <updated>2017-09-14T06:59:39.000Z</updated>
+    
+    <content type="html">&lt;p&gt; eslint官网：   &lt;a href=&quot;http://eslint.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://eslint.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;一：vscode默认配置&quot;&gt;&lt;a href=&quot;#一：vscode默认配置&quot; class=&quot;headerlink&quot; title=&quot;一：vscode默认配置&quot;&gt;&lt;/a&gt;一：vscode默认配置&lt;/h3&gt;&lt;p&gt;首选项  ——&amp;gt;设置&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;45&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //控制台---&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;workbench.colorTheme&amp;quot;: &amp;quot;Monokai&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //文件---&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;files.autoSave&amp;quot;: &amp;quot;onFocusChange&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //配置语言的文件关联&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;files.associations&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;*.js&amp;quot;: &amp;quot;javascriptreact&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //editor----&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;editor.fontSize&amp;quot;: 14,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;editor.detectIndentation&amp;quot;: false,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;editor.tabSize&amp;quot;: 2,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;editor.formatOnType&amp;quot;: false,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;editor.formatOnSave&amp;quot;: false,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;editor.wordWrap&amp;quot;: &amp;quot;on&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //关闭VS自带的 javascript验证&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;javascript.validate.enable&amp;quot;: false,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //eslint---- 代码检查(默认只支持 js 文件的脚本检测)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //支持类 html 文件（如 vue ）的内联脚本检测 安装 eslint-plugin-html &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;eslint.options&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;plugins&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;html&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;eslint.validate&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;javascript&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;javascriptreact&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;html&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;vue&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  // 在保存时自动修复错误&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;eslint.autoFixOnSave&amp;quot;: true,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //emmet缩写----&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  // 设置.vue 文件与 HTML 的关联&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;emmet.includeLanguages&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;javascript&amp;quot;: &amp;quot;javascriptreact&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;vue&amp;quot;: &amp;quot;html&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;emmet.syntaxProfiles&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;vue-html&amp;quot;: &amp;quot;html&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;vue&amp;quot;: &amp;quot;html&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;二：-eslintrc-js&quot;&gt;&lt;a href=&quot;#二：-eslintrc-js&quot; class=&quot;headerlink&quot; title=&quot;二：.eslintrc.js&quot;&gt;&lt;/a&gt;二：.eslintrc.js&lt;/h3&gt;&lt;p&gt;​    针对项目设置，放在根目录下&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;45&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;46&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;47&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;48&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;49&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;50&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;51&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;module.exports = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  root: true,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  parser: &amp;apos;babel-eslint&amp;apos;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;env&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;es6&amp;quot;: true,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;browser&amp;quot;: true,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;node&amp;quot;: true&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;extends&amp;quot;: &amp;apos;airbnb&amp;apos;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;parserOptions&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;ecmaVersion&amp;quot;: 6,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;sourceType&amp;quot;: &amp;apos;module&amp;apos;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;ecmaFeatures&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;experimentalObjectRestSpread&amp;quot;: true,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;arrowFunctions&amp;quot;: true&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;plugins&amp;quot;: [&amp;quot;react&amp;quot;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;rules&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;apos;no-debugger&amp;apos;: process.env.NODE_ENV === &amp;apos;production&amp;apos;? 2 : 0,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;no-underscore-dangle&amp;quot;: &amp;quot;off&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;react/prop-types&amp;quot;: &amp;quot;off&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;import/extensions&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;error&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;never&amp;quot;, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;quot;web.js&amp;quot;: &amp;quot;never&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;quot;json&amp;quot;: &amp;quot;never&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;import/no-extraneous-dependencies&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;error&amp;quot;, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;quot;devDependencies&amp;quot;: true&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;import/no-unresolved&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;error&amp;quot;, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;quot;ignore&amp;quot;: [&amp;quot;antd-mobile&amp;quot;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;indent&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;error&amp;quot;, 2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;indent&amp;quot;: [&amp;quot;error&amp;quot;, 2],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;linebreak-style&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;error&amp;quot;, &amp;quot;unix&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;quotes&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;error&amp;quot;, &amp;quot;single&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;三-安装相关eslint插件-（npm-cnpm-安装）&quot;&gt;&lt;a href=&quot;#三-安装相关eslint插件-（npm-cnpm-安装）&quot; class=&quot;headerlink&quot; title=&quot;三 安装相关eslint插件 （npm/cnpm 安装）&quot;&gt;&lt;/a&gt;三 安装相关eslint插件 （npm/cnpm 安装）&lt;/h3&gt;&lt;p&gt;​     “eslint”: “^4.6.1”,&lt;/p&gt;
+&lt;p&gt;​    “eslint-config-airbnb”: “^15.1.0”,&lt;/p&gt;
+&lt;p&gt;​    “eslint-plugin-import”: “^2.7.0”,&lt;/p&gt;
+&lt;p&gt;​    “eslint-plugin-jsx-a11y”: “^6.0.2”,&lt;/p&gt;
+&lt;p&gt;​    “eslint-plugin-react”: “^7.3.0”,&lt;/p&gt;
+&lt;p&gt;​     “babel-loader”: “^6.3.2”,&lt;/p&gt;
+&lt;p&gt;ESLint 允许你指定你想要支持的 JavaScript 语言选项。默认情况下，ESLint 支持 ECMAScript 5 语法。你可以覆盖该设置启用对 ECMAScript 其它版本和 JSX 的支持。&lt;/p&gt;
+&lt;p&gt;对 JSX 语法的支持不用于对 React 的支持。React 适用于特定 ESLint 无法识别的 JSX 语法。如果你正在使用 React 和 想要 React 语义，我们推荐你使用 &lt;a href=&quot;https://github.com/yannickcr/eslint-plugin-react&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;eslint-plugin-react&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&quot;四、在项目中执行-eslint&quot;&gt;&lt;a href=&quot;#四、在项目中执行-eslint&quot; class=&quot;headerlink&quot; title=&quot;四、在项目中执行  eslint&quot;&gt;&lt;/a&gt;四、在项目中执行  eslint&lt;/h3&gt;&lt;p&gt;package.json 中&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;quot;scripts&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   	&amp;quot;lint&amp;quot;: &amp;quot;eslint src --ext .js&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;说明:eslint 命令&lt;/p&gt;
+&lt;h4 id=&quot;ext&quot;&gt;&lt;a href=&quot;#ext&quot; class=&quot;headerlink&quot; title=&quot;--ext&quot;&gt;&lt;/a&gt;&lt;code&gt;--ext&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;这个选项允许你指定ESLint在指定的目录下查找JavaScript文件时要使用的文件扩展名。默认情况下，它使用&lt;code&gt;.js&lt;/code&gt;作为唯一性文件扩展名。&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# Use only .js2 extension&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;eslint . --ext .js2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# Use both .js and .js2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;eslint . --ext .js --ext .js2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# Also use both .js and .js2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;eslint . --ext .js,.js2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;注意：如果你使用了水珠模式，则&lt;code&gt;--ext&lt;/code&gt;被忽略&lt;/p&gt;
+&lt;p&gt;例如，&lt;code&gt;eslint lib/* --ext .js&lt;/code&gt;将匹配&lt;code&gt;lib/&lt;/code&gt;下的所有文件，忽略扩展名。&lt;/p&gt;
+&lt;h3 id=&quot;五、番外&quot;&gt;&lt;a href=&quot;#五、番外&quot; class=&quot;headerlink&quot; title=&quot;五、番外&quot;&gt;&lt;/a&gt;五、番外&lt;/h3&gt;&lt;h5 id=&quot;npm安装相关组件&quot;&gt;&lt;a href=&quot;#npm安装相关组件&quot; class=&quot;headerlink&quot; title=&quot;npm安装相关组件&quot;&gt;&lt;/a&gt;npm安装相关组件&lt;/h5&gt;&lt;h6 id=&quot;安装eslint&quot;&gt;&lt;a href=&quot;#安装eslint&quot; class=&quot;headerlink&quot; title=&quot;安装eslint&quot;&gt;&lt;/a&gt;安装eslint&lt;/h6&gt;&lt;p&gt;&lt;code&gt;$ npm install eslint -g&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&quot;安装eslint-plugin-react&quot;&gt;&lt;a href=&quot;#安装eslint-plugin-react&quot; class=&quot;headerlink&quot; title=&quot;安装eslint-plugin-react&quot;&gt;&lt;/a&gt;安装eslint-plugin-react&lt;/h5&gt;&lt;p&gt;识别react中的一些语法检验&lt;br&gt;&lt;code&gt;$ npm install eslint-plugin-react&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&quot;安装babel-eslint&quot;&gt;&lt;a href=&quot;#安装babel-eslint&quot; class=&quot;headerlink&quot; title=&quot;安装babel-eslint&quot;&gt;&lt;/a&gt;安装babel-eslint&lt;/h5&gt;&lt;p&gt;如果用到了es6的新语法, 需要安装babel-eslint,不然会把箭头函数识别成错误&lt;br&gt;&lt;code&gt;$ npm install babel-eslint&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&quot;在项目的根目录创建配置文件-eslintrc-json&quot;&gt;&lt;a href=&quot;#在项目的根目录创建配置文件-eslintrc-json&quot; class=&quot;headerlink&quot; title=&quot;在项目的根目录创建配置文件.eslintrc.json&quot;&gt;&lt;/a&gt;在项目的根目录创建配置文件.eslintrc.json&lt;/h4&gt;&lt;p&gt;eslint会根据.eslintrc.json定义的规则进行代码检测(在mac中的.开头的文件为隐藏文件);&lt;br&gt;eslint官方给出的一些有关react配置的文档:&lt;br&gt;&lt;a href=&quot;https://github.com/yannickcr/eslint-plugin-react&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/yannickcr/eslint-plugin-react&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一般有两种做法:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;宽松的定义,只检验一些语法上的错误.&lt;/li&gt;
+&lt;li&gt;严谨的定义,可以当团队书写代码的规范,把规范错误定义成&lt;strong&gt;警告&lt;/strong&gt;, 语法错误定义成&lt;strong&gt;错误&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt; eslint官网：   &lt;a href=&quot;http://eslint.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://eslint.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;一：vscode默认配置&quot;&gt;&lt;a href=&quot;#一：vscod
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>如何科学的组织React组件样式——模块化  样式之间互不影响</title>
     <link href="http://yoursite.com/2017/09/09/%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E7%9A%84%E7%BB%84%E7%BB%87React%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F/"/>
     <id>http://yoursite.com/2017/09/09/如何科学的组织React组件样式/</id>
@@ -178,67 +332,17 @@
   </entry>
   
   <entry>
-    <title>vscode中 针对 react的 eslint配置</title>
-    <link href="http://yoursite.com/2017/09/09/vscode----eslint%20+%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
-    <id>http://yoursite.com/2017/09/09/vscode----eslint +默认配置文件/</id>
-    <published>2017-09-08T16:00:00.000Z</published>
-    <updated>2017-09-14T06:59:39.000Z</updated>
-    
-    <content type="html">&lt;p&gt; eslint官网：   &lt;a href=&quot;http://eslint.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://eslint.cn/&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;一：vscode默认配置&quot;&gt;&lt;a href=&quot;#一：vscode默认配置&quot; class=&quot;headerlink&quot; title=&quot;一：vscode默认配置&quot;&gt;&lt;/a&gt;一：vscode默认配置&lt;/h3&gt;&lt;p&gt;首选项  ——&amp;gt;设置&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;45&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //控制台---&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;workbench.colorTheme&amp;quot;: &amp;quot;Monokai&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //文件---&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;files.autoSave&amp;quot;: &amp;quot;onFocusChange&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //配置语言的文件关联&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;files.associations&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;*.js&amp;quot;: &amp;quot;javascriptreact&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //editor----&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;editor.fontSize&amp;quot;: 14,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;editor.detectIndentation&amp;quot;: false,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;editor.tabSize&amp;quot;: 2,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;editor.formatOnType&amp;quot;: false,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;editor.formatOnSave&amp;quot;: false,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;editor.wordWrap&amp;quot;: &amp;quot;on&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //关闭VS自带的 javascript验证&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;javascript.validate.enable&amp;quot;: false,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //eslint---- 代码检查(默认只支持 js 文件的脚本检测)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //支持类 html 文件（如 vue ）的内联脚本检测 安装 eslint-plugin-html &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;eslint.options&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;plugins&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;html&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;eslint.validate&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;javascript&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;javascriptreact&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;html&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;vue&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  // 在保存时自动修复错误&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;eslint.autoFixOnSave&amp;quot;: true,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //emmet缩写----&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  // 设置.vue 文件与 HTML 的关联&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;emmet.includeLanguages&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;javascript&amp;quot;: &amp;quot;javascriptreact&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;vue&amp;quot;: &amp;quot;html&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;emmet.syntaxProfiles&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;vue-html&amp;quot;: &amp;quot;html&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;vue&amp;quot;: &amp;quot;html&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;二：-eslintrc-js&quot;&gt;&lt;a href=&quot;#二：-eslintrc-js&quot; class=&quot;headerlink&quot; title=&quot;二：.eslintrc.js&quot;&gt;&lt;/a&gt;二：.eslintrc.js&lt;/h3&gt;&lt;p&gt;​    针对项目设置，放在根目录下&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;45&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;46&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;47&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;48&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;49&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;50&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;51&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;module.exports = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  root: true,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  parser: &amp;apos;babel-eslint&amp;apos;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;env&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;es6&amp;quot;: true,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;browser&amp;quot;: true,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;node&amp;quot;: true&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;extends&amp;quot;: &amp;apos;airbnb&amp;apos;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;parserOptions&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;ecmaVersion&amp;quot;: 6,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;sourceType&amp;quot;: &amp;apos;module&amp;apos;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;ecmaFeatures&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;experimentalObjectRestSpread&amp;quot;: true,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;arrowFunctions&amp;quot;: true&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;plugins&amp;quot;: [&amp;quot;react&amp;quot;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;rules&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;apos;no-debugger&amp;apos;: process.env.NODE_ENV === &amp;apos;production&amp;apos;? 2 : 0,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;no-underscore-dangle&amp;quot;: &amp;quot;off&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;react/prop-types&amp;quot;: &amp;quot;off&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;import/extensions&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;error&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;never&amp;quot;, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;quot;web.js&amp;quot;: &amp;quot;never&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;quot;json&amp;quot;: &amp;quot;never&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;import/no-extraneous-dependencies&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;error&amp;quot;, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;quot;devDependencies&amp;quot;: true&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;import/no-unresolved&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;error&amp;quot;, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;quot;ignore&amp;quot;: [&amp;quot;antd-mobile&amp;quot;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;indent&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;error&amp;quot;, 2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;indent&amp;quot;: [&amp;quot;error&amp;quot;, 2],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;linebreak-style&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;error&amp;quot;, &amp;quot;unix&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;quotes&amp;quot;: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;quot;error&amp;quot;, &amp;quot;single&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;三-安装相关eslint插件-（npm-cnpm-安装）&quot;&gt;&lt;a href=&quot;#三-安装相关eslint插件-（npm-cnpm-安装）&quot; class=&quot;headerlink&quot; title=&quot;三 安装相关eslint插件 （npm/cnpm 安装）&quot;&gt;&lt;/a&gt;三 安装相关eslint插件 （npm/cnpm 安装）&lt;/h3&gt;&lt;p&gt;​     “eslint”: “^4.6.1”,&lt;/p&gt;
-&lt;p&gt;​    “eslint-config-airbnb”: “^15.1.0”,&lt;/p&gt;
-&lt;p&gt;​    “eslint-plugin-import”: “^2.7.0”,&lt;/p&gt;
-&lt;p&gt;​    “eslint-plugin-jsx-a11y”: “^6.0.2”,&lt;/p&gt;
-&lt;p&gt;​    “eslint-plugin-react”: “^7.3.0”,&lt;/p&gt;
-&lt;p&gt;​     “babel-loader”: “^6.3.2”,&lt;/p&gt;
-&lt;p&gt;ESLint 允许你指定你想要支持的 JavaScript 语言选项。默认情况下，ESLint 支持 ECMAScript 5 语法。你可以覆盖该设置启用对 ECMAScript 其它版本和 JSX 的支持。&lt;/p&gt;
-&lt;p&gt;对 JSX 语法的支持不用于对 React 的支持。React 适用于特定 ESLint 无法识别的 JSX 语法。如果你正在使用 React 和 想要 React 语义，我们推荐你使用 &lt;a href=&quot;https://github.com/yannickcr/eslint-plugin-react&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;eslint-plugin-react&lt;/a&gt;。&lt;/p&gt;
-&lt;h3 id=&quot;四、在项目中执行-eslint&quot;&gt;&lt;a href=&quot;#四、在项目中执行-eslint&quot; class=&quot;headerlink&quot; title=&quot;四、在项目中执行  eslint&quot;&gt;&lt;/a&gt;四、在项目中执行  eslint&lt;/h3&gt;&lt;p&gt;package.json 中&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;quot;scripts&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   	&amp;quot;lint&amp;quot;: &amp;quot;eslint src --ext .js&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;说明:eslint 命令&lt;/p&gt;
-&lt;h4 id=&quot;ext&quot;&gt;&lt;a href=&quot;#ext&quot; class=&quot;headerlink&quot; title=&quot;--ext&quot;&gt;&lt;/a&gt;&lt;code&gt;--ext&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;这个选项允许你指定ESLint在指定的目录下查找JavaScript文件时要使用的文件扩展名。默认情况下，它使用&lt;code&gt;.js&lt;/code&gt;作为唯一性文件扩展名。&lt;/p&gt;
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# Use only .js2 extension&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;eslint . --ext .js2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# Use both .js and .js2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;eslint . --ext .js --ext .js2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# Also use both .js and .js2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;eslint . --ext .js,.js2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;注意：如果你使用了水珠模式，则&lt;code&gt;--ext&lt;/code&gt;被忽略&lt;/p&gt;
-&lt;p&gt;例如，&lt;code&gt;eslint lib/* --ext .js&lt;/code&gt;将匹配&lt;code&gt;lib/&lt;/code&gt;下的所有文件，忽略扩展名。&lt;/p&gt;
-&lt;h3 id=&quot;五、番外&quot;&gt;&lt;a href=&quot;#五、番外&quot; class=&quot;headerlink&quot; title=&quot;五、番外&quot;&gt;&lt;/a&gt;五、番外&lt;/h3&gt;&lt;h5 id=&quot;npm安装相关组件&quot;&gt;&lt;a href=&quot;#npm安装相关组件&quot; class=&quot;headerlink&quot; title=&quot;npm安装相关组件&quot;&gt;&lt;/a&gt;npm安装相关组件&lt;/h5&gt;&lt;h6 id=&quot;安装eslint&quot;&gt;&lt;a href=&quot;#安装eslint&quot; class=&quot;headerlink&quot; title=&quot;安装eslint&quot;&gt;&lt;/a&gt;安装eslint&lt;/h6&gt;&lt;p&gt;&lt;code&gt;$ npm install eslint -g&lt;/code&gt;&lt;/p&gt;
-&lt;h5 id=&quot;安装eslint-plugin-react&quot;&gt;&lt;a href=&quot;#安装eslint-plugin-react&quot; class=&quot;headerlink&quot; title=&quot;安装eslint-plugin-react&quot;&gt;&lt;/a&gt;安装eslint-plugin-react&lt;/h5&gt;&lt;p&gt;识别react中的一些语法检验&lt;br&gt;&lt;code&gt;$ npm install eslint-plugin-react&lt;/code&gt;&lt;/p&gt;
-&lt;h5 id=&quot;安装babel-eslint&quot;&gt;&lt;a href=&quot;#安装babel-eslint&quot; class=&quot;headerlink&quot; title=&quot;安装babel-eslint&quot;&gt;&lt;/a&gt;安装babel-eslint&lt;/h5&gt;&lt;p&gt;如果用到了es6的新语法, 需要安装babel-eslint,不然会把箭头函数识别成错误&lt;br&gt;&lt;code&gt;$ npm install babel-eslint&lt;/code&gt;&lt;/p&gt;
-&lt;h4 id=&quot;在项目的根目录创建配置文件-eslintrc-json&quot;&gt;&lt;a href=&quot;#在项目的根目录创建配置文件-eslintrc-json&quot; class=&quot;headerlink&quot; title=&quot;在项目的根目录创建配置文件.eslintrc.json&quot;&gt;&lt;/a&gt;在项目的根目录创建配置文件.eslintrc.json&lt;/h4&gt;&lt;p&gt;eslint会根据.eslintrc.json定义的规则进行代码检测(在mac中的.开头的文件为隐藏文件);&lt;br&gt;eslint官方给出的一些有关react配置的文档:&lt;br&gt;&lt;a href=&quot;https://github.com/yannickcr/eslint-plugin-react&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/yannickcr/eslint-plugin-react&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;一般有两种做法:&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;宽松的定义,只检验一些语法上的错误.&lt;/li&gt;
-&lt;li&gt;严谨的定义,可以当团队书写代码的规范,把规范错误定义成&lt;strong&gt;警告&lt;/strong&gt;, 语法错误定义成&lt;strong&gt;错误&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt; eslint官网：   &lt;a href=&quot;http://eslint.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://eslint.cn/&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;一：vscode默认配置&quot;&gt;&lt;a href=&quot;#一：vscod
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title></title>
     <link href="http://yoursite.com/2017/09/05/%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E7%9A%84%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
     <id>http://yoursite.com/2017/09/05/如何实现元素的水平垂直居中/</id>
     <published>2017-09-05T07:06:36.000Z</published>
-    <updated>2017-09-05T08:43:30.000Z</updated>
+    <updated>2017-11-16T02:15:17.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;title: 如何实现元素的水平垂直居中&lt;br&gt;date: 2017-09-05&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/09ece194956a&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.jianshu.com/p/09ece194956a&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;水平居中&quot;&gt;&lt;a href=&quot;#水平居中&quot; class=&quot;headerlink&quot; title=&quot;水平居中&quot;&gt;&lt;/a&gt;水平居中&lt;/h3&gt;&lt;h4 id=&quot;1-方法1：若是行内元素&quot;&gt;&lt;a href=&quot;#1-方法1：若是行内元素&quot; class=&quot;headerlink&quot; title=&quot;1.方法1：若是行内元素&quot;&gt;&lt;/a&gt;1.方法1：若是行内元素&lt;/h4&gt;&lt;p&gt;  给其父级元素设置text-align:center,可以实现行内元素水平居中,&lt;/p&gt;
-&lt;h4 id=&quot;2-方法2-若是块级元素&quot;&gt;&lt;a href=&quot;#2-方法2-若是块级元素&quot; class=&quot;headerlink&quot; title=&quot;2.方法2:若是块级元素&quot;&gt;&lt;/a&gt;2.方法2:若是块级元素&lt;/h4&gt;&lt;h4 id=&quot;div-p-ul-li-ol-h1-h6-dl-dt-dd-address-article-figure-audio-video-section-table-canvas-header-table-footer-独自占一行-支持宽度和高度，要想实现水平居中-margin-0-auto&quot;&gt;&lt;a href=&quot;#div-p-ul-li-ol-h1-h6-dl-dt-dd-address-article-figure-audio-video-section-table-canvas-header-table-footer-独自占一行-支持宽度和高度，要想实现水平居中-margin-0-auto&quot; class=&quot;headerlink&quot; title=&quot;(div,p,ul,li,ol,h1-h6,dl,dt,dd,address,article,figure,audio,video,section,table,canvas,header,table,footer)独自占一行,支持宽度和高度，要想实现水平居中:margin:0 auto;&quot;&gt;&lt;/a&gt;(div,p,ul,li,ol,h1-h6,dl,dt,dd,address,article,figure,audio,video,section,table,canvas,header,table,footer)独自占一行,支持宽度和高度，要想实现水平居中:margin:0 auto;&lt;/h4&gt;&lt;p&gt;方法3:若是子元素有浮动,为了让子元素水平居中,则可以让父元素宽度设置为fit-content,并且配合margin:0 auto&lt;/p&gt;
-&lt;p&gt;注意这个属性值fit-content配上margin:0 auto才会让其水平居中,目前只有chrome,firfox,Opera浏览器支持该属性值,并且只能实现水平居中,无法实现垂直居中,也没有height:fit-content,该属性,即使设置了也不生效&lt;/p&gt;
+&lt;h4 id=&quot;2-方法2-若是块级元素&quot;&gt;&lt;a href=&quot;#2-方法2-若是块级元素&quot; class=&quot;headerlink&quot; title=&quot;2.方法2:若是块级元素&quot;&gt;&lt;/a&gt;2.方法2:若是块级元素&lt;/h4&gt;&lt;h4 id=&quot;div-p-ul-li-ol-h1-h6-dl-dt-dd-address-article-figure-audio-video-section-table-canvas-header-table-footer-独自占一行-支持宽度和高度，要想实现水平居中-margin-0-auto&quot;&gt;&lt;a href=&quot;#div-p-ul-li-ol-h1-h6-dl-dt-dd-address-article-figure-audio-video-section-table-canvas-header-table-footer-独自占一行-支持宽度和高度，要想实现水平居中-margin-0-auto&quot; class=&quot;headerlink&quot; title=&quot;(div,p,ul,li,ol,h1-h6,dl,dt,dd,address,article,figure,audio,video,section,table,canvas,header,table,footer)独自占一行,支持宽度和高度，要想实现水平居中:margin:0 auto;&quot;&gt;&lt;/a&gt;(div,p,ul,li,ol,h1-h6,dl,dt,dd,address,article,figure,audio,video,section,table,canvas,header,table,footer)独自占一行,支持宽度和高度，要想实现水平居中:margin:0 auto;&lt;/h4&gt;&lt;h3 id=&quot;方法3-若是子元素有浮动-为了让子元素水平居中-则可以让父元素宽度设置为fit-content-并且配合margin-0-auto&quot;&gt;&lt;a href=&quot;#方法3-若是子元素有浮动-为了让子元素水平居中-则可以让父元素宽度设置为fit-content-并且配合margin-0-auto&quot; class=&quot;headerlink&quot; title=&quot;方法3:若是子元素有浮动,为了让子元素水平居中,则可以让父元素宽度设置为fit-content,并且配合margin:0 auto&quot;&gt;&lt;/a&gt;方法3:若是子元素有浮动,为了让子元素水平居中,则可以让父元素宽度设置为fit-content,并且配合margin:0 auto&lt;/h3&gt;&lt;p&gt;注意这个属性值fit-content配上margin:0 auto才会让其水平居中,目前只有chrome,firfox,Opera浏览器支持该属性值,并且只能实现水平居中,无法实现垂直居中,也没有height:fit-content,该属性,即使设置了也不生效&lt;/p&gt;
 &lt;p&gt;&lt;ul class=&quot;parent&quot;&gt;&lt;br&gt;    &lt;li&gt;随笔川迹&lt;/li&gt;&lt;br&gt;    &lt;li&gt;itclan&lt;/li&gt;&lt;br&gt;    &lt;li&gt;个人简介&lt;/li&gt;&lt;br&gt;    &lt;li&gt;联系地止&lt;/li&gt;&lt;br&gt;&lt;/ul&gt;&lt;br&gt;css层叠样式代码&lt;/p&gt;
 &lt;p&gt;ul,li{&lt;br&gt;    list-style:none;&lt;br&gt;}&lt;br&gt;.parent{&lt;br&gt;    width:100%;&lt;br&gt;    width:-moz-fit-content;&lt;br&gt;    width:-webkit-fit-content;&lt;br&gt;    width:fit-content;   /&lt;em&gt;父元素宽度设置fit-content,高度是没有这样的写法的&lt;/em&gt;/&lt;br&gt;    margin:0 auto;     /&lt;em&gt;注意只设置得了水平居中,此方法,垂直居中无法&lt;/em&gt;/&lt;br&gt;}&lt;br&gt;li{&lt;br&gt;    float:left;    /&lt;em&gt;子元素设置了浮动&lt;/em&gt;/&lt;br&gt;    margin:0 5px 0;&lt;br&gt;}&lt;/p&gt;
 &lt;h3 id=&quot;方法4-使用flex布局-老版本&quot;&gt;&lt;a href=&quot;#方法4-使用flex布局-老版本&quot; class=&quot;headerlink&quot; title=&quot;方法4 使用flex布局,老版本:&quot;&gt;&lt;/a&gt;&lt;code&gt;方法4&lt;/code&gt; 使用flex布局,老版本:&lt;/h3&gt;&lt;p&gt;设置父元素&lt;code&gt;display:box;&lt;/code&gt;(声明弹性盒模型),&lt;/p&gt;
@@ -757,8 +861,8 @@
   
   <entry>
     <title>前端编辑器常用插件</title>
-    <link href="http://yoursite.com/2017/09/04/transform3d%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F/"/>
-    <id>http://yoursite.com/2017/09/04/transform3d硬件加速/</id>
+    <link href="http://yoursite.com/2017/09/04/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/"/>
+    <id>http://yoursite.com/2017/09/04/前端开发插件/</id>
     <published>2017-09-03T16:00:00.000Z</published>
     <updated>2017-09-04T07:28:49.000Z</updated>
     
@@ -813,8 +917,8 @@
   
   <entry>
     <title>前端编辑器常用插件</title>
-    <link href="http://yoursite.com/2017/09/04/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/"/>
-    <id>http://yoursite.com/2017/09/04/前端开发插件/</id>
+    <link href="http://yoursite.com/2017/09/04/transform3d%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F/"/>
+    <id>http://yoursite.com/2017/09/04/transform3d硬件加速/</id>
     <published>2017-09-03T16:00:00.000Z</published>
     <updated>2017-09-04T07:28:49.000Z</updated>
     
@@ -841,44 +945,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;Emmet-（缩写语法）&quot;&gt;&lt;a href=&quot;#Emmet-（缩写语法）&quot; class=&quot;headerlink&quot; title=&quot;Emmet  （缩写语法）&quot;&gt;&lt;/a&gt;Emmet  （缩写语法）&lt;/h3&gt;&lt;p&gt;Emmet的前身是大名鼎鼎的Zen coding&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>使用JS与CSS3的翻转实现3D翻牌效果</title>
-    <link href="http://yoursite.com/2017/08/31/%E4%BD%BF%E7%94%A8JS%E4%B8%8ECSS3%E7%9A%84%E7%BF%BB%E8%BD%AC%E5%AE%9E%E7%8E%B03D%E7%BF%BB%E7%89%8C%E6%95%88%E6%9E%9C/"/>
-    <id>http://yoursite.com/2017/08/31/使用JS与CSS3的翻转实现3D翻牌效果/</id>
-    <published>2017-08-30T16:00:00.000Z</published>
-    <updated>2017-09-05T06:54:23.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;我们先来看看箭头函数的&lt;strong&gt;语法&lt;/strong&gt;：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;([param] [, param]) =&amp;gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   statements&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;param =&amp;gt; expression&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;一、param 是参数，根据参数个数不同，分这几种情况：&lt;br&gt;&lt;strong&gt;() =&amp;gt; { … } // 零个参数用 () 表示；&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;x =&amp;gt; { … } // 一个参数可以省略 ()；&lt;/strong&gt;&lt;br&gt;(x, y) =&amp;gt; { … } // 多参数不能省略 ()；&lt;/p&gt;
-&lt;p&gt;二、expression：&lt;/p&gt;
-&lt;p&gt;多行语句需要用{}括起来&lt;strong&gt;，&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;单行表达式不需要{}，并且会作为函数返回值&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; &amp;#123; return x * x &amp;#125;; // 函数返回 x * x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; x * x; // 同上一行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; return x * x; // SyntaxError 报错，不能省略 &amp;#123;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x =&amp;gt; &amp;#123; x * x &amp;#125;; // 合法，没有定义返回值，返回 undefined&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;三、和普通函数一样，箭头函数也可以使用&lt;a href=&quot;http://blog.csdn.net/mevicky/article/details/49902147&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;剩余参数&lt;/strong&gt;&lt;/a&gt;和默认参数。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var func1 = (x = 1, y = 2) =&amp;gt; x + y;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;func1(); // 得到 3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;var func2 = (x, ...args) =&amp;gt; &amp;#123; console.log(args) &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;func2(1,2,3); // 输出 [2, 3]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;特性&quot;&gt;&lt;a href=&quot;#特性&quot; class=&quot;headerlink&quot; title=&quot;特性&quot;&gt;&lt;/a&gt;&lt;strong&gt;特性&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;一、箭头函数内部&lt;strong&gt;没有constructor方法&lt;/strong&gt;，也&lt;strong&gt;没有prototype&lt;/strong&gt;，所以不支持new操作&lt;/p&gt;
-&lt;p&gt;二、箭头函数的 this 始终指向函数定义时的 this，而非执行时；&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x : 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    func : function() &amp;#123; console.log(this.x) &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test : function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        setTimeout(function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            this.func();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;, 100);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test(); // TypeError : this.func is not a function&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;上面的代码会出现错误，因为this的指向&lt;strong&gt;从o变为了全局&lt;/strong&gt;（函数调用中的this都是指向全局的）。我们需要修改上面的代码如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x : 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    func : function() &amp;#123; console.log(this.x) &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test : function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        var _this = this;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        setTimeout(function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            _this.func(); &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;, 100);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;通过使用外部事先保存的this就行了。这里就可以利用到箭头函数了，我们刚才说过，&lt;strong&gt;箭头函数的 this 始终指向函数定义时的 this，而非执行时&lt;/strong&gt;。所以我们将上面的代码修改如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x : 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    func : function() &amp;#123; console.log(this.x) &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test : function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        setTimeout(() =&amp;gt; &amp;#123; this.func() &amp;#125;, 100);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这回&lt;strong&gt;this就指向o&lt;/strong&gt;了。&lt;/p&gt;
-&lt;p&gt;三、this是不会改变指向对象的**，我们知道call和apply可以改变this的指向，但是在箭头函数中是无效的。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var x = 1,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    o = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        x : 10,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        test : () =&amp;gt; this.x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test(); // 1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;o.test.call(o); // 依然是1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;我们先来看看箭头函数的&lt;strong&gt;语法&lt;/strong&gt;：&lt;/p&gt;
-&lt;figure class=&quot;hi
     
     </summary>
     
@@ -1055,6 +1121,28 @@
   
   <entry>
     <title></title>
+    <link href="http://yoursite.com/2017/01/10/BFC_IFC/"/>
+    <id>http://yoursite.com/2017/01/10/BFC_IFC/</id>
+    <published>2017-01-10T10:20:00.000Z</published>
+    <updated>2017-09-05T06:54:16.000Z</updated>
+    
+    <content type="html">&lt;hr&gt;
+&lt;p&gt;title: BFC 原理讲解&lt;br&gt;date: 2017-09-05&lt;/p&gt;
+&lt;h3 id=&quot;一、&quot;&gt;&lt;a href=&quot;#一、&quot; class=&quot;headerlink&quot; title=&quot;一、&quot;&gt;&lt;/a&gt;一、&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;title: BFC 原理讲解&lt;br&gt;date: 2017-09-05&lt;/p&gt;
+&lt;h3 id=&quot;一、&quot;&gt;&lt;a href=&quot;#一、&quot; class=&quot;headerlink&quot; title=&quot;一、&quot;&gt;&lt;/a&gt;一、&lt;/h3&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
     <link href="http://yoursite.com/2017/01/10/CSS%20%E7%9B%92%E7%8A%B6%E6%A8%A1%E5%9E%8B/"/>
     <id>http://yoursite.com/2017/01/10/CSS 盒状模型/</id>
     <published>2017-01-10T10:20:00.000Z</published>
@@ -1087,28 +1175,6 @@
       &lt;hr&gt;
 &lt;p&gt;title: CSS 盒状模型&lt;br&gt;date: 2017-09-05&lt;/p&gt;
 &lt;h3 id=&quot;一、盒模型定义&quot;&gt;&lt;a href=&quot;#一、盒模型定义&quot; class=&quot;headerlink&quot; title=&quot;一、盒模型定义&quot;&gt;&lt;/a&gt;一、盒模型定义&lt;/h3&gt;&lt;p&gt;(1
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2017/01/10/BFC_IFC/"/>
-    <id>http://yoursite.com/2017/01/10/BFC_IFC/</id>
-    <published>2017-01-10T10:20:00.000Z</published>
-    <updated>2017-09-05T06:54:16.000Z</updated>
-    
-    <content type="html">&lt;hr&gt;
-&lt;p&gt;title: BFC 原理讲解&lt;br&gt;date: 2017-09-05&lt;/p&gt;
-&lt;h3 id=&quot;一、&quot;&gt;&lt;a href=&quot;#一、&quot; class=&quot;headerlink&quot; title=&quot;一、&quot;&gt;&lt;/a&gt;一、&lt;/h3&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;title: BFC 原理讲解&lt;br&gt;date: 2017-09-05&lt;/p&gt;
-&lt;h3 id=&quot;一、&quot;&gt;&lt;a href=&quot;#一、&quot; class=&quot;headerlink&quot; title=&quot;一、&quot;&gt;&lt;/a&gt;一、&lt;/h3&gt;
     
     </summary>
     
@@ -1208,61 +1274,6 @@
     <summary type="html">
     
       &lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://redis.io/download&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网下
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>git 新建远程分支</title>
-    <link href="http://yoursite.com/2016/12/02/git%20%E6%96%B0%E5%BB%BA%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
-    <id>http://yoursite.com/2016/12/02/git 新建远程分支/</id>
-    <published>2016-12-01T16:00:00.000Z</published>
-    <updated>2016-12-02T05:23:38.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;查看远程分支&quot;&gt;&lt;a href=&quot;#查看远程分支&quot; class=&quot;headerlink&quot; title=&quot;查看远程分支&quot;&gt;&lt;/a&gt;查看远程分支&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git branch -a&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;其中带星号的为当前分支&lt;/p&gt;
-&lt;h2 id=&quot;查看本地分支&quot;&gt;&lt;a href=&quot;#查看本地分支&quot; class=&quot;headerlink&quot; title=&quot;查看本地分支&quot;&gt;&lt;/a&gt;查看本地分支&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git branch&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;创建分支（git-branch-《分支名称》-）&quot;&gt;&lt;a href=&quot;#创建分支（git-branch-《分支名称》-）&quot; class=&quot;headerlink&quot; title=&quot;创建分支（git branch 《分支名称》 ）&quot;&gt;&lt;/a&gt;创建分支（git branch 《分支名称》 ）&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git branch &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;   &lt;span class=&quot;comment&quot;&gt;# 创建test分支&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;把本地分支推到远程分支&quot;&gt;&lt;a href=&quot;#把本地分支推到远程分支&quot; class=&quot;headerlink&quot; title=&quot;把本地分支推到远程分支&quot;&gt;&lt;/a&gt;把本地分支推到远程分支&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git push origin &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;        &lt;span class=&quot;comment&quot;&gt;# 将test 分支推送到远程&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;切换分支到test&quot;&gt;&lt;a href=&quot;#切换分支到test&quot; class=&quot;headerlink&quot; title=&quot;切换分支到test&quot;&gt;&lt;/a&gt;切换分支到test&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git checkout &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;删除本地分支test-Git-branch-d-test-或者-git-br-d-test&quot;&gt;&lt;a href=&quot;#删除本地分支test-Git-branch-d-test-或者-git-br-d-test&quot; class=&quot;headerlink&quot; title=&quot;删除本地分支test   Git branch -d test  或者 git br -d test&quot;&gt;&lt;/a&gt;删除本地分支test   Git branch -d test  或者 git br -d test&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git br -d &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;删除前先切换至其他分支，才可以删除&lt;/p&gt;
-&lt;h2 id=&quot;删除远程版本&quot;&gt;&lt;a href=&quot;#删除远程版本&quot; class=&quot;headerlink&quot; title=&quot;删除远程版本&quot;&gt;&lt;/a&gt;删除远程版本&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git push origin :br-1.0.0&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;删除远程分支&quot;&gt;&lt;a href=&quot;#删除远程分支&quot; class=&quot;headerlink&quot; title=&quot;删除远程分支&quot;&gt;&lt;/a&gt;删除远程分支&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git branch -r -d origin/branch-name  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push origin :branch-name&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;查看远程分支&quot;&gt;&lt;a href=&quot;#查看远程分支&quot; class=&quot;headerlink&quot; title=&quot;查看远程分支&quot;&gt;&lt;/a&gt;查看远程分支&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>hexo常用命令</title>
-    <link href="http://yoursite.com/2016/11/30/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>http://yoursite.com/2016/11/30/hexo常用命令/</id>
-    <published>2016-11-29T16:00:00.000Z</published>
-    <updated>2016-11-30T12:22:36.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;hexo-s&quot;&gt;&lt;a href=&quot;#hexo-s&quot; class=&quot;headerlink&quot; title=&quot;hexo s&quot;&gt;&lt;/a&gt;hexo s&lt;/h2&gt;&lt;p&gt;启动本地服务器，用于预览主题。默认地址： &lt;a href=&quot;http://localhost:4000/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1.hexo s 是 hexo server 的缩写，命令效果一致；&lt;br&gt;2.预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；&lt;br&gt;3.对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果&lt;/p&gt;
-&lt;h2 id=&quot;hexo-new-“文章名字”&quot;&gt;&lt;a href=&quot;#hexo-new-“文章名字”&quot; class=&quot;headerlink&quot; title=&quot;hexo new “文章名字”&quot;&gt;&lt;/a&gt;hexo new “文章名字”&lt;/h2&gt;&lt;p&gt;新建一篇标题为 xxx 的文章，因为标题里有空格，所以加上了引号。&lt;br&gt;文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。&lt;/p&gt;
-&lt;h2 id=&quot;hexo-new-page-aboutme&quot;&gt;&lt;a href=&quot;#hexo-new-page-aboutme&quot; class=&quot;headerlink&quot; title=&quot;hexo new page aboutme&quot;&gt;&lt;/a&gt;hexo new page aboutme&lt;/h2&gt;&lt;p&gt;新建一个标题为 aboutme 的页面，默认链接地址为 主页地址/aboutme/&lt;/p&gt;
-&lt;p&gt;1.标题可以为中文，但一般习惯用英文；&lt;br&gt;2.页面标题和文章一样可以随意修改；&lt;br&gt;3.页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。&lt;/p&gt;
-&lt;h2 id=&quot;hexo-g&quot;&gt;&lt;a href=&quot;#hexo-g&quot; class=&quot;headerlink&quot; title=&quot;hexo g&quot;&gt;&lt;/a&gt;hexo g&lt;/h2&gt;&lt;p&gt;生成网站静态文件到默认设置的 public 文件夹。&lt;/p&gt;
-&lt;p&gt;1.便于查看网站生成的静态文件或者手动部署网站；&lt;br&gt;2.如果使用自动部署，不需要先执行该命令；&lt;br&gt;3.hexo g 是 hexo generate 的缩写，命令效果一致。&lt;/p&gt;
-&lt;h2 id=&quot;hexo-d&quot;&gt;&lt;a href=&quot;#hexo-d&quot; class=&quot;headerlink&quot; title=&quot;hexo d&quot;&gt;&lt;/a&gt;hexo d&lt;/h2&gt;&lt;p&gt;自动生成网站静态文件，并部署到设定的仓库。&lt;br&gt;1.hexo d 是 hexo deploy 的缩写，命令效果一致。&lt;/p&gt;
-&lt;h2 id=&quot;hexo-clean&quot;&gt;&lt;a href=&quot;#hexo-clean&quot; class=&quot;headerlink&quot; title=&quot;hexo clean&quot;&gt;&lt;/a&gt;hexo clean&lt;/h2&gt;&lt;p&gt;清除缓存文件 db.json 和已生成的静态文件 public 。&lt;/p&gt;
-&lt;p&gt;网站显示异常时可以执行这条命令试试。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;hexo-s&quot;&gt;&lt;a href=&quot;#hexo-s&quot; class=&quot;headerlink&quot; title=&quot;hexo s&quot;&gt;&lt;/a&gt;hexo s&lt;/h2&gt;&lt;p&gt;启动本地服务器，用于预览主题。默认地址： &lt;a href=&quot;http://localhost:4000/&quot; 
     
     </summary>
     

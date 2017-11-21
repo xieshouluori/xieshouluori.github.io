@@ -17,6 +17,8 @@
 <meta name="twitter:description" content="javascript html5 css3 前端">
   
   
+    <link rel="icon" href="/favicon.png">
+  
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -28,7 +30,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			<img lazy-src="/img/avatar.jpg" class="js-avatar">
 			
 		</a>
 
@@ -41,6 +43,32 @@
 		
 
 		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
 
 		<div class="switch-area">
 			<div class="switch-wrap">
@@ -48,15 +76,27 @@
 					<nav class="header-menu">
 						<ul>
 						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
 						<div class="social">
 							
+								<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+					        
 						</div>
 					</nav>
 				</section>
 				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
 				
 				
 				
@@ -78,7 +118,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
 			
 			</div>
 			<hgroup>
@@ -90,12 +130,18 @@
 			<nav class="header-menu">
 				<ul>
 				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
 			<nav class="header-nav">
 				<div class="social">
 					
+						<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+			        
 				</div>
 			</nav>
 		</header>				
@@ -104,280 +150,43 @@
 
       <div class="body-wrap">
   
-    <article id="post-immutable" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-阿里面试" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/09/11/immutable/" class="article-date">
-  	<time datetime="2017-09-10T16:00:00.000Z" itemprop="datePublished">2017-09-11</time>
+      <a href="/2017/11/17/阿里面试/" class="article-date">
+  	<time datetime="2017-11-17T06:56:44.000Z" itemprop="datePublished">2017-11-17</time>
 </a>
     </div>
   
   <div class="article-inner">
     
+      <input type="hidden" class="isFancy" />
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/11/immutable/">Immutable 在React 中实践</a>
-    </h1>
-  
-
-      </header>
-      
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p>出现的原因</p>
-<p>JavaScript 中的对象一般是可变的（Mutable）</p>
-<p>​    因为使用了引用赋值，新的对象简单的引用了原始对象，改变新的对象将影响到原始对象。</p>
-<p>​    如 <code>foo={a: 1}; bar=foo; bar.a=2</code> 你会发现此时 <code>foo.a</code> 也被改成了 <code>2</code>。</p>
-<p>优点：可以节约内存，</p>
-<p>缺点:当应用复杂后，这就造成了非常大的隐患，Mutable 带来的优点变得得不偿失。</p>
-<p>一般的解决办法：使用 shallowCopy（浅拷贝）或 deepCopy（深拷贝）来避免被修改，但这样做造成了 CPU 和内存的浪费。</p>
-<p>2.什么是 Immutable Data</p>
-<p>（1）Immutable Data 就是一旦创建，就不能再被更改的数据。对 Immutable 对象的任何修改或添加删除操作都会返回一个新的 Immutable 对象。</p>
-<p>（2）Immutable 实现的原理是</p>
-<p>​    Persistent Data Structure**（持久化数据结构），也就是使用旧数据创建新数据时，要保证旧数据同时可用且不变。</p>
-<p>​    同时为了避免 deepCopy 把所有节点都复制一遍带来的性能损耗，Immutable 使用了 <strong>Structural Sharing</strong>（结构共享），即如果对象树中一个节点发生变化，只修改这个节点和受它影响的父节点，其它节点则进行共享。请看下面动画：</p>
-<p><img src="http://img.alicdn.com/tps/i2/TB1zzi_KXXXXXctXFXXbrb8OVXX-613-575.gif" alt="Immutable 原理动画"></p>
-</li>
-</ol>
-<p>目前流行的 Immutable 库有两个：</p>
-<h3 id="immutable-js"><a href="#immutable-js" class="headerlink" title="immutable.js"></a>immutable.js</h3><p>Facebook 工程师 Lee Byron 花费 3 年时间打造，与 React 同期出现，但没有被默认放到 React 工具集里（React 提供了简化的 Helper）。它内部实现了一套完整的 Persistent Data Structure，还有很多易用的数据类型。像 <code>Collection</code>、<code>List</code>、<code>Map</code>、<code>Set</code>、<code>Record</code>、<code>Seq</code>。有非常全面的<code>map</code>、<code>filter</code>、<code>groupBy</code>、<code>reduce``find</code>函数式操作方法。同时 API 也尽量与 Object 或 Array 类似。</p>
-<p>其中有 3 种最重要的数据结构说明一下：（Java 程序员应该最熟悉了）</p>
-<ul>
-<li>Map：键值对集合，对应于 Object，ES6 也有专门的 Map 对象</li>
-<li>List：有序可重复的列表，对应于 Array</li>
-<li>Set：无序且不可重复的列表</li>
-</ul>
-<h3 id="seamless-immutable"><a href="#seamless-immutable" class="headerlink" title="seamless-immutable"></a>seamless-immutable</h3><p>与 Immutable.js 学院派的风格不同，seamless-immutable 并没有实现完整的 Persistent Data Structure，而是使用 <code>Object.defineProperty</code>（因此只能在 IE9 及以上使用）扩展了 JavaScript 的 Array 和 Object 对象来实现，只支持 Array 和 Object 两种数据类型，API 基于与 Array 和 Object 操持不变。代码库非常小，压缩后下载只有 2K。而 Immutable.js 压缩后下载有 16K。</p>
-<p>下面上代码来感受一下两者的不同：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// 原来的写法</div><div class="line">let foo = &#123;a: &#123;b: 1&#125;&#125;;</div><div class="line">let bar = foo;</div><div class="line">bar.a.b = 2;</div><div class="line">console.log(foo.a.b);  // 打印 2</div><div class="line">console.log(foo === bar);  //  打印 true</div><div class="line"></div><div class="line">// 使用 immutable.js 后</div><div class="line">import Immutable from &apos;immutable&apos;;</div><div class="line">foo = Immutable.fromJS(&#123;a: &#123;b: 1&#125;&#125;);</div><div class="line">bar = foo.setIn([&apos;a&apos;, &apos;b&apos;], 2);   // 使用 setIn 赋值</div><div class="line">console.log(foo.getIn([&apos;a&apos;, &apos;b&apos;]));  // 使用 getIn 取值，打印 1</div><div class="line">console.log(foo === bar);  //  打印 false</div><div class="line"></div><div class="line">// 使用  seamless-immutable.js 后</div><div class="line">import SImmutable from &apos;seamless-immutable&apos;;</div><div class="line">foo = SImmutable(&#123;a: &#123;b: 1&#125;&#125;)</div><div class="line">bar = foo.merge(&#123;a: &#123; b: 2&#125;&#125;)   // 使用 merge 赋值</div><div class="line">console.log(foo.a.b);  // 像原生 Object 一样取值，打印 1</div><div class="line">console.log(foo === bar);  //  打印 false</div></pre></td></tr></table></figure>
-<h2 id="Immutable-优点"><a href="#Immutable-优点" class="headerlink" title="Immutable 优点"></a>Immutable 优点</h2><h3 id="1-Immutable-降低了-Mutable-带来的复杂度"><a href="#1-Immutable-降低了-Mutable-带来的复杂度" class="headerlink" title="1. Immutable 降低了 Mutable 带来的复杂度"></a>1. Immutable 降低了 Mutable 带来的复杂度</h3><p>可变（Mutable）数据耦合了 Time 和 Value 的概念，造成了数据很难被回溯。</p>
-<p>比如下面一段代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function touchAndLog(touchFn) &#123;</div><div class="line">  let data = &#123; key: &apos;value&apos; &#125;;</div><div class="line">  touchFn(data);</div><div class="line">  console.log(data.key); // 猜猜会打印什么？</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在不查看 <code>touchFn</code> 的代码的情况下，因为不确定它对 <code>data</code> 做了什么，你是不可能知道会打印什么（这不是废话吗）。但如果 <code>data</code> 是 Immutable 的呢，你可以很肯定的知道打印的是 <code>value</code>。</p>
-<h3 id="2-节省内存"><a href="#2-节省内存" class="headerlink" title="2. 节省内存"></a>2. 节省内存</h3><p>Immutable.js 使用了 Structure Sharing 会尽量复用内存，甚至以前使用的对象也可以再次被复用。没有被引用的对象会被垃圾回收。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import &#123; Map&#125; from &apos;immutable&apos;;</div><div class="line">let a = Map(&#123;</div><div class="line">  select: &apos;users&apos;,</div><div class="line">  filter: Map(&#123; name: &apos;Cam&apos; &#125;)</div><div class="line">&#125;)</div><div class="line">let b = a.set(&apos;select&apos;, &apos;people&apos;);</div><div class="line"></div><div class="line">a === b; // false</div><div class="line">a.get(&apos;filter&apos;) === b.get(&apos;filter&apos;); // true</div></pre></td></tr></table></figure>
-<p>上面 a 和 b 共享了没有变化的 <code>filter</code> 节点。</p>
-<h3 id="3-Undo-Redo，Copy-Paste，甚至时间旅行这些功能做起来小菜一碟"><a href="#3-Undo-Redo，Copy-Paste，甚至时间旅行这些功能做起来小菜一碟" class="headerlink" title="3. Undo/Redo，Copy/Paste，甚至时间旅行这些功能做起来小菜一碟"></a>3. Undo/Redo，Copy/Paste，甚至时间旅行这些功能做起来小菜一碟</h3><p>因为每次数据都是不一样的，只要把这些数据放到一个数组里储存起来，想回退到哪里就拿出对应数据即可，很容易开发出撤销重做这种功能。</p>
-<p>后面我会提供 Flux 做 Undo 的示例。</p>
-<h3 id="4-并发安全"><a href="#4-并发安全" class="headerlink" title="4. 并发安全"></a>4. 并发安全</h3><p>传统的并发非常难做，因为要处理各种数据不一致问题，因此『聪明人』发明了各种锁来解决。但使用了 Immutable 之后，数据天生是不可变的，<strong>并发锁就不需要了</strong>。</p>
-<p>然而现在并没什么卵用，因为 JavaScript 还是单线程运行的啊。但未来可能会加入，提前解决未来的问题不也挺好吗？</p>
-<h3 id="5-拥抱函数式编程"><a href="#5-拥抱函数式编程" class="headerlink" title="5. 拥抱函数式编程"></a>5. 拥抱函数式编程</h3><p>Immutable 本身就是函数式编程中的概念，纯函数式编程比面向对象更适用于前端开发。因为只要输入一致，输出必然一致，这样开发的组件更易于调试和组装。</p>
-<p>像 ClojureScript，Elm 等函数式编程语言中的数据类型天生都是 Immutable 的，这也是为什么 ClojureScript 基于 React 的框架 — Om 性能比 React 还要好的原因。</p>
-<h2 id="Immutable-缺点"><a href="#Immutable-缺点" class="headerlink" title="Immutable 缺点"></a>Immutable 缺点</h2><h3 id="1-需要学习新的-API"><a href="#1-需要学习新的-API" class="headerlink" title="1. 需要学习新的 API"></a>1. 需要学习新的 API</h3><p>No Comments</p>
-<h3 id="2-增加了资源文件大小"><a href="#2-增加了资源文件大小" class="headerlink" title="2. 增加了资源文件大小"></a>2. 增加了资源文件大小</h3><p>No Comments</p>
-<h3 id="3-容易与原生对象混淆"><a href="#3-容易与原生对象混淆" class="headerlink" title="3. 容易与原生对象混淆"></a>3. 容易与原生对象混淆</h3><p>这点是我们使用 Immutable.js 过程中遇到最大的问题。写代码要做思维上的转变。</p>
-<p>虽然 Immutable.js 尽量尝试把 API 设计的原生对象类似，有的时候还是很难区别到底是 Immutable 对象还是原生对象，容易混淆操作。</p>
-<p>Immutable 中的 Map 和 List 虽对应原生 Object 和 Array，但操作非常不同，比如你要用 <code>map.get(&#39;key&#39;)</code> 而不是 <code>map.key</code>，<code>array.get(0)</code> 而不是 <code>array[0]</code>。另外 Immutable 每次修改都会返回新对象，也很容易忘记赋值。</p>
-<p>当使用外部库的时候，一般需要使用原生对象，也很容易忘记转换。</p>
-<p>下面给出一些办法来避免类似问题发生：</p>
+        <p>阿里面试：</p>
 <ol>
-<li>使用 Flow 或 TypeScript 这类有静态类型检查的工具</li>
-<li>约定变量命名规则：如所有 Immutable 类型对象以 <code>$$</code> 开头。</li>
-<li>使用 <code>Immutable.fromJS</code> 而不是 <code>Immutable.Map</code> 或 <code>Immutable.List</code> 来创建对象，这样可以避免 Immutable 和原生对象间的混用。</li>
-</ol>
-<h2 id="更多认识"><a href="#更多认识" class="headerlink" title="更多认识"></a>更多认识</h2><h3 id="Immutable-is"><a href="#Immutable-is" class="headerlink" title="Immutable.is"></a><code>Immutable.is</code></h3><p>两个 immutable 对象可以使用 <code>===</code> 来比较，这样是直接比较内存地址，性能最好。但即使两个对象的值是一样的，也会返回 <code>false</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let map1 = Immutable.Map(&#123;a:1, b:1, c:1&#125;);</div><div class="line">let map2 = Immutable.Map(&#123;a:1, b:1, c:1&#125;);</div><div class="line">map1 === map2;             // false</div></pre></td></tr></table></figure>
-<p>为了直接比较对象的值，immutable.js 提供了 <code>Immutable.is</code> 来做『值比较』，结果如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Immutable.is(map1, map2);  // true</div></pre></td></tr></table></figure>
-<p><code>Immutable.is</code> 比较的是两个对象的 <code>hashCode</code> 或 <code>valueOf</code>（对于 JavaScript 对象）。由于 immutable 内部使用了 Trie 数据结构来存储，只要两个对象的 <code>hashCode</code> 相等，值就是一样的。这样的算法避免了深度遍历比较，性能非常好。</p>
-<p>后面会使用 <code>Immutable.is</code> 来减少 React 重复渲染，提高性能。</p>
-<p>另外，还有 <a href="https://github.com/swannodette/mori" target="_blank" rel="external">mori</a>、<a href="https://github.com/mquan/cortex" target="_blank" rel="external">cortex</a> 等，因为类似就不再介绍。</p>
-<h3 id="与-Object-freeze、const-区别"><a href="#与-Object-freeze、const-区别" class="headerlink" title="与 Object.freeze、const 区别"></a>与 Object.freeze、const 区别</h3><p>ES6 中新加入的 <code>Object.freeze</code> 和 <code>const</code> 都可以达到防止对象被篡改的功能，但它们是 shallowCopy 的。对象层级一深就要特殊处理了。</p>
-<h3 id="Cursor-的概念"><a href="#Cursor-的概念" class="headerlink" title="Cursor 的概念"></a>Cursor 的概念</h3><p>这个 Cursor 和数据库中的游标是完全不同的概念。</p>
-<p>由于 Immutable 数据一般嵌套非常深，为了便于访问深层数据，Cursor 提供了可以直接访问这个深层数据的引用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import Immutable from &apos;immutable&apos;;</div><div class="line">import Cursor from &apos;immutable/contrib/cursor&apos;;</div><div class="line"></div><div class="line">let data = Immutable.fromJS(&#123; a: &#123; b: &#123; c: 1 &#125; &#125; &#125;);</div><div class="line">// 让 cursor 指向 &#123; c: 1 &#125;</div><div class="line">let cursor = Cursor.from(data, [&apos;a&apos;, &apos;b&apos;], newData =&gt; &#123;</div><div class="line">  // 当 cursor 或其子 cursor 执行 update 时调用</div><div class="line">  console.log(newData);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">cursor.get(&apos;c&apos;); // 1</div><div class="line">cursor = cursor.update(&apos;c&apos;, x =&gt; x + 1);</div><div class="line">cursor.get(&apos;c&apos;); // 2</div></pre></td></tr></table></figure>
-<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><h3 id="与-React-搭配使用，Pure-Render"><a href="#与-React-搭配使用，Pure-Render" class="headerlink" title="与 React 搭配使用，Pure Render"></a>与 React 搭配使用，Pure Render</h3><p>熟悉 React 的都知道，React 做性能优化时有一个避免重复渲染的大招，就是使用 <code>shouldComponentUpdate()</code>，但它默认返回 <code>true</code>，即始终会执行 <code>render()</code> 方法，然后做 Virtual DOM 比较，并得出是否需要做真实 DOM 更新，这里往往会带来很多无必要的渲染并成为性能瓶颈。</p>
-<p>当然我们也可以在 <code>shouldComponentUpdate()</code> 中使用使用 deepCopy 和 deepCompare 来避免无必要的 <code>render()</code>，但 <strong>deepCopy 和 deepCompare 一般都是非常耗性能的</strong>。</p>
-<p><strong>Immutable 则提供了简洁高效的判断数据是否变化的方法</strong>，只需 <code>===</code> 和 <code>is</code> 比较就能知道是否需要执行 <code>render()</code>，而这个<strong>操作几乎 0 成本</strong>，所以可以极大提高性能。修改后的 <code>shouldComponentUpdate</code> 是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import &#123; is &#125; from &apos;immutable&apos;;</div><div class="line">shouldComponentUpdate: (nextProps, nextState) =&gt; &#123;</div><div class="line">  return !(this.props === nextProps || is(this.props, nextProps)) ||</div><div class="line">         !(this.state === nextState || is(this.state, nextState));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>使用 Immutable 后，如下图，当红色节点的 state 变化后，不会再渲染树中的所有节点，而是只渲染图中绿色的部分：</p>
-<p><img src="http://img.alicdn.com/tps/i3/TB1VinpKXXXXXXAXpXXZ_OdNFXX-715-324.png" alt="react reconciliation"></p>
-<p>你也可以借助 <code>React.addons.PureRenderMixin</code> 或支持 class 语法的 <a href="https://www.w3ctech.com/topic/felixgirault/pure-render-decorator%20%C2%B7%20GitHub" target="_blank" rel="external">pure-render-decorator</a> 来实现。</p>
-<h4 id="setState-的一个技巧"><a href="#setState-的一个技巧" class="headerlink" title="setState 的一个技巧"></a>setState 的一个技巧</h4><p>React 建议把 <code>this.state</code> 当作 Immutable 的，因此修改前需要做一个 deepCopy，显得麻烦：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">import &apos;_&apos; from &apos;lodash&apos;;</div><div class="line"></div><div class="line">const Component = React.createClass(&#123;</div><div class="line">  getInitialState() &#123;</div><div class="line">    return &#123;</div><div class="line">      data: &#123; times: 0 &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  handleAdd() &#123;</div><div class="line">    let data = _.cloneDeep(this.state.data);</div><div class="line">    data.times = data.times + 1;</div><div class="line">    this.setState(&#123; data: data &#125;);</div><div class="line">    // 如果上面不做 cloneDeep，下面打印的结果会是已经加 1 后的值。</div><div class="line">    console.log(this.state.data.times);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>使用 Immutable 后：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">getInitialState() &#123;</div><div class="line">  return &#123;</div><div class="line">    data: Map(&#123; times: 0 &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;,</div><div class="line">handleAdd() &#123;</div><div class="line">  this.setState(&#123; data: this.state.data.update(&apos;times&apos;, v =&gt; v + 1) &#125;);</div><div class="line">  // 这时的 times 并不会改变</div><div class="line">  console.log(this.state.data.get(&apos;times&apos;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面的 <code>handleAdd</code> 可以简写成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">handleAdd() &#123;</div><div class="line">  this.setState((&#123;data&#125;) =&gt; (&#123;</div><div class="line">    data: data.update(&apos;times&apos;, v =&gt; v + 1) &#125;)</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="与-Flux-搭配使用"><a href="#与-Flux-搭配使用" class="headerlink" title="与 Flux 搭配使用"></a>与 Flux 搭配使用</h3><p>由于 Flux 并没有限定 Store 中数据的类型，使用 Immutable 非常简单。</p>
-<p>现在是实现一个类似带有添加和撤销功能的 Store：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">import &#123; Map, OrderedMap &#125; from &apos;immutable&apos;;</div><div class="line">let todos = OrderedMap();</div><div class="line">let history = [];  // 普通数组，存放每次操作后产生的数据</div><div class="line"></div><div class="line">let TodoStore = createStore(&#123;</div><div class="line">  getAll() &#123; return todos; &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">Dispatcher.register(action =&gt; &#123;</div><div class="line">  if (action.actionType === &apos;create&apos;) &#123;</div><div class="line">    let id = createGUID();</div><div class="line">    history.push(todos);  // 记录当前操作前的数据，便于撤销</div><div class="line">    todos = todos.set(id, Map(&#123;</div><div class="line">      id: id,</div><div class="line">      complete: false,</div><div class="line">      text: action.text.trim()</div><div class="line">    &#125;));</div><div class="line">    TodoStore.emitChange();</div><div class="line">  &#125; else if (action.actionType === &apos;undo&apos;) &#123;</div><div class="line">    // 这里是撤销功能实现，</div><div class="line">    // 只需从 history 数组中取前一次 todos 即可</div><div class="line">    if (history.length &gt; 0) &#123;</div><div class="line">      todos = history.pop();</div><div class="line">    &#125;</div><div class="line">    TodoStore.emitChange();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="与-Redux-搭配使用"><a href="#与-Redux-搭配使用" class="headerlink" title="与 Redux 搭配使用"></a>与 Redux 搭配使用</h3><p><a href="https://github.com/rackt/redux" target="_blank" rel="external">Redux</a> 是目前流行的 Flux 衍生库。它简化了 Flux 中多个 Store 的概念，只有一个 Store，数据操作通过 Reducer 中实现；同时它提供更简洁和清晰的单向数据流（View -&gt; Action -&gt; Middleware -&gt; Reducer），也更易于开发同构应用。目前已经在我们项目中大规模使用。</p>
-<p>由于 Redux 中内置的 <code>combineReducers</code> 和 reducer 中的 <code>initialState</code> 都为原生的 Object 对象，所以不能和 Immutable 原生搭配使用。</p>
-<p>幸运的是，Redux 并不排斥使用 Immutable，可以自己重写 <code>combineReducers</code> 或使用 <a href="https://github.com/indexiatech/redux-immutablejs" target="_blank" rel="external">redux-immutablejs</a> 来提供支持。</p>
-<p>上面我们提到 Cursor 可以方便检索和 update 层级比较深的数据，但因为 Redux 中已经有了 select 来做检索，Action 来更新数据，因此 Cursor 在这里就没有用武之地了。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Immutable 可以给应用带来极大的性能提升，但是否使用还要看项目情况。由于侵入性较强，新项目引入比较容易，老项目迁移需要评估迁移。对于一些提供给外部使用的公共组件，最好不要把 Immutable 对象直接暴露在对外接口中。</p>
-<p>如果 JS 原生 Immutable 类型会不会太美，被称为 React API 终结者的 Sebastian Markbåge 有一个这样的<a href="https://github.com/sebmarkbage/ecmascript-immutable-data-structures" target="_blank" rel="external">提案</a>，能否通过现在还不确定。不过可以肯定的是 Immutable 会被越来越多的项目使用。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-如何科学的组织React组件样式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/09/09/如何科学的组织React组件样式/" class="article-date">
-  	<time datetime="2017-09-08T16:00:00.000Z" itemprop="datePublished">2017-09-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/09/如何科学的组织React组件样式/">如何科学的组织React组件样式——模块化  样式之间互不影响</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="方法一：定义类的前缀"><a href="#方法一：定义类的前缀" class="headerlink" title="方法一：定义类的前缀"></a>方法一：定义类的前缀</h2><p>我们理想中的文件结构可能会是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- components</div><div class="line">    - modal</div><div class="line">        - modal.jsx</div><div class="line">        - modal.css  // 可以是任意预处理器</div><div class="line">    - dropdown</div><div class="line">        - dropdown.jsx</div><div class="line">        - dropdown.css</div></pre></td></tr></table></figure>
-<p>然而，js现在可以做模块化，css并不行，所有css的定义都可以被视为全局变量，在css被打包后，一个组件的样式有可能会影响到其他组件，于是我们可以通过命名约定（name convention）来曲线救国（这一点并不局限于react开发）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@modal-prefix: modal;</div><div class="line"></div><div class="line">.@&#123;modal-prefix&#125; &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.@&#123;modal-prefix&#125;-title &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>类似于上面的使用less的方式，在文件顶部先定义个类的前缀，来尽量避免命名冲突的可能。于是在组件中就可以这样做</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">import &apos;./modal.less&apos;;</div><div class="line"></div><div class="line">export default React.createClass(&#123;</div><div class="line">    render () &#123;</div><div class="line">        return </div><div class="line"></div><div class="line">&lt;div className=&quot;modal-title&quot;&gt;Hello&lt;/div&gt;</div><div class="line"></div><div class="line">;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="方法二-：CSS-in-JS（行内样式）"><a href="#方法二-：CSS-in-JS（行内样式）" class="headerlink" title="方法二 ：CSS in JS（行内样式）"></a>方法二 ：CSS in JS（行内样式）</h2><p>把样式也直接写进组件里，即使用inline style。</p>
-<p>首先，直接用传统的inline style并不可取，它对属性的支持有限，比如不能用伪类、多个不同浏览器前缀的相同属性、媒体查询、动画等。</p>
-<p>至于重用样式而言，在react中倒是还行：将需要重用的样式对象作为模块导出即可。</p>
-<p>CSS in JS可以实现，比如：</p>
-<p><strong>react-style</strong></p>
-<p><a href="https://github.com/js-next/react-style" target="_blank" rel="external">github地址</a></p>
-<h2 id="方法三：local-scoped-CSS-（webpack-css模块化）"><a href="#方法三：local-scoped-CSS-（webpack-css模块化）" class="headerlink" title="方法三：local scoped CSS  （webpack css模块化）"></a>方法三：local scoped CSS  （webpack css模块化）</h2><p><a href="https://github.com/css-modules/css-modules" target="_blank" rel="external">https://github.com/css-modules/css-modules</a><br><a href="https://github.com/webpack/css-loader#local-scope" target="_blank" rel="external">https://github.com/webpack/css-loader#local-scope</a></p>
-<p>用这个东西现在是webpack官方支持的，已在<code>css-loader</code>中实现，</p>
-<p>(1)</p>
-<p>​    1.本地样式 用 :local(.title) { background: red; }</p>
-<p>​    2.共享样式用：</p>
-<p>​    :global {<br>      .global-class-name {<br>            color: green;<br>​      }<br>​    }</p>
-<p>(2)代码中运用  本地声明</p>
-<p>1.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// style.css</div><div class="line">:local(.title) &#123; background: red; &#125;</div></pre></td></tr></table></figure>
-<p>2.在需要这份样式的组件里引入这个模块：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import styles from &apos;style.css&apos;</div><div class="line"></div><div class="line">&lt;div className=&#123;styles.title&#125;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>3.首先css的语法中是不支持这个:local()的，页面最终的代码为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;_3dpOqNNJl6oyjYpdDHCFD9&quot; data-reactid=&quot;.0.2.1&quot;&gt;Info&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>这也算是个预处理器，它将<code>:local(.title)</code>的类名变成了一个哈希值，仅可以通过模块导入的方式来获取这个哈希值 并应用到组件上（生成的类名是可以配置的）。</p>
-<p>(3)webpack配置：在<code>css-loader</code>可以通过添加<code>module</code>选项，</p>
-<p>​        使得css默认定义的是local scoped的，</p>
-<p>​    希望共享的可以用:global()定义。</p>
-<p>也可以和预处理器混用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">:global &#123;</div><div class="line">  .global-class-name &#123;</div><div class="line">    color: green;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>（4）目前看下来，它只对class名做哈希，对标签等不做哈希：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:local(.title span) // .[hash] span</div></pre></td></tr></table></figure>
-<p>然而</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:local(.title .name) // .[hash0] .[hash1]</div></pre></td></tr></table></figure>
-<p>这个算是一个有意思的方式，首先它依赖于webpack，而webpack并不局限于React的开发，任何前端项目都可以使用webpack，那么就也都可以使用CSS Modules的概念</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-vscode----eslint +默认配置文件" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/09/09/vscode----eslint +默认配置文件/" class="article-date">
-  	<time datetime="2017-09-08T16:00:00.000Z" itemprop="datePublished">2017-09-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/09/vscode----eslint +默认配置文件/">vscode中 针对 react的 eslint配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> eslint官网：   <a href="http://eslint.cn/" target="_blank" rel="external">http://eslint.cn/</a></p>
-<h3 id="一：vscode默认配置"><a href="#一：vscode默认配置" class="headerlink" title="一：vscode默认配置"></a>一：vscode默认配置</h3><p>首选项  ——&gt;设置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  //控制台---</div><div class="line">  &quot;workbench.colorTheme&quot;: &quot;Monokai&quot;,</div><div class="line">  //文件---</div><div class="line">  &quot;files.autoSave&quot;: &quot;onFocusChange&quot;,</div><div class="line">  //配置语言的文件关联</div><div class="line">  &quot;files.associations&quot;: &#123;</div><div class="line">    &quot;*.js&quot;: &quot;javascriptreact&quot;</div><div class="line">  &#125;,</div><div class="line">  //editor----</div><div class="line">  &quot;editor.fontSize&quot;: 14,</div><div class="line">  &quot;editor.detectIndentation&quot;: false,</div><div class="line">  &quot;editor.tabSize&quot;: 2,</div><div class="line">  &quot;editor.formatOnType&quot;: false,</div><div class="line">  &quot;editor.formatOnSave&quot;: false,</div><div class="line">  &quot;editor.wordWrap&quot;: &quot;on&quot;,</div><div class="line"></div><div class="line">  //关闭VS自带的 javascript验证</div><div class="line">  &quot;javascript.validate.enable&quot;: false,</div><div class="line">  //eslint---- 代码检查(默认只支持 js 文件的脚本检测)</div><div class="line">  //支持类 html 文件（如 vue ）的内联脚本检测 安装 eslint-plugin-html </div><div class="line">  &quot;eslint.options&quot;: &#123;</div><div class="line">    &quot;plugins&quot;: [</div><div class="line">      &quot;html&quot;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  &quot;eslint.validate&quot;: [</div><div class="line">    &quot;javascript&quot;,</div><div class="line">    &quot;javascriptreact&quot;,</div><div class="line">    &quot;html&quot;,</div><div class="line">    &quot;vue&quot;</div><div class="line">  ],</div><div class="line">  // 在保存时自动修复错误</div><div class="line">  &quot;eslint.autoFixOnSave&quot;: true,</div><div class="line">  //emmet缩写----</div><div class="line">  // 设置.vue 文件与 HTML 的关联</div><div class="line">  &quot;emmet.includeLanguages&quot;: &#123;</div><div class="line">    &quot;javascript&quot;: &quot;javascriptreact&quot;,</div><div class="line">    &quot;vue&quot;: &quot;html&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;emmet.syntaxProfiles&quot;: &#123;</div><div class="line">    &quot;vue-html&quot;: &quot;html&quot;,</div><div class="line">    &quot;vue&quot;: &quot;html&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="二：-eslintrc-js"><a href="#二：-eslintrc-js" class="headerlink" title="二：.eslintrc.js"></a>二：.eslintrc.js</h3><p>​    针对项目设置，放在根目录下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  root: true,</div><div class="line">  parser: &apos;babel-eslint&apos;,</div><div class="line">  &quot;env&quot;: &#123;</div><div class="line">    &quot;es6&quot;: true,</div><div class="line">    &quot;browser&quot;: true,</div><div class="line">    &quot;node&quot;: true</div><div class="line">  &#125;,</div><div class="line">  &quot;extends&quot;: &apos;airbnb&apos;,</div><div class="line">  &quot;parserOptions&quot;: &#123;</div><div class="line">    &quot;ecmaVersion&quot;: 6,</div><div class="line">    &quot;sourceType&quot;: &apos;module&apos;,</div><div class="line">    &quot;ecmaFeatures&quot;: &#123;</div><div class="line">      &quot;experimentalObjectRestSpread&quot;: true,</div><div class="line">      &quot;arrowFunctions&quot;: true</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  &quot;plugins&quot;: [&quot;react&quot;],</div><div class="line">  &quot;rules&quot;: &#123;</div><div class="line">    &apos;no-debugger&apos;: process.env.NODE_ENV === &apos;production&apos;? 2 : 0,</div><div class="line">    &quot;no-underscore-dangle&quot;: &quot;off&quot;,</div><div class="line">    &quot;react/prop-types&quot;: &quot;off&quot;,</div><div class="line">    &quot;import/extensions&quot;: [</div><div class="line">      &quot;error&quot;,</div><div class="line">      &quot;never&quot;, &#123;</div><div class="line">        &quot;web.js&quot;: &quot;never&quot;,</div><div class="line">        &quot;json&quot;: &quot;never&quot;</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    &quot;import/no-extraneous-dependencies&quot;: [</div><div class="line">      &quot;error&quot;, &#123;</div><div class="line">        &quot;devDependencies&quot;: true</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    &quot;import/no-unresolved&quot;: [</div><div class="line">      &quot;error&quot;, &#123;</div><div class="line">        &quot;ignore&quot;: [&quot;antd-mobile&quot;]</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    &quot;indent&quot;: [</div><div class="line">      &quot;error&quot;, 2</div><div class="line">    ],</div><div class="line">    &quot;indent&quot;: [&quot;error&quot;, 2],</div><div class="line">    &quot;linebreak-style&quot;: [</div><div class="line">      &quot;error&quot;, &quot;unix&quot;</div><div class="line">    ],</div><div class="line">    &quot;quotes&quot;: [</div><div class="line">      &quot;error&quot;, &quot;single&quot;</div><div class="line">    ],</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="三-安装相关eslint插件-（npm-cnpm-安装）"><a href="#三-安装相关eslint插件-（npm-cnpm-安装）" class="headerlink" title="三 安装相关eslint插件 （npm/cnpm 安装）"></a>三 安装相关eslint插件 （npm/cnpm 安装）</h3><p>​     “eslint”: “^4.6.1”,</p>
-<p>​    “eslint-config-airbnb”: “^15.1.0”,</p>
-<p>​    “eslint-plugin-import”: “^2.7.0”,</p>
-<p>​    “eslint-plugin-jsx-a11y”: “^6.0.2”,</p>
-<p>​    “eslint-plugin-react”: “^7.3.0”,</p>
-<p>​     “babel-loader”: “^6.3.2”,</p>
-<p>ESLint 允许你指定你想要支持的 JavaScript 语言选项。默认情况下，ESLint 支持 ECMAScript 5 语法。你可以覆盖该设置启用对 ECMAScript 其它版本和 JSX 的支持。</p>
-<p>对 JSX 语法的支持不用于对 React 的支持。React 适用于特定 ESLint 无法识别的 JSX 语法。如果你正在使用 React 和 想要 React 语义，我们推荐你使用 <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">eslint-plugin-react</a>。</p>
-<h3 id="四、在项目中执行-eslint"><a href="#四、在项目中执行-eslint" class="headerlink" title="四、在项目中执行  eslint"></a>四、在项目中执行  eslint</h3><p>package.json 中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line"></div><div class="line">   	&quot;lint&quot;: &quot;eslint src --ext .js&quot;,</div><div class="line"></div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
-<p>说明:eslint 命令</p>
-<h4 id="ext"><a href="#ext" class="headerlink" title="--ext"></a><code>--ext</code></h4><p>这个选项允许你指定ESLint在指定的目录下查找JavaScript文件时要使用的文件扩展名。默认情况下，它使用<code>.js</code>作为唯一性文件扩展名。</p>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Use only .js2 extension</div><div class="line">eslint . --ext .js2</div><div class="line"></div><div class="line"># Use both .js and .js2</div><div class="line">eslint . --ext .js --ext .js2</div><div class="line"></div><div class="line"># Also use both .js and .js2</div><div class="line">eslint . --ext .js,.js2</div></pre></td></tr></table></figure>
-<p>注意：如果你使用了水珠模式，则<code>--ext</code>被忽略</p>
-<p>例如，<code>eslint lib/* --ext .js</code>将匹配<code>lib/</code>下的所有文件，忽略扩展名。</p>
-<h3 id="五、番外"><a href="#五、番外" class="headerlink" title="五、番外"></a>五、番外</h3><h5 id="npm安装相关组件"><a href="#npm安装相关组件" class="headerlink" title="npm安装相关组件"></a>npm安装相关组件</h5><h6 id="安装eslint"><a href="#安装eslint" class="headerlink" title="安装eslint"></a>安装eslint</h6><p><code>$ npm install eslint -g</code></p>
-<h5 id="安装eslint-plugin-react"><a href="#安装eslint-plugin-react" class="headerlink" title="安装eslint-plugin-react"></a>安装eslint-plugin-react</h5><p>识别react中的一些语法检验<br><code>$ npm install eslint-plugin-react</code></p>
-<h5 id="安装babel-eslint"><a href="#安装babel-eslint" class="headerlink" title="安装babel-eslint"></a>安装babel-eslint</h5><p>如果用到了es6的新语法, 需要安装babel-eslint,不然会把箭头函数识别成错误<br><code>$ npm install babel-eslint</code></p>
-<h4 id="在项目的根目录创建配置文件-eslintrc-json"><a href="#在项目的根目录创建配置文件-eslintrc-json" class="headerlink" title="在项目的根目录创建配置文件.eslintrc.json"></a>在项目的根目录创建配置文件.eslintrc.json</h4><p>eslint会根据.eslintrc.json定义的规则进行代码检测(在mac中的.开头的文件为隐藏文件);<br>eslint官方给出的一些有关react配置的文档:<br><a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">https://github.com/yannickcr/eslint-plugin-react</a></p>
-<p><strong>一般有两种做法:</strong></p>
-<ol>
-<li>宽松的定义,只检验一些语法上的错误.</li>
-<li>严谨的定义,可以当团队书写代码的规范,把规范错误定义成<strong>警告</strong>, 语法错误定义成<strong>错误</strong></li>
+<li><p>jquery:</p>
+<p>animate 怎么实现的，提供哪些接口</p>
+</li>
+<li><p>vue </p>
+<p>双向数据绑定 具体咋实现，</p>
+<p>vue-router内部代码咋写的</p>
+<p>异步加载怎们做（按需加载）</p>
+<p>当数据set之后，触发什么生命周期</p>
+<p>虚拟dom和react有啥不一样</p>
+</li>
+<li><p>react</p>
+<p>当数据set之后，触发什么生命周期</p>
+<p>高阶函数有木有用</p>
+<p>vue 和 react有啥区别</p>
+</li>
+<li><p>webpack</p>
+<p>有哪些loader</p>
+<p>有哪些 plugins</p>
+<p>​</p>
+</li>
 </ol>
 
       
@@ -405,589 +214,24 @@
 
 
   
-    <article id="post-如何实现元素的水平垂直居中" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-前端项目框架" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/09/05/如何实现元素的水平垂直居中/" class="article-date">
-  	<time datetime="2017-09-05T07:06:36.000Z" itemprop="datePublished">2017-09-05</time>
+      <a href="/2017/09/12/前端项目框架/" class="article-date">
+  	<time datetime="2017-09-11T16:00:00.000Z" itemprop="datePublished">2017-09-12</time>
 </a>
     </div>
   
   <div class="article-inner">
     
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>title: 如何实现元素的水平垂直居中<br>date: 2017-09-05</p>
-<p><a href="http://www.jianshu.com/p/09ece194956a" target="_blank" rel="external">http://www.jianshu.com/p/09ece194956a</a></p>
-<h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><h4 id="1-方法1：若是行内元素"><a href="#1-方法1：若是行内元素" class="headerlink" title="1.方法1：若是行内元素"></a>1.方法1：若是行内元素</h4><p>  给其父级元素设置text-align:center,可以实现行内元素水平居中,</p>
-<h4 id="2-方法2-若是块级元素"><a href="#2-方法2-若是块级元素" class="headerlink" title="2.方法2:若是块级元素"></a>2.方法2:若是块级元素</h4><h4 id="div-p-ul-li-ol-h1-h6-dl-dt-dd-address-article-figure-audio-video-section-table-canvas-header-table-footer-独自占一行-支持宽度和高度，要想实现水平居中-margin-0-auto"><a href="#div-p-ul-li-ol-h1-h6-dl-dt-dd-address-article-figure-audio-video-section-table-canvas-header-table-footer-独自占一行-支持宽度和高度，要想实现水平居中-margin-0-auto" class="headerlink" title="(div,p,ul,li,ol,h1-h6,dl,dt,dd,address,article,figure,audio,video,section,table,canvas,header,table,footer)独自占一行,支持宽度和高度，要想实现水平居中:margin:0 auto;"></a>(div,p,ul,li,ol,h1-h6,dl,dt,dd,address,article,figure,audio,video,section,table,canvas,header,table,footer)独自占一行,支持宽度和高度，要想实现水平居中:margin:0 auto;</h4><p>方法3:若是子元素有浮动,为了让子元素水平居中,则可以让父元素宽度设置为fit-content,并且配合margin:0 auto</p>
-<p>注意这个属性值fit-content配上margin:0 auto才会让其水平居中,目前只有chrome,firfox,Opera浏览器支持该属性值,并且只能实现水平居中,无法实现垂直居中,也没有height:fit-content,该属性,即使设置了也不生效</p>
-<p><ul class="parent"><br>    <li>随笔川迹</li><br>    <li>itclan</li><br>    <li>个人简介</li><br>    <li>联系地止</li><br></ul><br>css层叠样式代码</p>
-<p>ul,li{<br>    list-style:none;<br>}<br>.parent{<br>    width:100%;<br>    width:-moz-fit-content;<br>    width:-webkit-fit-content;<br>    width:fit-content;   /<em>父元素宽度设置fit-content,高度是没有这样的写法的</em>/<br>    margin:0 auto;     /<em>注意只设置得了水平居中,此方法,垂直居中无法</em>/<br>}<br>li{<br>    float:left;    /<em>子元素设置了浮动</em>/<br>    margin:0 5px 0;<br>}</p>
-<h3 id="方法4-使用flex布局-老版本"><a href="#方法4-使用flex布局-老版本" class="headerlink" title="方法4 使用flex布局,老版本:"></a><code>方法4</code> 使用flex布局,老版本:</h3><p>设置父元素<code>display:box;</code>(声明弹性盒模型),</p>
-<p><code>box-orient:horizontal;</code>(父元素设置,用来确定子元素的方向,是横着的还是竖着的,horizontal是横着(水平),vertical表示竖着,垂直,),</p>
-<p><code>box-pack:center;</code>(决定盒子内部剩余空间的对齐表现,这里是居中,均等地分割多余空间）</p>
-<h3 id="方法5-使用flex-新版本"><a href="#方法5-使用flex-新版本" class="headerlink" title="方法5 使用flex,新版本:"></a>方法5 使用flex,新版本:</h3><p>设置父元素<code>display:flex</code>(声明弹性盒模型),</p>
-<p><code>flex-direction:row</code>(设置主轴方向为水平方向),</p>
-<p>just-content:center`(规定主轴方向富裕空间的管理,所有子元素的居中,对应老版本的box-pack)</p>
-<h3 id="方法6-使用css3中新增的transform属性"><a href="#方法6-使用css3中新增的transform属性" class="headerlink" title="方法6 使用css3中新增的transform属性,"></a><code>方法6</code> 使用css3中新增的transform属性,</h3><p>子元素设置离x轴50%</p>
-<h3 id="方法7-固定宽高："><a href="#方法7-固定宽高：" class="headerlink" title="方法7 固定宽高："></a><code>方法7</code> 固定宽高：</h3><h3 id="元素使用绝对定位方式-以及负值的margin-left"><a href="#元素使用绝对定位方式-以及负值的margin-left" class="headerlink" title="元素使用绝对定位方式,以及负值的margin-left"></a>元素使用绝对定位方式,以及负值的margin-left</h3><p>.parent{<br>​    position:relative;<br>}<br>.son{<br>​    width:100px;<br>​    height:100px;<br>​    position:absolute;<br>​    left:50%;<br>​    margin-left:-50px; /<em>-宽度/2</em>/<br>​    background:green;<br>}</p>
-<h3 id="方法8-子元素使用绝对定位方式-position-absolute以及top-left-0-right-0-bottom-0-属性值设置为0-margin-0-auto"><a href="#方法8-子元素使用绝对定位方式-position-absolute以及top-left-0-right-0-bottom-0-属性值设置为0-margin-0-auto" class="headerlink" title="方法8 子元素使用绝对定位方式,position:absolute以及top,left:0,right:0;bottom:0,属性值设置为0,margin:0 auto;"></a><code>方法8</code> 子元素使用绝对定位方式,<code>position:absolute</code>以及<code>top</code>,<code>left:0</code>,<code>right:0</code>;<code>bottom:0</code>,属性值设置为0,<code>margin:0 auto</code>;</h3><h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><h4 id="方法1-若是单行文本内容-可以设置line-height等于父元素的高度"><a href="#方法1-若是单行文本内容-可以设置line-height等于父元素的高度" class="headerlink" title="方法1,若是单行文本内容,可以设置line-height等于父元素的高度,"></a><code>方法1</code>,若是单行文本内容,可以设置<code>line-height</code>等于父元素的高度,</h4><p>注意这是定高的，也就是高度是固定不变的,这种方法只适用于单行文本的元素才适用,比如块级元素里面文本,图片</p>
-<h3 id="方法2，若是行内块级元素，也就是给它设置了display-inline-block属性"><a href="#方法2，若是行内块级元素，也就是给它设置了display-inline-block属性" class="headerlink" title="方法2，若是行内块级元素，也就是给它设置了display:inline-block属性,"></a>方法2，若是行内块级元素，也就是给它设置了<code>display:inline-block</code>属性,</h3><p>这种方法针对一些<code>img</code>等行内元素,比较常用,<code>vertical-align:middle</code>和一个伪元素内容块处于容器的中央,<code>注意</code>要给这个伪类高度设置高度100%，此方法在IE6下失效,IE,7,8,9有用,但是又在IE10,11又失效(IEText测的)</p>
-<p>代码实例如下所示<br><code>html结构代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">      ![](img/QrCode.jpg)</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p><code>css层叠样式代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">    width:500px;</div><div class="line">    height:500px;</div><div class="line">    border:1px solid red;</div><div class="line">&#125;</div><div class="line">.parent::after, .son&#123;        /*父级元素和子元素都设置display:inline-block*/</div><div class="line">    display:inline-block;</div><div class="line">    vertical-align: middle;   /*设置vertical-align:middle*/</div><div class="line">&#125;</div><div class="line">.parent::after&#123;   /*父元素添加一个伪类,并且设置高度100%*/ </div><div class="line">    content:&quot;&quot;;</div><div class="line">    height:100%;</div><div class="line">&#125;</div><div class="line">img&#123;</div><div class="line">    border:1px solid blue;</div><div class="line">    border-left:none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="方法3-子元素可用vertical-align-middle-使元素垂直对齐-和display-tab-cell-让元素以表格形式渲染-父元素使用display-table-让元素以表格的形式渲染"><a href="#方法3-子元素可用vertical-align-middle-使元素垂直对齐-和display-tab-cell-让元素以表格形式渲染-父元素使用display-table-让元素以表格的形式渲染" class="headerlink" title="方法3,子元素可用vertical-align:middle(使元素垂直对齐),和display:tab-cell(让元素以表格形式渲染),父元素使用display:table,让元素以表格的形式渲染"></a><code>方法3</code>,子元素可用<code>vertical-align:middle</code>(使元素垂直对齐),和<code>display:tab-cell</code>(让元素以表格形式渲染),<code>父元素使用display:table</code>,让元素以表格的形式渲染</h3><p>示例代码如下所示<br><code>html内容结构代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">     &lt;div class=&quot;son&quot;&gt;contentcontentcontentcontentcontentcontentcontent&lt;/div&gt;</div><div class="line"> &lt;/div&gt;</div></pre></td></tr></table></figure>
-<p><code>css层叠样式结构代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">    display:table; /*让元素以表格形式渲染*/</div><div class="line">    border:1px solid red;</div><div class="line">    background:red;</div><div class="line">    height:200px;</div><div class="line">&#125;</div><div class="line">.son&#123;</div><div class="line">    display:table-cell; /*让元素以表格的单元表格形式渲染*/</div><div class="line">    vertical-align:middle;/*使用元素的垂直对齐*/</div><div class="line">    background:yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>方法4,使用<code>Flex布局</code>,<code>display:box(声明弹性盒模型)</code>,<code>box-orient:vertical;</code>(父元素设置,用来确定子元素的方向,垂直方向向的,竖着的,horizontal是横着的),<code>box-pack:center;</code>(决定盒子内部剩余空间的对齐表现,这里居中)</p>
-<p>方法5,使用Flex布局,<code>display:flex(声明弹性盒模型)</code>,<code>align-items:center</code>(元素在侧轴中间位置,富裕空间在侧轴两侧)<code>flex-direction:coluumn</code>(设置主轴方向为垂直方向)<br><code>优点</code>：使用display:flex布局,内容块的宽高任意,优雅的溢出，可用于复杂的高级布局技术<br><code>缺点</code>:IE678不支持,兼容性处理,火狐，谷歌,欧朋要浏览器前缀</p>
-<p>方法6,设置父元素相对定位<code>(position:relative)</code>,子元素设置绝对定位<code>position:absolute</code>,<code>top:50%</code>,<code>height高度固定,利用margin负半值的方式</code>，让元素垂直居中</p>
-<p><code>优点</code>：适用于所有浏览器<br><code>缺点</code>：父元素空间不够时,子元素可能不可见,当浏览器窗口缩小时,滚动条不出现时,如果子元素设置了overflow:auto,则高度不够时会出现滚动条<br>方法7,设置父元素相对定位(position:relative),子元素设置绝对定位,margin:auto 0,高度固定,left | top | right | bottom都设置为0，但是在IE8低版本浏览器以下失效</p>
-<p>方法8,需要在<code>居中元素前面放一个空块级元素</code>(比如div)即可,然后<code>设置这个div的高度为50%,margin-bottom为元素高度的一半</code>,而且<code>居中元素需要清除浮动</code>,需要注意的是,使用这种方法,<code>如果你的居中元素是放在body中的话,需要给html,body设置一个height:100%的属性</code><br> <code>html结构代码如下所示</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div class=&quot;content&quot;&gt;Content&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p><code>css层叠样式</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> html,body&#123;height:100%;&#125;</div><div class="line"> .box&#123;</div><div class="line">        /*float:left;*/</div><div class="line">        height:50%;  /*相对父元素的高度的50%*/</div><div class="line">        margin-bottom:-120px;</div><div class="line">&#125;</div><div class="line">.content&#123;</div><div class="line">        clear:both;/*清除浮动*/</div><div class="line">        width:240px;</div><div class="line">        height:240px;</div><div class="line">        position:relative;/*只能用相对定位*/</div><div class="line">        background:green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>实例效果如下所示</code></p>
-<p>使用一个空标签使其元素垂直居中.png</p>
-<p><code>优点</code>:兼容所有的浏览器,在没有足够的空间下,内容不会被切掉<br><code>缺点</code>:元素高度被固定死,无法达到内容自适应,如果居中元素加上overflow,要么元素出现滚动条,要么元素被切掉,另外就是一个就是加上了一个空标签<br><code>html示例代码如下所示</code>方法9`:使用内边距的方式使其垂直居中 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">     &lt;div class=&quot;son&quot;&gt;content&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p><code>css示例代码如下所示</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.son&#123;</div><div class="line">    padding:30px 0 30px 0;</div><div class="line">    border:1px solid red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>实例效果如图所示</code></p>
-<p>内填充的方式垂直居中1.png</p>
-<p><code>缺点</code>:使用这种方法不能给容器固定高度,如果加了高度的话,要想要达到效果,那么要减去对应的高度</p>
-<blockquote>
-<h3 id="水平-垂直居中"><a href="#水平-垂直居中" class="headerlink" title="水平+垂直居中"></a>水平+垂直居中</h3></blockquote>
-<ul>
-<li>若是文本图片,则可以使用line-height:高度；text-align:center</li>
-</ul>
-<p><code>示例代码如下所示</code><br><code>html结构代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;wrap&quot;&gt;</div><div class="line">    文本水平垂直居中显示</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p><code>css结构代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.wrap&#123;</div><div class="line">        width:400px;</div><div class="line">        height:400px;</div><div class="line">        text-align:center;  /*文本水平居中显示*/</div><div class="line">        line-height:400px;  /*垂直居中显示*/</div><div class="line">        font-size:36px;</div><div class="line">        border:1px solid red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>实例效果图如下所示</code></p>
-<p>文本水平垂直居中显示.png</p>
-<ul>
-<li><p>若是定宽定高,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">使用绝对定位position:absolute,left:50%,top:50%,使用margin负半值</div></pre></td></tr></table></figure>
-<p>进行元素的水平垂直居中显示,代码如下所示:</p>
-<p>​</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">html结构内容代码</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">css示例代码如下所示</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">  width:100%;</div><div class="line">  height:500px;</div><div class="line">  position:relative;</div><div class="line">  background:red;</div><div class="line">&#125;</div><div class="line">.son&#123;</div><div class="line">  width:100px;</div><div class="line">  height:100px;</div><div class="line">  background:pink;</div><div class="line">  position:absolute;</div><div class="line">  left:50%;</div><div class="line">  top:50%;      /*top50%*/</div><div class="line">      margin-left:-50px;/*-(元素宽度/2)*/</div><div class="line">  margin-top:-50px; /*-(元素高度/2)*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">实例效果如下所示</div></pre></td></tr></table></figure>
-<p>​</p>
-<p>​</p>
-<p>​</p>
-<p>使用绝对定位margin负半值水平垂直居中显示.png</p>
-</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">绝对定位absolute+margin:auto</div></pre></td></tr></table></figure>
-<p>,同时,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">top:0</div></pre></td></tr></table></figure>
-<p>;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">left:0</div></pre></td></tr></table></figure>
-<p>;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">right:0</div></pre></td></tr></table></figure>
-<p>,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bottom:0</div></pre></td></tr></table></figure>
-<p>这种方式使一个元素水平垂直居中也是比较常见的</p>
-<p>​</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">html内容结构代码</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">css层叠样式代码</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.son&#123;</div><div class="line">    position:absolute;  /*设置绝对定位*/</div><div class="line">    width:100px;        /*宽度固定*/</div><div class="line">    height:100px;</div><div class="line">    background:#abcdef;</div><div class="line">    top:0;</div><div class="line">    left:0;             /*设置top | left | right | bottom都等于0*/</div><div class="line">    right:0;</div><div class="line">    bottom:0;</div><div class="line">    margin: auto;      /*水平垂直居中*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>实例效果图显示</code></p>
-<p>使用决定定位,设置left-top-bottom为0结合margin-auto水平垂直居中.png</p>
-<ul>
-<li>使用js动态计算使其元素水平垂直居中<ul>
-<li>水平居中元素应设置为绝对定位,获取元素的位置,距离浏览器左边，上边的距离,并且进行赋值</li>
-<li>left:(浏览器的宽度-元素的宽度)/2</li>
-<li>top:(浏览器的高度-元素的高度)/2<br>示例代码所示</li>
-</ul>
-</li>
-</ul>
-<p><code>html内容结构代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p><code>css示例代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> #box&#123;</div><div class="line">    width:100px;</div><div class="line">    height:100px;</div><div class="line">    background:red;</div><div class="line">    position:absolute;  /*设置绝对定位*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>js代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* @desc 利用js控制一个元素的水平垂直居中显示</div><div class="line">* </div><div class="line">*/</div><div class="line">window.onload = function()&#123;</div><div class="line">  var oBox=document.getElementById(&quot;box&quot;),</div><div class="line">      left=(document.documentElement.clientWidth-oBox.offsetWidth)/2,</div><div class="line">      top = (document.documentElement.clientHeight)/2;</div><div class="line">      oBox.style.left = left+&quot;px&quot;;</div><div class="line">      oBox.style.top = top+&quot;px&quot;;</div><div class="line">  //当屏幕尺寸发生变化时</div><div class="line">  window.onresize = function()&#123;</div><div class="line">     var top = (document.documentElement.clientHeight-oBox.offsetHeight)/2,</div><div class="line">         left = (document.documentElement.clientWidth-oBox.offsetWidth)/2; </div><div class="line">         oBox.style.top = top+&quot;px&quot;;</div><div class="line">         oBox.style.left = left+&quot;px&quot;;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>实例效果如下所示</code></p>
-<p>使用原生js使元素水平垂直居中.png</p>
-<ul>
-<li>使用jQuery实现元素的水平垂直居中<ul>
-<li>获取元素</li>
-<li>获取浏览器可视宽度$(window).width();</li>
-<li>获取浏览器可视高度$(window).height();</li>
-<li>元素距离浏览器左边的距离left:($(window).width()-元素.width())/2</li>
-<li>元素距离浏览器上边的距离top:($(window).height()-元素.height())/2</li>
-<li>resize:当调整浏览器窗口的大小时，发生 resize 事件</li>
-</ul>
-</li>
-</ul>
-<p><code>示例代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p><code>css层叠样式代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> #box&#123;</div><div class="line">    width:100px;</div><div class="line">    height:100px;</div><div class="line">    background:blue;</div><div class="line">    position:absolute;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>js代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">*  @dec 利用jQuery实现元素水平垂直居中</div><div class="line">*  @function getStyle 水平垂直居中元素</div><div class="line">*  @event resize</div><div class="line">*/</div><div class="line">$(function()&#123;</div><div class="line"> getStyle();</div><div class="line"> function getStyle()&#123;</div><div class="line">   var oBox = $(&quot;#box&quot;),</div><div class="line">       oW = $(window).width(),   //获取浏览器的可视宽度</div><div class="line">       oH  = $(window).height(), //获取浏览器的可视高度</div><div class="line">       l = (oW-oBox.width())/2,  // 元素距离浏览器左边的距离</div><div class="line">       t = (oH-oBox.height())/2; //元素距离浏览器右边的距离</div><div class="line">       oBox.css(&#123;                    //赋值操作,left,top值</div><div class="line">           left:l,</div><div class="line">           top:t</div><div class="line">        &#125;);</div><div class="line"> &#125;</div><div class="line">//当调整浏览器窗口的大小时,发生 resize 事件</div><div class="line">    $(window).resize(function()&#123;</div><div class="line">        getStyle();</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p><code>实例效果如下所示</code></p>
-<p>使用jquery使元素水平垂直居中.png</p>
-<blockquote>
-<h3 id="两种常见布局-圣杯布局与双飞翼布局"><a href="#两种常见布局-圣杯布局与双飞翼布局" class="headerlink" title="两种常见布局:圣杯布局与双飞翼布局"></a>两种常见布局:圣杯布局与双飞翼布局</h3></blockquote>
-<ul>
-<li>圣杯布局(左中右结构,两边宽度固定,中间自适应)<ul>
-<li>左边与右边,使用绝对定位,左边left:0,top:0,右边right:0,top:0,中间使用margin</li>
-<li>两栏布局,左边侧边栏固定,右边主体自使用,左边主体自适应,右边侧边栏固定,左侧边栏固定，右主体自适应,左主体自适应,右侧边栏固定都是圣杯布局，解决办法:使用绝对定位,如上,还有就是浮动布局,弹性盒模型也可以解决</li>
-</ul>
-</li>
-</ul>
-<p>示例代码如下:<br><code>使用绝对定位实现圣杯布局</code><br><code>html结构代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;left&quot;&gt;左边&lt;/div&gt;</div><div class="line">&lt;div class=&quot;center&quot;&gt;中间&lt;/div&gt;</div><div class="line">&lt;div class=&quot;right&quot;&gt;右边&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p><code>css示例代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"> .left&#123;</div><div class="line">    width:200px;        /*两边固定宽度,中间自适应*/</div><div class="line">    height:600px;       /*高度可以不可,由内容填充*/</div><div class="line">    position:absolute;</div><div class="line">    left:0;</div><div class="line">    top:0;</div><div class="line">    background:red;</div><div class="line">&#125;</div><div class="line">.center&#123;</div><div class="line">    width:100%;        /*宽度不固定*/</div><div class="line">    background:orange;</div><div class="line">    height:600px; </div><div class="line">    margin:0 200px;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">   width:200px;       /*两边固定宽度,中间自适应*/</div><div class="line">   height:600px;      /*高度可以不可,由内容填充*/</div><div class="line">   position:absolute;</div><div class="line">   right:0;</div><div class="line">   top:0;</div><div class="line">   background:green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>实例效果图所下所示</code></p>
-<p>绝对定位实现圣杯布局.gif</p>
-<p><code>使用浮动实现圣杯布局显示效果</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">* 利用浮动布局</div><div class="line">*  要注意位置不同,实现的效果也会不同,设置了浮动,一定要注意清除浮动</div></pre></td></tr></table></figure>
-<p>示例代码所示<br><code>html内容结构代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;left w200&quot;&gt;左边&lt;/div&gt;</div><div class="line">&lt;div class=&quot;right w200&quot;&gt;右边&lt;/div&gt;</div><div class="line">&lt;div class=&quot;center&quot;&gt;中间&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p><code>css层叠样式代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"> .w200&#123;</div><div class="line">    width:200px;</div><div class="line">    height:600px;</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">    float:left;</div><div class="line">    background:pink;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">    float:right;</div><div class="line">    background:blue;</div><div class="line">&#125;</div><div class="line">.center&#123;</div><div class="line">    height:600px;</div><div class="line">    background:red;</div><div class="line">    overflow:hidden;  /*清除浮动*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>实现效果如下所示</code></p>
-<p>浮动实现圣杯布局.gif</p>
-<p><code>利用弹性盒模型老版本display:box实现圣杯布局,两边固定,中间自适应</code></p>
-<ul>
-<li>当你缩放到最小值时,中间的内容会被隐藏,你可以给中间的盒子设置一个最小宽度值即可<br><code>html结构内容代码</code></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">   &lt;div class=&quot;left w200&quot;&gt;左边&lt;/div&gt;</div><div class="line">   &lt;div class=&quot;center&quot;&gt;中间&lt;/div&gt;</div><div class="line">   &lt;div class=&quot;right w200&quot;&gt;右边&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p><code>css层叠样式代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">    width:100%;</div><div class="line">    display:-webkit-box;</div><div class="line">    -webkit-box-orient:horizontal;</div><div class="line">    /*决定盒子剩余空间的利用对齐方式,center表示居中*/</div><div class="line">    -webkit-box-pack:center; </div><div class="line">    /*firefox*/</div><div class="line">    display:-moz-box;</div><div class="line">    -moz-box-orient:horizontal;</div><div class="line">    -moz-box-pack:center;</div><div class="line">    /*opera*/</div><div class="line">    display:-o-box;</div><div class="line">    -o-box-orient:horizontal;</div><div class="line">    -o-box-pack:center;</div><div class="line">    /*IE浏览器*/</div><div class="line">    display:-ms-box;</div><div class="line">    -ms-box-orient:horizontal;</div><div class="line">    -ms-box-pack:center;</div><div class="line">    /*标准浏览器*/</div><div class="line">    display:box;</div><div class="line">    box-orient:horizontal;</div><div class="line">    box-pack:center;</div><div class="line">&#125;</div><div class="line">.w200&#123;</div><div class="line">    width:200px;</div><div class="line">    height:600px;</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">   background:#abcdef;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">   background:yellow;</div><div class="line">&#125;</div><div class="line">.center&#123;</div><div class="line">    width:100%;</div><div class="line">    background:orange;</div><div class="line">    -webkit-box-flex:1;  /*注意的是浏览器前缀一定要加*/</div><div class="line">    -moz-box-flex:1;</div><div class="line">    -ms-box-flex:1;</div><div class="line">    -o-box-flex:1;</div><div class="line">    box-flex:1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>实现效果图如下所示</code></p>
-<p>使用弹性盒模型display-box实现圣杯布局.gif</p>
-<p><code>利用弹性盒模型新版本display:flex实现圣杯布局,两边固定,中间自适应</code><br><code>html内容结构代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> &lt;div class=&quot;parent&quot;&gt;</div><div class="line">        &lt;div class=&quot;left w200&quot;&gt;左边&lt;/div&gt;</div><div class="line">        &lt;div class=&quot;center&quot;&gt;中间&lt;/div&gt;</div><div class="line">        &lt;div class=&quot;right w200&quot;&gt;右边&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p><code>css层叠样式代码</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">    width:100%;</div><div class="line">    display:-webkit-flex;/*声明弹性盒模型,定义弹性容器*/</div><div class="line">    -webkit-flex-direction:row; /*row设置主轴方向为水平方向*/</div><div class="line">   /*决定盒子剩余空间的利用对齐方式,center表示居中*/</div><div class="line">   -webkit-justify-content:center; /*定义了在当前行上,弹性项目沿主轴如何排布*/</div><div class="line">   display:flex; </div><div class="line">   flex-direction:row;</div><div class="line">   justify-content:center;  /*相当于老版本的flex-pack*/</div><div class="line">   /*firefox*/</div><div class="line">   display:-moz-flex;</div><div class="line">   -moz-direction:row; </div><div class="line">   -moz-justify-content:center;</div><div class="line">   /*opera*/</div><div class="line">   display:-o-flex;</div><div class="line">   -o-direction:row;</div><div class="line">   -o-justify-content:center;</div><div class="line">   /*IE浏览器*/</div><div class="line">   display:-ms-flex;</div><div class="line">   -ms-direction:row; </div><div class="line">   -ms-justify-content:center;</div><div class="line">   /*标准浏览器*/</div><div class="line">   display:flex;</div><div class="line">   flex-direction:row;</div><div class="line">   justify-content:center;</div><div class="line">&#125;</div><div class="line">.w200&#123;</div><div class="line">    width:200px;</div><div class="line">    height:600px;</div><div class="line"> &#125;</div><div class="line">.left&#123;</div><div class="line">    background:red;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">    background:green;</div><div class="line">&#125;</div><div class="line">.center&#123;</div><div class="line">    width:100%;</div><div class="line">    background:pink;</div><div class="line">    -webkit-flex-flex:1;  /*注意的是浏览器前缀一定要加*/</div><div class="line">    -moz-flex-flex:1;</div><div class="line">    -ms-flex-flex:1;</div><div class="line">    -o-flex-flex:1;</div><div class="line">    flex-flex:1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>实例效果图如下所示</code></p>
-<p>使用display-flex实现圣杯布局.gif</p>
-<p>实例:手机端的淘宝布局,京东上方的搜索栏,一些后台管理系统,什么两边固定,中间自适应结构,左固定,右自适应或者左自适应,右固定等都是圣杯布局的体现,无论是使用绝对定位还是浮动布局,前两者都会破坏文档流,使用定位元素会脱离文档流,浮动会引起一些困扰的bug,比如说忘记清除浮动,设置margin-right,margin:0 auto值都会失效,在移动端布局上,使用弹性盒模型flex,无论是老版本还是新版本,对于这种两列,三列或多列自适应,复杂的布局,用flex布局方式,都是非常强大的,但是要注意兼容性,加各浏览器前缀,不然的会调试半天也会没有效果的，css的书写顺序应是选择渐进增强的方式,从低版本到高版本<br>比如说下面常见移动端示例参考,可借助上面的决定定位,浮动,弹性盒模型等实现下面示例上方的搜索导航部分<br><code>京东移动端头部搜索栏部分(左中右结构,两边固定,中间自适应)</code></p>
-<p>京东搜索导航栏.gif</p>
-<p><code>淘宝移动端头部搜索栏部分(左边固定,右边自适应)</code></p>
-<p>淘宝搜索导航栏.gif</p>
-<ul>
-<li><p>双飞翼布局(等高布局)</p>
-</li>
-<li><p>一个盒子的内容变化,同样会影响同级(兄弟)高度变换,实时同步变化</p>
-<p>​</p>
-<p>示例代码如下所示</p>
-<p>​</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">html内容结构代码</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;wrap&quot;&gt;</div><div class="line">  &lt;div class=&quot;left&quot;&gt;等高布局等高布局等高布局等高布局等高布局&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;right&quot;&gt;等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局等高布局&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">css层叠样式代码</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">.wrap&#123;</div><div class="line">    width:1000px;</div><div class="line">    margin:0 auto;</div><div class="line">    overflow:hidden;</div><div class="line">    border:1px solid red</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">    width:300px;</div><div class="line">    background:red;</div><div class="line">    float:left;             /*左浮动*/</div><div class="line">    padding-bottom:1000px;</div><div class="line">    margin-bottom:-10000px;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">    width:700px;</div><div class="line">    background:blue;</div><div class="line">    float:right;             /*右浮动*/</div><div class="line">    padding-bottom:1000px;</div><div class="line">    margin-bottom:-1000px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>实例效果如下所示</code></p>
-<p>等高布局.gif</p>
-<p><strong>总结</strong></p>
-<p> 本篇主要是围绕着一个元素在页面中如何水平垂直居中,分别对行内元素和块级元素介绍了8种方式元素的水平居中和9种垂直方式元素居中,进而又对一个元素用5种方式实现水平+垂直居中显示,最终常见两种布局,圣杯布局(使用绝对定位,浮动布局,弹性盒模性Flex布局可实现)和双飞翼(等高)布局,其中绝对定位与浮动布局都会破坏元素的文档流,对于一个元素让其水平垂直居中显示很常见,比如说弹框,还有页面上布局,对于块级元素我们往往第一想到的是margin:0 auto,水平居中显示,但是有时却难以想到其他种方法,对于使用绝对定位方式,设置left,top,right,bottom为0,配合margin的使用实现水平垂直居中还是挺巧妙的,同时绝对定位,对于固定宽度高度,用margin负半值的方法实现水平垂直居中显示也是一种很好的方式,还有display:table的方式实现垂直居中显示,以及transform结合绝对定位实现元素水平居中显示,最为强大的是弹性盒模型Flex布局,无论是老版本display:box,还是新版本display:flex对父元素设置该属性,同时设置子元素的排列方式,也可以对子元素进行box-flex进行设置,能够很好的达到水平垂直居中显示,自适应,但是注意该属性的兼容性,针对不同的浏览器,要加上浏览器的前缀,否则会失效,对于元素水平垂直居中显示可以优先考虑css的方式解决(如上方法),对于复杂的实例,也可以考虑同上文中用js的方式去实现元素的水平垂直居中显示</p>
-<p><strong>以下是本篇提点概要</strong></p>
-<ul>
-<li><p>水平居中</p>
-<ul>
-<li><code>方法1</code>：若是行内元素,给其父级元素设置<code>text-align:center</code>,可以实现行内元素水平居中</li>
-<li><code>方法2</code>:若是块级元素,要想实现水平居中:<code>margin:0 auto</code>;</li>
-<li><code>方法3</code>:若是子元素有浮动,为了让子元素水平居中,则可以让父元素宽度设置为<code>fit-content</code>,<code>并且配合margin:0 auto</code>,<code>注意</code>这个属性值<code>fit-content</code>配上<code>margin:0 auto</code>才会让其水平居中,目前只有chrome,firfox,Opera浏览器支持该属性值,并且只能实现水平居中,无法实现垂直居中,<code>也没有height:fit-content</code>,该属性,即使设置了也不生效</li>
-<li><code>方法4</code> 使用flex布局,老版本:设置父元素<code>display:box;</code>,<code>box-orient:horizontal;</code>,<code>box-pack:center;</code>实现元素水平居中</li>
-<li>. 方法5 使用flex,新版本:设置父元素<code>display:flex</code>),<code>flex-direction:row</code>(设置主轴方向为水平方向),<code>just-content:center</code>(规定主轴方向富裕空间的管理,所有子元素的居中,对应老版本的box-pack)</li>
-<li><code>方法6</code> 使用css3中新增的transform属性,子元素设置离x轴50%</li>
-<li><code>方法7</code> 元素使用绝对定位方式,left:50%,以及margin的负半值方式,margin-left:-宽度的一半</li>
-<li><code>方法8</code> 子元素使用绝对定位方式,<code>position:absolute</code>以及<code>top</code>,<code>left:0</code>,<code>right:0</code>;<code>bottom:0</code>,属性值设置为0,<code>margin:0 auto</code>;</li>
-</ul>
-</li>
-<li><p>垂直居中</p>
-<ul>
-<li><code>方法1</code>,若是单行文本内容,可以设置<code>line-height</code>等于父元素的高度,注意这是定高的，也就是高度是固定不变的,这种方法只适用于单行文本的元素才适用,比如块级元素里面文本,图片</li>
-<li><code>方法2</code>，若是行内块级元素，也就是给它设置了<code>display:inline-block</code>属性,这种方法针对一些<code>img</code>等行内元素,比较常用,<code>vertical-align:middle</code>和一个伪元素内容块处于容器的中央,<code>注意</code>要给这个伪类高度设置高度100%，此方法在IE6下失效,IE,7,8,9有用,但是又在IE10,11又失效(IEText测的)</li>
-<li><code>方法3</code>,子元素可用<code>vertical-align:middle</code>(使元素垂直对齐),和<code>display:tab-cell</code>(让元素以表格形式渲染),<code>父元素使用display:table</code>,让元素以表格的形式渲染</li>
-<li><code>方法4</code>,使用<code>Flex布局</code>,<code>display:box(声明弹性盒模型)</code>,<code>box-orient:vertical;</code>(父元素设置,用来确定子元素的方向,垂直方向向的,竖着的,horizontal是横着的),<code>box-pack:center;</code></li>
-<li><code>方法5</code>,使用Flex布局,<code>display:flex(声明弹性盒模型)</code>,<code>align-items:center</code>(元素在侧轴中间位置,富裕空间在侧轴两侧)<code>flex-direction:coluumn</code>(设置主轴方向为垂直方向)</li>
-<li><code>方法6</code>,设置父元素相对定位<code>(position:relative)</code>,子元素设置绝对定位<code>position:absolute</code>,<code>top:50%</code>,<code>height高度固定,利用margin负半值的方式</code>，让元素垂直居中</li>
-<li><code>方法7</code>,设置父元素相对定位(position:relative),子元素设置绝对定位,margin:auto 0,高度固定,left | top | right | bottom都设置为0，但是在IE8低版本浏览器以下失效</li>
-<li><code>方法8</code>,需要在<code>居中元素前面放一个空块级元素</code>(比如div)即可,然后<code>设置这个div的高度为50%,margin-bottom为元素高度的一半</code>,而且<code>居中元素需要清除浮动</code>,需要注意的是,使用这种方法,`如果你的居中元素是放在body中的话,需要给html,body设置一个height:100%的属性</li>
-<li><code>方法9</code>:使用内边距的方式使其垂直居中</li>
-</ul>
-</li>
-<li><p>水平+垂直居中</p>
-<ul>
-<li>若是文本图片,则可以使用<code>line-height:高度</code>；<code>text-align:center</code></li>
-<li>若是定宽定高,<code>使用绝对定位position:absolute,left:50%,top:50%,使用margin负半值</code>进行元素的水平垂直居中显示</li>
-<li><code>绝对定位absolute+margin:auto</code>,同时,<code>top:0</code>;<code>left:0</code>;<code>right:0</code>,<code>bottom:0</code>这种方式使一个元素水平垂直居中也是比较常见的</li>
-<li>使用js动态计算使其元素水平垂直居中</li>
-<li>使用jQuery实现元素的水平垂直居中</li>
-</ul>
-</li>
-<li><p>两种常见布局:圣杯布局(两边宽度固定,中间自适应)与双飞翼(等高)布局</p>
-<ul>
-<li>圣杯(两边宽度固定,中间自适应)布局<ul>
-<li>使用绝对定位实现圣杯布局</li>
-<li>使用浮动实现圣杯布局</li>
-<li>使用弹性盒模型Flex布局display-box实现圣杯布局</li>
-<li>利用弹性盒模型新版本display:flex实现圣杯布局</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>双飞翼(等高)布局<ul>
-<li>一个盒子的内容变化,同样会影响同级(兄弟)高度变换,实时同步变化,如上代码示例所示</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-grid 网格布局" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/09/05/grid 网格布局/" class="article-date">
-  	<time datetime="2017-09-05T07:06:36.000Z" itemprop="datePublished">2017-09-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>title: grid网格布局<br>date: 2017-09-05</p>
-<h3 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h3><p><strong>简介</strong><br>CSS网格布局（又称“网格”），是一种二维网格布局系统。CSS在处理网页布局方面一直做的不是很好。一开始我们用的是table（表格）布局，然后用float(浮动)，position（定位）和inline-block（行内块）布局，但是这些方法本质上是hack，遗漏了很多功能，例如垂直居中。后来出了<a href="http://peale.cn/2016/11/30/2016_11_30_flex/#more" target="_blank" rel="external">flexbox(盒子布局)</a>，解决了很多布局问题，但是它仅仅是一维布局，而不是复杂的二维布局，实际上它们（flexbox与grid）能很好的配合使用。Grid布局是第一个专门为解决布局问题而创建的CSS模块,2012年11月06日成立<a href="https://www.w3.org/TR/css3-grid-layout/" target="_blank" rel="external">草案</a>。作者：peale链接：<a href="http://www.jianshu.com/p/d183265a8dad來源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。" target="_blank" rel="external">http://www.jianshu.com/p/d183265a8dad來源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</a></p>
-<p><strong>初步了解和浏览器支持</strong><br>使用Grid布局非常简单，你只需要给容器（container）定义：display:grid，并设置列（grid-template-columns）和 行（grid-template-rows）的大小，然后用grid-column和grid-row定义容器子元素（grid-item项目）的位置。与flexbox布局类似，一开始项目的排列顺序并不重要，可以放置在容器的任何位置，这也使得你非常容易通过媒体查询重新排列你的项目。想象一下，当你定义整个页面的布局时，你只需要几行CSS就可以完成页面重排以便适应各种屏幕宽度，这得有多么神奇！<br>好东西总是来的晚，不要焦躁，不要沮丧。活好每一天，自然就等到了。<br>目前浏览器还不支持Grid布局，IE10和IE11支持老的语法。如果你想体验Grid布局的强大，推荐使用开通过“体验新功能”的Chrome, Opera 或 Firefox， Chrome:打开浏览器，输入chrome://flags，找到”experimental web platform features”，启用并重启浏览器；Opera：输入opera://flags，与Chrome一样；Firefox:输入layout.css.grid.enabled。作者：peale链接：<a href="http://www.jianshu.com/p/d183265a8dad來源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。" target="_blank" rel="external">http://www.jianshu.com/p/d183265a8dad來源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</a></p>
-<p>浏览器支持情况：</p>
-<table>
-<thead>
-<tr>
-<th>Chrome</th>
-<th>Safari</th>
-<th>Firefox</th>
-<th>Opera</th>
-<th>IE</th>
-<th>Android/iOS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>29+ (Behind flag)</td>
-<td>Not supported</td>
-<td>40+ (Behind flag)</td>
-<td>28+ (Behind flag)</td>
-<td>10+ (Old syntax)</td>
-<td>Not supported</td>
-</tr>
-</tbody>
-</table>
-<p><strong>重要术语</strong><br>在深入了解Grid布局概念之前，我们先了解一些术语。因为这些术语在概念上很相似，如果你不记住Grid定义的含义，会很容易将它们混淆，但是不用担心，这里术语很少。</p>
-<p>1.网格容器（Grid Container）<br>元素应用display:grid，它是其所有网格项的父元素。下面例子container就是网格容器。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">  &lt;div class=&quot;item item-1&quot;&gt;&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;item item-2&quot;&gt;&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;item item-3&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>2.网格项（Grid Item）<br>网格容器的子元素，下面的item元素是网格项，但sub-item不是。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">  &lt;div class=&quot;item&quot;&gt;&lt;/div&gt; </div><div class="line">  &lt;div class=&quot;item&quot;&gt;</div><div class="line">    &lt;p class=&quot;sub-item&quot;&gt;&lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>3.网格线（Grid Line）<br>组成网格线的分界线。它们可以是列网格线（column grid lines），也可以是行网格线（row grid lines）并且居于行或列的任意一侧，下面黄色线就是列网格线。</p>
-<p>grid lines</p>
-<p>4.网格轨道（Grid Track）<br>两个相邻的网格线之间为网格轨道。你可以认为它们是网格的列或行，下面在第二个和第三个网格线之间的黄色部分为网格轨道。</p>
-<p>Grid Track</p>
-<p>5.网格单元（Grid Cell）<br>两个相邻的列网格线和两个相邻的行网格线组成的是网格单元，它是最小的网格单元。下面行网格线1（row grid lines 1）、行网格线2（row grid lines 2）和列网格线1（column grid lines 1）、列网格线2（column grid lines2）组成的黄色区域为网格单元。</p>
-<p>Grid Cell</p>
-<p>6.网格区（Grid Area）<br>网格区是由任意数量网格单元组成，下面行网格线1（row grid lines 1）、行网格线3（row grid lines 3）和列网格线1（column grid lines 1）、列网格线3（column grid lines3）组成的黄色区域为网格区。</p>
-<p>Grid Area</p>
-<p><strong>设置在网格容器上的属性</strong></p>
-<ul>
-<li>display</li>
-<li>grid-template-columns</li>
-<li>grid-template-rows</li>
-<li>grid-template-areas</li>
-<li>grid-column-gap</li>
-<li>grid-row-gap</li>
-<li>grid-gap</li>
-<li>justify-items</li>
-<li>align-items</li>
-<li>justify-content</li>
-<li>align-content</li>
-<li>grid-auto-columns</li>
-<li>grid-auto-rows</li>
-<li>grid-auto-flow</li>
-<li>grid</li>
-</ul>
-<p>\1. display: grid | inline-grid | subgrid;</p>
-<p>属性值：<br>grid: 生成块级网格<br>inline-grid: 生成行内网格<br>subgrid: 如果网格容器本身是网格项（嵌套网格容器），此属性用来继承其父网格容器的列、行大小。</p>
-<p>注：当元素设置了网格布局，column、float、clear、vertical-align属性无效。</p>
-<p>\2. grid-template-columns: <track-size> … | <line-name> <track-size> … ;<br>​     grid-template-rows: <track-size> … | <line-name> <track-size> … ;</track-size></line-name></track-size></track-size></line-name></track-size></p>
-<p>设置行和列的大小，在行轨道或列轨道两边是网格线。</p>
-<p>属性值：<br>track-size: 轨道大小，可以使用css长度，百分比或用分数（用fr单位）。<br>line-name: 网格线名字，你可以选择任何名字。</p>
-<p>例子：<br>当你设置行或列大小为auto时，网格会自动分配空间和网格线名称。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    grid-template-columns: 40px 50px auto 50px 40px;</div><div class="line">    grid-template-rows: 25% 100px auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-numbers</p>
-<p>你也可以给网格线定义名字，注意名字需要写在[]里面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];</div><div class="line">    grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-names</p>
-<p>每条网格线可以有多个名字，例如上面行的第二条线有两个名字，分别是row1-end和row2-start。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果你定义包含重复部分，可以使用repeat()简化。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    grid-template-columns: repeat(3, 20px [col-start]) 5%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面等同于下面：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start] 5%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>用fr单位可以将容器分为几等份，例如下面分成三等份。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    grid-template-columns: 1fr 1fr 1fr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果fr单位和实际值一起使用，设置fr的行或列将分(除了实际值)剩余部分。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    grid-template-columns: 1fr 50px 1fr 1fr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>3.grid-template-areas</p>
-<p>通过获取网格项中的grid-area属性值（名称），来定义网格模版。重复网格区（grid-area）名称将跨越网格单元格，‘.’代表空网格单元。</p>
-<p>属性值：<br>grid-area-name: 网格项的grid-area属性值（名字）<br>‘.’ : 空网格单元<br>none: 不定义网格区域</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">.item-a&#123;</div><div class="line">  grid-area: header;</div><div class="line">&#125;</div><div class="line">.item-b&#123;</div><div class="line">  grid-area: main;</div><div class="line">&#125;</div><div class="line">.item-c&#123;</div><div class="line">  grid-area: sidebar;</div><div class="line">&#125;</div><div class="line">.item-d&#123;</div><div class="line">  grid-area: footer;</div><div class="line">&#125;</div><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    grid-template-columns: 50px 50px 50px 50px;</div><div class="line">    grid-template-rows: auto;</div><div class="line">    grid-template-areas: &quot;header header header header&quot;</div><div class="line">                         &quot;main main . sidebar&quot;</div><div class="line">                         &quot;footer footer footer footer&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面代码示例会创建四列三行网格，第一行将是header，第二行前两个网格单元是main部分、第三个为空网格单元、第四个为sliderbar，第三行是footer。</p>
-<p>grid-template-areas</p>
-<p>\4. grid-column-gap：<line-size>; 和 grid-row-gap: <line-size> ;</line-size></line-size></p>
-<p>网格单元间距。</p>
-<p>属性值：<br>line-size: 网格线间距,设置单位值。</p>
-<p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    grid-template-columns: 100px 50px 100px;</div><div class="line">    grid-template-rows: 80px auto 80px; </div><div class="line">    grid-column-gap: 10px;</div><div class="line">    grid-row-gap: 15px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-column-row-gap</p>
-<p>注：间隔仅仅作用在网格单元之间，不作用在容器边缘。</p>
-<p>\5. grid-gap：<grid-column-gap> <grid-row-gap>;</grid-row-gap></grid-column-gap></p>
-<p>是grid-column-gap 和 grid-row-gap简写。</p>
-<p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    grid-template-columns: 100px 50px 100px;</div><div class="line">    grid-template-rows: 80px auto 80px; </div><div class="line">    grid-gap: 10px 15px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>注：如果只设置一个值，那么grid-column-gap 和 grid-row-gap都为那个值。</p>
-<p>\6. justify-items: start | end | center | stretch（默认） ;</p>
-<p>垂直于列网格线对齐，适用于网格容器里的所有网格项。</p>
-<p>属性值：<br>start:   左对齐。<br>end:     右对齐。<br>center:  居中对齐。<br>stretch: 填满（默认）。</p>
-<p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    justify-items: start;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-items-start</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    justify-items: end;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-items-end</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    justify-items: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-items-center</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    justify-items: stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-items-stretch</p>
-<p>\7. align-items: start | end | center | stretch ;</p>
-<p>垂直于行网格线对齐，适用于网格容器里的所有网格项。</p>
-<p>属性值：<br>start：  顶部对齐。<br>end：    底部对齐。<br>center： 居中对齐。<br>stretch：填满（默认）。</p>
-<p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    align-items: start;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-items-start</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    align-items: end;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-items-end</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    align-items: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-items-center</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    align-items: stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-items-stretch</p>
-<p>\8. justify-content: start | end | center | stretch | space-around | space-between | space-evenly ;    </p>
-<p>如果用像px非弹性单位定义的话，总网格区域大小有可能小于网格容器，这时候你可以设置网格的对齐方式（垂直于列网格线对齐）。</p>
-<p>属性值：<br>start: 左对齐。<br>end: 右对齐。<br>center: 居中对齐。<br>stretch: 填满网格容器。<br>space-around: 网格项两边间距相等，网格项之间间隔是单侧的2倍。<br>space-between: 两边对齐，网格项之间间隔相等。<br>space-evenly: 网格项间隔相等。</p>
-<p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    justify-content: start;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-content-start</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    justify-content: end;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-content-end</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    justify-content: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-content-center</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    justify-content: stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-content-stretch</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    justify-content: space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-content-space-around</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    justify-content: space-between;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-content-space-between</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    justify-content: space-evenly;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-content-space-evenly</p>
-<p>\9. align-content: start | end | center | stretch | space-around | space-between | space-evenly ;  </p>
-<p>如果用像px非弹性单位定义的话，总网格区域大小有可能小于网格容器，这时候你可以设置网格的对齐方式（垂直于行网格线对齐）。</p>
-<p>属性值：<br>start: 顶部对齐。<br>end: 底部对齐。<br>center: 居中对齐。<br>stretch: 填满网格容器。<br>space-around: 网格项两边间距相等，网格项之间间隔是单侧的2倍。<br>space-between: 两边对齐，网格项之间间隔相等。<br>space-evenly: 网格项间隔相等。</p>
-<p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    align-content: start; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-content-start</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    align-content: end; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-content-end</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    align-content: center; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-content-center</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    align-content: stretch; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-content-stretch</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    align-content: space-around; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-content-space-around</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    align-content: space-between; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-content-space-between</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    align-content: space-evenly; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-content-space-evenly</p>
-<p>\10. grid-auto-columns: <track-size> … ; 和 grid-auto-rows: <track-size> … ;</track-size></track-size></p>
-<p>自动生成隐式网格轨道（列和行），当你定位网格项超出网格容器范围时，将自动创建隐式网格轨道。</p>
-<p>属性值：<br>track-size: 网格轨道大小,可以是固定值，百分比或者是分数（fr单位）。</p>
-<p>为了说明隐式网格轨道是怎么创建的，我们先看下面列子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    grid-template-columns: 60px 60px;</div><div class="line">    grid-template-rows: 90px 90px</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-auto</p>
-<p>这是2✖️2的网格，但是我们来用grid-column 和 grid-row给网格项定位如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.item-a&#123;</div><div class="line">    grid-column: 1 / 2;</div><div class="line">    grid-row: 2 / 3;</div><div class="line">&#125;</div><div class="line">.item-b&#123;</div><div class="line">    grid-column: 5 / 6;</div><div class="line">    grid-row: 2 / 3;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>implicit-tracks</p>
-<p>我们可以看出，网格项item-b定位在第五根列网格线（column line 5 ）和第六根列网格线（column line 6 ）之间。但是我们网格容器根本不存在这两条网格线，所以就用两个0宽度来填充。在这里我们可以用网格自动行（grid-auto-rows）和网格自动列（grid-auto-columns）来定义这些隐式轨道宽度。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display:grid;</div><div class="line">    grid-auto-columns: 60px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>implicit-tracks-with-widths</p>
-<p>\11. grid-auto-flow : row（默认） | column | dense ;</p>
-<p>在没有设置网格项的位置时，这个属性控制网格项怎样排列。</p>
-<p>属性值：<br>row: 按照行依次从左到右排列。<br>column: 按照列依次从上倒下排列。<br>dense: 按先后顺序排列。</p>
-<p>来看看下面结构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;section class=&quot;container&quot;&gt;</div><div class="line">    &lt;div class=&quot;item-a&quot;&gt;item-a&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;item-b&quot;&gt;item-b&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;item-c&quot;&gt;item-c&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;item-d&quot;&gt;item-d&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;item-e&quot;&gt;item-e&lt;/div&gt;</div><div class="line">&lt;/section&gt;</div></pre></td></tr></table></figure>
-<p>下面定义5列2行网格，同时定义grid-auto-flow：row。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display: grid;</div><div class="line">    grid-template-columns: 60px 60px 60px 60px 60px;</div><div class="line">    grid-template-rows: 30px 30px;</div><div class="line">    grid-auto-flow: row;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>像下面布局网格项。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.item-a&#123;</div><div class="line">    grid-column: 1;</div><div class="line">    grid-row: 1 / 3;</div><div class="line">&#125;</div><div class="line">.item-e&#123;</div><div class="line">    grid-column: 5;</div><div class="line">    grid-row: 1 / 3;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>由于我们设置了grid-auto-flow：row，item-b、item-c和item-d在行上是从左到右排列，如下：</p>
-<p>grid-auto-flow-row</p>
-<p>如果我们设置 grid-auto-flow: column;结果如下：</p>
-<p>grid-auto-flow-column</p>
-<p>\12. grid: none | <grid-template-rows> / <grid-template-columns> | <grid-auto-flow> [<grid-auto-rows> [ / <grid-auto-columns>] ];</grid-auto-columns></grid-auto-rows></grid-auto-flow></grid-template-columns></grid-template-rows></p>
-<p>是一种简写形式，设置网格容器所有属性。</p>
-<p>属性值：<br>none: 设置为所有属性的默认值。</p>
-<p><grid-template-rows> / <grid-template-columns>: 设置行和列的值，其他属性为默认值。</grid-template-columns></grid-template-rows></p>
-<p><grid-auto-flow> [ <grid-auto-rows> [ / <grid-auto-columns>] ] : 设置网格自动流、网格自动行、网格自动列的值，其他未设置则为默认值。</grid-auto-columns></grid-auto-rows></grid-auto-flow></p>
-<p>例子1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    grid: 200px auto / 1fr auto 1fr;</div><div class="line">&#125;</div><div class="line">等同于</div><div class="line">.container&#123;</div><div class="line">    grid-template-rows: 200px auto;</div><div class="line">    grid-template-columns: 1fr auto 1fr;</div><div class="line">    grid-template-areas: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>例子2：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    grid: column 1fr / auto;</div><div class="line">&#125;</div><div class="line">等同于</div><div class="line">.container&#123;</div><div class="line">    grid-auto-flow: column;</div><div class="line">    grid-auto-rows: 1fr;</div><div class="line">    grid-auto-columns: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>设置在网格项上的属性</strong></p>
-<ul>
-<li>grid-column-start</li>
-<li>grid-column-end</li>
-<li>grid-row-start</li>
-<li>grid-row-end</li>
-<li>grid-column</li>
-<li>grid-row</li>
-<li>grid-area</li>
-<li>justify-self</li>
-<li>align-self</li>
-</ul>
-<p>\1. grid-column-start: <number> | <name> | span <number> | span <name> | auto ;<br>​            grid-column-end: <number> | <name> | span <number> | span <name> | auto ;<br>​             grid-row-start: <number> | <name> | span <number> | span <name> | auto ;<br>​             grid-row-end: <number> | <name> | span <number> | span <name> | auto ;</name></number></name></number></name></number></name></number></name></number></name></number></name></number></name></number></p>
-<p>通过网格线来定义网格项的位置。grid-column-start、grid-row-start定义网格项的开始位置，grid-column-end、grid-row-end定义网格项的结束位置。</p>
-<p>属性值：<br>line: 指定带编号或者名字的网格线。<br>span <number>: 跨越轨道的数量。<br>span <name>: 跨越轨道直到对应名字的网格线。<br>auto: 自动展示位置，默认跨度为1。</name></number></p>
-<p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.item-a&#123;</div><div class="line">  grid-column-start: 2;</div><div class="line">  grid-column-end: five;</div><div class="line">  grid-row-start: row1-start</div><div class="line">  grid-row-end: 3</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-start-end-a</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.item-b&#123;</div><div class="line">  grid-column-start: 1;</div><div class="line">  grid-column-end: span col4-start;</div><div class="line">  grid-row-start: 2</div><div class="line">  grid-row-end: span 2</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-start-end-a</p>
-<p>注：如果未声明grid-column-end或grid-row-end，默认将跨越一个轨道。项目也可以重叠，设置z-index来确定堆叠顺序。</p>
-<p>\2. grid-column: <start-line> / <end-line> | <start-line> / span <value> ;<br>​             grid-row: <start-line> / <end-line> | <start-line> / span <value> ;</value></start-line></end-line></start-line></value></start-line></end-line></start-line></p>
-<p>是 grid-column-start、grid-column-end 和 grid-row-start、grid-row-end 的简写。</p>
-<p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.item-c&#123;</div><div class="line">  grid-column: 3 / span 2;</div><div class="line">  grid-row: third-line / 4;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-start-end-c</p>
-<p>\3. grid-area: <name> | <row-start> / <column-start> / <row-end> / <column-end> ;</column-end></row-end></column-start></row-start></name></p>
-<p>定义网格项名字，以便创建模块（容器属性grid-template-areas来定义模块）。</p>
-<p>属性值：<br>name: 项目名子。</p>
-<p><row-start> / <column-start> / <row-end> / <column-end>: 可以是数字或网格线名字。</column-end></row-end></column-start></row-start></p>
-<p>例子：<br>定义网格项名字：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item-d&#123;</div><div class="line">  grid-area: header</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>通过网格线定位网格项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item-d&#123;</div><div class="line">  grid-area: 1 / col4-start / last-line / 6 ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-start-end-d</p>
-<p>\4. justify-self:  justify-self: start | end | center | stretch;</p>
-<p>定义单个网格项垂直于列网格线的对齐方式。</p>
-<p>属性值：<br>start:   网格区域左对齐。<br>end:     网格区域右对齐。<br>center:  网格区域居中。<br>stretch: 网格区域填满。</p>
-<p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item-a&#123;</div><div class="line">  justify-self: start;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-self-start</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item-a&#123;</div><div class="line">  justify-self: end;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-self-end</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item-a&#123;</div><div class="line">  justify-self: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-self-center</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item-a&#123;</div><div class="line">  justify-self: stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-justify-self-stretch</p>
-<p>提示：也可以在容器上设置justify-items，达到全部网格项对齐。</p>
-<p>\5. align-self: start | end | center | stretch;</p>
-<p>定义单个网格项垂直于行网格线的对齐方式。</p>
-<p>属性值：<br>start:   网格区域顶部对齐。<br>end:     网格区域底部对齐。<br>center:  网格区域居中。<br>stretch: 网格区域填满。</p>
-<p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item-a&#123;</div><div class="line">  align-self: start;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-self-start</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item-a&#123;</div><div class="line">  align-self: end;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-self-end</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item-a&#123;</div><div class="line">  align-self: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-self-center</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item-a&#123;</div><div class="line">  align-self: stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>grid-align-self-stretch</p>
-<p>提示：也可以在容器上设置align-items，达到全部网格项对齐。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-transform3d硬件加速" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/09/04/transform3d硬件加速/" class="article-date">
-  	<time datetime="2017-09-03T16:00:00.000Z" itemprop="datePublished">2017-09-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/04/transform3d硬件加速/">前端编辑器常用插件</a>
+      <a class="article-title" href="/2017/09/12/前端项目框架/">前端项目框架</a>
     </h1>
   
 
@@ -996,144 +240,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Emmet-（缩写语法）"><a href="#Emmet-（缩写语法）" class="headerlink" title="Emmet  （缩写语法）"></a>Emmet  （缩写语法）</h3><p>Emmet的前身是大名鼎鼎的Zen coding<br>使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度</p>
-<p><a href="https://code.visualstudio.com/docs/editor/emmet" target="_blank" rel="external">https://code.visualstudio.com/docs/editor/emmet</a></p>
-<h3 id="ESLint-（代码检查）"><a href="#ESLint-（代码检查）" class="headerlink" title="ESLint （代码检查）"></a>ESLint （代码检查）</h3><p>开源的 JavaScript 代码检查工具，使用 Node.js 编写；</p>
-<p>初衷是为了让程序员可以创建自己的检测规则，使其可以在编码的过程中发现问题而不是在执行的过程中。</p>
-<p>由于 ESLint 默认只支持 js 文件的脚本检测，如果我们需要支持类 html 文件（如 vue ）的内联脚本检测，还需要安装 eslint-plugin-html 插件</p>
-<ol>
-<li>$ npm install -g eslint-plugin-html</li>
-<li>“eslint.options”: {</li>
-<li>​    “configFile”: “E:/git/github/styleguide/eslint/.eslintrc.js”,</li>
-<li>​    “plugins”: [“html”]</li>
-<li>},</li>
-<li>“eslint.validate”: [</li>
-<li>​    “javascript”,</li>
-<li>​    “javascriptreact”,</li>
-<li>​    “html”,</li>
-<li>​    “vue”</li>
-<li>]</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-旋转动画" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/09/04/旋转动画/" class="article-date">
-  	<time datetime="2017-09-03T16:00:00.000Z" itemprop="datePublished">2017-09-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/04/旋转动画/">旋转动画</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="css-transform"><a href="#css-transform" class="headerlink" title="css transform"></a>css transform</h2><p> 在部分浏览器上 比较卡 （安卓）</p>
-<h2 id="jquery-rotate库"><a href="#jquery-rotate库" class="headerlink" title="jquery rotate库"></a>jquery rotate库</h2>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-前端开发插件" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/09/04/前端开发插件/" class="article-date">
-  	<time datetime="2017-09-03T16:00:00.000Z" itemprop="datePublished">2017-09-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/04/前端开发插件/">前端编辑器常用插件</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Emmet-（缩写语法）"><a href="#Emmet-（缩写语法）" class="headerlink" title="Emmet  （缩写语法）"></a>Emmet  （缩写语法）</h3><p>Emmet的前身是大名鼎鼎的Zen coding<br>使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度</p>
-<p><a href="https://code.visualstudio.com/docs/editor/emmet" target="_blank" rel="external">https://code.visualstudio.com/docs/editor/emmet</a></p>
-<h3 id="ESLint-（代码检查）"><a href="#ESLint-（代码检查）" class="headerlink" title="ESLint （代码检查）"></a>ESLint （代码检查）</h3><p>开源的 JavaScript 代码检查工具，使用 Node.js 编写；</p>
-<p>初衷是为了让程序员可以创建自己的检测规则，使其可以在编码的过程中发现问题而不是在执行的过程中。</p>
-<p>由于 ESLint 默认只支持 js 文件的脚本检测，如果我们需要支持类 html 文件（如 vue ）的内联脚本检测，还需要安装 eslint-plugin-html 插件</p>
-<ol>
-<li>$ npm install -g eslint-plugin-html</li>
-<li>“eslint.options”: {</li>
-<li>​    “configFile”: “E:/git/github/styleguide/eslint/.eslintrc.js”,</li>
-<li>​    “plugins”: [“html”]</li>
-<li>},</li>
-<li>“eslint.validate”: [</li>
-<li>​    “javascript”,</li>
-<li>​    “javascriptreact”,</li>
-<li>​    “html”,</li>
-<li>​    “vue”</li>
-<li>]</li>
-</ol>
-
       
     </div>
     
@@ -1162,19 +269,21 @@
     <article id="post-使用JS与CSS3的翻转实现3D翻牌效果" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/08/31/使用JS与CSS3的翻转实现3D翻牌效果/" class="article-date">
-  	<time datetime="2017-08-30T16:00:00.000Z" itemprop="datePublished">2017-08-31</time>
+      <a href="/2017/09/12/使用JS与CSS3的翻转实现3D翻牌效果/" class="article-date">
+  	<time datetime="2017-09-11T16:00:00.000Z" itemprop="datePublished">2017-09-12</time>
 </a>
     </div>
   
   <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/31/使用JS与CSS3的翻转实现3D翻牌效果/">使用JS与CSS3的翻转实现3D翻牌效果</a>
+      <a class="article-title" href="/2017/09/12/使用JS与CSS3的翻转实现3D翻牌效果/">使用JS与CSS3的翻转实现3D翻牌效果</a>
     </h1>
   
 
@@ -1210,122 +319,10 @@
       
       
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-es6--class" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/24/es6--class/" class="article-date">
-  	<time datetime="2017-08-23T16:00:00.000Z" itemprop="datePublished">2017-08-24</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/24/es6--class/">es6—class</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、javascript传统做法生成一个对象实例："><a href="#一、javascript传统做法生成一个对象实例：" class="headerlink" title="一、javascript传统做法生成一个对象实例："></a>一、javascript传统做法生成一个对象实例：</h2><p>​    定义构造函数，然后通过new的方式完成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function StdInfo()&#123;</div><div class="line">    this.name = &quot;job&quot;;            </div><div class="line">    this.age = 30;            </div><div class="line">&#125;</div><div class="line"></div><div class="line">StdInfo.prototype.getNames = function ()&#123;</div><div class="line">    console.log(&quot;name：&quot;+this.name);               </div><div class="line">&#125;</div><div class="line">//得到一个学员信息对象</div><div class="line">var p = new StdInfo()</div></pre></td></tr></table></figure>
-<p>javacript中只有对象，没有类。它是是基于原型的语言，原型对象是新对象的模板，它将自身的属性共享给新对象。</p>
-<h2 id="二、ES6添加了类，作为对象的模板"><a href="#二、ES6添加了类，作为对象的模板" class="headerlink" title="二、ES6添加了类，作为对象的模板"></a>二、ES6添加了类，作为对象的模板</h2><h3 id="1-定义类"><a href="#1-定义类" class="headerlink" title="1.定义类"></a>1.定义类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//定义类</div><div class="line">class StdInfo &#123;</div><div class="line">    constructor()&#123;</div><div class="line">       this.name = &quot;job&quot;;            </div><div class="line">       this.age = 30;      </div><div class="line">    &#125;</div><div class="line">    //定义在类中的方法不需要添加function</div><div class="line">    getNames()&#123;</div><div class="line">       console.log(&quot;name：&quot;+this.name);      </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//使用new的方式得到一个实例对象</div><div class="line">var p = new StdInfo();</div></pre></td></tr></table></figure>
-<p>上面的写法更加清晰、更像面向对象编程的语法，看起来也更容易理解。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//定义类</div><div class="line">class StdInfo &#123;</div><div class="line">    //...</div><div class="line">&#125;</div><div class="line">console.log(typeof  StdInfo);  //function</div><div class="line"></div><div class="line">console.log(StdInfo === StdInfo.prototype.constructor);  //true</div></pre></td></tr></table></figure>
-<p>从上面的测试中可以看出来，类的类型就是一个函数，是一个“特殊函数”，指向的是构造函数。</p>
-<p>函数的定义方式有函数声明和函数表达式两种，类的定义方式也有两种，分别是：<strong>类声明</strong>和<strong>类表达式</strong>。</p>
-<h3 id="2-类声明（-class-类名-）"><a href="#2-类声明（-class-类名-）" class="headerlink" title="2.类声明（    class 类名 {}    ）"></a>2.类声明（    class 类名 {}    ）</h3><p>类声明是定义类的一种方式，使用关键字<strong>class</strong>，后面跟上类名，然后就是一对大括号。把这一类需要定义的方法放在大括号中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//定义类，可以省略constructor</div><div class="line">class StdInfo &#123;</div><div class="line">    getNames()&#123;</div><div class="line">        console.log(&quot;name：&quot;+this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// -------------------------------------</div><div class="line">//定义类，加上constructor</div><div class="line">class StdInfo &#123;</div><div class="line">    //使用new定义实例对象时，自动调用这个函数，传入参数</div><div class="line">    constructor(name,age)&#123;</div><div class="line">       this.name = name;            </div><div class="line">       this.age = age;      </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    getNames()&#123;</div><div class="line">       console.log(&quot;name：&quot;+this.name);      </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义实例对象时，传入参数</div><div class="line">var p = new StdInfo(&quot;job&quot;,30)</div></pre></td></tr></table></figure>
-<p>（1）constructor<strong>是一个默认方法，使用</strong>new<strong>来定义实例对象时，自动执行</strong>constructor<strong>函数，传入所需要的参数,执行完</strong>constructor**后自动返回实例对象。</p>
-<p>（2）一个类中只能有一个<strong>constructor</strong>函数，定义多个会报错。</p>
-<p>（3）constructor**中的this指向新创建的实例对象，利用this往新创建的实例对象扩展属性。</p>
-<p>（4）在定义实例对象时，不需要在初始化阶段做一些事，可以不用显示的写<strong>constructor</strong>函数。如果没有显式定义，一个空的constructor方法会被默认添加，constructor(){}</p>
-<h3 id="3-类表达式"><a href="#3-类表达式" class="headerlink" title="3.类表达式"></a>3.类表达式</h3><p>类表达式是定义类的另一种形式，类似于函数表达式，把一个函数作为值赋给变量。</p>
-<p>可以把定义的类赋值给一个变量，这时候变量就为类名。<strong>class</strong>关键字之后的类名可有可无，如果存在，则只能在类内部使用。</p>
-<p>定义类 class后面有类名：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> const People = class StdInfo &#123;</div><div class="line">    constructor()&#123;</div><div class="line">        console.log(StdInfo);  //可以打印出值，是一个函数</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">new People();</div><div class="line">new StdInfo();  //报错，StdInfo is not defined；</div></pre></td></tr></table></figure>
-<p>定义类 class后面没有类名：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">const People = class &#123;</div><div class="line">    constructor()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">new People();</div></pre></td></tr></table></figure>
-<p>立即执行的类：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const p = new class &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        console.log(name,age);</div><div class="line">    &#125;</div><div class="line">&#125;(&quot;job&quot;,30)</div></pre></td></tr></table></figure>
-<p>立即执行的类，在类前要加上<strong>new</strong>。<strong>p</strong>为类的实例对象。</p>
-<h3 id="4-不存在变量提升"><a href="#4-不存在变量提升" class="headerlink" title="4.不存在变量提升"></a>4.不存在变量提升</h3><p>定义类不存在变量提升，只能先定义类后使用，跟函数声明有区别的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//-----函数声明-------</div><div class="line">//定义前可以先使用，因为函数声明提升的缘故，调用合法。</div><div class="line">func();</div><div class="line">function func()&#123;&#125;</div><div class="line"></div><div class="line">//-----定义类---------------</div><div class="line">new StdInfo();  //报错，StdInfo is not defined</div><div class="line">class StdInfo&#123;&#125;</div></pre></td></tr></table></figure>
-<h2 id="5-extends继承"><a href="#5-extends继承" class="headerlink" title="5.extends继承"></a>5.extends继承</h2><p>使用<strong>extends</strong>关键字实现类之间的继承。这比在ES5中使用继承要方便很多。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//定义类父类</div><div class="line">class Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    speakSometing()&#123;</div><div class="line">        console.log(&quot;I can speek chinese&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义子类，继承父类</div><div class="line">class Child extends Parent &#123;</div><div class="line">    coding()&#123;</div><div class="line">        console.log(&quot;coding javascript&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var c = new Child();</div><div class="line"></div><div class="line">//可以调用父类的方法</div><div class="line">c.speakSometing(); // I can speek chinese</div></pre></td></tr></table></figure>
-<p>使用继承的方式，子类就拥有了父类的方法。</p>
-<p>如果子类中有<strong>constructor</strong>构造函数，则必须使用调用<strong>super</strong>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//定义类父类</div><div class="line">class Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    speakSometing()&#123;</div><div class="line">        console.log(&quot;I can speek chinese&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义子类，继承父类</div><div class="line">class Child extends Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        //不调super()，则会报错  this is not defined</div><div class="line"></div><div class="line">        //必须调用super</div><div class="line">        super(name,age);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    coding()&#123;</div><div class="line">        console.log(&quot;coding javascript&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var c = new Child(&quot;job&quot;,30);</div><div class="line"></div><div class="line">//可以调用父类的方法</div><div class="line">c.speakSometing(); // I can speek chinese</div></pre></td></tr></table></figure>
-<p>子类必须在constructor方法中调用super方法，否则新建实例时会报错(<em>this is not defined</em>)。这是因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象。</p>
-<p>以上是对ES6中类的简单总结学习，欢迎一起讨论。</p>
-<p>参考：<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes</a></p>
-<p><a href="http://es6.ruanyifeng.com/#docs/class" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/class</a></p>
-<ul>
-<li><a href="https://segmentfault.com/a/1190000007537173" target="_blank" rel="external">2016年11月20日发布</a></li>
-<li><a href="javascript:void(0" target="_blank" rel="external">**</a>;)</li>
-</ul>
-<ul>
-<li><a href="javascript:void(0" target="_blank" rel="external">新浪微博</a>;)</li>
-<li><a href="javascript:void(0" target="_blank" rel="external">微信</a>;)</li>
-<li><a href="javascript:void(0" target="_blank" rel="external">Twitter</a>;)</li>
-<li><a href="javascript:void(0" target="_blank" rel="external">Facebook</a>;)</li>
-</ul>
-<p>赞  |   1收藏  |  3</p>
-<h4 id="你可能感兴趣的文章"><a href="#你可能感兴趣的文章" class="headerlink" title="你可能感兴趣的文章"></a>你可能感兴趣的文章</h4><ul>
-<li><a href="https://segmentfault.com/a/1190000004102588" target="_blank" rel="external">JavaScript笔记集</a> 6 收藏，952 浏览</li>
-<li><a href="https://segmentfault.com/a/1190000010542028" target="_blank" rel="external">ES6的Class学习</a> 1 收藏，67 浏览</li>
-<li><a href="https://segmentfault.com/a/1190000004219721" target="_blank" rel="external">浮动【电梯】或【回到底部】的小插件ielevator.js</a> 2 收藏，727 浏览</li>
-</ul>
-<p>## </p>
-<p>2 条评论</p>
-<p><a href="javascript:;" target="_blank" rel="external">默认排序</a><a href="javascript:;" target="_blank" rel="external">时间排序</a></p>
-<p><a href="https://segmentfault.com/u/sunny_l" target="_blank" rel="external"><img src="https://static.segmentfault.com/v-599d4ab0/global/img/user-64.png" alt="img"></a></p>
-<p><a href="https://segmentfault.com/u/sunny_l" target="_blank" rel="external">Sunny_L</a></p>
-<p>· 7月4日</p>
-<p>非class方法可以写Point.prototype.on=Point.prototype.addListener，es6的class应该怎么写？包内好像不能用=号</p>
-<p>** 赞 回复</p>
-<p><a href="https://segmentfault.com/u/wocaibushidaocaoren" target="_blank" rel="external"><img src="https://sfault-avatar.b0.upaiyun.com/184/839/1848398528-5880ca077eec4_big64" alt="img"></a></p>
-<p><a href="https://segmentfault.com/u/wocaibushidaocaoren" target="_blank" rel="external">我才不是稻草人</a></p>
-<p>· 7月14日</p>
-<p>说的不错，想问个问题，在代码里<br>//定义类父类<br>class Parent {</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">constructor(name,age)&#123;</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">speakSometing()&#123;</div><div class="line">    console.log(&quot;I can speek chinese&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>}<br>//定义子类，继承父类<br>class Child extends Parent {</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">constructor(name,age)&#123;</div><div class="line">    //不调super()，则会报错  this is not defined</div><div class="line"></div><div class="line">    //必须调用super</div><div class="line">    super(name,age);</div><div class="line">&#125;</div><div class="line"></div><div class="line">coding()&#123;</div><div class="line">    this.speakSometing()   //可以这么用吗？？？？？？</div><div class="line">    console.log(&quot;coding javascript&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>}</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
 
       
       <div class="clearfix"></div>
@@ -1346,7 +343,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
@@ -1364,18 +361,20 @@
 </footer>
     </div>
     
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
 
 <script>
 	var yiliaConfig = {
-		fancybox: undefined,
-		mathjax: undefined,
-		animate: undefined,
+		fancybox: true,
+		mathjax: true,
+		animate: true,
 		isHome: true,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: undefined
+		open_in_new: true
 	}
 </script>
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
@@ -1384,6 +383,27 @@
 
 
 
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
   </div>

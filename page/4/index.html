@@ -17,6 +17,8 @@
 <meta name="twitter:description" content="javascript html5 css3 前端">
   
   
+    <link rel="icon" href="/favicon.png">
+  
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -28,7 +30,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			<img lazy-src="/img/avatar.jpg" class="js-avatar">
 			
 		</a>
 
@@ -41,6 +43,32 @@
 		
 
 		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
 
 		<div class="switch-area">
 			<div class="switch-wrap">
@@ -48,15 +76,27 @@
 					<nav class="header-menu">
 						<ul>
 						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
 						<div class="social">
 							
+								<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+					        
 						</div>
 					</nav>
 				</section>
 				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
 				
 				
 				
@@ -78,7 +118,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
 			
 			</div>
 			<hgroup>
@@ -90,12 +130,18 @@
 			<nav class="header-menu">
 				<ul>
 				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
 			<nav class="header-nav">
 				<div class="social">
 					
+						<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+			        
 				</div>
 			</nav>
 		</header>				
@@ -104,22 +150,24 @@
 
       <div class="body-wrap">
   
-    <article id="post-module_pattern" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-旋转动画" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/11/module_pattern/" class="article-date">
-  	<time datetime="2016-04-11T06:09:44.000Z" itemprop="datePublished">2016-04-11</time>
+      <a href="/2017/09/04/旋转动画/" class="article-date">
+  	<time datetime="2017-09-03T16:00:00.000Z" itemprop="datePublished">2017-09-04</time>
 </a>
     </div>
   
   <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/11/module_pattern/">JavaScript 模块化编程</a>
+      <a class="article-title" href="/2017/09/04/旋转动画/">旋转动画</a>
     </h1>
   
 
@@ -128,20 +176,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一-模块模式"><a href="#一-模块模式" class="headerlink" title="一 模块模式"></a>一 模块模式</h2><h3 id="（1）-闭包与-IIFE"><a href="#（1）-闭包与-IIFE" class="headerlink" title="（1） 闭包与 IIFE"></a>（1） 闭包与 IIFE</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">;(<span class="keyword">function</span> (参数) &#123;</div><div class="line">  // 模块代码</div><div class="line">  // <span class="built_in">return</span> something;</div><div class="line">&#125;(参数));</div></pre></td></tr></table></figure>
-<p>模块模式的本质:<br>(1)可以定义私有变量和函数，外部无法访问它们，从而做到了私有成员的隐藏和隔离。</p>
-<p>(2)通过返回对象或函数,可以公开我们对外暴露的公开的方法与数据。</p>
-<h3 id="（2）参数输入"><a href="#（2）参数输入" class="headerlink" title="（2）参数输入"></a>（2）参数输入</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">;(<span class="keyword">function</span> (q, w) &#123;</div><div class="line">  // q is jQuery</div><div class="line">  // w is window</div><div class="line">  // 局部变量及代码</div><div class="line">  // 返回</div><div class="line">&#125;)(jQuery, window);</div></pre></td></tr></table></figure>
-<p>如果模块内需要使用其它全局对象，应该将这些对象作为参数来显式引用它们</p>
-<p>将引用的对象作为参数，使它们得以和函数内的其它局部变量区分开来</p>
-<h3 id="（3）模块输出（Module-Export）"><a href="#（3）模块输出（Module-Export）" class="headerlink" title="（3）模块输出（Module Export）"></a>（3）模块输出（Module Export）</h3><p>通过匿名函数的 return 语句来声明和输出模块中的对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var MODULE = (<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">    var my = &#123;&#125;,</div><div class="line">        privateVariable = 1;</div><div class="line">    my.moduleProperty = 1;</div><div class="line">    my.moduleMethod = <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">        // ...</div><div class="line">    &#125;;</div><div class="line"> </div><div class="line">    <span class="built_in">return</span> my;</div><div class="line">&#125;());</div></pre></td></tr></table></figure></p>
-<h3 id="（4）与其它模块规范或-JS-库的适配"><a href="#（4）与其它模块规范或-JS-库的适配" class="headerlink" title="（4）与其它模块规范或 JS 库的适配"></a>（4）与其它模块规范或 JS 库的适配</h3><p>AMD 定义了 define 函数，可以使用 define 来编写模块化的代码<br>CommonJS定义了exports 或是 module.exports </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//注册模块</div><div class="line">//代码既兼容于 CommonJS Modules 或 AMD 规范，又能在一般环境下运行</div><div class="line"><span class="keyword">if</span> (typeof module !== <span class="string">'undefined'</span> &amp;&amp; module.exports) &#123; </div><div class="line">  module.exports = plug;    //CommonJS</div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (typeof define === <span class="string">'function'</span> &amp;&amp; define.amd) &#123;</div><div class="line">  define(<span class="function"><span class="title">function</span></span>() &#123;       //AMD</div><div class="line">    <span class="built_in">return</span> plug;</div><div class="line">  &#125;);</div><div class="line">&#125; <span class="keyword">else</span> &#123;     //一般环境</div><div class="line">  (<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">    <span class="built_in">return</span> this || (0, <span class="built_in">eval</span>)(<span class="string">'this'</span>);   //获取全局对象  若代码运行于浏览器中，得到的其实是 window 对象</div><div class="line">  &#125;()).plug = plug;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>以上代码可以让我们的代码既兼容于 CommonJS Modules 或 AMD 规范，又能在一般环境下运行</p>
-<h2 id="二-模块模式的变化"><a href="#二-模块模式的变化" class="headerlink" title="二 模块模式的变化"></a>二 模块模式的变化</h2><h3 id="1-扩展"><a href="#1-扩展" class="headerlink" title="(1)扩展"></a>(1)扩展</h3><h4 id="对已有的模块作出扩展-模块的各个组成部分并没有加载顺序要求"><a href="#对已有的模块作出扩展-模块的各个组成部分并没有加载顺序要求" class="headerlink" title="对已有的模块作出扩展(模块的各个组成部分并没有加载顺序要求)"></a>对已有的模块作出扩展(模块的各个组成部分并没有加载顺序要求)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var MODULE = (<span class="keyword">function</span> (my) &#123;</div><div class="line">  // add capabilities...</div><div class="line">  <span class="built_in">return</span> my;</div><div class="line">&#125;(MODULE || &#123;&#125;));</div></pre></td></tr></table></figure>
-<h4 id="紧耦合扩展-对模块的定义顺序是有要求的"><a href="#紧耦合扩展-对模块的定义顺序是有要求的" class="headerlink" title="紧耦合扩展(对模块的定义顺序是有要求的)"></a>紧耦合扩展(对模块的定义顺序是有要求的)</h4><p>要求在扩展时调用以前已被定义的方法，这也有可能被用于覆盖已有的方法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var MODULE = (<span class="keyword">function</span> (my) &#123;</div><div class="line">  var old_moduleMethod = my.moduleMethod;</div><div class="line"> </div><div class="line">  my.moduleMethod = <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">    // 方法重载</div><div class="line">    // 可通过 old_moduleMethod 调用以前的方法...</div><div class="line">  &#125;;</div><div class="line"> </div><div class="line">  <span class="built_in">return</span> my;</div><div class="line">&#125;(MODULE));</div></pre></td></tr></table></figure>
-<h3 id="2-克隆与继承（利用Object-create-）"><a href="#2-克隆与继承（利用Object-create-）" class="headerlink" title="(2)克隆与继承（利用Object.create() ）"></a>(2)克隆与继承（利用Object.create() ）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var MODULE_TWO = (<span class="keyword">function</span> (old) &#123;</div><div class="line">  var my = Object.create(old);</div><div class="line"> </div><div class="line">  var super_moduleMethod = old.moduleMethod;</div><div class="line">  my.moduleMethod = <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">    // override method ...</div><div class="line">  &#125;;</div><div class="line"> </div><div class="line">  <span class="built_in">return</span> my;</div><div class="line">&#125;(MODULE));</div></pre></td></tr></table></figure>
+        <h2 id="css-transform"><a href="#css-transform" class="headerlink" title="css transform"></a>css transform</h2><p> 在部分浏览器上 比较卡 （安卓）</p>
+<h2 id="jquery-rotate库"><a href="#jquery-rotate库" class="headerlink" title="jquery rotate库"></a>jquery rotate库</h2>
       
     </div>
     
@@ -167,22 +203,24 @@
 
 
   
-    <article id="post-getComputedStyle" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-transform3d硬件加速" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/17/getComputedStyle/" class="article-date">
-  	<time datetime="2016-03-17T06:52:12.000Z" itemprop="datePublished">2016-03-17</time>
+      <a href="/2017/09/04/transform3d硬件加速/" class="article-date">
+  	<time datetime="2017-09-03T16:00:00.000Z" itemprop="datePublished">2017-09-04</time>
 </a>
     </div>
   
   <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/getComputedStyle/">style、currentStyle、getComputedStyle的区别</a>
+      <a class="article-title" href="/2017/09/04/transform3d硬件加速/">前端编辑器常用插件</a>
     </h1>
   
 
@@ -191,97 +229,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="css设置样式分为三种方式"><a href="#css设置样式分为三种方式" class="headerlink" title="css设置样式分为三种方式"></a>css设置样式分为三种方式</h2><p>1.内嵌样式（inline Style） ：写在Tag里面的style属性中，只对所在Tag有效。</p>
-<p>2.内部样式（internal Style Sheet）：是写在HTML的style标签内部，只对所在的网页有效。</p>
-<p>3.外部样式表（External Style Sheet）：一个以.css为后缀的CSS文件，然后在每个需要用到这些样式(Styles)的网页里引用这个CSS文件。 </p>
-<h2 id="js获取样式"><a href="#js获取样式" class="headerlink" title="js获取样式"></a>js获取样式</h2><p>1.style属性：</p>
-<p>通过document.getElementById(id).style.XXX就可以获取到XXX的值。(可读可写)</p>
-<p>作用：只能取到通过内嵌方式设置的样式值，即style属性里面设置的值</p>
-<p>2.runtimeStyle ：</p>
-<p>通过document.getElementById(id).runtimeStyle.XXX设置</p>
-<p>作用：运行时的样式！如果与style的属性重叠，将覆盖style的属性！</p>
-<p>3.currentStyle 与 getComputedStyle</p>
-<p>（1）作用：获取元素中所有可用的css属性</p>
-<p>（2）应用：IE使用currentStyle，其他浏览器用getComputedStyle</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">var computed = !!window.getComputedStyle;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (!computed) &#123;</div><div class="line">  window.getComputedStyle = <span class="keyword">function</span>(el) &#123;</div><div class="line">    this.el = el;</div><div class="line">    this.getPropertyValue = <span class="keyword">function</span>(prop) &#123;</div><div class="line">      var re = /(\-([a-z])&#123;1&#125;)/g;</div><div class="line">      <span class="keyword">if</span> (prop === <span class="string">"float"</span>) &#123;</div><div class="line">        prop = <span class="string">"styleFloat"</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (re.test(prop)) &#123;</div><div class="line">        prop = prop.replace(re, <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">          <span class="built_in">return</span> arguments[2].toUpperCase();</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">      <span class="built_in">return</span> el.currentStyle[prop] ? el.currentStyle[prop] : null;</div><div class="line">    &#125;;</div><div class="line">    <span class="built_in">return</span> this;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>（3）语法：</p>
-<p>1&gt; getComputedStyle：(只读不可写－－－只能获取样式，不能设置)</p>
-<p>获取属性列表</p>
-<pre><code>arr_style=window.getComputedStyle(元素,伪类)
-
-伪元素，是否要获取伪元素属性值。如hover,active,link等属性。如果不想获取这些伪元素的属性值请填写为null。
-
-eg1: style = window.getComputedStyle(elem_id , &quot;:after&quot;);
-
-eg2：var width = window.getComputedStyle(mydiv , null);
-</code></pre><p>获取具体的属性值：</p>
-<pre><code>eg1：var width = window.getComputedStyle(mydiv , null)[&apos;width&apos;];
-
-eg2：var width = window.getComputedStyle(mydiv , null).width;
-
-eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;width&quot;);
-</code></pre><p>获取float，如果使用键值访问，则不能直接使用getComputedStyle(element, null).float，而应该是cssFloat与styleFloat，自然需要浏览器判断了，比较折腾！</p>
-<p>2&gt; currentStyle</p>
-<p>eg:var width = mydiv.currentStyle[‘width’];</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/17/hello-world/" class="article-date">
-  	<time datetime="2016-03-17T06:52:12.000Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to 我的博客</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h3 id="Emmet-（缩写语法）"><a href="#Emmet-（缩写语法）" class="headerlink" title="Emmet  （缩写语法）"></a>Emmet  （缩写语法）</h3><p>Emmet的前身是大名鼎鼎的Zen coding<br>使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度</p>
+<p><a href="https://code.visualstudio.com/docs/editor/emmet" target="_blank" rel="external">https://code.visualstudio.com/docs/editor/emmet</a></p>
+<h3 id="ESLint-（代码检查）"><a href="#ESLint-（代码检查）" class="headerlink" title="ESLint （代码检查）"></a>ESLint （代码检查）</h3><p>开源的 JavaScript 代码检查工具，使用 Node.js 编写；</p>
+<p>初衷是为了让程序员可以创建自己的检测规则，使其可以在编码的过程中发现问题而不是在执行的过程中。</p>
+<p>由于 ESLint 默认只支持 js 文件的脚本检测，如果我们需要支持类 html 文件（如 vue ）的内联脚本检测，还需要安装 eslint-plugin-html 插件</p>
+<ol>
+<li>$ npm install -g eslint-plugin-html</li>
+<li>“eslint.options”: {</li>
+<li>​    “configFile”: “E:/git/github/styleguide/eslint/.eslintrc.js”,</li>
+<li>​    “plugins”: [“html”]</li>
+<li>},</li>
+<li>“eslint.validate”: [</li>
+<li>​    “javascript”,</li>
+<li>​    “javascriptreact”,</li>
+<li>​    “html”,</li>
+<li>​    “vue”</li>
+<li>]</li>
+</ol>
 
       
     </div>
@@ -308,22 +273,24 @@ eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;w
 
 
   
-    <article id="post-禁止页面滚动" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-es6--class" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/09/禁止页面滚动/" class="article-date">
-  	<time datetime="2016-01-08T16:00:00.000Z" itemprop="datePublished">2016-01-09</time>
+      <a href="/2017/08/24/es6--class/" class="article-date">
+  	<time datetime="2017-08-23T16:00:00.000Z" itemprop="datePublished">2017-08-24</time>
 </a>
     </div>
   
   <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/09/禁止页面滚动/">禁止页面滚动</a>
+      <a class="article-title" href="/2017/08/24/es6--class/">es6—class</a>
     </h1>
   
 
@@ -332,13 +299,72 @@ eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;w
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在写一个在页面中，经验证用户没有登录或session失效时候弹出登录框禁止页面滚动用到<br>今天搞了一个功能，上下左右居中，模仿QQ空间里的样式，把横向和纵向滚动条禁止掉代码如下：</p>
-<p><script type="text/javascript"><br> //禁止滚动条<br> $(document.body).css({<br>   “overflow-x”:”hidden”,<br>   “overflow-y”:”hidden”<br> });</p>
-<p> //启用滚动条<br> $(document.body).css({<br>   “overflow-x”:”auto”,<br>   “overflow-y”:”auto”<br> });</p>
-<p></script><br>     我相信大家对这个代码应该无异议吧，如果有请高手给予指点。测试结果如下：<br>     IE6：禁止滚动条正常，启动滚动条错误，出现双滚动条且滚动条滚动页面无反应。<br>     IE7：禁止滚动条正常，启动滚动条错误，出现双滚动条且滚动条滚动页面无反应。<br>     IE8: 禁止滚动条正常，启动滚动条正常。<br>     IE9: 禁止滚动条正常，启动滚动条正常。<br>     Chrome: 禁止滚动条正常，启动滚动条正常。<br>     FireFox: 禁止滚动条正常，启动滚动条正常。</p>
-<pre><code>靠，又是IE6和IE7，微软真的该反省了，所以说做产品得一开始就要负责人。别扯远了，解决方法是当overflow设置hidden以后，直接取消这个style而不要设置overflow，具体代码如下：
-</code></pre><p> //为了简便定义一个样式类<br> <style type="text/css"><br>  .html-body-overflow<br>  {<br>    overflow-x:hidden;<br>    overflow-y:hidden;<br>  }<br> </style></p>
-<p> <script type="text/javascript"><br>  //禁止滚动条(默认是没有附加这个样式类的）<br>  $(document.body).toggleClass(“html-body-overflow”);<br>  //启动滚动条<br>  $(document.body).toggleClass(“html-body-overflow”);<br> </script><br>     当然也可以直接清掉style的内容，不过上面的做法更直观、更简单。</p>
+        <h2 id="一、javascript传统做法生成一个对象实例："><a href="#一、javascript传统做法生成一个对象实例：" class="headerlink" title="一、javascript传统做法生成一个对象实例："></a>一、javascript传统做法生成一个对象实例：</h2><p>​    定义构造函数，然后通过new的方式完成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function StdInfo()&#123;</div><div class="line">    this.name = &quot;job&quot;;            </div><div class="line">    this.age = 30;            </div><div class="line">&#125;</div><div class="line"></div><div class="line">StdInfo.prototype.getNames = function ()&#123;</div><div class="line">    console.log(&quot;name：&quot;+this.name);               </div><div class="line">&#125;</div><div class="line">//得到一个学员信息对象</div><div class="line">var p = new StdInfo()</div></pre></td></tr></table></figure>
+<p>javacript中只有对象，没有类。它是是基于原型的语言，原型对象是新对象的模板，它将自身的属性共享给新对象。</p>
+<h2 id="二、ES6添加了类，作为对象的模板"><a href="#二、ES6添加了类，作为对象的模板" class="headerlink" title="二、ES6添加了类，作为对象的模板"></a>二、ES6添加了类，作为对象的模板</h2><h3 id="1-定义类"><a href="#1-定义类" class="headerlink" title="1.定义类"></a>1.定义类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//定义类</div><div class="line">class StdInfo &#123;</div><div class="line">    constructor()&#123;</div><div class="line">       this.name = &quot;job&quot;;            </div><div class="line">       this.age = 30;      </div><div class="line">    &#125;</div><div class="line">    //定义在类中的方法不需要添加function</div><div class="line">    getNames()&#123;</div><div class="line">       console.log(&quot;name：&quot;+this.name);      </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//使用new的方式得到一个实例对象</div><div class="line">var p = new StdInfo();</div></pre></td></tr></table></figure>
+<p>上面的写法更加清晰、更像面向对象编程的语法，看起来也更容易理解。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//定义类</div><div class="line">class StdInfo &#123;</div><div class="line">    //...</div><div class="line">&#125;</div><div class="line">console.log(typeof  StdInfo);  //function</div><div class="line"></div><div class="line">console.log(StdInfo === StdInfo.prototype.constructor);  //true</div></pre></td></tr></table></figure>
+<p>从上面的测试中可以看出来，类的类型就是一个函数，是一个“特殊函数”，指向的是构造函数。</p>
+<p>函数的定义方式有函数声明和函数表达式两种，类的定义方式也有两种，分别是：<strong>类声明</strong>和<strong>类表达式</strong>。</p>
+<h3 id="2-类声明（-class-类名-）"><a href="#2-类声明（-class-类名-）" class="headerlink" title="2.类声明（    class 类名 {}    ）"></a>2.类声明（    class 类名 {}    ）</h3><p>类声明是定义类的一种方式，使用关键字<strong>class</strong>，后面跟上类名，然后就是一对大括号。把这一类需要定义的方法放在大括号中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//定义类，可以省略constructor</div><div class="line">class StdInfo &#123;</div><div class="line">    getNames()&#123;</div><div class="line">        console.log(&quot;name：&quot;+this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// -------------------------------------</div><div class="line">//定义类，加上constructor</div><div class="line">class StdInfo &#123;</div><div class="line">    //使用new定义实例对象时，自动调用这个函数，传入参数</div><div class="line">    constructor(name,age)&#123;</div><div class="line">       this.name = name;            </div><div class="line">       this.age = age;      </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    getNames()&#123;</div><div class="line">       console.log(&quot;name：&quot;+this.name);      </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义实例对象时，传入参数</div><div class="line">var p = new StdInfo(&quot;job&quot;,30)</div></pre></td></tr></table></figure>
+<p>（1）constructor<strong>是一个默认方法，使用</strong>new<strong>来定义实例对象时，自动执行</strong>constructor<strong>函数，传入所需要的参数,执行完</strong>constructor**后自动返回实例对象。</p>
+<p>（2）一个类中只能有一个<strong>constructor</strong>函数，定义多个会报错。</p>
+<p>（3）constructor**中的this指向新创建的实例对象，利用this往新创建的实例对象扩展属性。</p>
+<p>（4）在定义实例对象时，不需要在初始化阶段做一些事，可以不用显示的写<strong>constructor</strong>函数。如果没有显式定义，一个空的constructor方法会被默认添加，constructor(){}</p>
+<h3 id="3-类表达式"><a href="#3-类表达式" class="headerlink" title="3.类表达式"></a>3.类表达式</h3><p>类表达式是定义类的另一种形式，类似于函数表达式，把一个函数作为值赋给变量。</p>
+<p>可以把定义的类赋值给一个变量，这时候变量就为类名。<strong>class</strong>关键字之后的类名可有可无，如果存在，则只能在类内部使用。</p>
+<p>定义类 class后面有类名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> const People = class StdInfo &#123;</div><div class="line">    constructor()&#123;</div><div class="line">        console.log(StdInfo);  //可以打印出值，是一个函数</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">new People();</div><div class="line">new StdInfo();  //报错，StdInfo is not defined；</div></pre></td></tr></table></figure>
+<p>定义类 class后面没有类名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">const People = class &#123;</div><div class="line">    constructor()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">new People();</div></pre></td></tr></table></figure>
+<p>立即执行的类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const p = new class &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        console.log(name,age);</div><div class="line">    &#125;</div><div class="line">&#125;(&quot;job&quot;,30)</div></pre></td></tr></table></figure>
+<p>立即执行的类，在类前要加上<strong>new</strong>。<strong>p</strong>为类的实例对象。</p>
+<h3 id="4-不存在变量提升"><a href="#4-不存在变量提升" class="headerlink" title="4.不存在变量提升"></a>4.不存在变量提升</h3><p>定义类不存在变量提升，只能先定义类后使用，跟函数声明有区别的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//-----函数声明-------</div><div class="line">//定义前可以先使用，因为函数声明提升的缘故，调用合法。</div><div class="line">func();</div><div class="line">function func()&#123;&#125;</div><div class="line"></div><div class="line">//-----定义类---------------</div><div class="line">new StdInfo();  //报错，StdInfo is not defined</div><div class="line">class StdInfo&#123;&#125;</div></pre></td></tr></table></figure>
+<h2 id="5-extends继承"><a href="#5-extends继承" class="headerlink" title="5.extends继承"></a>5.extends继承</h2><p>使用<strong>extends</strong>关键字实现类之间的继承。这比在ES5中使用继承要方便很多。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//定义类父类</div><div class="line">class Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    speakSometing()&#123;</div><div class="line">        console.log(&quot;I can speek chinese&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义子类，继承父类</div><div class="line">class Child extends Parent &#123;</div><div class="line">    coding()&#123;</div><div class="line">        console.log(&quot;coding javascript&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var c = new Child();</div><div class="line"></div><div class="line">//可以调用父类的方法</div><div class="line">c.speakSometing(); // I can speek chinese</div></pre></td></tr></table></figure>
+<p>使用继承的方式，子类就拥有了父类的方法。</p>
+<p>如果子类中有<strong>constructor</strong>构造函数，则必须使用调用<strong>super</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//定义类父类</div><div class="line">class Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    speakSometing()&#123;</div><div class="line">        console.log(&quot;I can speek chinese&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//定义子类，继承父类</div><div class="line">class Child extends Parent &#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        //不调super()，则会报错  this is not defined</div><div class="line"></div><div class="line">        //必须调用super</div><div class="line">        super(name,age);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    coding()&#123;</div><div class="line">        console.log(&quot;coding javascript&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var c = new Child(&quot;job&quot;,30);</div><div class="line"></div><div class="line">//可以调用父类的方法</div><div class="line">c.speakSometing(); // I can speek chinese</div></pre></td></tr></table></figure>
+<p>子类必须在constructor方法中调用super方法，否则新建实例时会报错(<em>this is not defined</em>)。这是因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象。</p>
+<p>以上是对ES6中类的简单总结学习，欢迎一起讨论。</p>
+<p>参考：<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes</a></p>
+<p><a href="http://es6.ruanyifeng.com/#docs/class" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/class</a></p>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000007537173" target="_blank" rel="external">2016年11月20日发布</a></li>
+<li><a href="javascript:void(0" target="_blank" rel="external">**</a>;)</li>
+</ul>
+<ul>
+<li><a href="javascript:void(0" target="_blank" rel="external">新浪微博</a>;)</li>
+<li><a href="javascript:void(0" target="_blank" rel="external">微信</a>;)</li>
+<li><a href="javascript:void(0" target="_blank" rel="external">Twitter</a>;)</li>
+<li><a href="javascript:void(0" target="_blank" rel="external">Facebook</a>;)</li>
+</ul>
+<p>赞  |   1收藏  |  3</p>
+<h4 id="你可能感兴趣的文章"><a href="#你可能感兴趣的文章" class="headerlink" title="你可能感兴趣的文章"></a>你可能感兴趣的文章</h4><ul>
+<li><a href="https://segmentfault.com/a/1190000004102588" target="_blank" rel="external">JavaScript笔记集</a> 6 收藏，952 浏览</li>
+<li><a href="https://segmentfault.com/a/1190000010542028" target="_blank" rel="external">ES6的Class学习</a> 1 收藏，67 浏览</li>
+<li><a href="https://segmentfault.com/a/1190000004219721" target="_blank" rel="external">浮动【电梯】或【回到底部】的小插件ielevator.js</a> 2 收藏，727 浏览</li>
+</ul>
+<p>## </p>
+<p>2 条评论</p>
+<p><a href="javascript:;" target="_blank" rel="external">默认排序</a><a href="javascript:;" target="_blank" rel="external">时间排序</a></p>
+<p><a href="https://segmentfault.com/u/sunny_l" target="_blank" rel="external"><img src="https://static.segmentfault.com/v-599d4ab0/global/img/user-64.png" alt="img"></a></p>
+<p><a href="https://segmentfault.com/u/sunny_l" target="_blank" rel="external">Sunny_L</a></p>
+<p>· 7月4日</p>
+<p>非class方法可以写Point.prototype.on=Point.prototype.addListener，es6的class应该怎么写？包内好像不能用=号</p>
+<p>** 赞 回复</p>
+<p><a href="https://segmentfault.com/u/wocaibushidaocaoren" target="_blank" rel="external"><img src="https://sfault-avatar.b0.upaiyun.com/184/839/1848398528-5880ca077eec4_big64" alt="img"></a></p>
+<p><a href="https://segmentfault.com/u/wocaibushidaocaoren" target="_blank" rel="external">我才不是稻草人</a></p>
+<p>· 7月14日</p>
+<p>说的不错，想问个问题，在代码里<br>//定义类父类<br>class Parent {</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">constructor(name,age)&#123;</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">speakSometing()&#123;</div><div class="line">    console.log(&quot;I can speek chinese&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>}<br>//定义子类，继承父类<br>class Child extends Parent {</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">constructor(name,age)&#123;</div><div class="line">    //不调super()，则会报错  this is not defined</div><div class="line"></div><div class="line">    //必须调用super</div><div class="line">    super(name,age);</div><div class="line">&#125;</div><div class="line"></div><div class="line">coding()&#123;</div><div class="line">    this.speakSometing()   //可以这么用吗？？？？？？</div><div class="line">    console.log(&quot;coding javascript&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>}</p>
 
       
     </div>
@@ -367,7 +393,7 @@ eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;w
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 </div>
@@ -385,18 +411,20 @@ eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;w
 </footer>
     </div>
     
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
 
 <script>
 	var yiliaConfig = {
-		fancybox: undefined,
-		mathjax: undefined,
-		animate: undefined,
+		fancybox: true,
+		mathjax: true,
+		animate: true,
 		isHome: true,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: undefined
+		open_in_new: true
 	}
 </script>
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
@@ -405,6 +433,27 @@ eg3：var width = window.getComputedStyle(mydiv , null).getPropertyValue(&quot;w
 
 
 
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
   </div>

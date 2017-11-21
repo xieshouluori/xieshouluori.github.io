@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>携手落日</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="javascript html5 css3 前端">
+<meta property="og:type" content="website">
+<meta property="og:title" content="携手落日">
+<meta property="og:url" content="http://yoursite.com/page/8/index.html">
+<meta property="og:site_name" content="携手落日">
+<meta property="og:description" content="javascript html5 css3 前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="携手落日">
+<meta name="twitter:description" content="javascript html5 css3 前端">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">妞妞</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我思故我在</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">妞妞</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">妞妞</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我思故我在</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xieshouluori/" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+  
+    <article id="post-pm2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/30/pm2/" class="article-date">
+  	<time datetime="2016-11-29T16:00:00.000Z" itemprop="datePublished">2016-11-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/30/pm2/">pm2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>全局安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g pm2</div></pre></td></tr></table></figure></p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>启动指定应用程序   —-到运行文件的更目录 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start app.js     <span class="comment"># 启动app.js应用程序</span></div></pre></td></tr></table></figure>
+<p>启动所有进程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start all</div></pre></td></tr></table></figure></p>
+<h2 id="重新启动"><a href="#重新启动" class="headerlink" title="重新启动"></a>重新启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pm2 restart app.js  <span class="comment"># 重启 指定应用程序</span></div><div class="line">pm2 restart all     <span class="comment">#重启所有应用</span></div></pre></td></tr></table></figure>
+<h2 id="停止进程"><a href="#停止进程" class="headerlink" title="停止进程"></a>停止进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pm2 stop all                  <span class="comment"># 停止所有的应用程序</span></div><div class="line">pm2 stop 0                    <span class="comment"># 停止 id为 0的指定应用程序</span></div></pre></td></tr></table></figure>
+<h2 id="删除进程"><a href="#删除进程" class="headerlink" title="删除进程"></a>删除进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pm2 delete all                <span class="comment"># 关闭并删除所有应用</span></div><div class="line">pm2 delete 0                  <span class="comment"># 删除指定应用 id 0</span></div></pre></td></tr></table></figure>
+<h2 id="查看进程状态"><a href="#查看进程状态" class="headerlink" title="查看进程状态"></a>查看进程状态</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 list</div></pre></td></tr></table></figure>
+<h2 id="查看某个进程的信息-（查看id为0的指定应用程序"><a href="#查看某个进程的信息-（查看id为0的指定应用程序" class="headerlink" title="查看某个进程的信息  （查看id为0的指定应用程序)"></a>查看某个进程的信息  （查看id为0的指定应用程序)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 describe 0</div></pre></td></tr></table></figure>
+<h2 id="自定义启动的配置文件"><a href="#自定义启动的配置文件" class="headerlink" title="自定义启动的配置文件"></a>自定义启动的配置文件</h2><pre><code>配置文件里的设置项，跟命令行参数基本是一一对应的。
+可以选择yaml或者json文件，就看个人洗好了。
+json格式的配置文件，pm2当作普通的js文件来处理，所以可以在里面添加注释或者编写代码，这对于动态调整配置很有好处。
+如果启动的时候指定了配置文件，那么命令行参数会被忽略。（个别参数除外，比如--env）
+</code></pre><p>eg：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"name"</span>        : <span class="string">"test_saas"</span>,  </div><div class="line">    <span class="string">"script"</span>      : <span class="string">"/Users/niuniu/Documents/web/test_saas/bin/www"</span>,</div><div class="line">    <span class="string">"cwd"</span>         : <span class="string">"/Users/niuniu/Documents/web/test_saas"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注释：<br>name :进程名称<br>script :实际启动脚本 （为绝对路径）<br>cwd : 当前工作路径</p>
+<h2 id="补充-–注意点"><a href="#补充-–注意点" class="headerlink" title="补充 –注意点"></a>补充 –注意点</h2><p>1.pm2 start 启动之后，会自动生成一个 进程信息（包含该进程的所有配置信息） ，<br>  即使通过 pm2 stop  结束了本进程 ，但是进程信息会仍然存在 ，再次启动不会重新生成</p>
+<p>2.如果某个进程不再使用 或者配置信息有误   使用 pm2 delete 停止并删除；<br>3.如果某个进程只是暂停 做调整  可以使用 pm2 stop</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hexo常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/30/hexo常用命令/" class="article-date">
+  	<time datetime="2016-11-29T16:00:00.000Z" itemprop="datePublished">2016-11-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/30/hexo常用命令/">hexo常用命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a>hexo s</h2><p>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
+<p>1.hexo s 是 hexo server 的缩写，命令效果一致；<br>2.预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；<br>3.对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果</p>
+<h2 id="hexo-new-“文章名字”"><a href="#hexo-new-“文章名字”" class="headerlink" title="hexo new “文章名字”"></a>hexo new “文章名字”</h2><p>新建一篇标题为 xxx 的文章，因为标题里有空格，所以加上了引号。<br>文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。</p>
+<h2 id="hexo-new-page-aboutme"><a href="#hexo-new-page-aboutme" class="headerlink" title="hexo new page aboutme"></a>hexo new page aboutme</h2><p>新建一个标题为 aboutme 的页面，默认链接地址为 主页地址/aboutme/</p>
+<p>1.标题可以为中文，但一般习惯用英文；<br>2.页面标题和文章一样可以随意修改；<br>3.页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。</p>
+<h2 id="hexo-g"><a href="#hexo-g" class="headerlink" title="hexo g"></a>hexo g</h2><p>生成网站静态文件到默认设置的 public 文件夹。</p>
+<p>1.便于查看网站生成的静态文件或者手动部署网站；<br>2.如果使用自动部署，不需要先执行该命令；<br>3.hexo g 是 hexo generate 的缩写，命令效果一致。</p>
+<h2 id="hexo-d"><a href="#hexo-d" class="headerlink" title="hexo d"></a>hexo d</h2><p>自动生成网站静态文件，并部署到设定的仓库。<br>1.hexo d 是 hexo deploy 的缩写，命令效果一致。</p>
+<h2 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h2><p>清除缓存文件 db.json 和已生成的静态文件 public 。</p>
+<p>网站显示异常时可以执行这条命令试试。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Javascript闭包" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/11/Javascript闭包/" class="article-date">
+  	<time datetime="2016-11-10T16:00:00.000Z" itemprop="datePublished">2016-11-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/11/Javascript闭包/">Javascript闭包</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>   JS闭包是什么？<br>　　Ali的回答：<br>　　当function里嵌套function时，内部的function可以访问外部function里的变量。</p>
+<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> foo(x) &#123;</div><div class="line">    var tmp = 3;</div><div class="line">    <span class="keyword">function</span> bar(y) &#123;</div><div class="line">        alert(x + y + (++tmp));</div><div class="line">    &#125;</div><div class="line">    bar(10);</div><div class="line">&#125;</div><div class="line">foo(2)</div></pre></td></tr></table></figure>
+</code></pre><p>　　不管执行多少次，都会alert 16，因为bar能访问foo的参数x，也能访问foo的变量tmp。<br>　　但，这还不是闭包。当你return的是内部function时，就是一个闭包。内部function会close-over外部function的变量直到内部function结束。</p>
+<pre><code>function foo(x) {
+    var tmp = 3;
+    return function (y) {
+        alert(x + y + (++tmp));
+    }
+}
+var bar = foo(2); // bar 现在是一个闭包
+bar(10);
+</code></pre><p>　　上面的脚本最终也会alert 16，因为虽然bar不直接处于foo的内部作用域，但bar还是能访问x和tmp。<br>　　但是，由于tmp仍存在于bar闭包的内部，所以它还是会自加1，而且你每次调用bar时它都会自加1.<br>　　（考虑到六岁这个限制：我们其实可以建立不止一个闭包方法，比如return它们的数组，也可以把它们设置为全局变量。它们全都指向相同的x和相同的tmp，而不是各自有一份副本。）<br>　　注：现在来整点儿七岁的内容。<br>　　上面的x是一个字面值（值传递），和JS里其他的字面值一样，当调用foo时，实参x的值被复制了一份，复制的那一份作为了foo的参数x。<br>　　那么问题来了，JS里处理object时是用到引用传递的，那么，你调用foo时传递一个object，foo函数return的闭包也会引用最初那个object！<br>function foo(x) {<br>var tmp = 3;<br>return function (y) {<br>    alert(x + y + tmp);<br>    x.memb = x.memb ? x.memb + 1 : 1;<br>    alert(x.memb);<br>    }<br>}<br>var age = new Number(2);<br>var bar = foo(age); // bar 现在是一个引用了age的闭包<br>bar(10);<br>　　不出我们意料，每次运行bar(10)，x.memb都会自加1。但需要注意的是x每次都指向同一个object变量——age，运行两次bar(10)后，age.memb会变成2.<br>　　这和HTML对象的内存泄漏有关，呃，不过貌似超出了答题的范围。<br>　　JohnMerlino 对Ali说：<br>　　这里有一个不用return关键字的闭包例子：<br>function closureExample(objID, text, timedelay) {<br>    setTimeout(function() {<br>        document.getElementById(objID).innerHTML = text;<br>    }, timedelay);<br>}<br>closureExample(‘myDiv’, ‘Closure is created’, 500);<br>　　深夜1:37 John Pick这样回答：<br>　　JS里的function能访问它们的：<br>　　1. 参数<br>　　2. 局部变量或函数<br>　　3. 外部变量（环境变量？），包括<br>3.1 全局变量，包括DOM。<br>3.2 外部函数的变量或函数。<br>　　如果一个函数访问了它的外部变量，那么它就是一个闭包。<br>　　注意，外部函数不是必需的。通过访问外部变量，一个闭包可以维持（keep alive）这些变量。在内部函数和外部函数的例子中，外部函数可以创建局部变量，并且最终退出；但是，如果任何一个或多个内部函数在它退出后却没有退出，那么内部函数就维持了外部函数的局部数据。<br>　　一个典型的例子就是全局变量的使用。<br>　　mykhal这样回答：<br>　　Wikipedia对闭包的定义是这样的：<br>In computer science, a closure is a function together with a referencing environment for the nonlocal names (free variables) of that function.<br>　　从技术上来讲，在JS中，每个function都是闭包，因为它总是能访问在它外部定义的数据。<br>　　Since scope-defining construction in Javascript is a function, not a code block like in many other languages, what we usually mean by closure in Javascript is a fuction working with nonlocal variables defined in already executed surrounding function.<br>　　闭包经常用于创建含有隐藏数据的函数（但并不总是这样）。<br>var db = (function() {<br>// 创建一个隐藏的object, 这个object持有一些数据<br>// 从外部是不能访问这个object的<br>var data = {};<br>// 创建一个函数, 这个函数提供一些访问data的数据的方法<br>return function(key, val) {<br>    if (val === undefined) { return data[key] } // get<br>    else { return data[key] = val } // set<br>    }<br>// 我们可以调用这个匿名方法<br>// 返回这个内部函数，它是一个闭包<br>})();</p>
+<p>db(‘x’); // 返回 undefined<br>db(‘x’, 1); // 设置data[‘x’]为1<br>db(‘x’); // 返回 1<br>// 我们不可能访问data这个object本身<br>// 但是我们可以设置它的成员<br>　　看了这么多外国大牛的解答，不知道你懂还是不懂，反正我是懂了。<br>　　P.S. 发布文章之后看到@xiaotie的一篇文章，觉得有必要推荐一下，因为其剖析得更为深入。有人说应该在文章结尾对闭包进行总结，可惜小弟才疏学浅，不能给出一个精辟的总结。<br>　　@xiaotie对闭包的总结如下：<br>（1）闭包是一种设计原则，它通过分析上下文，来简化用户的调用，让用户在不知晓的情况下，达到他的目的；<br>（2）网上主流的对闭包剖析的文章实际上是和闭包原则反向而驰的，如果需要知道闭包细节才能用好的话，这个闭包是设计失败的；<br>（3）尽量少学习。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 妞妞
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
